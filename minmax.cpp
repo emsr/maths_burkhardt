@@ -2,6 +2,8 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <cstdio>
+#include <cstdlib>
 
 //****************************************************************************80
 
@@ -1866,13 +1868,13 @@ double r8_hyper_2f1 ( double a, double b, double c, double x )
         gm = 1.0;
       }
 
-      for ( j = 1; j <= abs ( m ) - 1; j++ )
+      for ( j = 1; j <= std::abs ( m ) - 1; j++ )
       {
         gm = gm * j;
       }
 
       rm = 1.0;
-      for ( j = 1; j <= abs ( m ); j++ )
+      for ( j = 1; j <= std::abs ( m ); j++ )
       {
         rm = rm * j;
       }

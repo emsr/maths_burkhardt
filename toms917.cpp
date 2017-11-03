@@ -8,6 +8,7 @@
 # include <iostream>
 
 using namespace std;
+
 //
 //  DBL_EPSILON, provided by <cfloat>, is twice the machine epsilon for
 //  double precision arithmetic.
@@ -18,7 +19,7 @@ using namespace std;
 
 //****************************************************************************80
 
-complex <double> wrightomega ( complex <double> z )
+std::complex <double> wrightomega ( std::complex <double> z )
 
 //****************************************************************************80
 //
@@ -58,11 +59,11 @@ complex <double> wrightomega ( complex <double> z )
 //    function of Z.
 //
 {
-  complex <double> cond;
-  complex <double> e;
+  std::complex <double> cond;
+  std::complex <double> e;
   int flag;
-  complex <double> r;
-  complex <double> w;
+  std::complex <double> r;
+  std::complex <double> w;
 
   flag = wrightomega_ext ( z, w, e, r, cond );
 
@@ -70,8 +71,8 @@ complex <double> wrightomega ( complex <double> z )
 }
 //****************************************************************************80
 
-int wrightomega_ext ( complex <double> z, complex <double> &w, 
-  complex <double> &e, complex <double> &r, complex <double> &cond )
+int wrightomega_ext ( std::complex <double> z, std::complex <double> &w, 
+  std::complex <double> &e, std::complex <double> &r, std::complex <double> &cond )
 
 //****************************************************************************80
 //
