@@ -29,5 +29,12 @@ add_library(maths_burkhardt SHARED
 	    toms462.cpp
 	    toms917.cpp
 	    quadrule.cpp
-           )
+	    line_monte_carlo.cpp
+	    line_ncc_rule.cpp
+	    line_nco_rule.cpp
+	    tetrahedron_monte_carlo.cpp
+	    triangle_fekete_rule.cpp
+	    triangle_felippa_rule.cpp
+	    triangle_monte_carlo.cpp
+)
 target_link_libraries(maths_burkhardt gfortran)

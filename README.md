@@ -1,5 +1,8 @@
 This is a slightly repackaged version of the collection of math special functions
-maintained by Burkhardt
+collected and maintained by John Burkhardt.
+
+This collection is not complete.  It concentrates on the special math functions.
+Matrix routines and simulators and such are not exposed here.
 
 http://people.sc.fsu.edu/~jburkardt/f_src/specfun/specfun.html
 
