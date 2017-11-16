@@ -152,73 +152,6 @@ void comp_next ( int n, int k, int a[], bool *more, int *h, int *t )
 }
 //****************************************************************************80
 
-double *monomial_value ( int m, int n, int e[], double x[] )
-
-//****************************************************************************80
-//
-//  Purpose:
-//
-//    MONOMIAL_VALUE evaluates a monomial.
-//
-//  Discussion:
-//
-//    This routine evaluates a monomial of the form
-//
-//      product ( 1 <= i <= m ) x(i)^e(i)
-//
-//    The combination 0.0^0 is encountered is treated as 1.0.
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    17 August 2014
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    Input, int M, the spatial dimension.
-//
-//    Input, int N, the number of evaluation points.
-//
-//    Input, int E[M], the exponents.
-//
-//    Input, double X[M*N], the point coordinates.
-//
-//    Output, double MONOMIAL_VALUE[N], the monomial values.
-//
-{
-  int i;
-  int j;
-  double *v;
-
-  v = new double[n];
-  for ( j = 0; j < n; j++)
-  {
-    v[j] = 1.0;
-  }
-//v = r8vec_ones_new ( n );
-
-  for ( i = 0; i < m; i++ )
-  {
-    if ( 0 != e[i] )
-    {
-      for ( j = 0; j < n; j++ )
-      {
-        v[j] = v[j] * pow ( x[i+j*m], e[i] );
-      }
-    }
-  }
-
-  return v;
-}
-//****************************************************************************80
-
 void r8vec_copy ( int n, double a1[], double a2[] )
 
 //****************************************************************************80
@@ -259,51 +192,6 @@ void r8vec_copy ( int n, double a1[], double a2[] )
     a2[i] = a1[i];
   }
   return;
-}
-//****************************************************************************80
-
-double r8vec_dot_product ( int n, double a1[], double a2[] )
-
-//****************************************************************************80
-//
-//  Purpose:
-//
-//    R8VEC_DOT_PRODUCT computes the dot product of a pair of R8VEC's.
-//
-//  Discussion:
-//
-//    An R8VEC is a vector of R8's.
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    03 July 2005
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    Input, int N, the number of entries in the vectors.
-//
-//    Input, double A1[N], A2[N], the two vectors to be considered.
-//
-//    Output, double R8VEC_DOT_PRODUCT, the dot product of the vectors.
-//
-{
-  int i;
-  double value;
-
-  value = 0.0;
-  for ( i = 0; i < n; i++ )
-  {
-    value = value + a1[i] * a2[i];
-  }
-  return value;
 }
 //****************************************************************************80
 
@@ -404,54 +292,6 @@ void subcomp_next ( int n, int k, int a[], bool *more, int *h, int *t )
   }
 
   return;
-}
-//****************************************************************************80
-
-void timestamp ( )
-
-//****************************************************************************80
-//
-//  Purpose:
-//
-//    TIMESTAMP prints the current YMDHMS date as a time stamp.
-//
-//  Example:
-//
-//    31 May 2001 09:45:54 AM
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license. 
-//
-//  Modified:
-//
-//    08 July 2009
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    None
-//
-{
-# define TIME_SIZE 40
-
-  static char time_buffer[TIME_SIZE];
-  const struct std::tm *tm_ptr;
-  size_t len;
-  std::time_t now;
-
-  now = std::time ( NULL );
-  tm_ptr = std::localtime ( &now );
-
-  len = std::strftime ( time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm_ptr );
-
-  std::cout << time_buffer << "\n";
-
-  return;
-# undef TIME_SIZE
 }
 //****************************************************************************80
 
