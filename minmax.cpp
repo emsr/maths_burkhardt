@@ -83,6 +83,82 @@ int i4_min ( int i1, int i2 )
   }
 
 }
+//****************************************************************************80*
+
+int i4_wrap ( int ival, int ilo, int ihi )
+
+//****************************************************************************80*
+//
+//  Purpose:
+//
+//    I4_WRAP forces an integer to lie between given limits by wrapping.
+//
+//  Example:
+//
+//    ILO = 4, IHI = 8
+//
+//    I   Value
+//
+//    -2     8
+//    -1     4
+//     0     5
+//     1     6
+//     2     7
+//     3     8
+//     4     4
+//     5     5
+//     6     6
+//     7     7
+//     8     8
+//     9     4
+//    10     5
+//    11     6
+//    12     7
+//    13     8
+//    14     4
+//
+//  Licensing:
+//
+//    This code is distributed under the GNU LGPL license.
+//
+//  Modified:
+//
+//    19 August 2003
+//
+//  Author:
+//
+//    John Burkardt
+//
+//  Parameters:
+//
+//    Input, int IVAL, an integer value.
+//
+//    Input, int ILO, IHI, the desired bounds for the integer value.
+//
+//    Output, int I4_WRAP, a "wrapped" version of IVAL.
+//
+{
+  int jhi;
+  int jlo;
+  int value;
+  int wide;
+
+  jlo = i4_min ( ilo, ihi );
+  jhi = i4_max ( ilo, ihi );
+
+  wide = jhi + 1 - jlo;
+
+  if ( wide == 1 )
+  {
+    value = jlo;
+  }
+  else
+  {
+    value = jlo + i4_modp ( ival - jlo, wide );
+  }
+
+  return value;
+}
 //****************************************************************************80
 
 double r8_choose ( int n, int k )
