@@ -7,6 +7,85 @@
 
 //****************************************************************************80
 
+int i4_sign ( int i )
+
+//****************************************************************************80
+//
+//  Purpose:
+//
+//    I4_SIGN returns the sign of an integer.
+//
+//  Discussion:
+//
+//    The sign of 0 and all positive integers is taken to be +1.
+//    The sign of all negative integers is -1.
+//
+//  Licensing:
+//
+//    This code is distributed under the GNU LGPL license. 
+//
+//  Modified:
+//
+//    06 May 2003
+//
+//  Author:
+//
+//    John Burkardt
+//
+//  Parameters:
+//
+//    Input, int I, the integer whose sign is desired.
+//
+//    Output, int I4_SIGN, the sign of I.
+{
+  if ( i < 0 ) 
+  {
+    return (-1);
+  }
+  else
+  {
+    return 1;
+  }
+
+}
+//****************************************************************************80
+
+void i4_swap ( int *i, int *j )
+
+//****************************************************************************80
+//
+//  Purpose:
+//
+//    I4_SWAP switches two integer values.
+//
+//  Licensing:
+//
+//    This code is distributed under the GNU LGPL license. 
+//
+//  Modified:
+//
+//    12 May 2003
+//
+//  Author:
+//
+//    John Burkardt
+//
+//  Parameters:
+//
+//    Input/output, int *I, *J.  On output, the values of I and
+//    J have been interchanged.
+//
+{
+  int k;
+
+  k = *i;
+  *i = *j;
+  *j = k;
+ 
+  return;
+}
+//****************************************************************************80
+
 int i4_max ( int i1, int i2 )
 
 //****************************************************************************80
@@ -82,6 +161,85 @@ int i4_min ( int i1, int i2 )
     return i2;
   }
 
+}
+//****************************************************************************80
+
+int i4_modp ( int i, int j )
+
+//****************************************************************************80
+//
+//  Purpose:
+//
+//    I4_MODP returns the nonnegative remainder of I4 division.
+//
+//  Discussion:
+//
+//    The MOD function computes a result with the same sign as the
+//    quantity being divided.  Thus, suppose you had an angle A,
+//    and you wanted to ensure that it was between 0 and 360.
+//    Then mod(A,360) would do, if A was positive, but if A
+//    was negative, your result would be between -360 and 0.
+//
+//    On the other hand, I4_MODP(A,360) is between 0 and 360, always.
+//
+//    The formula is:
+//
+//      If 
+//        NREM = I4_MODP ( I, J ) 
+//        NMULT = ( I - NREM ) / J
+//      then
+//        I = J * NMULT + NREM
+//      where NREM is always nonnegative.
+//
+//  Example:
+//
+//        I         J     MOD  I4_MODP   I4_MODP Factorization
+// 
+//      107        50       7       7    107 =  2 *  50 + 7
+//      107       -50       7       7    107 = -2 * -50 + 7
+//     -107        50      -7      43   -107 = -3 *  50 + 43
+//     -107       -50      -7      43   -107 =  3 * -50 + 43
+//
+//  Licensing:
+//
+//    This code is distributed under the GNU LGPL license. 
+//
+//  Modified:
+//
+//    12 May 2003
+//
+//  Author:
+//
+//    John Burkardt
+//
+//  Parameters:
+//
+//    Input, int I, the number to be divided.
+//
+//    Input, int J, the number that divides I.
+//
+//    Output, int I4_MODP, the nonnegative remainder when I is 
+//    divided by J.
+//
+{
+  int value;
+
+  if ( j == 0 )
+  {
+    std::cerr << "\n";
+    std::cerr << "I4_MODP - Fatal error!\n";
+    std::cerr << "  I4_MODP ( I, J ) called with J = " << j << "\n";
+    exit ( 1 );
+  }
+
+  value = i % j;
+
+  if ( value < 0 )
+  {
+    value = value + abs ( j );
+  }
+
+  return value;
 }
 //****************************************************************************80*
 
