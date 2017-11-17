@@ -101,14 +101,14 @@ double triangle01_monomial_integral ( int e[] )
     for ( j = 1; j <= e[i]; j++ )
     {
       k = k + 1;
-      integral = integral * ( double ) ( j ) / ( double ) ( k );
+      integral = integral * double( j ) / double( k );
     }
   }
 
   for ( i = 0; i < m; i++ )
   {
     k = k + 1;
-    integral = integral / ( double ) ( k );
+    integral = integral / double( k );
   }
 
   return integral;

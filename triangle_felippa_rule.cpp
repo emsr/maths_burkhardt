@@ -355,7 +355,7 @@ double triangle_unit_monomial ( int expon[2] )
 // for ( i = 1; i <= expon[0]; i++ )
 // {
 //   k = k + 1;
-//   value = value * ( double ) ( i ) / ( double ) ( k );
+//   value = value * double( i ) / double( k );
 // }
 
   k = expon[0];
@@ -363,14 +363,14 @@ double triangle_unit_monomial ( int expon[2] )
   for ( i = 1; i <= expon[1]; i++ )
   {
     k = k + 1;
-    value = value * ( double ) ( i ) / ( double ) ( k );
+    value = value * double( i ) / double( k );
   }
 
   k = k + 1;
-  value = value / ( double ) ( k );
+  value = value / double( k );
 
   k = k + 1;
-  value = value / ( double ) ( k );
+  value = value / double( k );
 
   return value;
 }

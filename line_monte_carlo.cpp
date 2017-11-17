@@ -95,7 +95,7 @@ double line01_monomial_integral ( int e )
     exit ( 1 );
   }
 
-  integral = 1.0 / ( double ) ( e + 1 );
+  integral = 1.0 / double( e + 1 );
 
   return integral;
 }
@@ -398,7 +398,7 @@ double *r8vec_uniform_01_new ( int n, int &seed )
       seed = seed + i4_huge;
     }
 
-    r[i] = ( double ) ( seed ) * 4.656612875E-10;
+    r[i] = double( seed ) * 4.656612875E-10;
   }
 
   return r;

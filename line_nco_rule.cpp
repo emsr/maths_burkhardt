@@ -92,17 +92,17 @@ void line_nco_rule ( int n, double a, double b, double x[], double w[] )
 //
 //  Evaluate the antiderivative of the polynomial at the endpoints.
 //
-    y_a = d[n-1] / ( double ) ( n );
+    y_a = d[n-1] / double( n );
     for ( j = n - 2; 0 <= j; j-- )
     {
-      y_a = y_a * a + d[j] / ( double ) ( j + 1 );
+      y_a = y_a * a + d[j] / double( j + 1 );
     }
     y_a = y_a * a;
 
-    y_b = d[n-1] / ( double ) ( n );
+    y_b = d[n-1] / double( n );
     for ( j = n - 2; 0 <= j; j-- )
     {
-      y_b = y_b * b + d[j] / ( double ) ( j + 1 );
+      y_b = y_b * b + d[j] / double( j + 1 );
     }
     y_b = y_b * b;
 
@@ -163,9 +163,9 @@ void r8vec_linspace2 ( int n, double a_first, double a_last, double a[] )
   {
     for ( i = 0; i < n; i++ )
     {
-      a[i] = ( ( double ) ( n - i     ) * a_first 
-             + ( double ) (     i + 1 ) * a_last ) 
-             / ( double ) ( n     + 1 );
+      a[i] = ( double( n - i     ) * a_first 
+             + double(     i + 1 ) * a_last ) 
+             / double( n     + 1 );
     }
   }
   return;

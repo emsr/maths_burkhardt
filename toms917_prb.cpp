@@ -520,7 +520,7 @@ void test_boundary ( )
 //
   for ( i = 0; i < n; i++ )
   {
-    x[0] = nextafter ( - 1.0 - exp ( ( double ) ( n - 1 - i ) / exp_num ), HUGE_VAL );
+    x[0] = nextafter ( - 1.0 - exp ( double( n - 1 - i ) / exp_num ), HUGE_VAL );
     y[0] = nextafter ( pi - 0.75 * ( x[0] + 1.0 ), HUGE_VAL );
     z = complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
@@ -587,7 +587,7 @@ void test_boundary ( )
 //  (x-0.1e1)*(x-0.1e1)+y*y=pi*pi)
 //  (on outside)
 //
-  td = pi / ( double ) ( n - 1 );
+  td = pi / double( n - 1 );
   y[0] = pi / 2.0;
 
   for ( i = 0; i < n; i++ )
@@ -667,7 +667,7 @@ void test_boundary ( )
 //
   for ( i = 0; i < n; i++ )
   {
-    x[0] = nextafter ( - 1.0 - exp ( ( double ) ( i ) / exp_num ), HUGE_VAL );
+    x[0] = nextafter ( - 1.0 - exp ( double( i ) / exp_num ), HUGE_VAL );
     y[0] = nextafter ( - pi + 0.75 * ( x[0] + 1.0 ), - HUGE_VAL );
     z = complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
@@ -682,7 +682,7 @@ void test_boundary ( )
 //
   for ( i = 0; i < n; i++ )
   {
-    x[0] = nextafter ( - 1.0 - exp ( ( double ) ( n - 1 - i ) / exp_num ), - HUGE_VAL );
+    x[0] = nextafter ( - 1.0 - exp ( double( n - 1 - i ) / exp_num ), - HUGE_VAL );
     y[0] = nextafter ( - pi + 0.75 * ( x[0] + 1.0 ), HUGE_VAL );
     z = complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
@@ -716,7 +716,7 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    x[0] = - 1.0 - exp ( ( double ) ( i ) / exp_num );
+    x[0] = - 1.0 - exp ( double( i ) / exp_num );
     z = complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
     fp << real ( z ) << " " 
@@ -732,7 +732,7 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    x[0] = - 1.0 - exp ( ( double ) ( n - 1 - i ) / exp_num );
+    x[0] = - 1.0 - exp ( double( n - 1 - i ) / exp_num );
     z = complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
     fp << real ( z ) << " " 
@@ -765,7 +765,7 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    x[0] = - 1.0 - exp ( ( double ) ( i ) / exp_num );
+    x[0] = - 1.0 - exp ( double( i ) / exp_num );
     z = complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
     fp << real ( z ) << " " 
@@ -781,7 +781,7 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    x[0] = - 1.0 - exp ( ( double ) ( n - 1 - i ) / exp_num );
+    x[0] = - 1.0 - exp ( double( n - 1 - i ) / exp_num );
     z = complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
     fp << real ( z ) << " " 
@@ -812,7 +812,7 @@ void test_boundary ( )
 //
   for ( i = 0; i < n; i++ )
   {
-    x[0] = -1.0 - exp ( ( double ) ( n - 1 - i ) / exp_num );
+    x[0] = -1.0 - exp ( double( n - 1 - i ) / exp_num );
     y[0] = nextafter ( pi - 0.75 * ( x[0] + 1.0 ), 0.1 );
     z = complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );

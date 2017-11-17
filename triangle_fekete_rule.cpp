@@ -146,7 +146,7 @@ int fekete_order_num ( int rule )
 }
 //****************************************************************************80
 
-void fekete_rule ( int rule, int order_num, double xy[], double w[] )
+void fekete_rule ( int rule, int /*order_num*/, double xy[], double w[] )
 
 //****************************************************************************80
 //
@@ -1452,15 +1452,15 @@ void reference_to_physical_t3 ( double t[], int n, double ref[], double phy[] )
 //
 //  Reference Element T3:
 //
-//    |
-//    1  3
-//    |  |\
-//    |  | \
-//    S  |  \
-//    |  |   \
-//    |  |    \
-//    0  1-----2
-//    |
+//    |           |
+//    1  3        |
+//    |  |\       |
+//    |  | \      |
+//    S  |  \     |
+//    |  |   \    |
+//    |  |    \   |
+//    0  1-----2  |
+//    |           |
 //    +--0--R--1-->
 //
 //  Licensing:
@@ -1604,7 +1604,6 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
 {
   int circle_size;
   int delta;
-  int e;
   ofstream file_unit;
   int i;
   int node;
@@ -1707,7 +1706,7 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
 
   if ( x_scale < y_scale )
   {
-    delta = r8_nint ( ( double ) ( x_ps_max - x_ps_min ) 
+    delta = r8_nint ( double( x_ps_max - x_ps_min ) 
       * ( y_scale - x_scale ) / ( 2.0 * y_scale ) );
 
     x_ps_max = x_ps_max - delta;
@@ -1720,7 +1719,7 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
   }
   else if ( y_scale < x_scale )
   {
-    delta = r8_nint ( ( double ) ( y_ps_max - y_ps_min ) 
+    delta = r8_nint ( double( y_ps_max - y_ps_min ) 
       * ( x_scale - y_scale ) / ( 2.0 * x_scale ) );
 
     y_ps_max      = y_ps_max - delta;
@@ -1828,13 +1827,13 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
       node = i4_wrap ( i, 0, 2 );
 
       x_ps = ( r8_nint ) ( 
-        ( ( x_max - node_xy[0+node*2]         ) * ( double ) ( x_ps_min )   
-        + (         node_xy[0+node*2] - x_min ) * ( double ) ( x_ps_max ) ) 
+        ( ( x_max - node_xy[0+node*2]         ) * double( x_ps_min )   
+        + (         node_xy[0+node*2] - x_min ) * double( x_ps_max ) ) 
         / ( x_max                     - x_min ) );
 
       y_ps = ( r8_nint ) ( 
-        ( ( y_max - node_xy[1+node*2]         ) * ( double ) ( y_ps_min )   
-        + (         node_xy[1+node*2] - y_min ) * ( double ) ( y_ps_max ) ) 
+        ( ( y_max - node_xy[1+node*2]         ) * double( y_ps_min )   
+        + (         node_xy[1+node*2] - y_min ) * double( y_ps_max ) ) 
         / ( y_max                     - y_min ) );
 
       if ( i == 0 )
@@ -1866,13 +1865,13 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
     for ( node = 0; node < 3; node++ )
     {
       x_ps = r8_nint ( 
-        ( ( x_max - node_xy[0+node*2]         ) * ( double ) ( x_ps_min )   
-        + (         node_xy[0+node*2] - x_min ) * ( double ) ( x_ps_max ) ) 
+        ( ( x_max - node_xy[0+node*2]         ) * double( x_ps_min )   
+        + (         node_xy[0+node*2] - x_min ) * double( x_ps_max ) ) 
         / ( x_max                     - x_min ) );
 
       y_ps = r8_nint ( 
-        ( ( y_max - node_xy[1+node*2]         ) * ( double ) ( y_ps_min )   
-        + (         node_xy[1+node*2] - y_min ) * ( double ) ( y_ps_max ) ) 
+        ( ( y_max - node_xy[1+node*2]         ) * double( y_ps_min )   
+        + (         node_xy[1+node*2] - y_min ) * double( y_ps_max ) ) 
         / ( y_max                     - y_min ) );
 
       file_unit << "newpath  " << x_ps 
@@ -1900,13 +1899,13 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
     for ( node = 0; node < node_num; node++ )
     {
       x_ps = r8_nint ( 
-        ( ( x_max - node_xy[0+node*2]         ) * ( double ) ( x_ps_min )   
-        + (       + node_xy[0+node*2] - x_min ) * ( double ) ( x_ps_max ) ) 
+        ( ( x_max - node_xy[0+node*2]         ) * double( x_ps_min )   
+        + (       + node_xy[0+node*2] - x_min ) * double( x_ps_max ) ) 
         / ( x_max                     - x_min ) );
 
       y_ps = r8_nint ( 
-        ( ( y_max - node_xy[1+node*2]         ) * ( double ) ( y_ps_min )   
-        + (         node_xy[1+node*2] - y_min ) * ( double ) ( y_ps_max ) ) 
+        ( ( y_max - node_xy[1+node*2]         ) * double( y_ps_min )   
+        + (         node_xy[1+node*2] - y_min ) * double( y_ps_max ) ) 
         / ( y_max                     - y_min ) );
 
       file_unit  << "  " << x_ps
@@ -1951,13 +1950,13 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
     for ( point = 0; point < point_num; point++ )
     {
       x_ps = r8_nint ( 
-        ( ( x_max - point_xy[0+point*2]         ) * ( double ) ( x_ps_min )   
-        + (         point_xy[0+point*2] - x_min ) * ( double ) ( x_ps_max ) ) 
+        ( ( x_max - point_xy[0+point*2]         ) * double( x_ps_min )   
+        + (         point_xy[0+point*2] - x_min ) * double( x_ps_max ) ) 
         / ( x_max                       - x_min ) );
 
       y_ps = r8_nint ( 
-        ( ( y_max - point_xy[1+point*2]         ) * ( double ) ( y_ps_min )   
-        + (         point_xy[1+point*2] - y_min ) * ( double ) ( y_ps_max ) ) 
+        ( ( y_max - point_xy[1+point*2]         ) * double( y_ps_min )   
+        + (         point_xy[1+point*2] - y_min ) * double( y_ps_max ) ) 
         / ( y_max                       - y_min ) );
 
       file_unit << "newpath  " << x_ps 
@@ -1985,13 +1984,13 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
     for ( point = 0; point < point_num; point++ )
     {
       x_ps = r8_nint ( 
-        ( ( x_max - point_xy[0+point*2]         ) * ( double ) ( x_ps_min )   
-        + (       + point_xy[0+point*2] - x_min ) * ( double ) ( x_ps_max ) ) 
+        ( ( x_max - point_xy[0+point*2]         ) * double( x_ps_min )   
+        + (       + point_xy[0+point*2] - x_min ) * double( x_ps_max ) ) 
         / ( x_max                       - x_min ) );
 
       y_ps = r8_nint ( 
-        ( ( y_max - point_xy[1+point*2]         ) * ( double ) ( y_ps_min )   
-        + (         point_xy[1+point*2] - y_min ) * ( double ) ( y_ps_max ) ) 
+        ( ( y_max - point_xy[1+point*2]         ) * double( y_ps_min )   
+        + (         point_xy[1+point*2] - y_min ) * double( y_ps_max ) ) 
         / ( y_max                       - y_min ) );
 
       file_unit << "  " << x_ps
