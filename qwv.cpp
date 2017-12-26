@@ -5,8 +5,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "qwv.hpp"
 
 //****************************************************************************80
@@ -199,7 +197,7 @@ double r8_abs ( double x )
 }
 //****************************************************************************80
 
-void r8mat_print ( int m, int n, double a[], string title )
+void r8mat_print ( int m, int n, double a[], std::string title )
 
 //****************************************************************************80
 //
@@ -244,7 +242,7 @@ void r8mat_print ( int m, int n, double a[], string title )
 //****************************************************************************80
 
 void r8mat_print_some ( int m, int n, double a[], int ilo, int jlo, int ihi,
-  int jhi, string title )
+  int jhi, std::string title )
 
 //****************************************************************************80
 //
@@ -294,13 +292,13 @@ void r8mat_print_some ( int m, int n, double a[], int ilo, int jlo, int ihi,
   int j2hi;
   int j2lo;
 
-  cout << "\n";
-  cout << title << "\n";
+  std::cout << "\n";
+  std::cout << title << "\n";
 
   if ( m <= 0 || n <= 0 )
   {
-    cout << "\n";
-    cout << "  (None)\n";
+    std::cout << "\n";
+    std::cout << "  (None)\n";
     return;
   }
 //
@@ -317,20 +315,20 @@ void r8mat_print_some ( int m, int n, double a[], int ilo, int jlo, int ihi,
     {
       j2hi = jhi;
     }
-    cout << "\n";
+    std::cout << "\n";
 //
 //  For each column J in the current range...
 //
 //  Write the header.
 //
-    cout << "  Col:    ";
+    std::cout << "  Col:    ";
     for ( j = j2lo; j <= j2hi; j++ )
     {
-      cout << setw(7) << j - 1 << "       ";
+      std::cout << std::setw(7) << j - 1 << "       ";
     }
-    cout << "\n";
-    cout << "  Row\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  Row\n";
+    std::cout << "\n";
 //
 //  Determine the range of the rows in this strip.
 //
@@ -356,12 +354,12 @@ void r8mat_print_some ( int m, int n, double a[], int ilo, int jlo, int ihi,
 //
 //  Print out (up to) 5 entries in row I, that lie in the current strip.
 //
-      cout << setw(5) << i - 1 << ": ";
+      std::cout << std::setw(5) << i - 1 << ": ";
       for ( j = j2lo; j <= j2hi; j++ )
       {
-        cout << setw(12) << a[i-1+(j-1)*m] << "  ";
+        std::cout << std::setw(12) << a[i-1+(j-1)*m] << "  ";
       }
-      cout << "\n";
+      std::cout << "\n";
     }
   }
 
@@ -508,16 +506,16 @@ double *r8mat_solve2 ( int n, double a[], double b[], int &ierror )
       if ( b[j-1] == 0.0 )
       {
         ierror = 1;
-        cout << "\n";
-        cout << "R8MAT_SOLVE2 - Warning:\n";
-        cout << "  Consistent singularity, equation = " << j << "\n";
+        std::cout << "\n";
+        std::cout << "R8MAT_SOLVE2 - Warning:\n";
+        std::cout << "  Consistent singularity, equation = " << j << "\n";
       }
       else
       {
         ierror = 2;
-        cout << "\n";
-        cout << "R8MAT_SOLVE2 - Warning:\n";
-        cout << "  Inconsistent singularity, equation = " << j << "\n";
+        std::cout << "\n";
+        std::cout << "R8MAT_SOLVE2 - Warning:\n";
+        std::cout << "  Inconsistent singularity, equation = " << j << "\n";
       }
     }
     else
@@ -598,7 +596,7 @@ double *r8vec_even_new ( int n, double alo, double ahi )
 }
 //****************************************************************************80
 
-void r8vec_print ( int n, double a[], string title )
+void r8vec_print ( int n, double a[], std::string title )
 
 //****************************************************************************80
 //
@@ -633,13 +631,13 @@ void r8vec_print ( int n, double a[], string title )
 {
   int i;
 
-  cout << "\n";
-  cout << title << "\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << title << "\n";
+  std::cout << "\n";
   for ( i = 0; i < n; i++ )
   {
-    cout << "  " << setw(8)  << i
-         << ": " << setw(14) << a[i]  << "\n";
+    std::cout << "  " << std::setw(8)  << i
+         << ": " << std::setw(14) << a[i]  << "\n";
   }
 
   return;

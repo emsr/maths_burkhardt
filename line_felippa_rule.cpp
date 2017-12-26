@@ -6,8 +6,6 @@
 # include <cstring>
 # include <cmath>
 
-using namespace std;
-
 # include "line_felippa_rule.hpp"
 
 //****************************************************************************80
@@ -60,9 +58,9 @@ double line_monomial ( double a, double b, int expon )
 
   if ( expon == - 1 )
   {
-    cerr << "\n";
-    cerr << "LINE_MONOMIAL - Fatal error!\n";
-    cerr << "  Exponent = -1 is not a legal input.\n";
+    std::cerr << "\n";
+    std::cerr << "LINE_MONOMIAL - Fatal error!\n";
+    std::cerr << "  Exponent = -1 is not a legal input.\n";
     exit ( 1 );
   }
   
@@ -104,23 +102,23 @@ void line_monomial_test ( int degree_max )
   int expon;
   double value;
 
-  cout << "\n";
-  cout << "LINE_MONOMIAL_TEST\n";
-  cout << "  For a line segment in 1D,\n";
-  cout << "  LINE_MONOMIAL returns the exact value of the\n";
-  cout << "  integral of X^EXPON\n";
-  cout << "\n";
-  cout << "  Volume = " << line_volume ( a, b ) << "\n";
-  cout << "\n";
-  cout << "     EXPON      INTEGRAL\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LINE_MONOMIAL_TEST\n";
+  std::cout << "  For a line segment in 1D,\n";
+  std::cout << "  LINE_MONOMIAL returns the exact value of the\n";
+  std::cout << "  integral of X^EXPON\n";
+  std::cout << "\n";
+  std::cout << "  Volume = " << line_volume ( a, b ) << "\n";
+  std::cout << "\n";
+  std::cout << "     EXPON      INTEGRAL\n";
+  std::cout << "\n";
 
   for ( expon = 0; expon <= degree_max; expon++ )
   {
     value = line_monomial ( a, b, expon );
 
-    cout << "  " << setw(8)  << expon
-         << "  " << setw(14) << value << "\n";
+    std::cout << "  " << std::setw(8)  << expon
+         << "  " << std::setw(14) << value << "\n";
   }
 
   return;
@@ -163,21 +161,21 @@ void line_quad_test ( int degree_max )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "LINE_QUAD_TEST\n";
-  cout << "  For a line segment in 1D,\n";
-  cout << "  we approximate monomial integrals with:\n";
-  cout << "  LINE_UNIT_O01, a 1 point rule.\n";
-  cout << "  LINE_UNIT_O02, a 2 point rule.\n";
-  cout << "  LINE_UNIT_O03, a 3 point rule.\n";
-  cout << "  LINE_UNIT_O04, a 4 point rule.\n";
-  cout << "  LINE_UNIT_O05, a 5 point rule.\n";
+  std::cout << "\n";
+  std::cout << "LINE_QUAD_TEST\n";
+  std::cout << "  For a line segment in 1D,\n";
+  std::cout << "  we approximate monomial integrals with:\n";
+  std::cout << "  LINE_UNIT_O01, a 1 point rule.\n";
+  std::cout << "  LINE_UNIT_O02, a 2 point rule.\n";
+  std::cout << "  LINE_UNIT_O03, a 3 point rule.\n";
+  std::cout << "  LINE_UNIT_O04, a 4 point rule.\n";
+  std::cout << "  LINE_UNIT_O05, a 5 point rule.\n";
 
   for ( expon = 0; expon <= degree_max; expon++ )
   {
-    cout << "\n";
-    cout << "  Monomial exponent:   " << expon << "\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  Monomial exponent:   " << expon << "\n";
+    std::cout << "\n";
 
     for ( order = 1; order <= 5; order++ )
     {
@@ -191,15 +189,15 @@ void line_quad_test ( int degree_max )
         v[j] = pow ( x[j], expon );
       }
       quad = r8vec_dot_product ( order, w, v );
-      cout << setw(8) << order << "  "
-           << setw(14) << quad << "\n";
+      std::cout << std::setw(8) << order << "  "
+           << std::setw(14) << quad << "\n";
       delete [] v;
       delete [] w;
       delete [] x;
     }
-    cout << "\n";
+    std::cout << "\n";
     quad = line_monomial ( a, b, expon );
-    cout << "   Exact  " << setw(14) << quad << "\n";
+    std::cout << "   Exact  " << std::setw(14) << quad << "\n";
   }
 
   return;
@@ -273,9 +271,9 @@ void line_rule ( double a, double b, int order, double w[], double x[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "LINE_RULE - Fatal error!\n";
-    cerr << "  Illegal value of ORDER.\n";
+    std::cerr << "\n";
+    std::cerr << "LINE_RULE - Fatal error!\n";
+    std::cerr << "  Illegal value of ORDER.\n";
     exit ( 1 );
   }
 //

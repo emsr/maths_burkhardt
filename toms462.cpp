@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "toms462.hpp"
 
 //****************************************************************************80
@@ -258,9 +256,9 @@ double bivnor ( double ah, double ak, double r )
 
   if ( rr < 0.0 )
   {
-    cerr << "\n";
-    cerr << "BIVNOR - Fatal error!\n";
-    cerr << "  1 < |R|.\n";
+    std::cerr << "\n";
+    std::cerr << "BIVNOR - Fatal error!\n";
+    std::cerr << "  1 < |R|.\n";
     exit ( 0 );
   }
 

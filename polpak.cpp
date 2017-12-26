@@ -5,8 +5,6 @@
 # include <iostream>
 # include <iomanip>
 
-using namespace std;
-
 # include "polpak.hpp"
 
 //****************************************************************************80
@@ -562,10 +560,10 @@ double benford ( int ival )
 
   if ( ival <= 0 )
   {
-    cerr << "\n";
-    cerr << "BENFORD - Fatal error!\n";
-    cerr << "  The input argument must be positive.\n";
-    cerr << "  Your value was " << ival << "\n";
+    std::cerr << "\n";
+    std::cerr << "BENFORD - Fatal error!\n";
+    std::cerr << "  The input argument must be positive.\n";
+    std::cerr << "  Your value was " << ival << "\n";
     exit ( 1 );
   }
 
@@ -1807,9 +1805,9 @@ void bpab ( int n, double x, double a, double b, double bern[] )
 
   if ( b == a )
   {
-    cerr << "\n";
-    cerr << "BPAB - Fatal error!\n";
-    cerr << "  A = B = " << a << "\n";
+    std::cerr << "\n";
+    std::cerr << "BPAB - Fatal error!\n";
+    std::cerr << "  A = B = " << a << "\n";
     exit ( 1 );
   }
 
@@ -2574,17 +2572,17 @@ void charlier ( int n, double a, double x, double value[] )
 
   if ( a == 0.0 )
   {
-    cerr << "\n";
-    cerr << "CHARLIER - Fatal error!\n";
-    cerr << "  Parameter A cannot be zero.\n";
+    std::cerr << "\n";
+    std::cerr << "CHARLIER - Fatal error!\n";
+    std::cerr << "  Parameter A cannot be zero.\n";
     exit ( 1 );
   }
 
   if ( n < 0 )
   {
-    cerr << "\n";
-    cerr << "CHARLIER - Fatal error!\n";
-    cerr << "  Parameter N must be nonnegative.\n";
+    std::cerr << "\n";
+    std::cerr << "CHARLIER - Fatal error!\n";
+    std::cerr << "  Parameter N must be nonnegative.\n";
     exit ( 1 );
   }
 
@@ -3660,25 +3658,25 @@ void chebyshev_discrete ( int n, int m, double x, double v[] )
 
   if ( m < 0 )
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV_DISCRETE - Fatal error!\n";
-    cerr << "  Parameter M must be nonnegative.\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV_DISCRETE - Fatal error!\n";
+    std::cerr << "  Parameter M must be nonnegative.\n";
     exit ( 1 );
   }
 
   if ( n < 0 )
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV_DISCRETE - Fatal error!\n";
-    cerr << "  Parameter N must be nonnegative.\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV_DISCRETE - Fatal error!\n";
+    std::cerr << "  Parameter N must be nonnegative.\n";
     exit ( 1 );
   }
 
   if ( m < n )
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV_DISCRETE - Fatal error!\n";
-    cerr << "  Parameter N must be no greater than M.\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV_DISCRETE - Fatal error!\n";
+    std::cerr << "  Parameter N must be no greater than M.\n";
     exit ( 1 );
   }
 
@@ -4141,10 +4139,10 @@ int commul ( int n, int nfact, int iarray[] )
   {
     if ( iarray[i] < 0 )
     {
-      cerr << "\n";
-      cerr << "COMMUL - Fatal error\n";
-      cerr << "  Entry " << i << " of IARRAY = " << iarray[i] << "\n";
-      cerr << "  But this value must be nonnegative.\n";
+      std::cerr << "\n";
+      std::cerr << "COMMUL - Fatal error\n";
+      std::cerr << "  Entry " << i << " of IARRAY = " << iarray[i] << "\n";
+      std::cerr << "  But this value must be nonnegative.\n";
       exit ( 1 );
     }
   }
@@ -4157,10 +4155,10 @@ int commul ( int n, int nfact, int iarray[] )
 
   if ( isum != n )
   {
-    cerr << "\n";
-    cerr << "COMMUL - Fatal error!\n";
-    cerr << "  The sum of the IARRAY entries is " << isum << "\n";
-    cerr << "  But it must equal N = " << n << "\n";
+    std::cerr << "\n";
+    std::cerr << "COMMUL - Fatal error!\n";
+    std::cerr << "  The sum of the IARRAY entries is " << isum << "\n";
+    std::cerr << "  But it must equal N = " << n << "\n";
     exit ( 1 );
   }
 
@@ -4239,17 +4237,17 @@ double complete_symmetric_poly ( int n, int r, double x[] )
 
   if ( n < 0 )
   {
-    cerr << "\n";
-    cerr << "COMPLETE_SYMMETRIC_POLY - Fatal error!\n";
-    cerr << "  N < 0.\n";
+    std::cerr << "\n";
+    std::cerr << "COMPLETE_SYMMETRIC_POLY - Fatal error!\n";
+    std::cerr << "  N < 0.\n";
     exit ( 1 );
   }
 
   if ( r < 0 )
   {
-    cerr << "\n";
-    cerr << "COMPLETE_SYMMETRIC_POLY - Fatal error!\n";
-    cerr << "  R < 0.\n";
+    std::cerr << "\n";
+    std::cerr << "COMPLETE_SYMMETRIC_POLY - Fatal error!\n";
+    std::cerr << "  R < 0.\n";
     exit ( 1 );
   }
 
@@ -4327,9 +4325,9 @@ double cos_power_int ( double a, double b, int n )
 
   if ( n < 0 )
   {
-    cerr << "\n";
-    cerr << "COS_POWER_INT - Fatal error!\n";
-    cerr << "  Power N < 0.\n";
+    std::cerr << "\n";
+    std::cerr << "COS_POWER_INT - Fatal error!\n";
+    std::cerr << "  Power N < 0.\n";
     exit ( 1 );
   }
 
@@ -5832,10 +5830,10 @@ void gegenbauer_poly ( int n, double alpha, double x, double cx[] )
 
   if ( alpha <= -0.5 )
   {
-    cerr << "\n";
-    cerr << "GEGENBAUER_POLY - Fatal error!\n";
-    cerr << "  Illegal value of ALPHA = " << alpha << "\n";
-    cerr << "  but ALPHA must be greater than -0.5.\n";
+    std::cerr << "\n";
+    std::cerr << "GEGENBAUER_POLY - Fatal error!\n";
+    std::cerr << "  Illegal value of ALPHA = " << alpha << "\n";
+    std::cerr << "  but ALPHA must be greater than -0.5.\n";
     exit ( 1 );
   }
 
@@ -6170,10 +6168,10 @@ void gen_laguerre_poly ( int n, double alpha, double x, double cx[] )
 
   if ( alpha <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "GEN_LAGUERRE_POLY - Fatal error!\n";
-    cerr << "  The input value of ALPHA is " << alpha << "\n";
-    cerr << "  but ALPHA must be greater than -1.\n";
+    std::cerr << "\n";
+    std::cerr << "GEN_LAGUERRE_POLY - Fatal error!\n";
+    std::cerr << "  The input value of ALPHA is " << alpha << "\n";
+    std::cerr << "  but ALPHA must be greater than -1.\n";
     exit ( 1 );
   }
 
@@ -7253,10 +7251,10 @@ int i4_factorial ( int n )
   if ( 13 < n ) 
   {
     value = - 1;
-    cerr << "I4_FACTORIAL - Fatal error!\n";
-    cerr << "  I4_FACTORIAL(N) cannot be computed as an integer\n";
-    cerr << "  for 13 < N.\n";
-    cerr << "  Input value N = " << n << "\n";
+    std::cerr << "I4_FACTORIAL - Fatal error!\n";
+    std::cerr << "  I4_FACTORIAL(N) cannot be computed as an integer\n";
+    std::cerr << "  for 13 < N.\n";
+    std::cerr << "  Input value N = " << n << "\n";
     exit ( 1 );
   }
 
@@ -7939,10 +7937,10 @@ void i4_to_triangle ( int k, int *i, int *j )
 
   if ( k < 0 )
   {
-    cerr << "\n";
-    cerr << "I4_TO_TRIANGLE - Fatal error!\n";
-    cerr << "  K < 0.\n";
-    cerr << "  K = " << k << "\n";
+    std::cerr << "\n";
+    std::cerr << "I4_TO_TRIANGLE - Fatal error!\n";
+    std::cerr << "  K < 0.\n";
+    std::cerr << "  K = " << k << "\n";
     exit ( 1 );
   }
   else if ( k == 0 )
@@ -7972,7 +7970,7 @@ void i4_to_triangle ( int k, int *i, int *j )
 }
 //****************************************************************************80
 
-void i4mat_print ( int m, int n, int a[], string title )
+void i4mat_print ( int m, int n, int a[], std::string title )
 
 //****************************************************************************80
 //
@@ -8014,7 +8012,7 @@ void i4mat_print ( int m, int n, int a[], string title )
 //****************************************************************************80
 
 void i4mat_print_some ( int m, int n, int a[], int ilo, int jlo, int ihi,
-  int jhi, string title )
+  int jhi, std::string title )
 
 //****************************************************************************80
 //
@@ -8063,13 +8061,13 @@ void i4mat_print_some ( int m, int n, int a[], int ilo, int jlo, int ihi,
   int j2hi;
   int j2lo;
 
-  cout << "\n";
-  cout << title << "\n";
+  std::cout << "\n";
+  std::cout << title << "\n";
 
   if ( m <= 0 || n <= 0 )
   {
-    cout << "\n";
-    cout << "  (None)\n";
+    std::cout << "\n";
+    std::cout << "  (None)\n";
     return;
   }
 //
@@ -8081,20 +8079,20 @@ void i4mat_print_some ( int m, int n, int a[], int ilo, int jlo, int ihi,
     j2hi = i4_min ( j2hi, n );
     j2hi = i4_min ( j2hi, jhi );
 
-    cout << "\n";
+    std::cout << "\n";
 //
 //  For each column J in the current range...
 //
 //  Write the header.
 //
-    cout << "  Col:";
+    std::cout << "  Col:";
     for ( j = j2lo; j <= j2hi; j++ )
     {
-      cout << "  " << setw(6) << j - 1;
+      std::cout << "  " << std::setw(6) << j - 1;
     }
-    cout << "\n";
-    cout << "  Row\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  Row\n";
+    std::cout << "\n";
 //
 //  Determine the range of the rows in this strip.
 //
@@ -8106,12 +8104,12 @@ void i4mat_print_some ( int m, int n, int a[], int ilo, int jlo, int ihi,
 //
 //  Print out (up to INCX) entries in row I, that lie in the current strip.
 //
-      cout << setw(5) << i - 1 << ":";
+      std::cout << std::setw(5) << i - 1 << ":";
       for ( j = j2lo; j <= j2hi; j++ )
       {
-        cout << "  " << setw(6) << a[i-1+(j-1)*m];
+        std::cout << "  " << std::setw(6) << a[i-1+(j-1)*m];
       }
-      cout << "\n";
+      std::cout << "\n";
     }
   }
 
@@ -8210,19 +8208,19 @@ double *jacobi_poly ( int n, double alpha, double beta, double x )
 
   if ( alpha <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "JACOBI_POLY - Fatal error!\n";
-    cerr << "  Illegal input value of ALPHA = " << alpha << "\n";
-    cerr << "  But ALPHA must be greater than -1.\n";
+    std::cerr << "\n";
+    std::cerr << "JACOBI_POLY - Fatal error!\n";
+    std::cerr << "  Illegal input value of ALPHA = " << alpha << "\n";
+    std::cerr << "  But ALPHA must be greater than -1.\n";
     exit ( 1 );
   }
 
   if ( beta <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "JACOBI_POLY - Fatal error!\n";
-    cerr << "  Illegal input value of BETA = " << beta << "\n";
-    cerr << "  But BETA must be greater than -1.\n";
+    std::cerr << "\n";
+    std::cerr << "JACOBI_POLY - Fatal error!\n";
+    std::cerr << "  Illegal input value of BETA = " << beta << "\n";
+    std::cerr << "  But BETA must be greater than -1.\n";
     exit ( 1 );
   }
 
@@ -8509,9 +8507,9 @@ int jacobi_symbol ( int q, int p )
 //
   if ( p <= 1 )
   {
-    cerr << "\n";
-    cerr << "JACOBI_SYMBOL - Fatal error!\n";
-    cerr << "  P must be greater than 1.\n";
+    std::cerr << "\n";
+    std::cerr << "JACOBI_SYMBOL - Fatal error!\n";
+    std::cerr << "  P must be greater than 1.\n";
     exit ( 1 );
   }
 //
@@ -8521,9 +8519,9 @@ int jacobi_symbol ( int q, int p )
 
   if ( nleft != 1 )
   {
-    cerr << "\n";
-    cerr << "JACOBI_SYMBOL - Fatal error!\n";
-    cerr << "  Not enough factorization space.\n";
+    std::cerr << "\n";
+    std::cerr << "JACOBI_SYMBOL - Fatal error!\n";
+    std::cerr << "  Not enough factorization space.\n";
     exit ( 1 );
   }
 //
@@ -8545,9 +8543,9 @@ int jacobi_symbol ( int q, int p )
 
     if ( l < -1 )
     {
-      cerr << "\n";
-      cerr << "JACOBI_SYMBOL - Fatal error!\n";
-      cerr << "  Error during Legendre symbol calculation.\n";
+      std::cerr << "\n";
+      std::cerr << "JACOBI_SYMBOL - Fatal error!\n";
+      std::cerr << "  Error during Legendre symbol calculation.\n";
       exit ( 1 );
     }
     value = value * int(pow ( double(l), power[i] ));
@@ -8626,25 +8624,25 @@ void krawtchouk ( int n, double p, double x, int m, double v[] )
 
   if ( n < 0 )
   {
-    cerr << "\n";
-    cerr << "KRAWTCHOUK - Fatal error!\n";
-    cerr << "  0 <= N is required.\n";
+    std::cerr << "\n";
+    std::cerr << "KRAWTCHOUK - Fatal error!\n";
+    std::cerr << "  0 <= N is required.\n";
     exit ( 1 );
   }
 
   if ( p <= 0.0 || 1.0 <= p )
   {
-    cerr << "\n";
-    cerr << "KRAWTCHOUK - Fatal error!\n";
-    cerr << "  0 < P < 1 is required.\n";
+    std::cerr << "\n";
+    std::cerr << "KRAWTCHOUK - Fatal error!\n";
+    std::cerr << "  0 < P < 1 is required.\n";
     exit ( 1 );
   }
 
   if ( m < 0 )
   {
-    cerr << "\n";
-    cerr << "KRAWTCHOUK - Fatal error!\n";
-    cerr << "  0 <= M is required.\n";
+    std::cerr << "\n";
+    std::cerr << "KRAWTCHOUK - Fatal error!\n";
+    std::cerr << "  0 <= M is required.\n";
     exit ( 1 );
   }
 
@@ -8782,10 +8780,10 @@ void laguerre_associated ( int n, int m, double x, double cx[] )
 
   if ( m < 0 )
   {
-    cerr << "\n";
-    cerr << "LAGUERRE_ASSOCIATED - Fatal error!\n";
-    cerr << "  Input value of M = " << m << "\n";
-    cerr << "  but M must be nonnegative.\n";
+    std::cerr << "\n";
+    std::cerr << "LAGUERRE_ASSOCIATED - Fatal error!\n";
+    std::cerr << "  Input value of M = " << m << "\n";
+    std::cerr << "  but M must be nonnegative.\n";
     exit ( 1 );
   }
 
@@ -9225,38 +9223,38 @@ void legendre_associated ( int n, int m, double x, double cx[] )
 
   if ( m < 0 )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_ASSOCIATED - Fatal error!\n";
-    cerr << "  Input value of M is " << m << "\n";
-    cerr << "  but M must be nonnegative.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_ASSOCIATED - Fatal error!\n";
+    std::cerr << "  Input value of M is " << m << "\n";
+    std::cerr << "  but M must be nonnegative.\n";
     exit ( 1 );
   }
 
   if ( n < m )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_ASSOCIATED - Fatal error!\n";
-    cerr << "  Input value of M = " << m << "\n";
-    cerr << "  Input value of N = " << n << "\n";
-    cerr << "  but M must be less than or equal to N.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_ASSOCIATED - Fatal error!\n";
+    std::cerr << "  Input value of M = " << m << "\n";
+    std::cerr << "  Input value of N = " << n << "\n";
+    std::cerr << "  but M must be less than or equal to N.\n";
     exit ( 1 );
   }
 
   if ( x < -1.0 )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_ASSOCIATED - Fatal error!\n";
-    cerr << "  Input value of X = " << x << "\n";
-    cerr << "  but X must be no less than -1.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_ASSOCIATED - Fatal error!\n";
+    std::cerr << "  Input value of X = " << x << "\n";
+    std::cerr << "  but X must be no less than -1.\n";
     exit ( 1 );
   }
 
   if ( 1.0 < x )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_ASSOCIATED - Fatal error!\n";
-    cerr << "  Input value of X = " << x << "\n";
-    cerr << "  but X must be no more than 1.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_ASSOCIATED - Fatal error!\n";
+    std::cerr << "  Input value of X = " << x << "\n";
+    std::cerr << "  but X must be no more than 1.\n";
     exit ( 1 );
   }
 
@@ -9361,38 +9359,38 @@ void legendre_associated_normalized ( int n, int m, double x, double cx[] )
 
   if ( m < 0 )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_ASSOCIATED_NORMALIZED - Fatal error!\n";
-    cerr << "  Input value of M is " << m << "\n";
-    cerr << "  but M must be nonnegative.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_ASSOCIATED_NORMALIZED - Fatal error!\n";
+    std::cerr << "  Input value of M is " << m << "\n";
+    std::cerr << "  but M must be nonnegative.\n";
     exit ( 1 );
   }
 
   if ( n < m )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_ASSOCIATED_NORMALIZED - Fatal error!\n";
-    cerr << "  Input value of M = " << m << "\n";
-    cerr << "  Input value of N = " << n << "\n";
-    cerr << "  but M must be less than or equal to N.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_ASSOCIATED_NORMALIZED - Fatal error!\n";
+    std::cerr << "  Input value of M = " << m << "\n";
+    std::cerr << "  Input value of N = " << n << "\n";
+    std::cerr << "  but M must be less than or equal to N.\n";
     exit ( 1 );
   }
 
   if ( x < -1.0 )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_ASSOCIATED_NORMALIZED - Fatal error!\n";
-    cerr << "  Input value of X = " << x << "\n";
-    cerr << "  but X must be no less than -1.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_ASSOCIATED_NORMALIZED - Fatal error!\n";
+    std::cerr << "  Input value of X = " << x << "\n";
+    std::cerr << "  but X must be no less than -1.\n";
     exit ( 1 );
   }
 
   if ( 1.0 < x )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_ASSOCIATED_NORMALIZED - Fatal error!\n";
-    cerr << "  Input value of X = " << x << "\n";
-    cerr << "  but X must be no more than 1.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_ASSOCIATED_NORMALIZED - Fatal error!\n";
+    std::cerr << "  Input value of X = " << x << "\n";
+    std::cerr << "  but X must be no more than 1.\n";
     exit ( 1 );
   }
 
@@ -9766,10 +9764,10 @@ void legendre_function_q ( int n, double x, double cx[] )
 //
   if ( x <= -1.0 || 1.0 <= x )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_FUNCTION_Q - Fatal error!\n";
-    cerr << "  Illegal input value of X = " << x << "\n";
-    cerr << "  But X must be between -1 and 1.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_FUNCTION_Q - Fatal error!\n";
+    std::cerr << "  Illegal input value of X = " << x << "\n";
+    std::cerr << "  But X must be between -1 and 1.\n";
     exit ( 1 );
   }
 
@@ -10341,9 +10339,9 @@ int legendre_symbol ( int q, int p )
 //
   if ( p <= 1 )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_SYMBOL - Fatal error!\n";
-    cerr << "  P must be greater than 1.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_SYMBOL - Fatal error!\n";
+    std::cerr << "  P must be greater than 1.\n";
     exit ( 1 );
   }
 //
@@ -10351,9 +10349,9 @@ int legendre_symbol ( int q, int p )
 //
   if ( !( i4_is_prime ( p ) ) )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_SYMBOL - Fatal error!\n";
-    cerr << "  P is not prime.\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_SYMBOL - Fatal error!\n";
+    std::cerr << "  P is not prime.\n";
     exit ( 1 );
   }
 //
@@ -10391,9 +10389,9 @@ int legendre_symbol ( int q, int p )
 
     if ( nleft != 1 )
     {
-      cerr << "\n";
-      cerr << "LEGENDRE_SYMBOL - Fatal error!\n";
-      cerr << "  Not enough factorization space.\n";
+      std::cerr << "\n";
+      std::cerr << "LEGENDRE_SYMBOL - Fatal error!\n";
+      std::cerr << "  Not enough factorization space.\n";
       exit ( 1 );
     }
 //
@@ -10409,9 +10407,9 @@ int legendre_symbol ( int q, int p )
 
         if ( STACK_MAX <= nstack )
         {
-          cerr << "\n";
-          cerr << "LEGENDRE_SYMBOL - Fatal error!\n";
-          cerr << "  Stack overflow!\n";
+          std::cerr << "\n";
+          std::cerr << "LEGENDRE_SYMBOL - Fatal error!\n";
+          std::cerr << "  Stack overflow!\n";
           exit ( 1 );
         }
 
@@ -10879,25 +10877,25 @@ void meixner ( int n, double beta, double c, double x, double v[] )
 
   if ( beta <= 0.0 )
   {
-    cerr << "\n";
-    cerr << "MEIXNER - Fatal error!\n";
-    cerr << "  Parameter BETA must be positive.\n";
+    std::cerr << "\n";
+    std::cerr << "MEIXNER - Fatal error!\n";
+    std::cerr << "  Parameter BETA must be positive.\n";
     exit ( 1 );
   }
 
   if ( c <= 0.0 || 1.0 <= c )
   {
-    cerr << "\n";
-    cerr << "MEIXNER - Fatal error!\n";
-    cerr << "  Parameter C must be strictly between 0 and 1.\n";
+    std::cerr << "\n";
+    std::cerr << "MEIXNER - Fatal error!\n";
+    std::cerr << "  Parameter C must be strictly between 0 and 1.\n";
     exit ( 1 );
   }
 
   if ( n < 0 )
   {
-    cerr << "\n";
-    cerr << "MEIXNER - Fatal error!\n";
-    cerr << "  Parameter N must be nonnegative.\n";
+    std::cerr << "\n";
+    std::cerr << "MEIXNER - Fatal error!\n";
+    std::cerr << "  Parameter N must be nonnegative.\n";
     exit ( 1 );
   }
 
@@ -11189,9 +11187,9 @@ int moebius ( int n )
 
   if ( nleft != 1 )
   {
-    cerr << "\n";
-    cerr << "MOEBIUS - Fatal error!\n";
-    cerr <<  "  Not enough factorization space.\n";
+    std::cerr << "\n";
+    std::cerr << "MOEBIUS - Fatal error!\n";
+    std::cerr <<  "  Not enough factorization space.\n";
     exit ( 1 );
   }
 
@@ -11730,9 +11728,9 @@ int omega ( int n )
 
   if ( nleft != 1 )
   {
-    cerr << "\n";
-    cerr << "OMEGA - Fatal error!\n";
-    cerr << "  Not enough factorization space.\n";
+    std::cerr << "\n";
+    std::cerr << "OMEGA - Fatal error!\n";
+    std::cerr << "  Not enough factorization space.\n";
     exit ( 1 );
   }
 
@@ -12089,9 +12087,9 @@ int phi ( int n )
 
   if ( nleft != 1 )
   {
-    cerr << "\n";
-    cerr << "PHI - Fatal error!\n";
-    cerr << "  Not enough factorization space.\n";
+    std::cerr << "\n";
+    std::cerr << "PHI - Fatal error!\n";
+    std::cerr << "  Not enough factorization space.\n";
     exit ( 1 );
   }
 
@@ -12250,9 +12248,9 @@ int plane_partition_num ( int n )
 
   if ( n < 0 )
   {
-    cerr << "\n";
-    cerr << "PLANE_PARTITION_NUM - Fatal error!\n";
-    cerr << "  0 <= N is required.\n";
+    std::cerr << "\n";
+    std::cerr << "PLANE_PARTITION_NUM - Fatal error!\n";
+    std::cerr << "  0 <= N is required.\n";
     exit ( 1 );
   }
 
@@ -12721,9 +12719,9 @@ int prime ( int n )
   }
   else
   {
-    cerr << "\n";
-    cerr << "PRIME - Fatal error!\n";
-    cerr << "  Unexpected input value of n = " << n << "\n";
+    std::cerr << "\n";
+    std::cerr << "PRIME - Fatal error!\n";
+    std::cerr << "  Unexpected input value of n = " << n << "\n";
     exit ( 1 );
   }
 
@@ -12934,17 +12932,17 @@ double r8_agm ( double a, double b )
 
   if ( a < 0.0 )
   {
-    cerr << "\n";
-    cerr << "R8_AGM - Fatal error!\n";
-    cerr << "  A < 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_AGM - Fatal error!\n";
+    std::cerr << "  A < 0.\n";
     exit ( 1 );
   }
 
   if ( b < 0.0 )
   {
-    cerr << "\n";
-    cerr << "R8_AGM - Fatal error!\n";
-    cerr << "  B < 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_AGM - Fatal error!\n";
+    std::cerr << "  B < 0.\n";
     exit ( 1 );
   }
 
@@ -13038,9 +13036,9 @@ double r8_beta ( double x, double y )
 
   if ( x <= 0.0 || y <= 0.0 )
   {
-    cerr << "\n";
-    cerr << "R8_BETA - Fatal error!\n";
-    cerr << "  Both X and Y must be greater than 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_BETA - Fatal error!\n";
+    std::cerr << "  Both X and Y must be greater than 0.\n";
     exit ( 1 );
   }
 
@@ -13939,9 +13937,9 @@ int sigma ( int n )
 
   if ( nleft != 1 )
   {
-    cerr << "\n";
-    cerr << "SIGMA - Fatal error!\n";
-    cerr << "  Not enough factorization space.\n";
+    std::cerr << "\n";
+    std::cerr << "SIGMA - Fatal error!\n";
+    std::cerr << "  Not enough factorization space.\n";
     exit ( 1 );
   }
 
@@ -14140,9 +14138,9 @@ double sin_power_int ( double a, double b, int n )
 
   if ( n < 0 )
   {
-    cerr << "\n";
-    cerr << "SIN_POWER_INT - Fatal error!\n";
-    cerr << "  Power N < 0.\n";
+    std::cerr << "\n";
+    std::cerr << "SIN_POWER_INT - Fatal error!\n";
+    std::cerr << "  Power N < 0.\n";
     exit ( 1 );
   }
 
@@ -14981,9 +14979,9 @@ int tau ( int n )
 
   if ( nleft != 1 )
   {
-    cerr << "\n";
-    cerr << "TAU - Fatal error!\n";
-    cerr << "  Not enough factorization space.\n";
+    std::cerr << "\n";
+    std::cerr << "TAU - Fatal error!\n";
+    std::cerr << "  Not enough factorization space.\n";
     exit ( 1 );
   }
 
@@ -15276,27 +15274,27 @@ int triangle_to_i4 ( int i, int j )
 
   if ( i < 0 )
   {
-    cerr << "\n";
-    cerr << "TRIANGLE_TO_I4 - Fatal error!\n";
-    cerr << "  I < 0.\n";
-    cerr << "  I = " << i << "\n";
+    std::cerr << "\n";
+    std::cerr << "TRIANGLE_TO_I4 - Fatal error!\n";
+    std::cerr << "  I < 0.\n";
+    std::cerr << "  I = " << i << "\n";
     exit ( 1 );
   }
   else if ( j < 0 )
   {
-    cerr << "\n";
-    cerr << "TRIANGLE_TO_I4 - Fatal error!\n";
-    cerr << "  J < 0.\n";
-    cerr << "  J = " << j << "\n";
+    std::cerr << "\n";
+    std::cerr << "TRIANGLE_TO_I4 - Fatal error!\n";
+    std::cerr << "  J < 0.\n";
+    std::cerr << "  J = " << j << "\n";
     exit ( 1 );
   }
   else if ( i < j )
   {
-    cerr << "\n";
-    cerr << "TRIANGLE_TO_I4 - Fatal error!\n";
-    cerr << "  I < J.\n";
-    cerr << "  I = " << i << "\n";
-    cerr << "  J = " << j << "\n";
+    std::cerr << "\n";
+    std::cerr << "TRIANGLE_TO_I4 - Fatal error!\n";
+    std::cerr << "  I < J.\n";
+    std::cerr << "  I = " << i << "\n";
+    std::cerr << "  J = " << j << "\n";
     exit ( 1 );
   }
 
@@ -15351,9 +15349,9 @@ int trinomial ( int i, int j, int k )
 //
   if ( i < 0 || j < 0 || k < 0 )
   {
-    cerr << "\n";
-    cerr << "TRINOMIAL - Fatal error!\n";
-    cerr << "  Negative factor encountered.\n";
+    std::cerr << "\n";
+    std::cerr << "TRINOMIAL - Fatal error!\n";
+    std::cerr << "  Negative factor encountered.\n";
     exit ( 1 );
   }
 
@@ -16000,9 +15998,9 @@ double zeta ( double p )
 
   if ( p <= 1.0 )
   {
-    cerr << "\n";
-    cerr << "ZETA - Fatal error!\n";
-    cerr << "  Exponent P <= 1.0.\n";
+    std::cerr << "\n";
+    std::cerr << "ZETA - Fatal error!\n";
+    std::cerr << "  Exponent P <= 1.0.\n";
     exit ( 1 );
   }
 

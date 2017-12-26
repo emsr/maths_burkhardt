@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "kronrod.hpp"
 
 int main ( );
@@ -41,10 +39,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "KRONROD_PRB:\n";
-  cout << "  C++ version.\n";
-  cout << "  Test the KRONROD library.\n";
+  std::cout << "\n";
+  std::cout << "KRONROD_PRB:\n";
+  std::cout << "  C++ version.\n";
+  std::cout << "  Test the KRONROD library.\n";
 
   test01 ( );
   test02 ( );
@@ -52,10 +50,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "KRONROD_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "KRONROD_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -116,13 +114,13 @@ void test01 ( )
     0.77459666924148337704, 
     0.96049126870802028342 };
 
-  cout << "\n";
-  cout << "TEST01\n";
-  cout << "  Request KRONROD to compute the Gauss rule\n";
-  cout << "  of order 3, and the Kronrod extension of\n";
-  cout << "  order 3+4=7.\n";
-  cout << "\n";
-  cout << "  Compare to exact data.\n";
+  std::cout << "\n";
+  std::cout << "TEST01\n";
+  std::cout << "  Request KRONROD to compute the Gauss rule\n";
+  std::cout << "  of order 3, and the Kronrod extension of\n";
+  std::cout << "  order 3+4=7.\n";
+  std::cout << "\n";
+  std::cout << "  Compare to exact data.\n";
 
   eps = 0.000001;
   w1 = new double[n+1];
@@ -131,23 +129,23 @@ void test01 ( )
 
   kronrod ( n, eps, x, w1, w2 );
 
-  cout << "\n";
-  cout << "  KRONROD returns 3 vectors of length " << n + 1 << "\n";
-  cout << "\n";
-  cout << "     I      X               WK              WG\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  KRONROD returns 3 vectors of length " << n + 1 << "\n";
+  std::cout << "\n";
+  std::cout << "     I      X               WK              WG\n";
+  std::cout << "\n";
   for ( i = 1; i <= n + 1; i++ )
   {
-    cout << "  " << setw(4) << i
-         << "  " << setw(14) << x[i-1]
-         << "  " << setw(14) << w1[i-1]
-         << "  " << setw(14) << w2[i-1] << "\n";
+    std::cout << "  " << std::setw(4) << i
+         << "  " << std::setw(14) << x[i-1]
+         << "  " << std::setw(14) << w1[i-1]
+         << "  " << std::setw(14) << w2[i-1] << "\n";
   }
 
-  cout << "\n";
-  cout << "               Gauss Abscissas\n";
-  cout << "            Exact           Computed\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "               Gauss Abscissas\n";
+  std::cout << "            Exact           Computed\n";
+  std::cout << "\n";
   for ( i = 1; i <= n; i++ )
   {
     if ( 2 * i <= n + 1 )
@@ -160,14 +158,14 @@ void test01 ( )
       i2 = 2 * ( n + 1 ) - 2 * i;
       s = +1.0;
     }
-    cout << "  " << setw(4) << i
-         << "  " << setw(14) << xg[i-1]
-         << "  " << setw(14) << s * x[i2-1] << "\n";
+    std::cout << "  " << std::setw(4) << i
+         << "  " << std::setw(14) << xg[i-1]
+         << "  " << std::setw(14) << s * x[i2-1] << "\n";
   }
-  cout << "\n";
-  cout << "               Gauss Weights\n";
-  cout << "            Exact           Computed\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "               Gauss Weights\n";
+  std::cout << "            Exact           Computed\n";
+  std::cout << "\n";
   for ( i = 1; i <= n; i++ )
   {
     if ( 2 * i <= n + 1 )
@@ -178,15 +176,15 @@ void test01 ( )
     {
       i2 = 2 * ( n + 1 ) - 2 * i;
     }
-    cout << "  " << setw(4) << i
-         << "  " << setw(14) << wg[i-1]
-         << "  " << setw(14) << w2[i2-1] << "\n";
+    std::cout << "  " << std::setw(4) << i
+         << "  " << std::setw(14) << wg[i-1]
+         << "  " << std::setw(14) << w2[i2-1] << "\n";
   }
 
-  cout << "\n";
-  cout << "             Gauss Kronrod Abscissas\n";
-  cout << "            Exact           Computed\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "             Gauss Kronrod Abscissas\n";
+  std::cout << "            Exact           Computed\n";
+  std::cout << "\n";
   for ( i = 1; i <= 2 * n + 1; i++ )
   {
     if ( i <= n + 1 )
@@ -199,14 +197,14 @@ void test01 ( )
       i2 = 2 * ( n + 1 ) - i;
       s = +1.0;
     }
-    cout << "  " << setw(4) << i
-         << "  " << setw(14) << xk[i-1]
-         << "  " << setw(14) << s * x[i2-1] << "\n";
+    std::cout << "  " << std::setw(4) << i
+         << "  " << std::setw(14) << xk[i-1]
+         << "  " << std::setw(14) << s * x[i2-1] << "\n";
   }
-  cout << "\n";
-  cout << "             Gauss Kronrod Weights\n";
-  cout << "            Exact           Computed\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "             Gauss Kronrod Weights\n";
+  std::cout << "            Exact           Computed\n";
+  std::cout << "\n";
   for ( i = 1; i <= 2 * n + 1; i++ )
   {
     if ( i <= n + 1 )
@@ -217,9 +215,9 @@ void test01 ( )
     {
       i2 = 2 * ( n + 1 ) - i;
     }
-    cout << "  " << setw(4) << i
-         << "  " << setw(14) << wk[i-1]
-         << "  " << setw(14) << w1[i2-1] << "\n";
+    std::cout << "  " << std::setw(4) << i
+         << "  " << std::setw(14) << wk[i-1]
+         << "  " << std::setw(14) << w1[i2-1] << "\n";
   }
 
   delete [] w1;
@@ -260,11 +258,11 @@ void test02 ( )
   double *w2;
   double *x;
 
-  cout << "\n";
-  cout << "TEST02\n";
-  cout << "  Request KRONROD to compute the Gauss rule\n";
-  cout << "  of order 4, and the Kronrod extension of\n";
-  cout << "  order 4+5=9.\n";
+  std::cout << "\n";
+  std::cout << "TEST02\n";
+  std::cout << "  Request KRONROD to compute the Gauss rule\n";
+  std::cout << "  of order 4, and the Kronrod extension of\n";
+  std::cout << "  order 4+5=9.\n";
 
   eps = 0.000001;
   w1 = new double[n+1];
@@ -273,17 +271,17 @@ void test02 ( )
 
   kronrod ( n, eps, x, w1, w2 );
 
-  cout << "\n";
-  cout << "  KRONROD returns 3 vectors of length " << n + 1 <<"\n";
-  cout << "\n";
-  cout << "     I      X               WK              WG\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  KRONROD returns 3 vectors of length " << n + 1 <<"\n";
+  std::cout << "\n";
+  std::cout << "     I      X               WK              WG\n";
+  std::cout << "\n";
   for ( i = 1; i <= n + 1; i++ )
   {
-    cout << "  " << setw(4) << i
-         << "  " << setw(14) << x[i-1]
-         << "  " << setw(14) << w1[i-1]
-         << "  " << setw(14) << w2[i-1] << "\n";
+    std::cout << "  " << std::setw(4) << i
+         << "  " << std::setw(14) << x[i-1]
+         << "  " << std::setw(14) << w1[i-1]
+         << "  " << std::setw(14) << w2[i-1] << "\n";
   }
 
   delete [] w1;
@@ -325,10 +323,10 @@ void test03 ( )
   double *w2;
   double *x;
 
-  cout << "\n";
-  cout << "TEST03\n";
-  cout << "  Call Kronrod to estimate the integral of a function.\n";
-  cout << "  Keep trying until the error is small.\n";
+  std::cout << "\n";
+  std::cout << "TEST03\n";
+  std::cout << "  Call Kronrod to estimate the integral of a function.\n";
+  std::cout << "  Keep trying until the error is small.\n";
 //
 //  EPS just tells KRONROD how carefully it must compute X, W1 and W2.
 //  It is NOT a statement about the accuracy of your integral estimate!
@@ -377,24 +375,24 @@ void test03 ( )
 
     if ( fabs ( i1 - i2 ) < 0.0001 )
     {
-      cout << "\n";
-      cout << "  Error tolerance satisfied with N = " << n << "\n";
-      cout << "  Coarse integral estimate = " << setprecision ( 8 ) << i1 << "\n";
-      cout << "  Fine   integral estimate = " << i2 << "\n";
-      cout << "  Error estimate = " << fabs ( i2 - i1 ) << "\n";
-      cout << "  Actual error = " << fabs ( exact - i2 ) << "\n";
+      std::cout << "\n";
+      std::cout << "  Error tolerance satisfied with N = " << n << "\n";
+      std::cout << "  Coarse integral estimate = " << std::setprecision ( 8 ) << i1 << "\n";
+      std::cout << "  Fine   integral estimate = " << i2 << "\n";
+      std::cout << "  Error estimate = " << fabs ( i2 - i1 ) << "\n";
+      std::cout << "  Actual error = " << fabs ( exact - i2 ) << "\n";
       break;
     }
 
     if ( 25 < n )
     {
-      cout << "\n";
-      cout << "  Error tolerance failed even for n = " << n << "\n";
-      cout << "  Canceling iteration, and accepting bad estimates!\n";
-      cout << "  Coarse integral estimate = " << i1 << "\n";
-      cout << "  Fine   integral estimate = " << i2 << "\n";
-      cout << "  Error estimate = " << fabs ( i2 - i1 ) << "\n";
-      cout << "  Actual error = " << fabs ( exact - i2 ) << "\n";
+      std::cout << "\n";
+      std::cout << "  Error tolerance failed even for n = " << n << "\n";
+      std::cout << "  Canceling iteration, and accepting bad estimates!\n";
+      std::cout << "  Coarse integral estimate = " << i1 << "\n";
+      std::cout << "  Fine   integral estimate = " << i2 << "\n";
+      std::cout << "  Error estimate = " << fabs ( i2 - i1 ) << "\n";
+      std::cout << "  Actual error = " << fabs ( exact - i2 ) << "\n";
       break;
     }
     n = 2 * n + 1;

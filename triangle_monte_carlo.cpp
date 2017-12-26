@@ -5,8 +5,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "triangle_monte_carlo.hpp"
 
 //****************************************************************************80
@@ -86,9 +84,9 @@ double triangle01_monomial_integral ( int e[] )
   {
     if ( e[i] < 0 )
     {
-      cerr << "\n";
-      cerr << "TRIANGLE01_MONOMIAL_INTEGRAL - Fatal error!\n";
-      cerr << "  All exponents must be nonnegative.\n";
+      std::cerr << "\n";
+      std::cerr << "TRIANGLE01_MONOMIAL_INTEGRAL - Fatal error!\n";
+      std::cerr << "  All exponents must be nonnegative.\n";
       exit ( 1 );
     }
   }

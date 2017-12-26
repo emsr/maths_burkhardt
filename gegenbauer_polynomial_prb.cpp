@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "gegenbauer_polynomial.hpp"
 
 int main ( );
@@ -41,10 +39,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "GEGENBAUER_POLYNOMIAL_TEST:\n";
-  cout << "  MATLAB version.\n";
-  cout << "  Test the GEGENBAUER_POLYNOMIAL library.\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_POLYNOMIAL_TEST:\n";
+  std::cout << "  MATLAB version.\n";
+  std::cout << "  Test the GEGENBAUER_POLYNOMIAL library.\n";
 
   gegenbauer_alpha_check_test ( );
   gegenbauer_ek_compute_test ( );
@@ -59,10 +57,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "GEGENBAUER_POLYNOMIAL_TEST:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_POLYNOMIAL_TEST:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -95,12 +93,12 @@ void gegenbauer_alpha_check_test ( )
   int n;
   int seed;
 
-  cout << "\n";
-  cout << "GEGENBAUER_ALPHA_CHECK_TEST\n";
-  cout << "  GEGENBAUER_ALPHA_CHECK checks that ALPHA is legal;\n";
-  cout << "\n";
-  cout << "       ALPHA   Check?\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_ALPHA_CHECK_TEST\n";
+  std::cout << "  GEGENBAUER_ALPHA_CHECK checks that ALPHA is legal;\n";
+  std::cout << "\n";
+  std::cout << "       ALPHA   Check?\n";
+  std::cout << "\n";
 
   seed = 123456789;
 
@@ -108,8 +106,8 @@ void gegenbauer_alpha_check_test ( )
   {
     alpha = r8_uniform_ab ( -5.0, +5.0, seed );
     check = gegenbauer_alpha_check ( alpha );
-    cout << "  " << setw(10) << alpha
-         << "       " << setw(1) << check << "\n";
+    std::cout << "  " << std::setw(10) << alpha
+         << "       " << std::setw(1) << check << "\n";
   }
 
   return;
@@ -144,23 +142,23 @@ void gegenbauer_ek_compute_test ( )
   double *w;
   double *x;
 
-  prec = cout.precision ( );
-  cout.precision ( 16 );
+  prec = std::cout.precision ( );
+  std::cout.precision ( 16 );
 
   alpha = 0.5;
 
-  cout << "\n";
-  cout << "GEGENBAUER_EK_COMPUTE_TEST\n";
-  cout << "  GEGENBAUER_EK_COMPUTE computes a Gauss-Gegenbauer rule;\n";
-  cout << "\n";
-  cout << "  with ALPHA = " << alpha << "\n";
-  cout << "  and integration interval [-1,+1]\n";
-  cout << "\n";
-  cout << "                  W               X\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_EK_COMPUTE_TEST\n";
+  std::cout << "  GEGENBAUER_EK_COMPUTE computes a Gauss-Gegenbauer rule;\n";
+  std::cout << "\n";
+  std::cout << "  with ALPHA = " << alpha << "\n";
+  std::cout << "  and integration interval [-1,+1]\n";
+  std::cout << "\n";
+  std::cout << "                  W               X\n";
 
   for ( n = 1; n <= 10; n++ )
   {
-    cout << "\n";
+    std::cout << "\n";
 
     w = new double[n];
     x = new double[n];
@@ -169,15 +167,15 @@ void gegenbauer_ek_compute_test ( )
 
     for ( i = 0; i < n; i++ )
     {
-      cout << "          "
-           << "  " << setw(14) << w[i]
-           << "  " << setw(14) << x[i] << "\n";
+      std::cout << "          "
+           << "  " << std::setw(14) << w[i]
+           << "  " << std::setw(14) << x[i] << "\n";
     }
     delete [] w;
     delete [] x;
   }
 
-  cout.precision ( prec );
+  std::cout.precision ( prec );
 
   return;
 }
@@ -209,27 +207,27 @@ void gegenbauer_integral_test ( )
   int prec;
   double value;
 
-  prec = cout.precision ( );
-  cout.precision ( 16 );
+  prec = std::cout.precision ( );
+  std::cout.precision ( 16 );
 
   alpha = 0.25;
 
-  cout << "\n";
-  cout << "GEGENBAUER_INTEGRAL_TEST\n";
-  cout << "  GEGENBAUER_INTEGRAL evaluates\n";
-  cout << "  Integral ( -1 < x < +1 ) x^n * (1-x*x)^alpha dx\n";
-  cout << "\n";
-  cout << "         N         Value\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_INTEGRAL_TEST\n";
+  std::cout << "  GEGENBAUER_INTEGRAL evaluates\n";
+  std::cout << "  Integral ( -1 < x < +1 ) x^n * (1-x*x)^alpha dx\n";
+  std::cout << "\n";
+  std::cout << "         N         Value\n";
+  std::cout << "\n";
 
   for ( n = 0; n <= 10; n++ )
   {
     value = gegenbauer_integral ( n, alpha );
-    cout << "  " << setw(8)  << n
-         << "  " << setw(24) << value << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(24) << value << "\n";
   }
 
-  cout.precision ( prec );
+  std::cout.precision ( prec );
  
   return;
 }
@@ -265,12 +263,12 @@ void gegenbauer_polynomial_value_test ( )
   double x[1];
   double xscalar;
 
-  cout << "\n";
-  cout << "GEGENBAUER_POLYNOMIAL_VALUE_TEST:\n";
-  cout << "  GEGENBAUER_POLYNOMIAL_VALUE evaluates the Gegenbauer polynomial.\n";
-  cout << "\n";
-  cout << "       M     ALPHA         X           GPV    GEGENBAUER\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_POLYNOMIAL_VALUE_TEST:\n";
+  std::cout << "  GEGENBAUER_POLYNOMIAL_VALUE evaluates the Gegenbauer polynomial.\n";
+  std::cout << "\n";
+  std::cout << "       M     ALPHA         X           GPV    GEGENBAUER\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -289,11 +287,11 @@ void gegenbauer_polynomial_value_test ( )
     n = 1;
     x[0] = xscalar;
     c = gegenbauer_polynomial_value ( m, n, alpha, x );
-    cout << "  " << setw(6) << m
-         << "  " << setw(8) << alpha
-         << "  " << setw(8) << x[0]
-         << "  " << setw(12) << fx
-         << "  " << setw(12) << c[m+0*(m+1)] << "\n";
+    std::cout << "  " << std::setw(6) << m
+         << "  " << std::setw(8) << alpha
+         << "  " << std::setw(8) << x[0]
+         << "  " << std::setw(12) << fx
+         << "  " << std::setw(12) << c[m+0*(m+1)] << "\n";
     delete [] c;
   }
 
@@ -329,22 +327,22 @@ void gegenbauer_ss_compute_test ( )
   double *w;
   double *x;
 
-  prec = cout.precision ( );
-  cout.precision ( 16 );
+  prec = std::cout.precision ( );
+  std::cout.precision ( 16 );
 
   alpha = 0.5;
 
-  cout << "\n";
-  cout << "GEGENBAUER_SS_COMPUTE_TEST\n";
-  cout << "  GEGENBAUER_SS_COMPUTE computes a Gauss-Gegenbauer rule;\n";
-  cout << "\n";
-  cout << "  with ALPHA = " << alpha << "\n";
-  cout << "\n";
-  cout << "                  W               X\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_SS_COMPUTE_TEST\n";
+  std::cout << "  GEGENBAUER_SS_COMPUTE computes a Gauss-Gegenbauer rule;\n";
+  std::cout << "\n";
+  std::cout << "  with ALPHA = " << alpha << "\n";
+  std::cout << "\n";
+  std::cout << "                  W               X\n";
 
   for ( n = 1; n <= 10; n++ )
   {
-    cout << "\n";
+    std::cout << "\n";
 
     w = new double[n];
     x = new double[n];
@@ -353,16 +351,16 @@ void gegenbauer_ss_compute_test ( )
 
     for ( i = 0; i < n; i++ )
     {
-      cout << "          "
-           << "  " << setw(14) << w[i]
-           << "  " << setw(14) << x[i] << "\n";
+      std::cout << "          "
+           << "  " << std::setw(14) << w[i]
+           << "  " << std::setw(14) << x[i] << "\n";
     }
 
     delete [] w;
     delete [] x;
   }
 
-  cout.precision ( prec );
+  std::cout.precision ( prec );
 
   return;
 }
@@ -400,12 +398,12 @@ void imtqlx_test ( )
   double r8_pi = 3.141592653589793;
   double z[5];
 
-  cout << "\n";
-  cout << "IMTQLX_TEST\n";
-  cout << "  IMTQLX takes a symmetric tridiagonal matrix A\n";
-  cout << "  and computes its eigenvalues LAM.\n";
-  cout << "  It also accepts a vector Z and computes Q'*Z,\n";
-  cout << "  where Q is the matrix that diagonalizes A.\n";
+  std::cout << "\n";
+  std::cout << "IMTQLX_TEST\n";
+  std::cout << "  IMTQLX takes a symmetric tridiagonal matrix A\n";
+  std::cout << "  and computes its eigenvalues LAM.\n";
+  std::cout << "  It also accepts a vector Z and computes Q'*Z,\n";
+  std::cout << "  where Q is the matrix that diagonalizes A.\n";
 
   for ( i = 0; i < n; i++ )
   {
@@ -480,15 +478,15 @@ void r8_hyper_2f1_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << " R8_HYPER_2F1_TEST:\n";
-  cout << "   R8_HYPER_2F1 evaluates the hypergeometric function 2F1.\n";
-  cout << "\n";
-  cout << "      A       B       C       X      ";
-  cout << " 2F1                       2F1                     DIFF\n";
-  cout << "                                     ";
-  cout << "(tabulated)               (computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << " R8_HYPER_2F1_TEST:\n";
+  std::cout << "   R8_HYPER_2F1 evaluates the hypergeometric function 2F1.\n";
+  std::cout << "\n";
+  std::cout << "      A       B       C       X      ";
+  std::cout << " 2F1                       2F1                     DIFF\n";
+  std::cout << "                                     ";
+  std::cout << "(tabulated)               (computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -503,13 +501,13 @@ void r8_hyper_2f1_test ( )
 
     fx2 = r8_hyper_2f1 ( a, b, c, x );
 
-    cout << "  " << setw(6)  << setprecision(2)  << a
-         << "  " << setw(6)  << setprecision(2)  << b  
-         << "  " << setw(6)  << setprecision(2)  << c  
-         << "  " << setw(6)  << setprecision(2)  << x  
-         << "  " << setw(24) << setprecision(16) << fx
-         << "  " << setw(24) << setprecision(16) << fx2
-         << "  " << setw(10) << setprecision(4)  << fabs ( fx - fx2 ) << "\n";
+    std::cout << "  " << std::setw(6)  << std::setprecision(2)  << a
+         << "  " << std::setw(6)  << std::setprecision(2)  << b  
+         << "  " << std::setw(6)  << std::setprecision(2)  << c  
+         << "  " << std::setw(6)  << std::setprecision(2)  << x  
+         << "  " << std::setw(24) << std::setprecision(16) << fx
+         << "  " << std::setw(24) << std::setprecision(16) << fx2
+         << "  " << std::setw(10) << std::setprecision(4)  << fabs ( fx - fx2 ) << "\n";
   }
   return;
 }
@@ -546,21 +544,21 @@ void r8_uniform_ab_test ( )
   c = 25.0;
   seed = 17;
 
-  cout << "\n";
-  cout << "R8_UNIFORM_AB_TEST\n";
-  cout << "  R8_UNIFORM_AB produces a random real in a given range.\n";
-  cout << "\n";
-  cout << "  Using range " << b << " <= A <= " << c << ".\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_UNIFORM_AB_TEST\n";
+  std::cout << "  R8_UNIFORM_AB produces a random real in a given range.\n";
+  std::cout << "\n";
+  std::cout << "  Using range " << b << " <= A <= " << c << ".\n";
+  std::cout << "\n";
 
-  cout << "\n";
-  cout << "      I       A\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "      I       A\n";
+  std::cout << "\n";
   for ( i = 0; i < 10; i++ )
   {
     a = r8_uniform_ab ( b, c, seed );
-    cout << setw ( 6 )  << i << " "
-         << setw ( 10 ) << a << "\n";
+    std::cout << std::setw ( 6 )  << i << " "
+         << std::setw ( 10 ) << a << "\n";
   }
 
   return;

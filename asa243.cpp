@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "asa243.hpp"
 
 //****************************************************************************80

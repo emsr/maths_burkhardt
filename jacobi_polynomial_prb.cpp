@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "jacobi_polynomial.hpp"
 
 int main ( );
@@ -41,10 +39,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "JACOBI_POLYNOMIAL_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the JACOBI_POLYNOMIAL library.\n";
+  std::cout << "\n";
+  std::cout << "JACOBI_POLYNOMIAL_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the JACOBI_POLYNOMIAL library.\n";
 
   test01 ( );
   test02 ( );
@@ -53,10 +51,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "JACOBI_POLYNOMIAL_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JACOBI_POLYNOMIAL_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -96,15 +94,15 @@ void test01 ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "TEST01:\n";
-  cout << "  J_POLYNOMIAL_VALUES stores values of\n";
-  cout << "  the Jacobi polynomials.\n";
-  cout << "  J_POLYNOMIAL evaluates the polynomial.\n";
-  cout << "\n";
-  cout << "                                    Tabulated                 Computed\n";
-  cout << "     N     A     B        X           J(N,A,B,X)                    J(N,A,B,X)                     Error\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST01:\n";
+  std::cout << "  J_POLYNOMIAL_VALUES stores values of\n";
+  std::cout << "  the Jacobi polynomials.\n";
+  std::cout << "  J_POLYNOMIAL evaluates the polynomial.\n";
+  std::cout << "\n";
+  std::cout << "                                    Tabulated                 Computed\n";
+  std::cout << "     N     A     B        X           J(N,A,B,X)                    J(N,A,B,X)                     Error\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -123,13 +121,13 @@ void test01 ( )
     fx2 = fx2_vec[0+n*1];
     e = fx1 - fx2;
 
-    cout << "  " << setw(4) << n
-         << "  " << setw(6) << a
-         << "  " << setw(6) << b
-         << "  " << setw(6) << x
-         << "  " << setw(24) << fx1
-         << "  " << setw(24) << fx2
-         << "  " << setw(8) << e << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(6) << a
+         << "  " << std::setw(6) << b
+         << "  " << std::setw(6) << x
+         << "  " << std::setw(24) << fx1
+         << "  " << std::setw(24) << fx2
+         << "  " << std::setw(8) << e << "\n";
     
     delete [] fx2_vec;
   }
@@ -166,13 +164,13 @@ void test02 ( )
   double *hz;
   int test;
   int test_num = 3;
-  string title;
+  std::string title;
   double *z;
 
-  cout << "\n";
-  cout << "TEST02:\n";
-  cout << "  J_POLYNOMIAL_ZEROS computes the zeros of J(n,a,b,x);\n";
-  cout << "  Check by calling J_POLYNOMIAL there.\n";
+  std::cout << "\n";
+  std::cout << "TEST02:\n";
+  std::cout << "  J_POLYNOMIAL_ZEROS computes the zeros of J(n,a,b,x);\n";
+  std::cout << "  Check by calling J_POLYNOMIAL there.\n";
 
   for ( test = 0; test < test_num; test++ )
   {
@@ -233,10 +231,10 @@ void test03 ( )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "TEST03:\n";
-  cout << "  J_QUADRATURE_RULE computes the quadrature rule\n";
-  cout << "  associated with J(n,a,b,x);\n";
+  std::cout << "\n";
+  std::cout << "TEST03:\n";
+  std::cout << "  J_QUADRATURE_RULE computes the quadrature rule\n";
+  std::cout << "  associated with J(n,a,b,x);\n";
 
   n = 7;
   a = 1.0;
@@ -249,13 +247,13 @@ void test03 ( )
 
   r8vec2_print ( n, x, w, "      X            W" );
 
-  cout << "\n";
-  cout << "  Use the quadrature rule to estimate:\n";
-  cout << "\n";
-  cout << "    Q = Integral (-1<x<+1) J(i,a,b,x) J(j,a,b,x) (1-x)^a (1+x)^b dx\n";
-  cout << "\n";
-  cout << "   I   J      Q_Estimate         Q_Exact\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Use the quadrature rule to estimate:\n";
+  std::cout << "\n";
+  std::cout << "    Q = Integral (-1<x<+1) J(i,a,b,x) J(j,a,b,x) (1-x)^a (1+x)^b dx\n";
+  std::cout << "\n";
+  std::cout << "   I   J      Q_Estimate         Q_Exact\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 5; i++ )
   {
@@ -269,10 +267,10 @@ void test03 ( )
         q = q + w[k] * ji[k+i*n] * jj[k+j*n];
       }
       q_exact = j_double_product_integral ( i, j, a, b );
-      cout << "  " << setw(2) << i
-           << "  " << setw(2) << j
-           << "  " << setw(14) << q
-           << "  " << setw(14) << q_exact << "\n";
+      std::cout << "  " << std::setw(2) << i
+           << "  " << std::setw(2) << j
+           << "  " << std::setw(14) << q
+           << "  " << std::setw(14) << q_exact << "\n";
       delete [] jj;
     }
     delete [] ji;
@@ -308,28 +306,28 @@ void test04 ( )
   int j;
   double q;
 
-  cout << "\n";
-  cout << "TEST04:\n";
-  cout << "  J_DOUBLE_PRODUCT_INTEGRAL returns the weighted integral of\n";
-  cout << "  J(i,a,b,x) * J(j,a,b,x);\n";
+  std::cout << "\n";
+  std::cout << "TEST04:\n";
+  std::cout << "  J_DOUBLE_PRODUCT_INTEGRAL returns the weighted integral of\n";
+  std::cout << "  J(i,a,b,x) * J(j,a,b,x);\n";
 
   a = 1.0;
   b = 2.5;
 
-  cout << "\n";
-  cout << "    Q = Integral (-1<x<+1) J(i,a,b,x) J(j,a,b,x) (1-x)^a (1+x)^b dx\n";
-  cout << "\n";
-  cout << "   I   J      Q\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    Q = Integral (-1<x<+1) J(i,a,b,x) J(j,a,b,x) (1-x)^a (1+x)^b dx\n";
+  std::cout << "\n";
+  std::cout << "   I   J      Q\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 5; i++ )
   {
     for ( j = i; j <= 5; j++ )
     {
       q = j_double_product_integral ( i, j, a, b );
-      cout << "  " << setw(2) << i
-           << "  " << setw(2) << j
-           << "  " << setw(14) << q << "\n";
+      std::cout << "  " << std::setw(2) << i
+           << "  " << std::setw(2) << j
+           << "  " << std::setw(14) << q << "\n";
     }
   }
   return;

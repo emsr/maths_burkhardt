@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "test_int_2d.hpp"
 
 int main ( );
@@ -40,10 +38,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "TEST_INT_2D_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the TEST_INT_2D library.\n";
+  std::cout << "\n";
+  std::cout << "TEST_INT_2D_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the TEST_INT_2D library.\n";
  
   test01 ( );
   test02 ( );
@@ -51,10 +49,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "TEST_INT_2D_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST_INT_2D_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -98,20 +96,20 @@ void test01 ( )
   double volume;
   double *x;
 
-  cout << "\n";
-  cout << "TEST01\n";
-  cout << "  Use a Monte Carlo rule.\n";
-  cout << "\n";
-  cout << "  Repeatedly multiply the number of points by 4.\n";
+  std::cout << "\n";
+  std::cout << "TEST01\n";
+  std::cout << "  Use a Monte Carlo rule.\n";
+  std::cout << "\n";
+  std::cout << "  Repeatedly multiply the number of points by 4.\n";
 
   problem_num = p00_problem_num ( );
 
-  cout << "\n";
-  cout << "   Problem      Points         Approx            Error\n";
+  std::cout << "\n";
+  std::cout << "   Problem      Points         Approx            Error\n";
 
   for ( problem = 1; problem <= problem_num; problem++ )
   {
-    cout << "\n";
+    std::cout << "\n";
     n = 1;
     for ( i = 1; i <= 12; i++ )
     {
@@ -143,19 +141,19 @@ void test01 ( )
 
       error = r8_abs ( quad - exact );
 
-      cout << "  " << setw(8)  << problem
-           << "  " << setw(10) << n
-           << "  " << setw(14) << quad
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << std::setw(8)  << problem
+           << "  " << std::setw(10) << n
+           << "  " << std::setw(14) << quad
+           << "  " << std::setw(14) << error << "\n";
 
       delete [] fx;
       delete [] x;
 
       n = n * 4;
     }
-    cout << "  " << setw(8)  << problem
+    std::cout << "  " << std::setw(8)  << problem
          << "       Exact"
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
   }
   return;
 }
@@ -203,19 +201,19 @@ void test02 ( )
   double xval;
   double yval;
 
-  cout << "\n";
-  cout << "TEST02\n";
-  cout << "  Use a product of composite midpoint rules..\n";
-  cout << "  Repeatedly multiply the number of points by 4.\n";
+  std::cout << "\n";
+  std::cout << "TEST02\n";
+  std::cout << "  Use a product of composite midpoint rules..\n";
+  std::cout << "  Repeatedly multiply the number of points by 4.\n";
 
   problem_num = p00_problem_num ( );
 
-  cout << "\n";
-  cout << "   Problem      Points         Approx            Error\n";
+  std::cout << "\n";
+  std::cout << "   Problem      Points         Approx            Error\n";
 
   for ( problem = 1; problem <= problem_num; problem++ )
   {
-    cout << "\n";
+    std::cout << "\n";
     nx = 1;
     ny = 1;
 
@@ -258,10 +256,10 @@ void test02 ( )
 
       error = r8_abs ( quad - exact );
 
-      cout << "  " << setw(8)  << problem
-           << "  " << setw(10) << n
-           << "  " << setw(14) << quad
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << std::setw(8)  << problem
+           << "  " << std::setw(10) << n
+           << "  " << std::setw(14) << quad
+           << "  " << std::setw(14) << error << "\n";
 
       delete [] fx;
       delete [] x;
@@ -269,9 +267,9 @@ void test02 ( )
       nx = nx * 2;
       ny = ny * 2;
     }
-    cout << "  " << setw(8)  << problem
+    std::cout << "  " << std::setw(8)  << problem
          << "       Exact"
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
   }
   return;
 }
@@ -323,19 +321,19 @@ void test03 ( )
   double xval;
   double yval;
 
-  cout << "\n";
-  cout << "TEST03\n";
-  cout << "  Use a product of Gauss-Legendre rules.\n";
-  cout << "  The 1D rules essentially double in order.\n";
+  std::cout << "\n";
+  std::cout << "TEST03\n";
+  std::cout << "  Use a product of Gauss-Legendre rules.\n";
+  std::cout << "  The 1D rules essentially double in order.\n";
 
   problem_num = p00_problem_num ( );
 
-  cout << "\n";
-  cout << "   Problem      Points       Approx         Error\n";
+  std::cout << "\n";
+  std::cout << "   Problem      Points       Approx         Error\n";
 
   for ( problem = 1; problem <= problem_num; problem++ )
   {
-    cout << "\n";
+    std::cout << "\n";
 
     nx = 1;
     ny = 1;
@@ -388,10 +386,10 @@ void test03 ( )
 
       error = r8_abs ( quad - exact );
 
-      cout << "  " << setw(8) << problem
-           << "  " << setw(10) << nxy
-           << "  " << setw(14) << quad
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << std::setw(8) << problem
+           << "  " << std::setw(10) << nxy
+           << "  " << std::setw(14) << quad
+           << "  " << std::setw(14) << error << "\n";
 
       delete [] fxy;
       delete [] w;
@@ -402,9 +400,9 @@ void test03 ( )
       nx = 2 * nx + 1;
       ny = nx;
     }
-    cout << "  " << setw(8) << problem
+    std::cout << "  " << std::setw(8) << problem
          << "  " << "     Exact"
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
   }
   return;
 }

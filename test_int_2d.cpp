@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "test_int_2d.hpp"
 
 //****************************************************************************80
@@ -89,9 +87,9 @@ void legendre_dr_compute ( int n, double x[], double w[] )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_DR_COMPUTE - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_DR_COMPUTE - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
     exit ( 1 );
   }
 
@@ -255,9 +253,9 @@ double p00_exact ( int problem )
   }
   else
   {
-    cerr << "\n";
-    cerr << "P00_EXACT - Fatal error!\n";
-    cerr << "  Illegal problem index = " << problem << "\n";
+    std::cerr << "\n";
+    std::cerr << "P00_EXACT - Fatal error!\n";
+    std::cerr << "  Illegal problem index = " << problem << "\n";
     exit ( 1 );
   }
   return exact;
@@ -329,9 +327,9 @@ void p00_fun ( int problem, int n, double x[], double fx[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "P00_FUN - Fatal error!\n";
-    cerr << "  Illegal problem index = " << problem << "\n";
+    std::cerr << "\n";
+    std::cerr << "P00_FUN - Fatal error!\n";
+    std::cerr << "  Illegal problem index = " << problem << "\n";
     exit ( 1 );
   }
   return;
@@ -399,9 +397,9 @@ void p00_lim ( int problem, double a[2], double b[2] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "P00_LIM - Fatal error!\n";
-    cerr << "  Illegal problem index = " << problem << "\n";
+    std::cerr << "\n";
+    std::cerr << "P00_LIM - Fatal error!\n";
+    std::cerr << "  Illegal problem index = " << problem << "\n";
     exit ( 1 );
   }
   return;
@@ -1448,25 +1446,25 @@ double r8_abs ( double x )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "R8_CSEVL - Fatal error!\n";
-    cerr << "  Number of terms <= 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_CSEVL - Fatal error!\n";
+    std::cerr << "  Number of terms <= 0.\n";
     exit ( 1 );
   }
 
   if ( 1000 < n )
   {
-    cerr << "\n";
-    cerr << "R8_CSEVL - Fatal error!\n";
-    cerr << "  Number of terms greater than 1000.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_CSEVL - Fatal error!\n";
+    std::cerr << "  Number of terms greater than 1000.\n";
     exit ( 1 );
  }
 
   if ( x < -1.1 || 1.1 < x )
   {
-    cerr << "\n";
-    cerr << "R8_CSEVL - Fatal error!\n";
-    cerr << "  X outside (-1,+1).\n";
+    std::cerr << "\n";
+    std::cerr << "R8_CSEVL - Fatal error!\n";
+    std::cerr << "  X outside (-1,+1).\n";
     exit ( 1 );
   }
 
@@ -1795,9 +1793,9 @@ double r8_erfc ( double x )
 
   if ( xmax < x )
   {
-    cerr << "\n";
-    cerr << "R8_ERFC - Warning!\n";
-    cerr << "  X so big that ERFC underflows.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_ERFC - Warning!\n";
+    std::cerr << "  X so big that ERFC underflows.\n";
     value = 0.0;
     return value;
   }
@@ -1884,9 +1882,9 @@ int r8_inits ( double dos[], int nos, double eta )
 
   if ( nos < 1 )
   {
-    cerr << "\n";
-    cerr << "R8_INITS - Fatal error!\n";
-    cerr << "  Number of coefficients < 1.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_INITS - Fatal error!\n";
+    std::cerr << "  Number of coefficients < 1.\n";
     exit ( 1 );
   }
 
@@ -1903,9 +1901,9 @@ int r8_inits ( double dos[], int nos, double eta )
   }
 
   value = i;
-  cerr << "\n";
-  cerr << "R8_INITS - Warning!\n";
-  cerr << "  ETA may be too small.\n";
+  std::cerr << "\n";
+  std::cerr << "R8_INITS - Warning!\n";
+  std::cerr << "  ETA may be too small.\n";
 
   return value;
 }
@@ -1985,11 +1983,11 @@ double r8_mach ( int i )
   }
   else if ( 5 < i )
   {
-    cerr << "\n";
-    cerr << "R8_MACH - Fatal error!\n";
-    cerr << "  The input argument I is out of bounds.\n";
-    cerr << "  Legal values satisfy 1 <= I <= 5.\n";
-    cerr << "  I = " << i << "\n";
+    std::cerr << "\n";
+    std::cerr << "R8_MACH - Fatal error!\n";
+    std::cerr << "  The input argument I is out of bounds.\n";
+    std::cerr << "  Legal values satisfy 1 <= I <= 5.\n";
+    std::cerr << "  I = " << i << "\n";
     value = 0.0;
     exit ( 1 );
   }
@@ -2076,9 +2074,9 @@ double *r8mat_uniform_01 ( int m, int n, int *seed )
 
   if ( *seed == 0 )
   {
-    cerr << "\n";
-    cerr << "R8MAT_UNIFORM_01 - Fatal error!\n";
-    cerr << "  Input value of SEED = 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8MAT_UNIFORM_01 - Fatal error!\n";
+    std::cerr << "  Input value of SEED = 0.\n";
     exit ( 1 );
   }
 
@@ -2192,7 +2190,7 @@ void timestamp ( )
 
   len = strftime ( time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm );
 
-  cout << time_buffer << "\n";
+  std::cout << time_buffer << "\n";
 
   return;
 # undef TIME_SIZE

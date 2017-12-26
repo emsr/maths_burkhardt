@@ -7,13 +7,11 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "jacobi_polynomial.hpp"
 
 //****************************************************************************80
 
-string i4_to_string ( int i4 )
+std::string i4_to_string ( int i4 )
 
 //****************************************************************************80
 //
@@ -42,8 +40,8 @@ string i4_to_string ( int i4 )
 //    Output, string I4_TO_STRING, the string.
 //
 {
-  ostringstream fred;
-  string value;
+  std::ostringstream fred;
+  std::string value;
 
   fred << i4;
 
@@ -248,19 +246,19 @@ double *j_polynomial ( int m, int n, double alpha, double beta, double x[] )
 
   if ( alpha <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "J_POLYNOMIAL - Fatal error!\n";
-    cerr << "  Illegal input value of ALPHA = " << alpha << "\n";
-    cerr << "  But ALPHA must be greater than -1.\n";
+    std::cerr << "\n";
+    std::cerr << "J_POLYNOMIAL - Fatal error!\n";
+    std::cerr << "  Illegal input value of ALPHA = " << alpha << "\n";
+    std::cerr << "  But ALPHA must be greater than -1.\n";
     exit ( 1 );
   }
 
   if ( beta <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "J_POLYNOMIAL - Fatal error!\n";
-    cerr << "  Illegal input value of BETA = " << beta << "\n";
-    cerr << "  But BETA must be greater than -1.\n";
+    std::cerr << "\n";
+    std::cerr << "J_POLYNOMIAL - Fatal error!\n";
+    std::cerr << "  Illegal input value of BETA = " << beta << "\n";
+    std::cerr << "  But BETA must be greater than -1.\n";
     exit ( 1 );
   }
 

@@ -7,8 +7,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "triangle_fekete_rule.hpp"
 
 //****************************************************************************80
@@ -81,9 +79,9 @@ int fekete_degree ( int rule )
   else
   {
     degree = -1;
-    cout << "\n";
-    cout << "FEKETE_DEGREE - Fatal error!\n";
-    cout << "  Illegal RULE = " << rule << "\n";
+    std::cout << "\n";
+    std::cout << "FEKETE_DEGREE - Fatal error!\n";
+    std::cout << "  Illegal RULE = " << rule << "\n";
     exit ( 1 );
   }
 
@@ -246,9 +244,9 @@ void fekete_rule ( int rule, int /*order_num*/, double xy[], double w[] )
     }
     else
     {
-      cerr << "\n";
-      cerr << "FEKETE_RULE - Fatal error!\n;";
-      cerr << "  Illegal SUBORDER(" << s << ") = " << suborder[s] << "\n";
+      std::cerr << "\n";
+      std::cerr << "FEKETE_RULE - Fatal error!\n;";
+      std::cerr << "  Illegal SUBORDER(" << s << ") = " << suborder[s] << "\n";
       exit ( 1 );
     }
   }
@@ -492,9 +490,9 @@ int *fekete_suborder ( int rule, int suborder_num )
   }
   else
   {
-    cerr << "\n";
-    cerr << "FEKETE_SUBORDER - Fatal error!\n";
-    cerr << "  Illegal RULE = " << rule << "\n";
+    std::cerr << "\n";
+    std::cerr << "FEKETE_SUBORDER - Fatal error!\n";
+    std::cerr << "  Illegal RULE = " << rule << "\n";
     exit ( 1 );
   }
 
@@ -569,9 +567,9 @@ int fekete_suborder_num ( int rule )
   else
   {
     suborder_num = -1;
-    cerr << "\n";
-    cerr << "FEKETE_SUBORDER_NUM - Fatal error!\n";
-    cerr << "  Illegal RULE = " << rule << "\n";
+    std::cerr << "\n";
+    std::cerr << "FEKETE_SUBORDER_NUM - Fatal error!\n";
+    std::cerr << "  Illegal RULE = " << rule << "\n";
     exit ( 1 );
   }
 
@@ -657,9 +655,9 @@ void fekete_subrule ( int rule, int suborder_num, double suborder_xyz[],
   }
   else
   {
-    cerr << "\n";
-    cerr << "FEKETE_SUBRULE - Fatal error!\n";
-    cerr << "  Illegal RULE = " << rule << "\n";
+    std::cerr << "\n";
+    std::cerr << "FEKETE_SUBRULE - Fatal error!\n";
+    std::cerr << "  Illegal RULE = " << rule << "\n";
     exit ( 1 );
   }
 
@@ -1391,9 +1389,9 @@ void file_name_inc ( char *file_name )
 
   if ( lens <= 0 )
   {
-    cerr << "\n";
-    cerr << "FILE_NAME_INC - Fatal error!\n";
-    cerr << "  Input file name is blank.\n";
+    std::cerr << "\n";
+    std::cerr << "FILE_NAME_INC - Fatal error!\n";
+    std::cerr << "  Input file name is blank.\n";
     exit ( 1 );
   }
 
@@ -1604,7 +1602,7 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
 {
   int circle_size;
   int delta;
-  ofstream file_unit;
+  std::ofstream file_unit;
   int i;
   int node;
   int node_num = 3;
@@ -1735,9 +1733,9 @@ void triangle_points_plot ( char *file_name, double node_xy[], int node_show,
 
   if ( !file_unit )
   {
-    cerr << "\n";
-    cerr << "TRIANGLE_POINTS_PLOT - Fatal error!\n";
-    cerr << "  Could not open the output EPS file.\n";
+    std::cerr << "\n";
+    std::cerr << "TRIANGLE_POINTS_PLOT - Fatal error!\n";
+    std::cerr << "  Could not open the output EPS file.\n";
     exit ( 1 );
   }
 

@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "toms743.hpp"
 
 int main ( );
@@ -52,14 +50,14 @@ int main ( )
   double xmin;
 
   timestamp ( );
-  cout << "\n";
-  cout << "TOMS743_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the TOMS743 library.\n";
+  std::cout << "\n";
+  std::cout << "TOMS743_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the TOMS743 library.\n";
 
   nbits = nbits_compute ( );
-  cout << "\n";
-  cout << "  Number of bits in mantissa - 1 = " << nbits << "\n";
+  std::cout << "\n";
+  std::cout << "  Number of bits in mantissa - 1 = " << nbits << "\n";
 
   test01 ( nbits );
 
@@ -74,10 +72,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "TOMS743_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TOMS743_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -392,18 +390,18 @@ void test01 ( int nbits )
 //
 //  Compare the approximations of WAPR with the given exact values.
 //
-  cout << "\n";
-  cout << "TEST01\n";
-  cout << "  Compare WAPR(X) to stored values.\n";
+  std::cout << "\n";
+  std::cout << "TEST01\n";
+  std::cout << "  Compare WAPR(X) to stored values.\n";
 //
 //  Wp results for x near -exp(-1).
 //
-  cout << "\n";
-  cout << "  Wp results for x near -exp(-1)\n";
-  cout << "\n";
-  cout << "   Offset x    W(x) (WAPR)";
-  cout << "   W(x) (EXACT)   Digits Correct\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Wp results for x near -exp(-1)\n";
+  std::cout << "\n";
+  std::cout << "   Offset x    W(x) (WAPR)";
+  std::cout << "   W(x) (EXACT)   Digits Correct\n";
+  std::cout << "\n";
 
   for ( i = 0; i < 68; i++ )
   {
@@ -425,20 +423,20 @@ void test01 ( int nbits )
     {
       nd = ( int ) ( log10 ( fabs ( wp1[i] / ( w - wp1[i] ))) + 0.5 );
     }
-    cout << setprecision(8) << setw(17) << dx1[i]
-         << setprecision(8) << setw(17) << w
-         << setprecision(8) << setw(17) << wp1[i] << "      "
-         << setw(3) << nd << "\n";
+    std::cout << std::setprecision(8) << std::setw(17) << dx1[i]
+         << std::setprecision(8) << std::setw(17) << w
+         << std::setprecision(8) << std::setw(17) << wp1[i] << "      "
+         << std::setw(3) << nd << "\n";
   }
 //
 //  Wp results for x near 0.
 //
-  cout << "\n";
-  cout << "  Wp results for x near 0\n";
-  cout << "\n";
-  cout << "      x    W(x) (WAPR)";
-  cout << "     W(x) (EXACT)   Digits Correct\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Wp results for x near 0\n";
+  std::cout << "\n";
+  std::cout << "      x    W(x) (WAPR)";
+  std::cout << "     W(x) (EXACT)   Digits Correct\n";
+  std::cout << "\n";
 
   for ( i = 0; i < 20; i++ )
   {
@@ -451,10 +449,10 @@ void test01 ( int nbits )
     {
       nd = ( int ) ( log10 ( fabs ( wp2[i] / ( w - wp2[i] ))) + 0.5 );
     }
-    cout << setprecision(8) << setw(17) << x2[i]
-         << setprecision(8) << setw(17) << w
-         << setprecision(8) << setw(17) << wp2[i] << "      "
-         << setw(3) << nd << "\n";
+    std::cout << std::setprecision(8) << std::setw(17) << x2[i]
+         << std::setprecision(8) << std::setw(17) << w
+         << std::setprecision(8) << std::setw(17) << wp2[i] << "      "
+         << std::setw(3) << nd << "\n";
   }
 
   for ( i = 0; i < 20; i++ )
@@ -468,20 +466,20 @@ void test01 ( int nbits )
     {
       nd = ( int ) ( log10 ( fabs ( wp2[20+i] / ( w - wp2[20+i] ) ) ) + 0.5 );
     }
-    cout << setprecision(8) << setw(17) << -x2[i]
-         << setprecision(8) << setw(17) << w
-         << setprecision(8) << setw(17) << wp2[20+i] << "      "
-         << setw(3) << nd << "\n";
+    std::cout << std::setprecision(8) << std::setw(17) << -x2[i]
+         << std::setprecision(8) << std::setw(17) << w
+         << std::setprecision(8) << std::setw(17) << wp2[20+i] << "      "
+         << std::setw(3) << nd << "\n";
   }
 //
 //  Other Wp results.
 //
-  cout << "\n";
-  cout << "  Other Wp results\n";
-  cout << "\n";
-  cout << "      x     W(x) (WAPR)";
-  cout << "     W(x) (EXACT)   Digits Correct\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Other Wp results\n";
+  std::cout << "\n";
+  std::cout << "      x     W(x) (WAPR)";
+  std::cout << "     W(x) (EXACT)   Digits Correct\n";
+  std::cout << "\n";
 
   for ( i = 0; i < 10; i++ )
   {
@@ -494,20 +492,20 @@ void test01 ( int nbits )
     {
       nd = ( int ) ( log10 ( fabs ( wp3[i] / ( w - wp3[i] ))) + 0.5 );
     }
-    cout << setprecision(8) << setw(17) << x3[i]
-         << setprecision(8) << setw(17) << w
-         << setprecision(8) << setw(17) << wp3[i] << "      "
-         << setw(3) << nd << "\n";
+    std::cout << std::setprecision(8) << std::setw(17) << x3[i]
+         << std::setprecision(8) << std::setw(17) << w
+         << std::setprecision(8) << std::setw(17) << wp3[i] << "      "
+         << std::setw(3) << nd << "\n";
   }
 //
 //  Wm results for x near -exp(-1).
 //
-  cout << "\n";
-  cout << "  Wm results for x near 0\n";
-  cout << "\n";
-  cout << "      x    W(x) (WAPR)";
-  cout << "     W(x) (EXACT)   Digits Correct\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Wm results for x near 0\n";
+  std::cout << "\n";
+  std::cout << "      x    W(x) (WAPR)";
+  std::cout << "     W(x) (EXACT)   Digits Correct\n";
+  std::cout << "\n";
 
   for ( i = 0; i < 68; i++ )
   {
@@ -520,21 +518,21 @@ void test01 ( int nbits )
     {
       nd = ( int ) ( log10 ( fabs ( wm1[i] / ( w - wm1[i] ))) + 0.5 );
     }
-    cout << setprecision(8) << setw(17) << dx1[i]
-         << setprecision(8) << setw(17) << w
-         << setprecision(8) << setw(17) << wm1[i] << "      "
-         << setw(3) << nd << "\n";
+    std::cout << std::setprecision(8) << std::setw(17) << dx1[i]
+         << std::setprecision(8) << std::setw(17) << w
+         << std::setprecision(8) << std::setw(17) << wm1[i] << "      "
+         << std::setw(3) << nd << "\n";
   }
 //
 //  Wm results for x near 0.
 //  Check for underflow.
 //
-  cout << "\n";
-  cout << "  Wm results for x near -exp(-1)\n";
-  cout << "\n";
-  cout << "   Offset x    W(x) (WAPR)";
-  cout << "     W(x) (EXACT)   Digits Correct\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Wm results for x near -exp(-1)\n";
+  std::cout << "\n";
+  std::cout << "   Offset x    W(x) (WAPR)";
+  std::cout << "     W(x) (EXACT)   Digits Correct\n";
+  std::cout << "\n";
 
   for ( i = 0; i < 68; i++ )
   {
@@ -549,10 +547,10 @@ void test01 ( int nbits )
       {
         nd = ( int ) ( log10 ( fabs ( wm2[i] / ( w - wm2[i] ))) + 0.5 );
       }
-      cout << setprecision(8) << setw(17) << -dx1[i]
-           << setprecision(8) << setw(17) << w
-           << setprecision(8) << setw(17) << wm2[i] << "      "
-           << setw(3) << nd << "\n";
+      std::cout << std::setprecision(8) << std::setw(17) << -dx1[i]
+           << std::setprecision(8) << std::setw(17) << w
+           << std::setprecision(8) << std::setw(17) << wm2[i] << "      "
+           << std::setw(3) << nd << "\n";
     }
   }
   return;
@@ -603,9 +601,9 @@ void test02 ( int nbits, double dx, int n )
   double xmax;
   double xmin;
 
-  cout << "\n";
-  cout << "TEST02\n";
-  cout << "  Input X is the offset from -exp(-1).\n";
+  std::cout << "\n";
+  std::cout << "TEST02\n";
+  std::cout << "  Input X is the offset from -exp(-1).\n";
 
   l = 1;
   ifmt = 0;
@@ -615,31 +613,31 @@ void test02 ( int nbits, double dx, int n )
   if ( xmax <= 0.0 )
   {
     iw = 1;
-    cout << "  Both branches of the W function will be checked.\n";
+    std::cout << "  Both branches of the W function will be checked.\n";
   }
   else
   {
     iw = 0;
-    cout << "  Wp has been selected (maximum x is > 0)\n";
+    std::cout << "  Wp has been selected (maximum x is > 0)\n";
   }
 
-  cout << "\n";
-  cout << "  Results for Wp(x):\n";
+  std::cout << "\n";
+  std::cout << "  Results for Wp(x):\n";
 
   if ( ifmt == 0 )
   {
-    cout << "\n";
-    cout << "   Offset x    W(x) (WAPR)";
-    cout << "     W(x) (BISECT)  Digits Correct\n";
+    std::cout << "\n";
+    std::cout << "   Offset x    W(x) (WAPR)";
+    std::cout << "     W(x) (BISECT)  Digits Correct\n";
   }
   else
   {
-    cout << "\n";
-    cout << "     x     W(x) (WAPR)";
-    cout << "     W(x) (BISECT)  Digits Correct\n";
+    std::cout << "\n";
+    std::cout << "     x     W(x) (WAPR)";
+    std::cout << "     W(x) (BISECT)  Digits Correct\n";
   }
 
-  cout << "\n";
+  std::cout << "\n";
 
   for ( i = 1; i <= n + 1; i++ )
   {
@@ -648,7 +646,7 @@ void test02 ( int nbits, double dx, int n )
 
     if ( nerror == 1 )
     {
-      cout << "  The value of X = " << x << " is out of range.\n";
+      std::cout << "  The value of X = " << x << " is out of range.\n";
     }
     else
     {
@@ -656,9 +654,9 @@ void test02 ( int nbits, double dx, int n )
 
       if ( ner == 1 )
       {
-        cout << "\n";
-        cout << " BISECT did not converge for x = " << x << "\n";
-        cout << "  Try reducing NBITS.\n";
+        std::cout << "\n";
+        std::cout << " BISECT did not converge for x = " << x << "\n";
+        std::cout << "  Try reducing NBITS.\n";
       }
 
       if ( w == we )
@@ -669,32 +667,32 @@ void test02 ( int nbits, double dx, int n )
       {
         nd = ( int ) ( log10 ( fabs ( we / ( w - we ) ) ) + 0.5 );
       }
-      cout << setprecision(8) << setw(17) << x
-           << setprecision(8) << setw(17) << w
-           << setprecision(8) << setw(17) << we << "      "
-           << setw(3) << nd << "\n";
+      std::cout << std::setprecision(8) << std::setw(17) << x
+           << std::setprecision(8) << std::setw(17) << w
+           << std::setprecision(8) << std::setw(17) << we << "      "
+           << std::setw(3) << nd << "\n";
     }
   }
 
   if ( iw == 1 )
   {
-    cout << "\n";
-    cout << "  Results for Wm(x):\n";
+    std::cout << "\n";
+    std::cout << "  Results for Wm(x):\n";
 
     if ( ifmt == 0 )
     {
-      cout << "\n";
-      cout << "   Offset x    W(x) (WAPR)";
-      cout << "     W(x) (BISECT)  Digits Correct\n";
+      std::cout << "\n";
+      std::cout << "   Offset x    W(x) (WAPR)";
+      std::cout << "     W(x) (BISECT)  Digits Correct\n";
     }
     else
     {
-      cout << "\n";
-      cout << "     x     W(x) (WAPR)";
-      cout << "     W(x) (BISECT)  Digits Correct\n";
+      std::cout << "\n";
+      std::cout << "     x     W(x) (WAPR)";
+      std::cout << "     W(x) (BISECT)  Digits Correct\n";
     }
 
-    cout << "\n";
+    std::cout << "\n";
 
     for ( i = 1; i <= n + 1; i++ )
     {
@@ -703,7 +701,7 @@ void test02 ( int nbits, double dx, int n )
 
       if ( nerror == 1 )
       {
-        cout << "  The value of X = " << x << " is out of range.\n";
+        std::cout << "  The value of X = " << x << " is out of range.\n";
       }
       else
       {
@@ -711,9 +709,9 @@ void test02 ( int nbits, double dx, int n )
 
         if ( ner == 1 )
         {
-          cout << "\n";
-          cout << " BISECT did not converge for x = " << x << "\n";
-          cout << "  Try reducing NBITS.\n";
+          std::cout << "\n";
+          std::cout << " BISECT did not converge for x = " << x << "\n";
+          std::cout << "  Try reducing NBITS.\n";
         }
   
         if ( w == we )
@@ -724,10 +722,10 @@ void test02 ( int nbits, double dx, int n )
         {
           nd = ( int ) ( log10 ( fabs ( we / ( w - we ) ) ) + 0.5 );
         }
-        cout << setprecision(8) << setw(17) << x
-             << setprecision(8) << setw(17) << w
-             << setprecision(8) << setw(17) << we << "      "
-             << setw(3) << nd << "\n";
+        std::cout << std::setprecision(8) << std::setw(17) << x
+             << std::setprecision(8) << std::setw(17) << w
+             << std::setprecision(8) << std::setw(17) << we << "      "
+             << std::setw(3) << nd << "\n";
       }
     }
   }
@@ -781,9 +779,9 @@ void test03 ( int nbits, double xmin, double xmax, int n )
   double we;
   double x;
 
-  cout << "\n";
-  cout << "TEST03\n";
-  cout << "  Input X is the argument.\n";
+  std::cout << "\n";
+  std::cout << "TEST03\n";
+  std::cout << "  Input X is the argument.\n";
 
   l = 0;
   ifmt = 1;
@@ -801,30 +799,30 @@ void test03 ( int nbits, double xmin, double xmax, int n )
   if ( xmax <= 0.0 )
   {
     iw = 1;
-    cout << "  Both branches of the W function will be checked.\n";
+    std::cout << "  Both branches of the W function will be checked.\n";
   }
   else
   {
     iw = 0;
-    cout << "  Wp has been selected (maximum x is > 0)\n";
+    std::cout << "  Wp has been selected (maximum x is > 0)\n";
   }
 
-  cout << "\n";
-  cout << "  Results for Wp(x):\n";
+  std::cout << "\n";
+  std::cout << "  Results for Wp(x):\n";
 
   if ( ifmt == 0 )
   {
-    cout << "\n";
-    cout << "   Offset x    W(x) (WAPR)";
-    cout << "     W(x) (BISECT)  Digits Correct\n";
+    std::cout << "\n";
+    std::cout << "   Offset x    W(x) (WAPR)";
+    std::cout << "     W(x) (BISECT)  Digits Correct\n";
   }
   else
   {
-    cout << "\n";
-    cout << "     x     W(x) (WAPR)";
-    cout << "     W(x) (BISECT)  Digits Correct\n";
+    std::cout << "\n";
+    std::cout << "     x     W(x) (WAPR)";
+    std::cout << "     W(x) (BISECT)  Digits Correct\n";
   }
-  cout << "\n";
+  std::cout << "\n";
 
   for ( i = 1; i <= n + 1; i++ )
   {
@@ -833,7 +831,7 @@ void test03 ( int nbits, double xmin, double xmax, int n )
 
     if ( nerror == 1 )
     {
-      cout << "  The value of X = " << x << " is out of range.\n";
+      std::cout << "  The value of X = " << x << " is out of range.\n";
     }
     else
     {
@@ -841,9 +839,9 @@ void test03 ( int nbits, double xmin, double xmax, int n )
 
       if ( ner == 1 )
       {
-        cout << "\n";
-        cout << " BISECT did not converge for x = " << x << "\n";
-        cout << "  Try reducing NBITS.\n";
+        std::cout << "\n";
+        std::cout << " BISECT did not converge for x = " << x << "\n";
+        std::cout << "  Try reducing NBITS.\n";
       }
 
       if ( w == we )
@@ -854,29 +852,29 @@ void test03 ( int nbits, double xmin, double xmax, int n )
       {
         nd = ( int ) ( log10 ( fabs ( we / ( w - we ))) + 0.5 );
       }
-      cout << setprecision(8) << setw(17) << x
-           << setprecision(8) << setw(17) << w
-           << setprecision(8) << setw(17) << we << "      "
-           << setw(3) << nd << "\n";
+      std::cout << std::setprecision(8) << std::setw(17) << x
+           << std::setprecision(8) << std::setw(17) << w
+           << std::setprecision(8) << std::setw(17) << we << "      "
+           << std::setw(3) << nd << "\n";
     }
   }
 
   if ( iw == 1 )
   {
-    cout << "\n";
-    cout << "  Results for Wm(x):\n";
+    std::cout << "\n";
+    std::cout << "  Results for Wm(x):\n";
 
     if ( ifmt == 0 )
     {
-      cout << "\n";
-      cout << "   Offset x    W(x) (WAPR)";
-      cout << "     W(x) (BISECT)  Digits Correct\n";
+      std::cout << "\n";
+      std::cout << "   Offset x    W(x) (WAPR)";
+      std::cout << "     W(x) (BISECT)  Digits Correct\n";
     }
     else
     {
-      cout << "\n";
-      cout << "     x     W(x) (WAPR)";
-      cout << "     W(x) (BISECT)  Digits Correct\n";
+      std::cout << "\n";
+      std::cout << "     x     W(x) (WAPR)";
+      std::cout << "     W(x) (BISECT)  Digits Correct\n";
     }
 
     for ( i = 1; i <= n + 1; i++ )
@@ -886,7 +884,7 @@ void test03 ( int nbits, double xmin, double xmax, int n )
 
       if ( nerror == 1 )
       {
-        cout << "  The value of X = " << x << " is out of range.\n";
+        std::cout << "  The value of X = " << x << " is out of range.\n";
       }
       else
       {
@@ -894,9 +892,9 @@ void test03 ( int nbits, double xmin, double xmax, int n )
 
         if ( ner == 1 )
         {
-          cout << "\n";
-          cout << " BISECT did not converge for x = " << x << "\n";
-          cout << "  Try reducing NBITS.\n";
+          std::cout << "\n";
+          std::cout << " BISECT did not converge for x = " << x << "\n";
+          std::cout << "  Try reducing NBITS.\n";
         }
 
         if ( w == we )
@@ -907,10 +905,10 @@ void test03 ( int nbits, double xmin, double xmax, int n )
         {
           nd = ( int ) ( log10 ( fabs ( we / ( w - we ))) + 0.5 );
         }
-        cout << setprecision(8) << setw(17) << x
-             << setprecision(8) << setw(17) << w
-             << setprecision(8) << setw(17) << we << "      "
-             << setw(3) << nd << "\n";
+        std::cout << std::setprecision(8) << std::setw(17) << x
+             << std::setprecision(8) << std::setw(17) << w
+             << std::setprecision(8) << std::setw(17) << we << "      "
+             << std::setw(3) << nd << "\n";
       }
     }
   }

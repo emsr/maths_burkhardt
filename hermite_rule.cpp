@@ -6,8 +6,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 int main ( int argc, char *argv[] );
 void cdgqf ( int nt, int kind, double alpha, double beta, double t[], 
   double wts[] );
@@ -21,8 +19,8 @@ double r8_epsilon ( );
 double r8_gamma ( double x );
 double r8_huge ( );
 double r8_sign ( double x );
-void r8mat_write ( string output_filename, int m, int n, double table[] );
-void rule_write ( int order, string filename, double x[], double w[], 
+void r8mat_write ( std::string output_filename, int m, int n, double table[] );
+void rule_write ( int order, std::string filename, double x[], double w[], 
   double r[] );
 void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[], 
   double swts[], double st[], int kind, double alpha, double beta, double a, 
@@ -84,7 +82,7 @@ int main ( int argc, char *argv[] )
   double alpha;
   double b;
   double beta;
-  string filename;
+  std::string filename;
   int i;
   int kind;
   int n;
@@ -94,29 +92,29 @@ int main ( int argc, char *argv[] )
   double *w;
   double *x;
 
-  cout << "\n";
+  std::cout << "\n";
   timestamp ( );
-  cout << "\n";
-  cout << "HERMITE_RULE\n";
-  cout << "  C++ version\n";
-  cout << "  Compiled on " << __DATE__ << " at " << __TIME__ << ".\n";
-  cout << "\n";
-  cout << "  Compute a Gauss-Hermite quadrature rule for\n";
-  cout << "    Integral ( -oo < x < +oo ) f(x) rho(x) dx\n";
-  cout << "  where the weight rho(x) is:\n";
-  cout << "    exp ( - b * ( x - a )^2 ) * sqrt ( b / pi ) dx\n";
-  cout << "  using N points.\n";
-  cout << "\n";
-  cout << "  The user specifies N, A, B, SCALE, and FILENAME.\n";
-  cout << "\n";
-  cout << "  N is the number of points;\n";
-  cout << "  A is the center point, usually 0.0:\n";
-  cout << "  B is a scale factor, usually 0.5 or 1.0;\n";
-  cout << "  SCALE is a normalization option (0/1)\n";
-  cout << "  FILENAME is used to generate 3 files:\n";
-  cout << "    filename_w.txt - the weight file\n";
-  cout << "    filename_x.txt - the abscissa file.\n";
-  cout << "    filename_r.txt - the region file.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_RULE\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Compiled on " << __DATE__ << " at " << __TIME__ << ".\n";
+  std::cout << "\n";
+  std::cout << "  Compute a Gauss-Hermite quadrature rule for\n";
+  std::cout << "    Integral ( -oo < x < +oo ) f(x) rho(x) dx\n";
+  std::cout << "  where the weight rho(x) is:\n";
+  std::cout << "    exp ( - b * ( x - a )^2 ) * sqrt ( b / pi ) dx\n";
+  std::cout << "  using N points.\n";
+  std::cout << "\n";
+  std::cout << "  The user specifies N, A, B, SCALE, and FILENAME.\n";
+  std::cout << "\n";
+  std::cout << "  N is the number of points;\n";
+  std::cout << "  A is the center point, usually 0.0:\n";
+  std::cout << "  B is a scale factor, usually 0.5 or 1.0;\n";
+  std::cout << "  SCALE is a normalization option (0/1)\n";
+  std::cout << "  FILENAME is used to generate 3 files:\n";
+  std::cout << "    filename_w.txt - the weight file\n";
+  std::cout << "    filename_x.txt - the abscissa file.\n";
+  std::cout << "    filename_r.txt - the region file.\n";
 //
 //  Initialize parameters;
 //
@@ -131,8 +129,8 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter N (1 or greater)\n";
+    std::cout << "\n";
+    std::cout << "  Enter N (1 or greater)\n";
     cin >> n;
   }
 //
@@ -144,8 +142,8 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter A, the center point (default 0)\n";
+    std::cout << "\n";
+    std::cout << "  Enter A, the center point (default 0)\n";
     cin >> a;
   }
 //
@@ -157,8 +155,8 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter B, the scale (default 1)\n";
+    std::cout << "\n";
+    std::cout << "  Enter B, the scale (default 1)\n";
     cin >> b;
   }
 //
@@ -170,8 +168,8 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter SCALE, the normalization option (0/1)\n";
+    std::cout << "\n";
+    std::cout << "  Enter SCALE, the normalization option (0/1)\n";
     cin >> scale;
   }
 //
@@ -183,19 +181,19 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter FILENAME, the \"root name\" of the quadrature files).\n";
+    std::cout << "\n";
+    std::cout << "  Enter FILENAME, the \"root name\" of the quadrature files).\n";
     cin >> filename;
   }
 //
 //  Input summary.
 //
-  cout << "\n";
-  cout << "  N =  " << n << "\n";
-  cout << "  A = " << a << "\n";
-  cout << "  B = " << b << "\n";
-  cout << "  SCALE = " << scale << "\n";
-  cout << "  FILENAME = \"" << filename << "\".\n";
+  std::cout << "\n";
+  std::cout << "  N =  " << n << "\n";
+  std::cout << "  A = " << a << "\n";
+  std::cout << "  B = " << b << "\n";
+  std::cout << "  SCALE = " << scale << "\n";
+  std::cout << "  FILENAME = \"" << filename << "\".\n";
 //
 //  Construct the rule.
 //
@@ -234,10 +232,10 @@ int main ( int argc, char *argv[] )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "HERMITE_RULE:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_RULE:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -514,9 +512,9 @@ double class_matrix ( int kind, int m, double alpha, double beta, double aj[],
 
   if ( 500.0 * temp < fabs ( pow ( r8_gamma ( temp2 ), 2 ) - pi ) )
   {
-    cout << "\n";
-    cout << "CLASS_MATRIX - Fatal error!\n";
-    cout << "  Gamma function does not match machine parameters.\n";
+    std::cout << "\n";
+    std::cout << "CLASS_MATRIX - Fatal error!\n";
+    std::cout << "  Gamma function does not match machine parameters.\n";
     exit ( 1 );
   }
 
@@ -777,9 +775,9 @@ void imtqlx ( int n, double d[], double e[], double z[] )
       }
       if ( itn <= j )
       {
-        cout << "\n";
-        cout << "IMTQLX - Fatal error!\n";
-        cout << "  Iteration limit exceeded\n";
+        std::cout << "\n";
+        std::cout << "IMTQLX - Fatal error!\n";
+        std::cout << "  Iteration limit exceeded\n";
         exit ( 1 );
       }
       j = j + 1;
@@ -910,9 +908,9 @@ void parchk ( int kind, int m, double alpha, double beta )
 
   if ( kind <= 0 )
   {
-    cout << "\n";
-    cout << "PARCHK - Fatal error!\n";
-    cout << "  KIND <= 0.\n";
+    std::cout << "\n";
+    std::cout << "PARCHK - Fatal error!\n";
+    std::cout << "  KIND <= 0.\n";
     exit ( 1 );
   }
 //
@@ -920,9 +918,9 @@ void parchk ( int kind, int m, double alpha, double beta )
 //
   if ( 3 <= kind && alpha <= -1.0 )
   {
-    cout << "\n";
-    cout << "PARCHK - Fatal error!\n";
-    cout << "  3 <= KIND and ALPHA <= -1.\n";
+    std::cout << "\n";
+    std::cout << "PARCHK - Fatal error!\n";
+    std::cout << "  3 <= KIND and ALPHA <= -1.\n";
     exit ( 1 );
   }
 //
@@ -930,9 +928,9 @@ void parchk ( int kind, int m, double alpha, double beta )
 //
   if ( kind == 4 && beta <= -1.0 )
   {
-    cout << "\n";
-    cout << "PARCHK - Fatal error!\n";
-    cout << "  KIND == 4 and BETA <= -1.0.\n";
+    std::cout << "\n";
+    std::cout << "PARCHK - Fatal error!\n";
+    std::cout << "  KIND == 4 and BETA <= -1.0.\n";
     exit ( 1 );
   }
 //
@@ -943,9 +941,9 @@ void parchk ( int kind, int m, double alpha, double beta )
     tmp = alpha + beta + m + 1.0;
     if ( 0.0 <= tmp || tmp <= beta )
     {
-      cout << "\n";
-      cout << "PARCHK - Fatal error!\n";
-      cout << "  KIND == 8 but condition on ALPHA and BETA fails.\n";
+      std::cout << "\n";
+      std::cout << "PARCHK - Fatal error!\n";
+      std::cout << "  KIND == 8 but condition on ALPHA and BETA fails.\n";
       exit ( 1 );
     }
   }
@@ -1319,7 +1317,7 @@ double r8_sign ( double x )
 }
 //****************************************************************************80
 
-void r8mat_write ( string output_filename, int m, int n, double table[] )
+void r8mat_write ( std::string output_filename, int m, int n, double table[] )
 
 //****************************************************************************80
 //
@@ -1352,7 +1350,7 @@ void r8mat_write ( string output_filename, int m, int n, double table[] )
 {
   int i;
   int j;
-  ofstream output;
+  std::ofstream output;
 //
 //  Open the file.
 //
@@ -1360,9 +1358,9 @@ void r8mat_write ( string output_filename, int m, int n, double table[] )
 
   if ( !output )
   {
-    cerr << "\n";
-    cerr << "R8MAT_WRITE - Fatal error!\n";
-    cerr << "  Could not open the output file.\n";
+    std::cerr << "\n";
+    std::cerr << "R8MAT_WRITE - Fatal error!\n";
+    std::cerr << "  Could not open the output file.\n";
     return;
   }
 //
@@ -1372,7 +1370,7 @@ void r8mat_write ( string output_filename, int m, int n, double table[] )
   {
     for ( i = 0; i < m; i++ )
     {
-      output << "  " << setw(24) << setprecision(16) << table[i+j*m];
+      output << "  " << std::setw(24) << std::setprecision(16) << table[i+j*m];
     }
     output << "\n";
   }
@@ -1385,7 +1383,7 @@ void r8mat_write ( string output_filename, int m, int n, double table[] )
 }
 //****************************************************************************80
 
-void rule_write ( int order, string filename, double x[], double w[], 
+void rule_write ( int order, std::string filename, double x[], double w[], 
   double r[] )
 
 //****************************************************************************80
@@ -1419,9 +1417,9 @@ void rule_write ( int order, string filename, double x[], double w[],
 //    defining weights, abscissas, and region.
 // 
 {
-  string filename_r;
-  string filename_w;
-  string filename_x;
+  std::string filename_r;
+  std::string filename_w;
+  std::string filename_x;
   int i;
   int kind;
 
@@ -1429,14 +1427,14 @@ void rule_write ( int order, string filename, double x[], double w[],
   filename_x = filename + "_x.txt";
   filename_r = filename + "_r.txt";
 
-  cout << "\n";
-  cout << "  Creating quadrature files.\n";
-  cout << "\n";
-  cout << "  Root file name is     \"" << filename   << "\".\n";
-  cout << "\n";
-  cout << "  Weight file will be   \"" << filename_w << "\".\n";
-  cout << "  Abscissa file will be \"" << filename_x << "\".\n";
-  cout << "  Region file will be   \"" << filename_r << "\".\n";
+  std::cout << "\n";
+  std::cout << "  Creating quadrature files.\n";
+  std::cout << "\n";
+  std::cout << "  Root file name is     \"" << filename   << "\".\n";
+  std::cout << "\n";
+  std::cout << "  Weight file will be   \"" << filename_w << "\".\n";
+  std::cout << "  Abscissa file will be \"" << filename_x << "\".\n";
+  std::cout << "  Region file will be   \"" << filename_r << "\".\n";
             
   r8mat_write ( filename_w, 1, order, w );
   r8mat_write ( filename_x, 1, order, x );
@@ -1541,9 +1539,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
     be = 0.0;
     if ( fabs ( b - a ) <= temp )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  |B - A| too small.\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -1555,9 +1553,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
     be = -0.5;
     if ( fabs ( b - a ) <= temp )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  |B - A| too small.\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -1569,9 +1567,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
     be = alpha;
     if ( fabs ( b - a ) <= temp )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  |B - A| too small.\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -1584,9 +1582,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
 
     if ( fabs ( b - a ) <= temp )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  |B - A| too small.\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -1596,9 +1594,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
   {
     if ( b <= 0.0 )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  B <= 0\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  B <= 0\n";
       exit ( 1 );
     }
     shft = a;
@@ -1610,9 +1608,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
   {
     if ( b <= 0.0 )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  B <= 0.\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  B <= 0.\n";
       exit ( 1 );
     }
     shft = a;
@@ -1626,9 +1624,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
     be = 0.0;
     if ( fabs ( b - a ) <= temp )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  |B - A| too small.\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -1638,9 +1636,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
   {
     if ( a + b <= 0.0 )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  A + B <= 0.\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  A + B <= 0.\n";
       exit ( 1 );
     }
     shft = a;
@@ -1654,9 +1652,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int nwts, int ndx[],
     be = 0.5;
     if ( fabs ( b - a ) <= temp )
     {
-      cout << "\n";
-      cout << "SCQF - Fatal error!\n";
-      cout << "  |B - A| too small.\n";
+      std::cout << "\n";
+      std::cout << "SCQF - Fatal error!\n";
+      std::cout << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -1742,9 +1740,9 @@ void sgqf ( int nt, double aj[], double bj[], double zemu, double t[],
 //
   if ( zemu <= 0.0 )
   {
-    cout << "\n";
-    cout << "SGQF - Fatal error!\n";
-    cout << "  ZEMU <= 0.\n";
+    std::cout << "\n";
+    std::cout << "SGQF - Fatal error!\n";
+    std::cout << "  ZEMU <= 0.\n";
     exit ( 1 );
   }
 //

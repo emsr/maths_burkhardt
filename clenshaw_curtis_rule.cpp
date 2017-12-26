@@ -6,13 +6,11 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 int main ( int argc, char *argv[] );
 void clenshaw_curtis_compute ( int order, double xtab[], double weight[] );
-void r8mat_write ( string output_filename, int m, int n, double table[] );
+void r8mat_write ( std::string output_filename, int m, int n, double table[] );
 void rescale ( double a, double b, int n, double x[], double w[] );
-void rule_write ( int order, string filename, double x[], double w[],
+void rule_write ( int order, std::string filename, double x[], double w[],
   double r[] );
 void timestamp ( );
 
@@ -52,38 +50,38 @@ int main ( int argc, char *argv[] )
 {
   double a;
   double b;
-  string filename;
+  std::string filename;
   int order;
   double *r;
   double *w;
   double *x;
 
   timestamp ( );
-  cout << "\n";
-  cout << "CLENSHAW_CURTIS_RULE\n";
-  cout << "  C++ version\n";
-  cout << "\n";
-  cout << "  Compiled on " << __DATE__ << " at " << __TIME__ << ".\n";
-  cout << "\n";
-  cout << "  Compute a Clenshaw Curtis rule for approximating\n";
-  cout << "\n";
-  cout << "    Integral ( -1 <= x <= +1 ) f(x) dx\n";
-  cout << "\n";
-  cout << "  of order ORDER.\n";
-  cout << "\n";
-  cout << "  The user specifies ORDER, A, B and FILENAME.\n";
-  cout << "\n";
-  cout << "  ORDER is the number of points.\n";
-  cout << "\n";
-  cout << "  A is the left endpoint.\n";
-  cout << "\n";
-  cout << "  B is the right endpoint.\n";
-  cout << "\n";
-  cout << "  FILENAME is used to generate 3 files:\n";
-  cout << "\n";
-  cout << "    filename_w.txt - the weight file\n";
-  cout << "    filename_x.txt - the abscissa file.\n";
-  cout << "    filename_r.txt - the region file.\n";
+  std::cout << "\n";
+  std::cout << "CLENSHAW_CURTIS_RULE\n";
+  std::cout << "  C++ version\n";
+  std::cout << "\n";
+  std::cout << "  Compiled on " << __DATE__ << " at " << __TIME__ << ".\n";
+  std::cout << "\n";
+  std::cout << "  Compute a Clenshaw Curtis rule for approximating\n";
+  std::cout << "\n";
+  std::cout << "    Integral ( -1 <= x <= +1 ) f(x) dx\n";
+  std::cout << "\n";
+  std::cout << "  of order ORDER.\n";
+  std::cout << "\n";
+  std::cout << "  The user specifies ORDER, A, B and FILENAME.\n";
+  std::cout << "\n";
+  std::cout << "  ORDER is the number of points.\n";
+  std::cout << "\n";
+  std::cout << "  A is the left endpoint.\n";
+  std::cout << "\n";
+  std::cout << "  B is the right endpoint.\n";
+  std::cout << "\n";
+  std::cout << "  FILENAME is used to generate 3 files:\n";
+  std::cout << "\n";
+  std::cout << "    filename_w.txt - the weight file\n";
+  std::cout << "    filename_x.txt - the abscissa file.\n";
+  std::cout << "    filename_r.txt - the region file.\n";
 //
 //  Get ORDER.
 //
@@ -93,8 +91,8 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter the value of ORDER (1 or greater)\n";
+    std::cout << "\n";
+    std::cout << "  Enter the value of ORDER (1 or greater)\n";
     cin >> order;
   }
 //
@@ -106,8 +104,8 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter the left endpoint A:\n";
+    std::cout << "\n";
+    std::cout << "  Enter the left endpoint A:\n";
     cin >> a;
   }
 //
@@ -119,8 +117,8 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter the right endpoint B:\n";
+    std::cout << "\n";
+    std::cout << "  Enter the right endpoint B:\n";
     cin >> b;
   }
 //
@@ -132,18 +130,18 @@ int main ( int argc, char *argv[] )
   }
   else
   {
-    cout << "\n";
-    cout << "  Enter FILENAME, the \"root name\" of the quadrature files).\n";
+    std::cout << "\n";
+    std::cout << "  Enter FILENAME, the \"root name\" of the quadrature files).\n";
     cin >> filename;
   }
 //
 //  Input summary.
 //
-  cout << "\n";
-  cout << "  ORDER = " << order << "\n";
-  cout << "  A = " << a << "\n";
-  cout << "  B = " << b << "\n";
-  cout << "  FILENAME = \"" << filename << "\".\n";
+  std::cout << "\n";
+  std::cout << "  ORDER = " << order << "\n";
+  std::cout << "  A = " << a << "\n";
+  std::cout << "  B = " << b << "\n";
+  std::cout << "  FILENAME = \"" << filename << "\".\n";
 //
 //  Construct the rule.
 //
@@ -172,11 +170,11 @@ int main ( int argc, char *argv[] )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "CLENSHAW_CURTIS_RULE:\n";
-  cout << "  Normal end of execution.\n";
+  std::cout << "\n";
+  std::cout << "CLENSHAW_CURTIS_RULE:\n";
+  std::cout << "  Normal end of execution.\n";
 
-  cout << "\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -293,7 +291,7 @@ void clenshaw_curtis_compute ( int order, double x[], double w[] )
 }
 //****************************************************************************80
 
-void r8mat_write ( string output_filename, int m, int n, double table[] )
+void r8mat_write ( std::string output_filename, int m, int n, double table[] )
 
 //****************************************************************************80
 //
@@ -326,7 +324,7 @@ void r8mat_write ( string output_filename, int m, int n, double table[] )
 {
   int i;
   int j;
-  ofstream output;
+  std::ofstream output;
 //
 //  Open the file.
 //
@@ -334,9 +332,9 @@ void r8mat_write ( string output_filename, int m, int n, double table[] )
 
   if ( !output )
   {
-    cerr << "\n";
-    cerr << "R8MAT_WRITE - Fatal error!\n";
-    cerr << "  Could not open the output file.\n";
+    std::cerr << "\n";
+    std::cerr << "R8MAT_WRITE - Fatal error!\n";
+    std::cerr << "  Could not open the output file.\n";
     return;
   }
 //
@@ -346,7 +344,7 @@ void r8mat_write ( string output_filename, int m, int n, double table[] )
   {
     for ( i = 0; i < m; i++ )
     {
-      output << "  " << setw(24) << setprecision(16) << table[i+j*m];
+      output << "  " << std::setw(24) << std::setprecision(16) << table[i+j*m];
     }
     output << "\n";
   }
@@ -406,7 +404,7 @@ void rescale ( double a, double b, int n, double x[], double w[] )
 }
 //****************************************************************************80
 
-void rule_write ( int order, string filename, double x[], double w[],
+void rule_write ( int order, std::string filename, double x[], double w[],
   double r[] )
 
 //****************************************************************************80
@@ -440,9 +438,9 @@ void rule_write ( int order, string filename, double x[], double w[],
 //    defining weights, abscissas, and region.
 //
 {
-  string filename_r;
-  string filename_w;
-  string filename_x;
+  std::string filename_r;
+  std::string filename_w;
+  std::string filename_x;
   int i;
   int kind;
 
@@ -450,14 +448,14 @@ void rule_write ( int order, string filename, double x[], double w[],
   filename_x = filename + "_x.txt";
   filename_r = filename + "_r.txt";
 
-  cout << "\n";
-  cout << "  Creating quadrature files.\n";
-  cout << "\n";
-  cout << "  Root file name is     \"" << filename   << "\".\n";
-  cout << "\n";
-  cout << "  Weight file will be   \"" << filename_w << "\".\n";
-  cout << "  Abscissa file will be \"" << filename_x << "\".\n";
-  cout << "  Region file will be   \"" << filename_r << "\".\n";
+  std::cout << "\n";
+  std::cout << "  Creating quadrature files.\n";
+  std::cout << "\n";
+  std::cout << "  Root file name is     \"" << filename   << "\".\n";
+  std::cout << "\n";
+  std::cout << "  Weight file will be   \"" << filename_w << "\".\n";
+  std::cout << "  Abscissa file will be \"" << filename_x << "\".\n";
+  std::cout << "  Region file will be   \"" << filename_r << "\".\n";
 
   r8mat_write ( filename_w, 1, order, w );
   r8mat_write ( filename_x, 1, order, x );

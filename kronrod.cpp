@@ -3,8 +3,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "kronrod.hpp"
 
 //****************************************************************************80
@@ -155,11 +153,11 @@ void abwe1 ( int n, int m, double eps, double coef2, bool even, double b[],
 //
   if ( ka != 1 )
   {
-    cout << "\n";
-    cout << "ABWE1 - Fatal error!\n";
-    cout << "  Iteration limit reached.\n";
-    cout << "  EPS is " << eps << "\n";
-    cout << "  Last DELTA was " << delta << "\n";
+    std::cout << "\n";
+    std::cout << "ABWE1 - Fatal error!\n";
+    std::cout << "  Iteration limit reached.\n";
+    std::cout << "  EPS is " << eps << "\n";
+    std::cout << "  Last DELTA was " << delta << "\n";
     exit ( 1 );
   }
 //
@@ -317,11 +315,11 @@ void abwe2 ( int n, int m, double eps, double coef2, bool even, double b[],
 //
   if ( ka != 1 )
   {
-    cout << "\n";
-    cout << "ABWE2 - Fatal error!\n";
-    cout << "  Iteration limit reached.\n";
-    cout << "  EPS is " << eps << "\n";
-    cout << "  Last DELTA was " << delta << "\n";
+    std::cout << "\n";
+    std::cout << "ABWE2 - Fatal error!\n";
+    std::cout << "  Iteration limit reached.\n";
+    std::cout << "  EPS is " << eps << "\n";
+    std::cout << "  Last DELTA was " << delta << "\n";
     exit ( 1 );
   }
 //

@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "test_int.hpp"
 
 int main ( );
@@ -44,10 +42,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "TEST_INT_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the TEST_INT library.\n";
+  std::cout << "\n";
+  std::cout << "TEST_INT_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the TEST_INT library.\n";
  
   test01 ( );
   test02 ( );
@@ -59,10 +57,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "TEST_INT_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST_INT_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -98,16 +96,16 @@ void test01 ( )
   int prob_num;
   double result;
 
-  cout << "\n";
-  cout << "TEST01\n";
-  cout << "  Composite midpoint rule,\n";
-  cout << "  for 1D finite interval problems.\n";
+  std::cout << "\n";
+  std::cout << "TEST01\n";
+  std::cout << "  Composite midpoint rule,\n";
+  std::cout << "  for 1D finite interval problems.\n";
 
   prob_num = p00_prob_num ( );
 
-  cout << "\n";
-  cout << "  Prob   Ints         Exact       Error\n";
-  cout << "                      Approx\n";
+  std::cout << "\n";
+  std::cout << "  Prob   Ints         Exact       Error\n";
+  std::cout << "                      Approx\n";
 //
 //  Pick a problem.
 //
@@ -115,10 +113,10 @@ void test01 ( )
   {
     exact = p00_exact ( prob );
 
-    cout << "\n";
-    cout << "  " << setw(4) << prob
+    std::cout << "\n";
+    std::cout << "  " << std::setw(4) << prob
          << "  " << "    "
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
 //
 //  Pick a number of subintervals.
 //
@@ -130,10 +128,10 @@ void test01 ( )
 
       error = r8_abs ( exact - result );
 
-      cout << "  " << "    "
-           << "  " << setw(4) << int_num
-           << "  " << setw(14) << result
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << "    "
+           << "  " << std::setw(4) << int_num
+           << "  " << std::setw(14) << result
+           << "  " << std::setw(14) << error << "\n";
     }
   }
   return;
@@ -169,16 +167,16 @@ void test02 ( )
   int prob_num;
   double result;
 
-  cout << "\n";
-  cout << "TEST02\n";
-  cout << "  Composite Simpson rule,\n";
-  cout << "  for 1D finite interval problems.\n";
+  std::cout << "\n";
+  std::cout << "TEST02\n";
+  std::cout << "  Composite Simpson rule,\n";
+  std::cout << "  for 1D finite interval problems.\n";
 
   prob_num = p00_prob_num ( );
 
-  cout << "\n";
-  cout << "  Prob   Ints         Exact       Error\n";
-  cout << "                      Approx\n";
+  std::cout << "\n";
+  std::cout << "  Prob   Ints         Exact       Error\n";
+  std::cout << "                      Approx\n";
 //
 //  Pick a problem.
 //
@@ -189,10 +187,10 @@ void test02 ( )
 //
     exact = p00_exact ( prob );
 
-    cout << "\n";
-    cout << "  " << setw(4) << prob
+    std::cout << "\n";
+    std::cout << "  " << std::setw(4) << prob
          << "  " << "    "
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
 //
 //  Pick a number of subintervals.
 //
@@ -204,10 +202,10 @@ void test02 ( )
 
       error = r8_abs ( exact - result );
 
-      cout << "  " << "    "
-           << "  " << setw(4) << int_num
-           << "  " << setw(14) << result
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << "    "
+           << "  " << std::setw(4) << int_num
+           << "  " << std::setw(14) << result
+           << "  " << std::setw(14) << error << "\n";
     }
   }
   return;
@@ -243,16 +241,16 @@ void test03 ( )
   int prob_num;
   double result;
 
-  cout << "\n";
-  cout << "TEST03\n";
-  cout << "  Monte Carlo rule,\n";
-  cout << "  for 1D finite interval problems.\n";
+  std::cout << "\n";
+  std::cout << "TEST03\n";
+  std::cout << "  Monte Carlo rule,\n";
+  std::cout << "  for 1D finite interval problems.\n";
 
   prob_num = p00_prob_num ( );
 
-  cout << "\n";
-  cout << "  Prob   Ints         Exact       Error\n";
-  cout << "                      Approx\n";
+  std::cout << "\n";
+  std::cout << "  Prob   Ints         Exact       Error\n";
+  std::cout << "                      Approx\n";
 //
 //  Pick a problem.
 //
@@ -260,10 +258,10 @@ void test03 ( )
   {
     exact = p00_exact ( prob );
 
-    cout << "\n";
-    cout << "  " << setw(4) << prob
+    std::cout << "\n";
+    std::cout << "  " << std::setw(4) << prob
          << "  " << "    "
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
 //
 //  Pick a number of points.
 //
@@ -275,10 +273,10 @@ void test03 ( )
 
       error = r8_abs ( exact - result );
 
-      cout << "  " << "    "
-           << "  " << setw(4) << int_num
-           << "  " << setw(14) << result
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << "    "
+           << "  " << std::setw(4) << int_num
+           << "  " << std::setw(14) << result
+           << "  " << std::setw(14) << error << "\n";
     }
   }
   return;
@@ -314,16 +312,16 @@ void test04 ( )
   int prob_num;
   double result;
 
-  cout << "\n";
-  cout << "TEST04\n";
-  cout << "  Use a composite 4 point Gauss-Legendre rule,\n";
-  cout << "  for 1D finite interval problems.\n";
+  std::cout << "\n";
+  std::cout << "TEST04\n";
+  std::cout << "  Use a composite 4 point Gauss-Legendre rule,\n";
+  std::cout << "  for 1D finite interval problems.\n";
 
   prob_num = p00_prob_num ( );
 
-  cout << "\n";
-  cout << "  Prob   Ints         Exact       Error\n";
-  cout << "                      Approx\n";
+  std::cout << "\n";
+  std::cout << "  Prob   Ints         Exact       Error\n";
+  std::cout << "                      Approx\n";
 //
 //  Pick a problem.
 //
@@ -331,10 +329,10 @@ void test04 ( )
   {
     exact = p00_exact ( prob );
 
-    cout << "\n";
-    cout << "  " << setw(4) << prob
+    std::cout << "\n";
+    std::cout << "  " << std::setw(4) << prob
          << "  " << "    "
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
 //
 //  Pick a number of subintervals.
 //
@@ -346,10 +344,10 @@ void test04 ( )
 
       error = r8_abs ( exact - result );
 
-      cout << "  " << "    "
-           << "  " << setw(4) << int_num
-           << "  " << setw(14) << result
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << "    "
+           << "  " << std::setw(4) << int_num
+           << "  " << std::setw(14) << result
+           << "  " << std::setw(14) << error << "\n";
     }
   }
   return;
@@ -385,16 +383,16 @@ void test05 ( )
   int prob_num;
   double result;
 
-  cout << "\n";
-  cout << "TEST05\n";
-  cout << "  Composite trapezoid rule,\n";
-  cout << "  for 1D finite interval problems.\n";
+  std::cout << "\n";
+  std::cout << "TEST05\n";
+  std::cout << "  Composite trapezoid rule,\n";
+  std::cout << "  for 1D finite interval problems.\n";
 
   prob_num = p00_prob_num ( );
 
-  cout << "\n";
-  cout << "  Prob   Ints         Exact       Error\n";
-  cout << "                      Approx\n";
+  std::cout << "\n";
+  std::cout << "  Prob   Ints         Exact       Error\n";
+  std::cout << "                      Approx\n";
 //
 //  Pick a problem.
 //
@@ -402,10 +400,10 @@ void test05 ( )
   {
     exact = p00_exact ( prob );
 
-    cout << "\n";
-    cout << "  " << setw(4) << prob
+    std::cout << "\n";
+    std::cout << "  " << std::setw(4) << prob
          << "  " << "    "
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
 //
 //  Pick a number of subintervals.
 //
@@ -417,10 +415,10 @@ void test05 ( )
 
       error = r8_abs ( exact - result );
 
-      cout << "  " << "    "
-           << "  " << setw(4) << int_num
-           << "  " << setw(14) << result
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << "    "
+           << "  " << std::setw(4) << int_num
+           << "  " << std::setw(14) << result
+           << "  " << std::setw(14) << error << "\n";
     }
   }
   return;
@@ -456,16 +454,16 @@ void test06 ( )
   int prob_num;
   double result;
 
-  cout << "\n";
-  cout << "TEST06\n";
-  cout << "  Halton sequence rule,\n";
-  cout << "  for 1D finite interval problems.\n";
+  std::cout << "\n";
+  std::cout << "TEST06\n";
+  std::cout << "  Halton sequence rule,\n";
+  std::cout << "  for 1D finite interval problems.\n";
 
   prob_num = p00_prob_num ( );
 
-  cout << "\n";
-  cout << "  Prob   Ints         Exact       Error\n";
-  cout << "                      Approx\n";
+  std::cout << "\n";
+  std::cout << "  Prob   Ints         Exact       Error\n";
+  std::cout << "                      Approx\n";
 //
 //  Pick a problem.
 //
@@ -473,10 +471,10 @@ void test06 ( )
   {
     exact = p00_exact ( prob );
 
-    cout << "\n";
-    cout << "  " << setw(4) << prob
+    std::cout << "\n";
+    std::cout << "  " << std::setw(4) << prob
          << "  " << "    "
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
 //
 //  Pick a number of points.
 //
@@ -488,10 +486,10 @@ void test06 ( )
 
       error = r8_abs ( exact - result );
 
-      cout << "  " << "    "
-           << "  " << setw(4) << int_num
-           << "  " << setw(14) << result
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << "    "
+           << "  " << std::setw(4) << int_num
+           << "  " << std::setw(14) << result
+           << "  " << std::setw(14) << error << "\n";
     }
   }
   return;
@@ -527,16 +525,16 @@ void test07 ( )
   int prob_num;
   double result;
 
-  cout << "\n";
-  cout << "TEST07\n";
-  cout << "  Evenly spaced point sequence rule,\n";
-  cout << "  for 1D finite interval problems.\n";
+  std::cout << "\n";
+  std::cout << "TEST07\n";
+  std::cout << "  Evenly spaced point sequence rule,\n";
+  std::cout << "  for 1D finite interval problems.\n";
 
   prob_num = p00_prob_num ( );
 
-  cout << "\n";
-  cout << "  Prob   Ints         Exact       Error\n";
-  cout << "                      Approx\n";
+  std::cout << "\n";
+  std::cout << "  Prob   Ints         Exact       Error\n";
+  std::cout << "                      Approx\n";
 //
 //  Pick a problem.
 //
@@ -544,10 +542,10 @@ void test07 ( )
   {
     exact = p00_exact ( prob );
 
-    cout << "\n";
-    cout << "  " << setw(4) << prob
+    std::cout << "\n";
+    std::cout << "  " << std::setw(4) << prob
          << "  " << "    "
-         << "  " << setw(14) << exact << "\n";
+         << "  " << std::setw(14) << exact << "\n";
 //
 //  Pick a number of points.
 //
@@ -559,10 +557,10 @@ void test07 ( )
 
       error = r8_abs ( exact - result );
 
-      cout << "  " << "    "
-           << "  " << setw(4) << int_num
-           << "  " << setw(14) << result
-           << "  " << setw(14) << error << "\n";
+      std::cout << "  " << "    "
+           << "  " << std::setw(4) << int_num
+           << "  " << std::setw(14) << result
+           << "  " << std::setw(14) << error << "\n";
     }
   }
   return;

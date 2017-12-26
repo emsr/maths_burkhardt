@@ -3,8 +3,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "line_ncc_rule.hpp"
 
 //****************************************************************************80

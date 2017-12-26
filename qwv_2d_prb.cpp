@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "qwv_2d.hpp"
 
 int main ( );
@@ -40,20 +38,20 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "QWV_2D_PRB:\n";
-  cout << "  C++ version\n";
-  cout << "  Test the QWV_2D library.\n";
+  std::cout << "\n";
+  std::cout << "QWV_2D_PRB:\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the QWV_2D library.\n";
 
   test01 ( );
   test02 ( );
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "QWV_2D_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "QWV_2D_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -99,17 +97,17 @@ void test01 ( )
   t = 1;
   n = ( ( t + 1 ) * ( t + 2 ) ) / 2;
 
-  cout << "\n";
-  cout << "\n";
-  cout << "TEST01:\n";
-  cout << "  Compute the weights associated with an interpolatory\n";
-  cout << "  quadrature rule defined by N=(T+1)*(T+2)/2 points,\n";
-  cout << "  exact for polynomials of total degree T or less.\n";
-  cout << "\n";
-  cout << "  Degree T = " << t << "\n";
-  cout << "  Number of points N = " << n << "\n";
-  cout << "  X Interval = [" << a << "," << b << "]\n";
-  cout << "  Y Interval = [" << c << "," << d << "]\n";
+  std::cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST01:\n";
+  std::cout << "  Compute the weights associated with an interpolatory\n";
+  std::cout << "  quadrature rule defined by N=(T+1)*(T+2)/2 points,\n";
+  std::cout << "  exact for polynomials of total degree T or less.\n";
+  std::cout << "\n";
+  std::cout << "  Degree T = " << t << "\n";
+  std::cout << "  Number of points N = " << n << "\n";
+  std::cout << "  X Interval = [" << a << "," << b << "]\n";
+  std::cout << "  Y Interval = [" << c << "," << d << "]\n";
 //
 //  Set the points.
 //
@@ -176,21 +174,21 @@ void test02 ( )
   c = -1.0;
   d = +1.0;
 
-  cout << "\n";
-  cout << "TEST02:\n";
-  cout << "  Compute the weights associated with an interpolatory\n";
-  cout << "  quadrature rule defined by N=(T+1)*(T+2)/2 points,\n";
-  cout << "  exact for polynomials of total degree T or less.\n";
-  cout << "  X Interval = [" << a << "," << b << "]\n";
-  cout << "  Y Interval = [" << c << "," << d << "]\n";
+  std::cout << "\n";
+  std::cout << "TEST02:\n";
+  std::cout << "  Compute the weights associated with an interpolatory\n";
+  std::cout << "  quadrature rule defined by N=(T+1)*(T+2)/2 points,\n";
+  std::cout << "  exact for polynomials of total degree T or less.\n";
+  std::cout << "  X Interval = [" << a << "," << b << "]\n";
+  std::cout << "  Y Interval = [" << c << "," << d << "]\n";
 
   for ( t = 0; t <= 10; t++ )
   {
     n = ( ( t + 1 ) * ( t + 2 ) ) / 2;
 
-    cout << "\n";
-    cout << "  Degree T = " << t << "\n";
-    cout << "  Number of points N = " << n << "\n";
+    std::cout << "\n";
+    std::cout << "  Degree T = " << t << "\n";
+    std::cout << "  Number of points N = " << n << "\n";
 
     x = new double[n];
     y = new double[n];
@@ -855,10 +853,10 @@ void padua_point_set ( int l, double x[], double y[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "PADUA_POINT_SET - Fatal error!\n";
-    cerr << "  Illegal value of L = " << l << "\n";
-    cerr << "  Legal values are 1 through 10.\n";
+    std::cerr << "\n";
+    std::cerr << "PADUA_POINT_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of L = " << l << "\n";
+    std::cerr << "  Legal values are 1 through 10.\n";
     exit ( 1 );
   }
 

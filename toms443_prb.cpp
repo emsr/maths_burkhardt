@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "toms443.hpp"
 
 int main ( );
@@ -39,20 +37,20 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "TOMS443_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the TOMS443 library.\n";
+  std::cout << "\n";
+  std::cout << "TOMS443_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the TOMS443 library.\n";
 
   test01 ( );
   test02 ( );
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "TOMS433_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TOMS433_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -86,13 +84,13 @@ void test01 ( )
   double w2;
   double x;
 
-  cout << "\n";
-  cout << "TEST01\n";
-  cout << "  Test WEW_A to evaluate\n";
-  cout << "  Lambert's W function.\n";
-  cout << "\n";
-  cout << "          X             Exact             Computed      Error\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST01\n";
+  std::cout << "  Test WEW_A to evaluate\n";
+  std::cout << "  Lambert's W function.\n";
+  std::cout << "\n";
+  std::cout << "          X             Exact             Computed      Error\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -114,10 +112,10 @@ void test01 ( )
       w2 = wew_a ( x, en );
     }
 
-    cout << setw(14) << x << "  "
-         << setw(16) << w1 << "  "
-         << setw(16) << w2 << "  "
-         << setw(10) << fabs ( w1 - w2 ) << "\n";
+    std::cout << std::setw(14) << x << "  "
+         << std::setw(16) << w1 << "  "
+         << std::setw(16) << w2 << "  "
+         << std::setw(10) << fabs ( w1 - w2 ) << "\n";
   }
 
   return;
@@ -151,13 +149,13 @@ void test02 ( )
   double w2;
   double x;
 
-  cout << "\n";
-  cout << "TEST02\n";
-  cout << "  Test WEW_B to evaluate\n";
-  cout << "  Lambert's W function.\n";
-  cout << "\n";
-  cout << "          X             Exact             Computed      Error\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST02\n";
+  std::cout << "  Test WEW_B to evaluate\n";
+  std::cout << "  Lambert's W function.\n";
+  std::cout << "\n";
+  std::cout << "          X             Exact             Computed      Error\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -179,10 +177,10 @@ void test02 ( )
       w2 = wew_b ( x, en );
     }
 
-    cout << setw(14) << x << "  "
-         << setw(16) << w1 << "  "
-         << setw(16) << w2 << "  "
-         << setw(10) << fabs ( w1 - w2 ) << "\n";
+    std::cout << std::setw(14) << x << "  "
+         << std::setw(16) << w1 << "  "
+         << std::setw(16) << w2 << "  "
+         << std::setw(10) << fabs ( w1 - w2 ) << "\n";
   }
 
   return;

@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "asa243.hpp"
 
 int main ( );
@@ -39,19 +37,19 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "ASA243_PRB:\n";
-  cout << "  C++ version\n";
-  cout << "  Test the ASA243 library.\n";
+  std::cout << "\n";
+  std::cout << "ASA243_PRB:\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the ASA243 library.\n";
 
   test01 ( );
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "ASA243_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ASA243_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -88,17 +86,17 @@ void test01 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST01:\n";
-  cout << "  TNC computes the noncentral Student T\n";
-  cout << "  Cumulative Density Function.\n";
-  cout << "  Compare with tabulated values.\n";
-  cout << "\n";
-  cout << "        X         LAMBDA        DF     "
+  std::cout << "\n";
+  std::cout << "TEST01:\n";
+  std::cout << "  TNC computes the noncentral Student T\n";
+  std::cout << "  Cumulative Density Function.\n";
+  std::cout << "  Compare with tabulated values.\n";
+  std::cout << "\n";
+  std::cout << "        X         LAMBDA        DF     "
        << " CDF             CDF           DIFF\n";
-  cout << "                                       "
+  std::cout << "                                       "
        << " Tabulated       PRNCST\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -115,12 +113,12 @@ void test01 ( )
 
     fx2 = tnc ( x, df_real, delta, &ifault );
 
-    cout << "  " << setw(10) << setprecision(4) << x
-         << "  " << setw(10) << setprecision(4) << delta
-         << "  " << setw(8)                     << df
-         << "  " << setw(24) << setprecision(16) << fx
-         << "  " << setw(24) << setprecision(16) << fx2
-         << "  " << setw(10) << setprecision(4) << fabs ( fx - fx2 ) << "\n";
+    std::cout << "  " << std::setw(10) << std::setprecision(4) << x
+         << "  " << std::setw(10) << std::setprecision(4) << delta
+         << "  " << std::setw(8)                     << df
+         << "  " << std::setw(24) << std::setprecision(16) << fx
+         << "  " << std::setw(24) << std::setprecision(16) << fx2
+         << "  " << std::setw(10) << std::setprecision(4) << fabs ( fx - fx2 ) << "\n";
   }
 
   return;

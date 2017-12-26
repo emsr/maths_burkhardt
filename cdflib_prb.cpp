@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "cdflib.hpp"
 
 int main ( );
@@ -64,10 +62,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "CDFLIB_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the CDFLIB library.\n";
+  std::cout << "\n";
+  std::cout << "CDFLIB_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the CDFLIB library.\n";
 
   test005 ( );
   test01 ( );
@@ -102,10 +100,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "CDFLIB_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CDFLIB_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -140,15 +138,15 @@ void test005 ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "TEST005\n";
-  cout << "  BETA_INC computes the incomplete Beta ratio.\n";
-  cout << "  BETA_INC_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X         Y         A         B         CDF           CDF\n";
-  cout <<
+  std::cout << "\n";
+  std::cout << "TEST005\n";
+  std::cout << "  BETA_INC computes the incomplete Beta ratio.\n";
+  std::cout << "  BETA_INC_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X         Y         A         B         CDF           CDF\n";
+  std::cout <<
     "                                           (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -165,19 +163,19 @@ void test005 ( )
 
     beta_inc ( &a, &b, &x, &y, &cdf_compute, &ccdf_compute, &ierror );
 
-    cout << setw(10) << x
-         << setw(10) << y
-         << setw(10) << a
-         << setw(10) << b
-         << setw(14) << cdf_lookup
-         << setw(14) << cdf_compute << "\n";
+    std::cout << std::setw(10) << x
+         << std::setw(10) << y
+         << std::setw(10) << a
+         << std::setw(10) << b
+         << std::setw(14) << cdf_lookup
+         << std::setw(14) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    X         Y         A         B         1-CDF         CCDF\n";
-  cout <<
+  std::cout << "\n";
+  std::cout << "    X         Y         A         B         1-CDF         CCDF\n";
+  std::cout <<
     "                                           (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -196,12 +194,12 @@ void test005 ( )
 
     beta_inc ( &a, &b, &x, &y, &cdf_compute, &ccdf_compute, &ierror );
 
-    cout << setw(10) << x
-         << setw(10) << y
-         << setw(10) << a
-         << setw(10) << b
-         << setw(14) << ccdf_lookup
-         << setw(14) << ccdf_compute << "\n";
+    std::cout << std::setw(10) << x
+         << std::setw(10) << y
+         << std::setw(10) << a
+         << std::setw(10) << b
+         << std::setw(14) << ccdf_lookup
+         << std::setw(14) << ccdf_compute << "\n";
 
   }
 
@@ -236,16 +234,16 @@ void test01 ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "TEST01\n";
-  cout << "  CDFBET computes one missing parameter from the\n";
-  cout << "    BETA CDF:\n";
-  cout << "\n";
-  cout << "   BETA_CDF ( (P,Q), (X,Y), A, B )\n";
-  cout << "\n";
-  cout << "      P           Q               X           Y"
+  std::cout << "\n";
+  std::cout << "TEST01\n";
+  std::cout << "  CDFBET computes one missing parameter from the\n";
+  std::cout << "    BETA CDF:\n";
+  std::cout << "\n";
+  std::cout << "   BETA_CDF ( (P,Q), (X,Y), A, B )\n";
+  std::cout << "\n";
+  std::cout << "      P           Q               X           Y"
        << "            A           B\n";
-  cout << "\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 4; which++ )
   {
@@ -290,17 +288,17 @@ void test01 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFBET returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFBET returned STATUS = " << status << "\n";
       continue;
     }
-    cout                  << "  "
-         << setw(10) << p << "  "
-         << setw(10) << q << "  "
-         << setw(10) << x << "  "
-         << setw(10) << y << "  "
-         << setw(10) << a << "  "
-         << setw(10) << b << "\n";
+    std::cout                  << "  "
+         << std::setw(10) << p << "  "
+         << std::setw(10) << q << "  "
+         << std::setw(10) << x << "  "
+         << std::setw(10) << y << "  "
+         << std::setw(10) << a << "  "
+         << std::setw(10) << b << "\n";
   }
 
   return;
@@ -334,16 +332,16 @@ void test02 ( )
   int which;
   double xn;
 
-  cout << "\n";
-  cout << "TEST02\n";
-  cout << "  CDFBIN computes one missing parameter from the\n";
-  cout << "    Binomial CDF:\n";
-  cout << "\n";
-  cout << "   BINOMIAL_CDF ( (P,Q), S, XN, (PR,OMPR) )\n";
-  cout << "\n";
-  cout << "      P           Q                S          "
+  std::cout << "\n";
+  std::cout << "TEST02\n";
+  std::cout << "  CDFBIN computes one missing parameter from the\n";
+  std::cout << "    Binomial CDF:\n";
+  std::cout << "\n";
+  std::cout << "   BINOMIAL_CDF ( (P,Q), S, XN, (PR,OMPR) )\n";
+  std::cout << "\n";
+  std::cout << "      P           Q                S          "
        << "XN         PR         OMPR\n";
-  cout << "\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 4; which++ )
   {
@@ -388,17 +386,17 @@ void test02 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFBIN returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFBIN returned STATUS = " << status << "\n";
       continue;
     }
-    cout                     << "  "
-         << setw(10) << p    << "  "
-         << setw(10) << q    << "  "
-         << setw(10) << s    << "  "
-         << setw(10) << xn   << "  "
-         << setw(10) << pr   << "  "
-         << setw(10) << ompr << "\n";
+    std::cout                     << "  "
+         << std::setw(10) << p    << "  "
+         << std::setw(10) << q    << "  "
+         << std::setw(10) << s    << "  "
+         << std::setw(10) << xn   << "  "
+         << std::setw(10) << pr   << "  "
+         << std::setw(10) << ompr << "\n";
   }
 
   return;
@@ -430,15 +428,15 @@ void test03 ( )
   int which;
   double x;
 
-  cout << "\n";
-  cout << "TEST03\n";
-  cout << "  CDFCHI computes one missing parameter from the\n";
-  cout << "    Chi Square CDF:\n";
-  cout << "\n";
-  cout << "   CHI_CDF ( (P,Q), X, DF )\n";
-  cout << "\n";
-  cout << "      P           Q                X          DF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST03\n";
+  std::cout << "  CDFCHI computes one missing parameter from the\n";
+  std::cout << "    Chi Square CDF:\n";
+  std::cout << "\n";
+  std::cout << "   CHI_CDF ( (P,Q), X, DF )\n";
+  std::cout << "\n";
+  std::cout << "      P           Q                X          DF\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 3; which++ )
   {
@@ -468,15 +466,15 @@ void test03 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFCHI returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFCHI returned STATUS = " << status << "\n";
       continue;
     }
-    cout                     << "  "
-         << setw(10) << p    << "  "
-         << setw(10) << q    << "  "
-         << setw(10) << x    << "  "
-         << setw(10) << df   << "\n";
+    std::cout                     << "  "
+         << std::setw(10) << p    << "  "
+         << std::setw(10) << q    << "  "
+         << std::setw(10) << x    << "  "
+         << std::setw(10) << df   << "\n";
   }
   return;
 }
@@ -508,15 +506,15 @@ void test04 ( )
   int which;
   double x;
 
-  cout << "\n";
-  cout << "TEST04\n";
-  cout << "  CDFCHN computes one missing parameter from the\n";
-  cout << "    Chi Square CDF:\n";
-  cout << "\n";
-  cout << "   CHI_Noncentral_CDF ( (P,Q), X, DF, PNONC )\n";
-  cout << "\n";
-  cout << "     P         Q             X        DF     PNONC\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST04\n";
+  std::cout << "  CDFCHN computes one missing parameter from the\n";
+  std::cout << "    Chi Square CDF:\n";
+  std::cout << "\n";
+  std::cout << "   CHI_Noncentral_CDF ( (P,Q), X, DF, PNONC )\n";
+  std::cout << "\n";
+  std::cout << "     P         Q             X        DF     PNONC\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 4; which++ )
   {
@@ -557,17 +555,17 @@ void test04 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFCHN returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFCHN returned STATUS = " << status << "\n";
       continue;
     }
 
-    cout <<                     "  "
-         << setw(8) << p     << "  "
-         << setw(8) << q     << "  "
-         << setw(8) << x     << "  "
-         << setw(8) << df    << "  "
-         << setw(8) << pnonc << "\n";
+    std::cout <<                     "  "
+         << std::setw(8) << p     << "  "
+         << std::setw(8) << q     << "  "
+         << std::setw(8) << x     << "  "
+         << std::setw(8) << df    << "  "
+         << std::setw(8) << pnonc << "\n";
   }
   return;
 }
@@ -599,15 +597,15 @@ void test05 ( )
   int status;
   int which;
 
-  cout << "\n";
-  cout << "TEST05\n";
-  cout << "  CDFF computes one missing parameter from the\n";
-  cout << "    F CDF:\n";
-  cout << "\n";
-  cout << "   F_CDF ( (P,Q), F, DFN, DFD )\n";
-  cout << "\n";
-  cout << "     P         Q             F       DFN       DFD\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST05\n";
+  std::cout << "  CDFF computes one missing parameter from the\n";
+  std::cout << "    F CDF:\n";
+  std::cout << "\n";
+  std::cout << "   F_CDF ( (P,Q), F, DFN, DFD )\n";
+  std::cout << "\n";
+  std::cout << "     P         Q             F       DFN       DFD\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 4; which++ )
   {
@@ -648,17 +646,17 @@ void test05 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFF returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFF returned STATUS = " << status << "\n";
       continue;
     }
 
-    cout <<                   "  "
-         << setw(8) << p   << "  "
-         << setw(8) << q   << "  "
-         << setw(8) << f   << "  "
-         << setw(8) << dfn << "  "
-         << setw(8) << dfd << "\n";
+    std::cout <<                   "  "
+         << std::setw(8) << p   << "  "
+         << std::setw(8) << q   << "  "
+         << std::setw(8) << f   << "  "
+         << std::setw(8) << dfn << "  "
+         << std::setw(8) << dfd << "\n";
   }
   return;
 }
@@ -691,15 +689,15 @@ void test06 ( )
   int status;
   int which;
 
-  cout << "\n";
-  cout << "TEST06\n";
-  cout << "  CDFFNC computes one missing parameter from the\n";
-  cout << "    noncentral F CDF:\n";
-  cout << "\n";
-  cout << "   F_noncentral_CDF ( (P,Q), F, DFN, DFD, PNONC )\n";
-  cout << "\n";
-  cout << "         P         Q         F       DFN       DFD     PNONC\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST06\n";
+  std::cout << "  CDFFNC computes one missing parameter from the\n";
+  std::cout << "    noncentral F CDF:\n";
+  std::cout << "\n";
+  std::cout << "   F_noncentral_CDF ( (P,Q), F, DFN, DFD, PNONC )\n";
+  std::cout << "\n";
+  std::cout << "         P         Q         F       DFN       DFD     PNONC\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 5; which++ )
   {
@@ -753,18 +751,18 @@ void test06 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFFNC returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFFNC returned STATUS = " << status << "\n";
       continue;
     }
 
-    cout <<                   "  "
-         << setw(8) << p     << "  "
-         << setw(8) << q     << "  "
-         << setw(8) << f     << "  "
-         << setw(8) << dfn   << "  "
-         << setw(8) << dfd   << "  "
-         << setw(8) << pnonc << "\n";
+    std::cout <<                   "  "
+         << std::setw(8) << p     << "  "
+         << std::setw(8) << q     << "  "
+         << std::setw(8) << f     << "  "
+         << std::setw(8) << dfn   << "  "
+         << std::setw(8) << dfd   << "  "
+         << std::setw(8) << pnonc << "\n";
   }
 
   return;
@@ -797,15 +795,15 @@ void test07 ( )
   int which;
   double x;
 
-  cout << "\n";
-  cout << "TEST07\n";
-  cout << "  CDFGAM computes one missing parameter from the\n";
-  cout << "    Gamma CDF:\n";
-  cout << "\n";
-  cout << "   Gamma_CDF ( (P,Q), X, SHAPE, SCALE )\n";
-  cout << "\n";
-  cout << "    P         Q              X     SHAPE     SCALE\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST07\n";
+  std::cout << "  CDFGAM computes one missing parameter from the\n";
+  std::cout << "    Gamma CDF:\n";
+  std::cout << "\n";
+  std::cout << "   Gamma_CDF ( (P,Q), X, SHAPE, SCALE )\n";
+  std::cout << "\n";
+  std::cout << "    P         Q              X     SHAPE     SCALE\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 4; which++ )
   {
@@ -846,17 +844,17 @@ void test07 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFGAM returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFGAM returned STATUS = " << status << "\n";
       continue;
     }
 
-    cout <<                     "  "
-         << setw(8) << p     << "  "
-         << setw(9) << q     << "  "
-         << setw(8) << x     << "  "
-         << setw(8) << shape << "  "
-         << setw(8) << scale << "\n";
+    std::cout <<                     "  "
+         << std::setw(8) << p     << "  "
+         << std::setw(9) << q     << "  "
+         << std::setw(8) << x     << "  "
+         << std::setw(8) << shape << "  "
+         << std::setw(8) << scale << "\n";
   }
 
   return;
@@ -890,15 +888,15 @@ void test08 ( )
   int status;
   int which;
 
-  cout << "\n";
-  cout << "TEST08\n";
-  cout << "  CDFNBN computes one missing parameter from the\n";
-  cout << "    Negative_Binomial CDF:\n";
-  cout << "\n";
-  cout << "   Negative_BINOMIAL_CDF ( (P,Q), F, S, (PR,OMPR) )\n";
-  cout << "\n";
-  cout << "    P         Q               F         S       PR        OMPR\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST08\n";
+  std::cout << "  CDFNBN computes one missing parameter from the\n";
+  std::cout << "    Negative_Binomial CDF:\n";
+  std::cout << "\n";
+  std::cout << "   Negative_BINOMIAL_CDF ( (P,Q), F, S, (PR,OMPR) )\n";
+  std::cout << "\n";
+  std::cout << "    P         Q               F         S       PR        OMPR\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 4; which++ )
   {
@@ -943,17 +941,17 @@ void test08 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFNBN returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFNBN returned STATUS = " << status << "\n";
       continue;
     }
-    cout <<                    "  "
-         << setw(8) << p    << "  "
-         << setw(9) << q    << "  "
-         << setw(8) << f    << "  "
-         << setw(8) << s    << "  "
-         << setw(8) << pr   << "  "
-         << setw(8) << ompr << "\n";
+    std::cout <<                    "  "
+         << std::setw(8) << p    << "  "
+         << std::setw(9) << q    << "  "
+         << std::setw(8) << f    << "  "
+         << std::setw(8) << s    << "  "
+         << std::setw(8) << pr   << "  "
+         << std::setw(8) << ompr << "\n";
   }
 
   return;
@@ -986,15 +984,15 @@ void test09 ( )
   int which;
   double x;
 
-  cout << "\n";
-  cout << "TEST09\n";
-  cout << "  CDFNOR computes one missing parameter from the\n";
-  cout << "    Normal CDF:\n";
-  cout << "\n";
-  cout << "   Normal_CDF ( (P,Q), X, MEAN, SD )\n";
-  cout << "\n";
-  cout << "    P         Q               X      MEAN       SD\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST09\n";
+  std::cout << "  CDFNOR computes one missing parameter from the\n";
+  std::cout << "    Normal CDF:\n";
+  std::cout << "\n";
+  std::cout << "   Normal_CDF ( (P,Q), X, MEAN, SD )\n";
+  std::cout << "\n";
+  std::cout << "    P         Q               X      MEAN       SD\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 4; which++ )
   {
@@ -1035,16 +1033,16 @@ void test09 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFNOR returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFNOR returned STATUS = " << status << "\n";
       continue;
     }
-    cout <<                    "  "
-         << setw(9) << p    << "  "
-         << setw(8) << q    << "  "
-         << setw(8) << x    << "  "
-         << setw(8) << mean << "  "
-         << setw(8) << sd   << "\n";
+    std::cout <<                    "  "
+         << std::setw(9) << p    << "  "
+         << std::setw(8) << q    << "  "
+         << std::setw(8) << x    << "  "
+         << std::setw(8) << mean << "  "
+         << std::setw(8) << sd   << "\n";
   }
 
   return;
@@ -1076,15 +1074,15 @@ void test10 ( )
   int which;
   double xlam;
 
-  cout << "\n";
-  cout << "TEST10\n";
-  cout << "  CDFPOI computes one missing parameter from the\n";
-  cout << "    Poisson CDF:\n";
-  cout << "\n";
-  cout << "   POISSON_CDF ( (P,Q), S, XLAM )\n";
-  cout << "\n";
-  cout << "     P         Q         S         XLAM\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST10\n";
+  std::cout << "  CDFPOI computes one missing parameter from the\n";
+  std::cout << "    Poisson CDF:\n";
+  std::cout << "\n";
+  std::cout << "   POISSON_CDF ( (P,Q), S, XLAM )\n";
+  std::cout << "\n";
+  std::cout << "     P         Q         S         XLAM\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 3; which++ )
   {
@@ -1114,15 +1112,15 @@ void test10 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFPOI returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFPOI returned STATUS = " << status << "\n";
       continue;
     }
-    cout <<                    "  "
-         << setw(9) << p    << "  "
-         << setw(9) << q    << "  "
-         << setw(9) << s    << "  "
-         << setw(9) << xlam << "\n";
+    std::cout <<                    "  "
+         << std::setw(9) << p    << "  "
+         << std::setw(9) << q    << "  "
+         << std::setw(9) << s    << "  "
+         << std::setw(9) << xlam << "\n";
   }
 
   return;
@@ -1154,15 +1152,15 @@ void test11 ( )
   double t;
   int which;
 
-  cout << "\n";
-  cout << "TEST11\n";
-  cout << "  CDFT computes one missing parameter from the\n";
-  cout << "    T CDF:\n";
-  cout << "\n";
-  cout << "   T_CDF ( (P,Q), T, DF )\n";
-  cout << "\n";
-  cout << "    P         Q         T         DF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST11\n";
+  std::cout << "  CDFT computes one missing parameter from the\n";
+  std::cout << "    T CDF:\n";
+  std::cout << "\n";
+  std::cout << "   T_CDF ( (P,Q), T, DF )\n";
+  std::cout << "\n";
+  std::cout << "    P         Q         T         DF\n";
+  std::cout << "\n";
 
   for ( which = 1; which <= 3; which++ )
   {
@@ -1192,15 +1190,15 @@ void test11 ( )
 
     if ( status != 0 )
     {
-      cout << "\n";
-      cout << "  CDFT returned STATUS = " << status << "\n";
+      std::cout << "\n";
+      std::cout << "  CDFT returned STATUS = " << status << "\n";
       continue;
     }
-    cout <<                  "  "
-         << setw(9) << p  << "  "
-         << setw(9) << q  << "  "
-         << setw(9) << t  << "  "
-         << setw(9) << df << "\n";
+    std::cout <<                  "  "
+         << std::setw(9) << p  << "  "
+         << std::setw(9) << q  << "  "
+         << std::setw(9) << t  << "  "
+         << std::setw(9) << df << "\n";
   }
 
   return;
@@ -1234,16 +1232,16 @@ void test12 ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "TEST12\n";
-  cout << "  CUMBET computes the Beta CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  BETA_INC_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X         Y         A         B         CDF           CDF\n";
-  cout <<
+  std::cout << "\n";
+  std::cout << "TEST12\n";
+  std::cout << "  CUMBET computes the Beta CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  BETA_INC_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X         Y         A         B         CDF           CDF\n";
+  std::cout <<
     "                                           (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1260,20 +1258,20 @@ void test12 ( )
 
     cumbet ( &x, &y, &a, &b, &cdf_compute, &ccdf_compute );
 
-    cout << " "
-         << setw(9) << x           << "  "
-         << setw(9) << y           << "  "
-         << setw(9) << a           << "  "
-         << setw(9) << b           << "  "
-         << setw(9) << cdf_lookup  << "  "
-         << setw(9) << cdf_compute << "\n";
+    std::cout << " "
+         << std::setw(9) << x           << "  "
+         << std::setw(9) << y           << "  "
+         << std::setw(9) << a           << "  "
+         << std::setw(9) << b           << "  "
+         << std::setw(9) << cdf_lookup  << "  "
+         << std::setw(9) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    X         Y         A         B         1-CDF         CCDF\n";
-  cout <<
+  std::cout << "\n";
+  std::cout << "    X         Y         A         B         1-CDF         CCDF\n";
+  std::cout <<
     "                                           (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1292,13 +1290,13 @@ void test12 ( )
 
     cumbet ( &x, &y, &a, &b, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(9) << x            << "  "
-         << setw(9) << y            << "  "
-         << setw(9) << a            << "  "
-         << setw(9) << b            << "  "
-         << setw(9) << ccdf_lookup  << "  "
-         << setw(9) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(9) << x            << "  "
+         << std::setw(9) << y            << "  "
+         << std::setw(9) << a            << "  "
+         << std::setw(9) << b            << "  "
+         << std::setw(9) << ccdf_lookup  << "  "
+         << std::setw(9) << ccdf_compute << "\n";
   }
 
   return;
@@ -1334,15 +1332,15 @@ void test13 ( )
   int x;
   double x_double;
 
-  cout << "\n";
-  cout << "TEST13\n";
-  cout << "  CUMBIN computes the Binomial CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  BINOMIAL_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "   X   S    Pr       CDF           CDF\n";
-  cout << "                    (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST13\n";
+  std::cout << "  CUMBIN computes the Binomial CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  BINOMIAL_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "   X   S    Pr       CDF           CDF\n";
+  std::cout << "                    (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1362,18 +1360,18 @@ void test13 ( )
 
     cumbin ( &s_double, &x_double, &pr, &ompr, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(2)  << s           << "  "
-         << setw(2)  << x           << "  "
-         << setw(8)  << pr          << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(2)  << s           << "  "
+         << std::setw(2)  << x           << "  "
+         << std::setw(8)  << pr          << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "   X   S    Pr       1-CDF         CCDF\n";
-  cout << "                    (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   X   S    Pr       1-CDF         CCDF\n";
+  std::cout << "                    (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1395,12 +1393,12 @@ void test13 ( )
 
     cumbin ( &s_double, &x_double, &pr, &ompr, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(2)  << s            << "  "
-         << setw(2)  << x            << "  "
-         << setw(8)  << pr           << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(2)  << s            << "  "
+         << std::setw(2)  << x            << "  "
+         << std::setw(8)  << pr           << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -1433,15 +1431,15 @@ void test14 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST14\n";
-  cout << "  CUMCHI computes the chi square CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  CHI_SQUARE_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X       DF    CDF           CDF\n";
-  cout << "                 (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST14\n";
+  std::cout << "  CUMCHI computes the chi square CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  CHI_SQUARE_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X       DF    CDF           CDF\n";
+  std::cout << "                 (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1458,17 +1456,17 @@ void test14 ( )
 
     cumchi ( &x, &df_double, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x           << "  "
-         << setw(2)  << df          << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(2)  << df          << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    X       DF    1-CDF         CCDF\n";
-  cout << "                 (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    X       DF    1-CDF         CCDF\n";
+  std::cout << "                 (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1487,11 +1485,11 @@ void test14 ( )
 
     cumchi ( &x, &df_double, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x            << "  "
-         << setw(2)  << df           << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x            << "  "
+         << std::setw(2)  << df           << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -1525,16 +1523,16 @@ void test15 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST15\n";
-  cout << "  CUMCHN computes the cumulative density\n";
-  cout << "    function for the noncentral chi-squared\n";
-  cout << "    distribution.\n";
-  cout << "  CHI_NONCENTRAL_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    DF    Lambda    X         CDF           CDF\n";
-  cout << "                             (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST15\n";
+  std::cout << "  CUMCHN computes the cumulative density\n";
+  std::cout << "    function for the noncentral chi-squared\n";
+  std::cout << "    distribution.\n";
+  std::cout << "  CHI_NONCENTRAL_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    DF    Lambda    X         CDF           CDF\n";
+  std::cout << "                             (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1551,18 +1549,18 @@ void test15 ( )
 
     cumchn ( &x, &df_double, &lambda, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(6)  << df          << "  "
-         << setw(8)  << lambda      << "  "
-         << setw(8)  << x           << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(6)  << df          << "  "
+         << std::setw(8)  << lambda      << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    DF    Lambda    X         1-CDF         CCDF\n";
-  cout << "                             (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    DF    Lambda    X         1-CDF         CCDF\n";
+  std::cout << "                             (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1581,12 +1579,12 @@ void test15 ( )
 
     cumchn ( &x, &df_double, &lambda, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(6)  << df           << "  "
-         << setw(8)  << lambda       << "  "
-         << setw(8)  << x            << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(6)  << df           << "  "
+         << std::setw(8)  << lambda       << "  "
+         << std::setw(8)  << x            << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -1621,15 +1619,15 @@ void test16 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST16\n";
-  cout << "  CUMF computes the F CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  F_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X      DFN DFD    CDF           CDF\n";
-  cout << "                     (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST16\n";
+  std::cout << "  CUMF computes the F CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  F_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X      DFN DFD    CDF           CDF\n";
+  std::cout << "                     (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1647,19 +1645,19 @@ void test16 ( )
 
     cumf ( &x, &dfn_double, &dfd_double, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x           << "  "
-         << setw(2)  << dfn         << "  "
-         << setw(2)  << dfd         << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(2)  << dfn         << "  "
+         << std::setw(2)  << dfd         << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
 
   }
 
-  cout << "\n";
-  cout << "    X      DFN DFD    1-CDF         CCDF\n";
-  cout << "                     (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    X      DFN DFD    1-CDF         CCDF\n";
+  std::cout << "                     (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1679,12 +1677,12 @@ void test16 ( )
 
     cumf ( &x, &dfn_double, &dfd_double, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x            << "  "
-         << setw(2)  << dfn          << "  "
-         << setw(2)  << dfd          << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x            << "  "
+         << std::setw(2)  << dfn          << "  "
+         << std::setw(2)  << dfd          << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -1720,15 +1718,15 @@ void test17 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST17\n";
-  cout << "  CUMFNC computes the noncentral F CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  F_NONCENTRAL_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X      DFN DFD    LAMBDA    CDF           CDF\n";
-  cout << "                               (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST17\n";
+  std::cout << "  CUMFNC computes the noncentral F CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  F_NONCENTRAL_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X      DFN DFD    LAMBDA    CDF           CDF\n";
+  std::cout << "                               (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1747,19 +1745,19 @@ void test17 ( )
     cumfnc ( &x, &dfn_double, &dfd_double, &lambda, &cdf_compute,
       &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x           << "  "
-         << setw(2)  << dfn         << "  "
-         << setw(2)  << dfd         << "  "
-         << setw(8)  << lambda      << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(2)  << dfn         << "  "
+         << std::setw(2)  << dfd         << "  "
+         << std::setw(8)  << lambda      << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    X      DFN DFD    LAMBDA    1-CDF         CCDF\n";
-  cout << "                               (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    X      DFN DFD    LAMBDA    1-CDF         CCDF\n";
+  std::cout << "                               (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1780,13 +1778,13 @@ void test17 ( )
     cumfnc ( &x, &dfn_double, &dfd_double, &lambda, &cdf_compute,
       &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x            << "  "
-         << setw(2)  << dfn          << "  "
-         << setw(2)  << dfd          << "  "
-         << setw(8)  << lambda       << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x            << "  "
+         << std::setw(2)  << dfn          << "  "
+         << std::setw(2)  << dfd          << "  "
+         << std::setw(8)  << lambda       << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -1818,15 +1816,15 @@ void test18 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST18\n";
-  cout << "  CUMGAM computes the Gamma CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  GAMMA_INC_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    A         X         CDF           CDF\n";
-  cout << "                        (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST18\n";
+  std::cout << "  CUMGAM computes the Gamma CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  GAMMA_INC_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    A         X         CDF           CDF\n";
+  std::cout << "                        (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1841,17 +1839,17 @@ void test18 ( )
 
     cumgam ( &x, &a, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << a           << "  "
-         << setw(8)  << x           << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << a           << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    A         X         CDF           CDF\n";
-  cout << "                        (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    A         X         CDF           CDF\n";
+  std::cout << "                        (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1868,11 +1866,11 @@ void test18 ( )
 
     cumgam ( &x, &a, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << a            << "  "
-         << setw(8)  << x            << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << a            << "  "
+         << std::setw(8)  << x            << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -1908,15 +1906,15 @@ void test19 ( )
   double s_double;
   double pr;
 
-  cout << "\n";
-  cout << "TEST19\n";
-  cout << "  CUMNBN computes the Negative Binomial CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  NEGATIVE_BINOMIAL_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "   F   S    Pr       CDF           CDF\n";
-  cout << "                     (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST19\n";
+  std::cout << "  CUMNBN computes the Negative Binomial CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  NEGATIVE_BINOMIAL_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "   F   S    Pr       CDF           CDF\n";
+  std::cout << "                     (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1936,18 +1934,18 @@ void test19 ( )
 
     cumnbn ( &f_double, &s_double, &pr, &ompr, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(2)  << f           << "  "
-         << setw(2)  << s           << "  "
-         << setw(8)  << pr          << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(2)  << f           << "  "
+         << std::setw(2)  << s           << "  "
+         << std::setw(8)  << pr          << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "   F   S    Pr       1-CDF         CCDF\n";
-  cout << "                     (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   F   S    Pr       1-CDF         CCDF\n";
+  std::cout << "                     (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1969,12 +1967,12 @@ void test19 ( )
 
     cumnbn ( &f_double, &s_double, &pr, &ompr, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(2)  << f            << "  "
-         << setw(2)  << s            << "  "
-         << setw(8)  << pr           << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(2)  << f            << "  "
+         << std::setw(2)  << s            << "  "
+         << std::setw(8)  << pr           << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -2005,15 +2003,15 @@ void test20 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST20\n";
-  cout << "  CUMNOR computes the Normal CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  NORMAL_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X         CDF           CDF\n";
-  cout << "              (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST20\n";
+  std::cout << "  CUMNOR computes the Normal CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  NORMAL_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X         CDF           CDF\n";
+  std::cout << "              (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2028,16 +2026,16 @@ void test20 ( )
 
     cumnor ( &x, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x           << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    X         1-CDF         CCDF\n";
-  cout << "              (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    X         1-CDF         CCDF\n";
+  std::cout << "              (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2054,10 +2052,10 @@ void test20 ( )
 
     cumnor ( &x, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x            << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x            << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -2090,15 +2088,15 @@ void test21 ( )
   int x;
   double x_double;
 
-  cout << "\n";
-  cout << "TEST21\n";
-  cout << "  CUMPOI computes the Poisson CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  POISSON_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "     X    LAMBDA    CDF           CDF\n";
-  cout << "                   (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST21\n";
+  std::cout << "  CUMPOI computes the Poisson CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  POISSON_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "     X    LAMBDA    CDF           CDF\n";
+  std::cout << "                   (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2115,17 +2113,17 @@ void test21 ( )
 
     cumpoi ( &x_double, &lambda, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(4)  << x           << "  "
-         << setw(8)  << lambda      << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(4)  << x           << "  "
+         << std::setw(8)  << lambda      << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "     X    LAMBDA    1-CDF         CCDF\n";
-  cout << "                   (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "     X    LAMBDA    1-CDF         CCDF\n";
+  std::cout << "                   (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2143,11 +2141,11 @@ void test21 ( )
 
     cumpoi ( &x_double, &lambda, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(4)  << x            << "  "
-         << setw(8)  << lambda       << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(4)  << x            << "  "
+         << std::setw(8)  << lambda       << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -2180,15 +2178,15 @@ void test22 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST22\n";
-  cout << "  CUMT computes the Student T CDF\n";
-  cout << "    and the complementary CDF.\n";
-  cout << "  STUDENT_CDF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X       DF    CDF           CDF\n";
-  cout << "                 (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST22\n";
+  std::cout << "  CUMT computes the Student T CDF\n";
+  std::cout << "    and the complementary CDF.\n";
+  std::cout << "  STUDENT_CDF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X       DF    CDF           CDF\n";
+  std::cout << "                 (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2204,17 +2202,17 @@ void test22 ( )
 
     cumt ( &x, &df_double, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x           << "  "
-         << setw(2)  << df          << "  "
-         << setw(12) << cdf_lookup  << "  "
-         << setw(12) << cdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(2)  << df          << "  "
+         << std::setw(12) << cdf_lookup  << "  "
+         << std::setw(12) << cdf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    X       DF    1-CDF         CCDF\n";
-  cout << "                 (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    X       DF    1-CDF         CCDF\n";
+  std::cout << "                 (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2233,11 +2231,11 @@ void test22 ( )
 
     cumt ( &x, &df_double, &cdf_compute, &ccdf_compute );
 
-    cout << "  "
-         << setw(8)  << x            << "  "
-         << setw(2)  << df           << "  "
-         << setw(12) << ccdf_lookup  << "  "
-         << setw(12) << ccdf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x            << "  "
+         << std::setw(2)  << df           << "  "
+         << std::setw(12) << ccdf_lookup  << "  "
+         << std::setw(12) << ccdf_compute << "\n";
   }
 
   return;
@@ -2267,10 +2265,10 @@ void test23 ( )
   double beta1;
   double beta2;
 
-  cout << "\n";
-  cout << "TEST23\n";
-  cout << "  BETA evaluates the Beta function;\n";
-  cout << "  GAMMA_X evaluates the Gamma function.\n";
+  std::cout << "\n";
+  std::cout << "TEST23\n";
+  std::cout << "  BETA evaluates the Beta function;\n";
+  std::cout << "  GAMMA_X evaluates the Gamma function.\n";
 
   a = 2.2;
   b = 3.7;
@@ -2279,13 +2277,13 @@ void test23 ( )
   beta1 = beta ( a, b );
   beta2 = gamma_x ( &a ) * gamma_x ( &b ) / gamma_x ( &apb );
 
-  cout << "\n";
-  cout << "  Argument A =                   " << a << "\n";
-  cout << "  Argument B =                   " << b << "\n";
-  cout << "  Beta(A,B) =                    " << beta1 << "\n";
-  cout << "  (Expected value = 0.0454 )\n";
-  cout << "\n";
-  cout << "  Gamma(A)*Gamma(B)/Gamma(A+B) = " << beta2 << "\n";
+  std::cout << "\n";
+  std::cout << "  Argument A =                   " << a << "\n";
+  std::cout << "  Argument B =                   " << b << "\n";
+  std::cout << "  Beta(A,B) =                    " << beta1 << "\n";
+  std::cout << "  (Expected value = 0.0454 )\n";
+  std::cout << "\n";
+  std::cout << "  Gamma(A)*Gamma(B)/Gamma(A+B) = " << beta2 << "\n";
 
   return;
 }
@@ -2316,15 +2314,15 @@ void test24 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST24\n";
-  cout << "  ERROR_F computes the error function ERF;\n";
-  cout << "  ERROR_FC the complementary error function ERFC.\n";
-  cout << "  ERF_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X         ERF           ERF\n";
-  cout << "              (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST24\n";
+  std::cout << "  ERROR_F computes the error function ERF;\n";
+  std::cout << "  ERROR_FC the complementary error function ERFC.\n";
+  std::cout << "  ERF_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X         ERF           ERF\n";
+  std::cout << "              (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2339,16 +2337,16 @@ void test24 ( )
 
     erf_compute = error_f ( &x );
 
-    cout << "  "
-         << setw(8)  << x           << "  "
-         << setw(12) << erf_lookup  << "  "
-         << setw(12) << erf_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(12) << erf_lookup  << "  "
+         << std::setw(12) << erf_compute << "\n";
   }
 
-  cout << "\n";
-  cout << "    X         ERFC          ERFC\n";
-  cout << "              (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "    X         ERFC          ERFC\n";
+  std::cout << "              (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   ind = 0;
   n_data = 0;
@@ -2365,10 +2363,10 @@ void test24 ( )
     erfc_lookup = 1.0 - erf_lookup;
     erfc_compute = error_fc ( &ind, &x );
 
-    cout << "  "
-         << setw(8)  << x            << "  "
-         << setw(12) << erfc_lookup  << "  "
-         << setw(12) << erfc_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x            << "  "
+         << std::setw(12) << erfc_lookup  << "  "
+         << std::setw(12) << erfc_compute << "\n";
   }
 
   return;
@@ -2397,14 +2395,14 @@ void test25 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST25\n";
-  cout << "  XGAMM computes the Gamma function;\n";
-  cout << "  GAMMA_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X         GAMMA         GAMMA\n";
-  cout << "              (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST25\n";
+  std::cout << "  XGAMM computes the Gamma function;\n";
+  std::cout << "  GAMMA_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X         GAMMA         GAMMA\n";
+  std::cout << "              (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2419,10 +2417,10 @@ void test25 ( )
 
     gamma_compute = gamma_x ( &x );
 
-    cout << "  "
-         << setw(8)  << x             << "  "
-         << setw(12) << gamma_lookup  << "  "
-         << setw(12) << gamma_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x             << "  "
+         << std::setw(12) << gamma_lookup  << "  "
+         << std::setw(12) << gamma_compute << "\n";
   }
 
   return;
@@ -2461,17 +2459,17 @@ void test26 ( )
   ind = 1;
   x0 = 0;
 
-  cout << "\n";
-  cout << "TEST26\n";
-  cout << "  GAMMA_INC evaluates the incomplete Gamma ratio;\n";
-  cout << "  GAMMA_INC_INV inverts it.\n";
-  cout << "\n";
-  cout << "  Parameters:\n";
-  cout << "\n";
-  cout << "    A = " << a << "\n";
-  cout << "\n";
-  cout << "    X             P             Q             Inverse\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST26\n";
+  std::cout << "  GAMMA_INC evaluates the incomplete Gamma ratio;\n";
+  std::cout << "  GAMMA_INC_INV inverts it.\n";
+  std::cout << "\n";
+  std::cout << "  Parameters:\n";
+  std::cout << "\n";
+  std::cout << "    A = " << a << "\n";
+  std::cout << "\n";
+  std::cout << "    X             P             Q             Inverse\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= test_num; i++ )
   {
@@ -2481,11 +2479,11 @@ void test26 ( )
 
     gamma_inc_inv ( &a, &x2, &x0, &p, &q, &ierror );
 
-    cout << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << p  << "  "
-         << setw(12) << q  << "  "
-         << setw(12) << x2 << "\n";
+    std::cout << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << p  << "  "
+         << std::setw(12) << q  << "  "
+         << std::setw(12) << x2 << "\n";
   }
 
   return;
@@ -2514,14 +2512,14 @@ void test27 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST27\n";
-  cout << "  PSI computes the Psi function;\n";
-  cout << "  PSI_VALUES looks up some values.\n";
-  cout << "\n";
-  cout << "    X         PSI           PSI\n";
-  cout << "              (Lookup)      (Computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST27\n";
+  std::cout << "  PSI computes the Psi function;\n";
+  std::cout << "  PSI_VALUES looks up some values.\n";
+  std::cout << "\n";
+  std::cout << "    X         PSI           PSI\n";
+  std::cout << "              (Lookup)      (Computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2536,10 +2534,10 @@ void test27 ( )
 
     psi_compute = psi ( &x );
 
-    cout << "  "
-         << setw(8)  << x           << "  "
-         << setw(12) << psi_lookup  << "  "
-         << setw(12) << psi_compute << "\n";
+    std::cout << "  "
+         << std::setw(8)  << x           << "  "
+         << std::setw(12) << psi_lookup  << "  "
+         << std::setw(12) << psi_compute << "\n";
   }
 
   return;

@@ -4,8 +4,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "lobatto_polynomial.hpp"
 
 int main ( );
@@ -37,10 +35,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "LOBATTO_POLYNOMIAL_TEST:\n";
-  cout << "  C++ version.\n";
-  cout << "  Test the LOBATTO_POLYNOMIAL library.\n";
+  std::cout << "\n";
+  std::cout << "LOBATTO_POLYNOMIAL_TEST:\n";
+  std::cout << "  C++ version.\n";
+  std::cout << "  Test the LOBATTO_POLYNOMIAL library.\n";
 
   lobatto_polynomial_value_test ( );
   lobatto_polynomial_derivative_test ( );
@@ -48,10 +46,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "LOBATTO_POLYNOMIAL_TEST\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOBATTO_POLYNOMIAL_TEST\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -91,15 +89,15 @@ void lobatto_polynomial_value_test ( )
 
   m = 1;
 
-  cout << "\n";
-  cout << "LOBATTO_POLYNOMIAL_VALUE_TEST:\n";
-  cout << "  LOBATTO_POLYNOMIAL_VALUES stores values of\n";
-  cout << "  the completed Lobatto polynomial L(n,x).\n";
-  cout << "  LOBATTO_POLYNOMIAL_VALUE evaluates the completed Lobatto polynomial.\n";
-  cout << "\n";
-  cout << "                                       Tabulated                 Computed\n";
-  cout << "     N        X                        L(N,X)                    L(N,X)        Error\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOBATTO_POLYNOMIAL_VALUE_TEST:\n";
+  std::cout << "  LOBATTO_POLYNOMIAL_VALUES stores values of\n";
+  std::cout << "  the completed Lobatto polynomial L(n,x).\n";
+  std::cout << "  LOBATTO_POLYNOMIAL_VALUE evaluates the completed Lobatto polynomial.\n";
+  std::cout << "\n";
+  std::cout << "                                       Tabulated                 Computed\n";
+  std::cout << "     N        X                        L(N,X)                    L(N,X)        Error\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -120,11 +118,11 @@ void lobatto_polynomial_value_test ( )
 
     e = fx1 - fx2;
 
-    cout << "  " << setw(4) << n
-         << "  " << setw(12) << x
-         << "  " << setw(12) << fx1
-         << "  " << setw(12) << fx2
-         << "  " << setw(8) << e << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(12) << x
+         << "  " << std::setw(12) << fx1
+         << "  " << std::setw(12) << fx2
+         << "  " << std::setw(8) << e << "\n";
 
     delete [] l;
   }
@@ -166,15 +164,15 @@ void lobatto_polynomial_derivative_test ( )
 
   m = 1;
 
-  cout << "\n";
-  cout << "LOBATTO_POLYNOMIAL_DERIVATIVE_TEST:\n";
-  cout << "  LOBATTO_POLYNOMIAL_DERIVATIVES stores derivatives of\n";
-  cout << "  the completed Lobatto polynomial L(n,x).\n";
-  cout << "  LOBATTO_POLYNOMIAL_DERIVATIVE evaluates the completed Lobatto polynomial.\n";
-  cout << "\n";
-  cout << "                                       Tabulated                 Computed\n";
-  cout << "     N        X                        L''(N,X)                   L''(N,X)       Error\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOBATTO_POLYNOMIAL_DERIVATIVE_TEST:\n";
+  std::cout << "  LOBATTO_POLYNOMIAL_DERIVATIVES stores derivatives of\n";
+  std::cout << "  the completed Lobatto polynomial L(n,x).\n";
+  std::cout << "  LOBATTO_POLYNOMIAL_DERIVATIVE evaluates the completed Lobatto polynomial.\n";
+  std::cout << "\n";
+  std::cout << "                                       Tabulated                 Computed\n";
+  std::cout << "     N        X                        L''(N,X)                   L''(N,X)       Error\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -193,11 +191,11 @@ void lobatto_polynomial_derivative_test ( )
 
     e = fx1 - fx2;
 
-    cout << "  " << setw(4) << n
-         << "  " << setw(12) << x
-         << "  " << setw(12) << fx1
-         << "  " << setw(12) << fx2
-         << "  " << setw(8) << e << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(12) << x
+         << "  " << std::setw(12) << fx1
+         << "  " << std::setw(12) << fx2
+         << "  " << std::setw(8) << e << "\n";
 
     delete [] lp;
   }
@@ -229,11 +227,11 @@ void lobatto_polynomial_plot_test ( )
 {
   int ndx[7] = { 1, 2, 3, 4, 5, 6, 7 };
   int ndx_num = 7;
-  string prefix = "test";
+  std::string prefix = "test";
 
-  cout << "\n";
-  cout << "LOBATTO_POLYNOMIAL_PLOT_TEST:\n";
-  cout << "  LOBATTO_POLYNOMIAL_PLOT plots Lobatto polynomials.\n";
+  std::cout << "\n";
+  std::cout << "LOBATTO_POLYNOMIAL_PLOT_TEST:\n";
+  std::cout << "  LOBATTO_POLYNOMIAL_PLOT plots Lobatto polynomials.\n";
 
   lobatto_polynomial_plot ( ndx_num, ndx, prefix );
 

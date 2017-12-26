@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "qwv.hpp"
 
 int main ( );
@@ -39,20 +37,20 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "QWV_PRB:\n";
-  cout << "  C++ version\n";
-  cout << "  Test the QWV library.\n";
+  std::cout << "\n";
+  std::cout << "QWV_PRB:\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the QWV library.\n";
 
   test01 ( );
   test02 ( );
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "QWV_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "QWV_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -93,12 +91,12 @@ void test01 ( )
   b = +1.0;
   n = 5;
 
-  cout << "\n";
-  cout << "TEST01:\n";
-  cout << "  Use the Vandermonde procedure to compute the\n";
-  cout << "  quadrature weights for a Newton-Cotes rule.\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  Interval = [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "TEST01:\n";
+  std::cout << "  Use the Vandermonde procedure to compute the\n";
+  std::cout << "  quadrature weights for a Newton-Cotes rule.\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  Interval = [" << a << "," << b << "]\n";
 //
 //  Set the points.
 //
@@ -154,12 +152,12 @@ void test02 ( )
   b = +1.0;
   n = 5;
 
-  cout << "\n";
-  cout << "TEST02\n";
-  cout << "  Use the Vandermonde procedure to compute the\n";
-  cout << "  quadrature weights for a Clenshaw-Curtis rule.\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  Interval is [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "TEST02\n";
+  std::cout << "  Use the Vandermonde procedure to compute the\n";
+  std::cout << "  quadrature weights for a Clenshaw-Curtis rule.\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  Interval is [" << a << "," << b << "]\n";
 //
 //  Set the points.
 //

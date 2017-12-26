@@ -5,8 +5,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "test_values.hpp"
 
 //****************************************************************************80
@@ -1206,14 +1204,14 @@ void airy_bi_prime_values ( int &n_data, double &x, double &bip )
 }
 //****************************************************************************80
 
-void airy_cai_values ( int &n_data, complex <double> &x,
-  complex <double> &cai )
+void airy_cai_values ( int &n_data, std::complex <double> &x,
+  std::complex <double> &cai )
 
 //****************************************************************************80
 //
 //  Purpose:
 //
-//    AIRY_CAI_VALUES returns some values of the Airy Ai(x) for complex argument.
+//    AIRY_CAI_VALUES returns some values of the Airy Ai(x) for std::complex argument.
 //
 //  Discussion:
 //
@@ -1260,36 +1258,36 @@ void airy_cai_values ( int &n_data, complex <double> &x,
 //    returns the corresponding data; when there is no more data, the
 //    output value of N_DATA will be 0 again.
 //
-//    Output, complex <double> &X, the argument of the function.
+//    Output, std::complex <double> &X, the argument of the function.
 //
-//    Output, complex <double> &CAI, the value of the Airy AI function.
+//    Output, std::complex <double> &CAI, the value of the Airy AI function.
 //
 {
 # define N_MAX 10
 
-  static complex <double> cai_vec[N_MAX] = {
-   complex <double> ( 0.1352924163128814, + 0.0000000000000000  ),
-   complex <double> ( 0.1433824486882056, - 0.1092193342707378  ),
-   complex <double> ( 0.2215404472324631, - 0.2588711788891803  ),
-   complex <double> ( 0.4763929771766866, - 0.3036484220291284  ),
-   complex <double> ( 0.5983692170633874, - 0.08154602160771214 ),
-   complex <double> ( 0.5355608832923521, + 0.00000000000000000 ),
-   complex <double> ( 0.5983692170633874, + 0.08154602160771214 ),
-   complex <double> ( 0.4763929771766866, + 0.3036484220291284  ),
-   complex <double> ( 0.2215404472324631, + 0.2588711788891803  ),
-   complex <double> ( 0.1433824486882056, + 0.1092193342707378  ) };
+  static std::complex <double> cai_vec[N_MAX] = {
+   std::complex <double> ( 0.1352924163128814, + 0.0000000000000000  ),
+   std::complex <double> ( 0.1433824486882056, - 0.1092193342707378  ),
+   std::complex <double> ( 0.2215404472324631, - 0.2588711788891803  ),
+   std::complex <double> ( 0.4763929771766866, - 0.3036484220291284  ),
+   std::complex <double> ( 0.5983692170633874, - 0.08154602160771214 ),
+   std::complex <double> ( 0.5355608832923521, + 0.00000000000000000 ),
+   std::complex <double> ( 0.5983692170633874, + 0.08154602160771214 ),
+   std::complex <double> ( 0.4763929771766866, + 0.3036484220291284  ),
+   std::complex <double> ( 0.2215404472324631, + 0.2588711788891803  ),
+   std::complex <double> ( 0.1433824486882056, + 0.1092193342707378  ) };
 
-  static complex <double> x_vec[N_MAX] = {
-   complex <double> (  1.0000000000000000, + 0.0000000000000000 ),
-   complex <double> (  0.8090169943749474, + 0.5877852522924731 ),
-   complex <double> (  0.3090169943749474, + 0.9510565162951536 ),
-   complex <double> ( -0.3090169943749474, + 0.9510565162951536 ),
-   complex <double> ( -0.8090169943749474, + 0.5877852522924731 ),
-   complex <double> ( -1.0000000000000000, + 0.0000000000000000 ),
-   complex <double> ( -0.8090169943749474, - 0.5877852522924731 ),
-   complex <double> ( -0.3090169943749474, - 0.9510565162951536 ),
-   complex <double> (  0.3090169943749474, - 0.9510565162951536 ),
-   complex <double> (  0.8090169943749474, - 0.5877852522924731 ) };
+  static std::complex <double> x_vec[N_MAX] = {
+   std::complex <double> (  1.0000000000000000, + 0.0000000000000000 ),
+   std::complex <double> (  0.8090169943749474, + 0.5877852522924731 ),
+   std::complex <double> (  0.3090169943749474, + 0.9510565162951536 ),
+   std::complex <double> ( -0.3090169943749474, + 0.9510565162951536 ),
+   std::complex <double> ( -0.8090169943749474, + 0.5877852522924731 ),
+   std::complex <double> ( -1.0000000000000000, + 0.0000000000000000 ),
+   std::complex <double> ( -0.8090169943749474, - 0.5877852522924731 ),
+   std::complex <double> ( -0.3090169943749474, - 0.9510565162951536 ),
+   std::complex <double> (  0.3090169943749474, - 0.9510565162951536 ),
+   std::complex <double> (  0.8090169943749474, - 0.5877852522924731 ) };
 
   if ( n_data < 0 )
   {
@@ -1315,14 +1313,14 @@ void airy_cai_values ( int &n_data, complex <double> &x,
 }
 //****************************************************************************80
 
-void airy_cbi_values ( int &n_data, complex <double> &x,
-  complex <double> &cbi )
+void airy_cbi_values ( int &n_data, std::complex <double> &x,
+  std::complex <double> &cbi )
 
 //****************************************************************************80
 //
 //  Purpose:
 //
-//    AIRY_CBI_VALUES returns some values of the Airy Bi(x) for complex argument.
+//    AIRY_CBI_VALUES returns some values of the Airy Bi(x) for std::complex argument.
 //
 //  Discussion:
 //
@@ -1369,36 +1367,36 @@ void airy_cbi_values ( int &n_data, complex <double> &x,
 //    returns the corresponding data; when there is no more data, the
 //    output value of N_DATA will be 0 again.
 //
-//    Output, complex <double> &X, the argument of the function.
+//    Output, std::complex <double> &X, the argument of the function.
 //
-//    Output, complex <double> &CBI, the value of the Airy BI function.
+//    Output, std::complex <double> &CBI, the value of the Airy BI function.
 //
 {
 # define N_MAX 10
 
-  static complex <double> cbi_vec[N_MAX] = {
-    complex <double> ( 1.207423594952871,  + 0.0000000000000000 ),
-    complex <double> ( 0.9127160108293936, + 0.3800456133135556 ),
-    complex <double> ( 0.6824453575635721, + 0.3343047153635002 ),
-    complex <double> ( 0.5726265660086474, + 0.3988641086982559 ),
-    complex <double> ( 0.2511841251049547, + 0.3401447690712719 ),
-    complex <double> ( 0.1039973894969446, + 0.0000000000000000 ),
-    complex <double> ( 0.2511841251049547, - 0.3401447690712719 ),
-    complex <double> ( 0.5726265660086474, - 0.3988641086982559 ),
-    complex <double> ( 0.6824453575635721, - 0.3343047153635002 ),
-    complex <double> ( 0.9127160108293936, - 0.3800456133135556 ) };
+  static std::complex <double> cbi_vec[N_MAX] = {
+    std::complex <double> ( 1.207423594952871,  + 0.0000000000000000 ),
+    std::complex <double> ( 0.9127160108293936, + 0.3800456133135556 ),
+    std::complex <double> ( 0.6824453575635721, + 0.3343047153635002 ),
+    std::complex <double> ( 0.5726265660086474, + 0.3988641086982559 ),
+    std::complex <double> ( 0.2511841251049547, + 0.3401447690712719 ),
+    std::complex <double> ( 0.1039973894969446, + 0.0000000000000000 ),
+    std::complex <double> ( 0.2511841251049547, - 0.3401447690712719 ),
+    std::complex <double> ( 0.5726265660086474, - 0.3988641086982559 ),
+    std::complex <double> ( 0.6824453575635721, - 0.3343047153635002 ),
+    std::complex <double> ( 0.9127160108293936, - 0.3800456133135556 ) };
 
-  static complex <double> x_vec[N_MAX] = {
-    complex <double> (  1.0000000000000000, + 0.0000000000000000 ),
-    complex <double> (  0.8090169943749474, + 0.5877852522924731 ),
-    complex <double> (  0.3090169943749474, + 0.9510565162951536 ),
-    complex <double> ( -0.3090169943749474, + 0.9510565162951536 ),
-    complex <double> ( -0.8090169943749474, + 0.5877852522924731 ),
-    complex <double> ( -1.0000000000000000, + 0.0000000000000000 ),
-    complex <double> ( -0.8090169943749474, - 0.5877852522924731 ),
-    complex <double> ( -0.3090169943749474, - 0.9510565162951536 ),
-    complex <double> (  0.3090169943749474, - 0.9510565162951536 ),
-    complex <double> (  0.8090169943749474, - 0.5877852522924731 ) };
+  static std::complex <double> x_vec[N_MAX] = {
+    std::complex <double> (  1.0000000000000000, + 0.0000000000000000 ),
+    std::complex <double> (  0.8090169943749474, + 0.5877852522924731 ),
+    std::complex <double> (  0.3090169943749474, + 0.9510565162951536 ),
+    std::complex <double> ( -0.3090169943749474, + 0.9510565162951536 ),
+    std::complex <double> ( -0.8090169943749474, + 0.5877852522924731 ),
+    std::complex <double> ( -1.0000000000000000, + 0.0000000000000000 ),
+    std::complex <double> ( -0.8090169943749474, - 0.5877852522924731 ),
+    std::complex <double> ( -0.3090169943749474, - 0.9510565162951536 ),
+    std::complex <double> (  0.3090169943749474, - 0.9510565162951536 ),
+    std::complex <double> (  0.8090169943749474, - 0.5877852522924731 ) };
 
   if ( n_data < 0 )
   {

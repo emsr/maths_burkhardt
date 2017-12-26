@@ -5,8 +5,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "qwgw.hpp"
 
 int main ( );
@@ -48,10 +46,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "QWGW_PRB:\n";
-  cout << "  C++ version\n";
-  cout << "  Test the QWGW library.\n";
+  std::cout << "\n";
+  std::cout << "QWGW_PRB:\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the QWGW library.\n";
 
   test01 ( );
   test02 ( );
@@ -65,10 +63,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "QWGW_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "QWGW_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -113,12 +111,12 @@ void test01 ( )
   b = +1.0;
   n = 5;
 
-  cout << "\n";
-  cout << "TEST01:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the Chebyshev Type 1 weight w(x) = 1/sqrt(1-x^2).\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  Interval = [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "TEST01:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the Chebyshev Type 1 weight w(x) = 1/sqrt(1-x^2).\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  Interval = [" << a << "," << b << "]\n";
 //
 //  Set the recursion coefficients.
 //
@@ -203,12 +201,12 @@ void test02 ( )
   b = +1.0;
   n = 5;
 
-  cout << "\n";
-  cout << "TEST02:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the Chebyshev Type 2 weight w(x) = sqrt(1-x^2).\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  Interval = [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "TEST02:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the Chebyshev Type 2 weight w(x) = sqrt(1-x^2).\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  Interval = [" << a << "," << b << "]\n";
 //
 //  Set the recursion coefficients.
 //
@@ -298,13 +296,13 @@ void test03 ( )
 //
   alpha = 0.25;
 
-  cout << "\n";
-  cout << "TEST03:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the Gegenbauer weight w(x) = (1-x^2)^alpha.\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  ALPHA = " << alpha << "\n";
-  cout << "  Interval = [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "TEST03:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the Gegenbauer weight w(x) = (1-x^2)^alpha.\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  ALPHA = " << alpha << "\n";
+  std::cout << "  Interval = [" << a << "," << b << "]\n";
 //
 //  Set the recursion coefficients.
 //
@@ -393,13 +391,13 @@ void test04 ( )
 //
   alpha = 2.0;
 
-  cout << "\n";
-  cout << "TEST04:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the generalized Hermite weight w(x) = |x|^alpha * exp(-x^2).\n";
-  cout << "  ALPHA = " << alpha << "\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  Interval = (-oo,+oo)\n";
+  std::cout << "\n";
+  std::cout << "TEST04:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the generalized Hermite weight w(x) = |x|^alpha * exp(-x^2).\n";
+  std::cout << "  ALPHA = " << alpha << "\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  Interval = (-oo,+oo)\n";
 //
 //  Set the recursion coefficients.
 //
@@ -496,13 +494,13 @@ void test05 ( )
 //
   alpha = 2.0;
 
-  cout << "\n";
-  cout << "TEST05:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the generalized Laguerre weight w(x) = x^alpha * exp(-x).\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  ALPHA = " << alpha << "\n";
-  cout << "  Interval = [0,+oo)\n";
+  std::cout << "\n";
+  std::cout << "TEST05:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the generalized Laguerre weight w(x) = x^alpha * exp(-x).\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  ALPHA = " << alpha << "\n";
+  std::cout << "  Interval = [0,+oo)\n";
 //
 //  Set the recursion coefficients.
 //
@@ -586,12 +584,12 @@ void test06 ( )
 //
   n = 5;
 
-  cout << "\n";
-  cout << "TEST06:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the Hermite weight w(x) = exp(-x^2).\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  Interval = (-oo,+oo)\n";
+  std::cout << "\n";
+  std::cout << "TEST06:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the Hermite weight w(x) = exp(-x^2).\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  Interval = (-oo,+oo)\n";
 //
 //  Set the recursion coefficients.
 //
@@ -683,14 +681,14 @@ void test07 ( )
   alpha = 0.25;
   beta = 0.75;
 
-  cout << "\n";
-  cout << "TEST07:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the Jacobi weight w(x) = (1-x^2)^alpha*(1+x)^beta\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  ALPHA = " << alpha << "\n";
-  cout << "  BETA =  " << beta << "\n";
-  cout << "  Interval = [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "TEST07:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the Jacobi weight w(x) = (1-x^2)^alpha*(1+x)^beta\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  ALPHA = " << alpha << "\n";
+  std::cout << "  BETA =  " << beta << "\n";
+  std::cout << "  Interval = [" << a << "," << b << "]\n";
 //
 //  Set the recursion coefficients.
 //
@@ -783,12 +781,12 @@ void test08 ( )
   a = 0.0;
   n = 5;
 
-  cout << "\n";
-  cout << "TEST08:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the Laguerre weight w(x) = exp(-x).\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  Interval = [0,+oo)\n";
+  std::cout << "\n";
+  std::cout << "TEST08:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the Laguerre weight w(x) = exp(-x).\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  Interval = [0,+oo)\n";
 //
 //  Set the recursion coefficients.
 //
@@ -875,12 +873,12 @@ void test09 ( )
   b = +1.0;
   n = 5;
 
-  cout << "\n";
-  cout << "TEST09:\n";
-  cout << "  Compute points and weights for Gauss quadrature\n";
-  cout << "  with the Legendre weight w(x) = 1.\n";
-  cout << "  Order N = " << n << "\n";
-  cout << "  Interval = [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "TEST09:\n";
+  std::cout << "  Compute points and weights for Gauss quadrature\n";
+  std::cout << "  with the Legendre weight w(x) = 1.\n";
+  std::cout << "  Order N = " << n << "\n";
+  std::cout << "  Interval = [" << a << "," << b << "]\n";
 //
 //  Set the recursion coefficients.
 //

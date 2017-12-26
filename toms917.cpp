@@ -7,8 +7,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 //
 //  DBL_EPSILON, provided by <cfloat>, is twice the machine epsilon for
 //  double precision arithmetic.
@@ -61,11 +59,10 @@ std::complex <double> wrightomega ( std::complex <double> z )
 {
   std::complex <double> cond;
   std::complex <double> e;
-  int flag;
   std::complex <double> r;
   std::complex <double> w;
 
-  flag = wrightomega_ext ( z, w, e, r, cond );
+  int flag = wrightomega_ext ( z, w, e, r, cond );
 
   return w;
 }
@@ -122,10 +119,10 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
 {
   double near;
   double pi = 3.1415926535897932384626433832795029;//M_PI;
-  complex <double> pz;
+  std::complex <double> pz;
   double s = 1.0;
-  complex <double> t;
-  complex <double> wp1;
+  std::complex <double> t;
+  std::complex <double> wp1;
   double x;
   double y;
   double ympi;
@@ -133,8 +130,8 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
 // 
 //  Extract real and imaginary parts of Z. 
 //
-  x = real ( z );
-  y = imag ( z );
+  x = std::real ( z );
+  y = std::imag ( z );
 // 
 //  Compute if we are near the branch cuts.
 //
@@ -148,17 +145,17 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
 //
 //  NaN output for NaN input.
 //
-  if ( isnan ( x ) || isnan ( y ) )
+  if ( std::isnan ( x ) || std::isnan ( y ) )
   {
-    w = complex <double> ( ( 0.0 / 0.0 ), ( 0.0 / 0.0 ) );
-    e = complex <double> ( 0.0, 0.0 );
-    r = complex <double> ( 0.0, 0.0 );
+    w = std::complex <double> ( ( 0.0 / 0.0 ), ( 0.0 / 0.0 ) );
+    e = std::complex <double> ( 0.0, 0.0 );
+    r = std::complex <double> ( 0.0, 0.0 );
     return 0;
   }
 //
 //  Signed zeros between branches.
 //
-  else if ( isinf ( x ) && ( x < 0.0 ) && ( - pi < y ) && ( y <= pi ) )
+  else if ( std::isinf ( x ) && ( x < 0.0 ) && ( - pi < y ) && ( y <= pi ) )
   {
     if ( fabs ( y ) <= pi / 2.0 )
     {
@@ -171,25 +168,25 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
       
     if ( 0.0 <= y )
     {
-      w = w + complex <double> ( 0.0, 0.0 );
+      w = w + std::complex <double> ( 0.0, 0.0 );
     }
     else
     {
-      w = w + complex <double> ( 0.0, - 1.0 * 0.0 );
+      w = w + std::complex <double> ( 0.0, - 1.0 * 0.0 );
     }
 
-    e = complex <double> ( 0.0, 0.0 );
-    r = complex <double> ( 0.0, 0.0 );
+    e = std::complex <double> ( 0.0, 0.0 );
+    r = std::complex <double> ( 0.0, 0.0 );
     return 0;
   }
 //
 //  Asymptotic for large z.
 //
-  else if ( isinf ( x ) || isinf ( y ) )
+  else if ( std::isinf ( x ) || std::isinf ( y ) )
   {
-    w = complex <double> ( x, y );
-    e = complex <double> ( 0.0, 0.0 );
-    r = complex <double> ( 0.0, 0.0 );
+    w = std::complex <double> ( x, y );
+    e = std::complex <double> ( 0.0, 0.0 );
+    r = std::complex <double> ( 0.0, 0.0 );
     return 0;
   }
 //
@@ -197,9 +194,9 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
 //
   if ( ( x == - 1.0 ) && ( fabs ( y ) == pi ) )
   {
-    w = complex <double> ( - 1.0, 0.0 );
-    e = complex <double> ( 0.0, 0.0 );
-    r = complex <double> ( 0.0, 0.0 );
+    w = std::complex <double> ( - 1.0, 0.0 );
+    e = std::complex <double> ( 0.0, 0.0 );
+    r = std::complex <double> ( 0.0, 0.0 );
     return 0;
   }
 // 
@@ -212,13 +209,13 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
 //
   if ( ( - 2.0 < x && x <= 1.0 && 1.0 < y && y < 2.0 * pi ) )
   {
-    pz = conj ( sqrt ( conj ( 2.0 * ( z + complex <double> ( 1.0, - pi ) ) ) ) );
+    pz = conj ( sqrt ( conj ( 2.0 * ( z + std::complex <double> ( 1.0, - pi ) ) ) ) );
 
     w = - 1.0 
-      + ( complex <double> ( 0.0, 1.0 )
+      + ( std::complex <double> ( 0.0, 1.0 )
       + ( 1.0 / 3.0 
-      + ( - 1.0 / 36.0 * complex <double> ( 0.0, 1.0 ) 
-      + ( 1.0 / 270.0 + 1.0 / 4320.0 * complex <double> ( 0.0, 1.0 ) * pz ) 
+      + ( - 1.0 / 36.0 * std::complex <double> ( 0.0, 1.0 ) 
+      + ( 1.0 / 270.0 + 1.0 / 4320.0 * std::complex <double> ( 0.0, 1.0 ) * pz ) 
       * pz ) * pz ) * pz ) * pz;
   }
 //
@@ -227,12 +224,12 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
 //
   else if ( ( - 2.0 < x && x <= 1.0 && - 2.0 * pi < y && y <- 1.0 ) )
   {
-    pz = conj ( sqrt ( conj ( 2.0 * ( z + 1.0 + complex <double> ( 0.0, pi ) ) ) ) );
+    pz = conj ( sqrt ( conj ( 2.0 * ( z + 1.0 + std::complex <double> ( 0.0, pi ) ) ) ) );
 
     w = - 1.0 
-      + ( - complex <double> ( 0.0, 1.0 ) + ( 1.0 / 3.0 
-      + ( 1.0 / 36.0 * complex <double> ( 0.0, 1.0 )
-      + ( 1.0 / 270.0 - 1.0 / 4320.0 * complex <double> ( 0.0, 1.0 ) * pz ) 
+      + ( - std::complex <double> ( 0.0, 1.0 ) + ( 1.0 / 3.0 
+      + ( 1.0 / 36.0 * std::complex <double> ( 0.0, 1.0 )
+      + ( 1.0 / 270.0 - 1.0 / 4320.0 * std::complex <double> ( 0.0, 1.0 ) * pz ) 
       * pz ) * pz ) * pz ) * pz;
   }
 //
@@ -267,7 +264,7 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
 //
   else if ( x <= - 1.05 && pi < y && y - pi <= - 0.75 * ( x + 1.0 ) )
   {
-    t = z - complex <double> ( 0.0, pi );
+    t = z - std::complex <double> ( 0.0, pi );
     pz = log ( - t );
     w = ( ( 1.0 + ( - 3.0 / 2.0 + 1.0 / 3.0 * pz ) * pz ) * pz 
       + ( ( -1.0 + 1.0 / 2.0 * pz ) * pz + ( pz + ( - pz + t ) * t ) * t ) * t ) 
@@ -279,7 +276,7 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
 //
   else if ( x <= - 1.05 && 0.75 * ( x + 1.0 ) < y + pi && y + pi <= 0.0 )
   {
-    t = z + complex <double> ( 0.0, pi );
+    t = z + std::complex <double> ( 0.0, pi );
     pz = log ( - t );
     w = ( ( 1.0 + ( - 3.0 / 2.0 + 1.0 / 3.0 * pz ) * pz ) * pz
       + ( ( - 1.0 + 1.0 / 2.0 * pz ) * pz + ( pz + ( - pz + t ) * t ) * t ) * t ) 
@@ -316,7 +313,7 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
         ympi = y - pi;
       }
          
-      z = complex <double> ( x, ympi ); 
+      z = std::complex <double> ( x, ympi ); 
 // 
 //  Return rounding to default.
 //
@@ -336,7 +333,7 @@ int wrightomega_ext ( std::complex <double> z, std::complex <double> &w,
         yppi = y + pi;
       }
 
-      z = complex <double> ( x, yppi );
+      z = std::complex <double> ( x, yppi );
 // 
 //  Return rounding to default.
 //

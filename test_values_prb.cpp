@@ -5,8 +5,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "test_values.hpp"
 
 int main ( );
@@ -329,10 +327,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "TEST_VALUES_PRB:\n";
-  cout << "  C++ version,\n";
-  cout << "  Test the TEST_VALUES library.\n";
+  std::cout << "\n";
+  std::cout << "TEST_VALUES_PRB:\n";
+  std::cout << "  C++ version,\n";
+  std::cout << "  Test the TEST_VALUES library.\n";
 
   abram0_values_test ( );
   abram1_values_test ( );
@@ -626,10 +624,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "TEST_VALUES_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST_VALUES_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -661,13 +659,13 @@ void abram0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ABRAM0_VALUES_TEST:\n";
-  cout << "  ABRAM0_VALUES stores values of \n";
-  cout << "  the Abramowitz function of order 0.\n";
-  cout << "\n";
-  cout << "                X                   ABRAM0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ABRAM0_VALUES_TEST:\n";
+  std::cout << "  ABRAM0_VALUES stores values of \n";
+  std::cout << "  the Abramowitz function of order 0.\n";
+  std::cout << "\n";
+  std::cout << "                X                   ABRAM0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -679,9 +677,9 @@ void abram0_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -712,13 +710,13 @@ void abram1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ABRAM1_VALUES_TEST:\n";
-  cout << "  ABRAM1_VALUES stores values of \n";
-  cout << "  the Abramowitz function of order 1.\n";
-  cout << "\n";
-  cout << "                X                   ABRAM1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ABRAM1_VALUES_TEST:\n";
+  std::cout << "  ABRAM1_VALUES stores values of \n";
+  std::cout << "  the Abramowitz function of order 1.\n";
+  std::cout << "\n";
+  std::cout << "                X                   ABRAM1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -730,9 +728,9 @@ void abram1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -763,13 +761,13 @@ void abram2_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ABRAM2_VALUES_TEST:\n";
-  cout << "  ABRAM2_VALUES stores values of \n";
-  cout << "  the Abramowitz function of order 2.\n";
-  cout << "\n";
-  cout << "                X                   ABRAM3(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ABRAM2_VALUES_TEST:\n";
+  std::cout << "  ABRAM2_VALUES stores values of \n";
+  std::cout << "  the Abramowitz function of order 2.\n";
+  std::cout << "\n";
+  std::cout << "                X                   ABRAM3(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -781,9 +779,9 @@ void abram2_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -815,13 +813,13 @@ void agm_values_test ( )
   double fx;
   int n_data;
 
-  cout << "\n";
-  cout << "AGM_VALUES_TEST:\n";
-  cout << "  AGM_VALUES stores values of \n";
-  cout << "  the arithmetic geometric mean function.\n";
-  cout << "\n";
-  cout << "           A          B              AGM(A,B)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AGM_VALUES_TEST:\n";
+  std::cout << "  AGM_VALUES stores values of \n";
+  std::cout << "  the arithmetic geometric mean function.\n";
+  std::cout << "\n";
+  std::cout << "           A          B              AGM(A,B)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -833,10 +831,10 @@ void agm_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(14) << setprecision (  6 ) << a  << "  "
-         << setw(14) << setprecision (  6 ) << b  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(14) << std::setprecision (  6 ) << a  << "  "
+         << std::setw(14) << std::setprecision (  6 ) << b  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -867,13 +865,13 @@ void airy_ai_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "AIRY_AI_VALUES_TEST:\n";
-  cout << "  AIRY_AI_VALUES stores values of \n";
-  cout << "  the Airy functions Ai(X).\n";
-  cout << "\n";
-  cout << "                X                     Ai(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_AI_VALUES_TEST:\n";
+  std::cout << "  AIRY_AI_VALUES stores values of \n";
+  std::cout << "  the Airy functions Ai(X).\n";
+  std::cout << "\n";
+  std::cout << "                X                     Ai(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -885,9 +883,9 @@ void airy_ai_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << ai << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << ai << "\n";
   }
   return;
 }
@@ -918,13 +916,13 @@ void airy_ai_int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "AIRY_AI_INT_VALUES_TEST:\n";
-  cout << "  AIRY_AI_INT_VALUES stores values of \n";
-  cout << "  the integral of the Airy Ai function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_AI_INT_VALUES_TEST:\n";
+  std::cout << "  AIRY_AI_INT_VALUES stores values of \n";
+  std::cout << "  the integral of the Airy Ai function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -936,9 +934,9 @@ void airy_ai_int_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -969,13 +967,13 @@ void airy_ai_prime_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "AIRY_AI_PRIME_VALUES_TEST:\n";
-  cout << "  AIRY_AI_PRIME_VALUES stores values of \n";
-  cout << "  the derivative of the Airy function Ai'(X).\n";
-  cout << "\n";
-  cout << "                X                    Ai'\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_AI_PRIME_VALUES_TEST:\n";
+  std::cout << "  AIRY_AI_PRIME_VALUES stores values of \n";
+  std::cout << "  the derivative of the Airy function Ai'(X).\n";
+  std::cout << "\n";
+  std::cout << "                X                    Ai'\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -987,9 +985,9 @@ void airy_ai_prime_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(24) << setprecision ( 16 ) << x   << "  "
-         << setw(24) << setprecision ( 16 ) << aip << "\n";
+    std::cout                                           << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x   << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << aip << "\n";
   }
   return;
 }
@@ -1020,13 +1018,13 @@ void airy_bi_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "AIRY_BI_VALUES_TEST:\n";
-  cout << "  AIRY_BI_VALUES stores values of \n";
-  cout << "  the Airy function Bi.\n";
-  cout << "\n";
-  cout << "                X                     Bi\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_BI_VALUES_TEST:\n";
+  std::cout << "  AIRY_BI_VALUES stores values of \n";
+  std::cout << "  the Airy function Bi.\n";
+  std::cout << "\n";
+  std::cout << "                X                     Bi\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1038,9 +1036,9 @@ void airy_bi_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << bi << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << bi << "\n";
   }
   return;
 }
@@ -1071,13 +1069,13 @@ void airy_bi_int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "AIRY_BI_INT_VALUES_TEST:\n";
-  cout << "  AIRY_BI_INT_VALUES stores values of \n";
-  cout << "  the integral of the Airy Bi function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_BI_INT_VALUES_TEST:\n";
+  std::cout << "  AIRY_BI_INT_VALUES stores values of \n";
+  std::cout << "  the integral of the Airy Bi function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1089,9 +1087,9 @@ void airy_bi_int_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1122,13 +1120,13 @@ void airy_bi_prime_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "AIRY_BI_PRIME_VALUES_TEST:\n";
-  cout << "  AIRY_BI_PRIME_VALUES stores values of \n";
-  cout << "  the derivative of Airy function Bi'(X).\n";
-  cout << "\n";
-  cout << "                X                     Bi'\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_BI_PRIME_VALUES_TEST:\n";
+  std::cout << "  AIRY_BI_PRIME_VALUES stores values of \n";
+  std::cout << "  the derivative of Airy function Bi'(X).\n";
+  std::cout << "\n";
+  std::cout << "                X                     Bi'\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1140,9 +1138,9 @@ void airy_bi_prime_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(24) << setprecision ( 16 ) << x   << "  "
-         << setw(24) << setprecision ( 16 ) << bip << "\n";
+    std::cout                                           << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x   << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << bip << "\n";
   }
   return;
 }
@@ -1169,17 +1167,17 @@ void airy_cai_values_test ( )
 //    John Burkardt
 //
 {
-  complex <double> cai;
+  std::complex <double> cai;
   int n_data;
-  complex <double> x;
+  std::complex <double> x;
 
-  cout << "\n";
-  cout << "AIRY_CAI_VALUES_TEST:\n";
-  cout << "  AIRY_CAI_VALUES stores values of \n";
-  cout << "  the Airy functions Ai(X) for complex argument.\n";
-  cout << "\n";
-  cout << "                X                     Ai\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_CAI_VALUES_TEST:\n";
+  std::cout << "  AIRY_CAI_VALUES stores values of \n";
+  std::cout << "  the Airy functions Ai(X) for std::complex argument.\n";
+  std::cout << "\n";
+  std::cout << "                X                     Ai\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1191,11 +1189,11 @@ void airy_cai_values_test ( )
     {
       break;
     }
-    cout                                                   << "  "
-         << setw(14) << setprecision ( 6 ) << real ( x )   << "  "
-         << setw(14) << setprecision ( 6 ) << imag ( x )   << "  "
-         << setw(24) << setprecision (16 ) << real ( cai ) << "  "
-         << setw(24) << setprecision (16 ) << imag ( cai ) << "\n";
+    std::cout                                                   << "  "
+         << std::setw(14) << std::setprecision ( 6 ) << std::real ( x )   << "  "
+         << std::setw(14) << std::setprecision ( 6 ) << std::imag ( x )   << "  "
+         << std::setw(24) << std::setprecision (16 ) << std::real ( cai ) << "  "
+         << std::setw(24) << std::setprecision (16 ) << std::imag ( cai ) << "\n";
   }
   return;
 }
@@ -1222,17 +1220,17 @@ void airy_cbi_values_test ( )
 //    John Burkardt
 //
 {
-  complex <double> cbi;
+  std::complex <double> cbi;
   int n_data;
-  complex <double> x;
+  std::complex <double> x;
 
-  cout << "\n";
-  cout << "AIRY_CBI_VALUES_TEST:\n";
-  cout << "  AIRY_CBI_VALUES stores values of \n";
-  cout << "  the Airy functions Bi(X) for complex argument.\n";
-  cout << "\n";
-  cout << "                X                     Bi\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_CBI_VALUES_TEST:\n";
+  std::cout << "  AIRY_CBI_VALUES stores values of \n";
+  std::cout << "  the Airy functions Bi(X) for std::complex argument.\n";
+  std::cout << "\n";
+  std::cout << "                X                     Bi\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1244,11 +1242,11 @@ void airy_cbi_values_test ( )
     {
       break;
     }
-    cout                                                   << "  "
-         << setw(14) << setprecision ( 6 ) << real ( x )   << "  "
-         << setw(14) << setprecision ( 6 ) << imag ( x )   << "  "
-         << setw(24) << setprecision (16 ) << real ( cbi ) << "  "
-         << setw(24) << setprecision (16 ) << imag ( cbi ) << "\n";
+    std::cout                                                   << "  "
+         << std::setw(14) << std::setprecision ( 6 ) << std::real ( x )   << "  "
+         << std::setw(14) << std::setprecision ( 6 ) << std::imag ( x )   << "  "
+         << std::setw(24) << std::setprecision (16 ) << std::real ( cbi ) << "  "
+         << std::setw(24) << std::setprecision (16 ) << std::imag ( cbi ) << "\n";
   }
   return;
 }
@@ -1279,13 +1277,13 @@ void airy_gi_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "AIRY_GI_VALUES_TEST:\n";
-  cout << "  AIRY_GI_VALUES stores values of \n";
-  cout << "  the modified Airy function Gi(X).\n";
-  cout << "\n";
-  cout << "                X                     Gi\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_GI_VALUES_TEST:\n";
+  std::cout << "  AIRY_GI_VALUES stores values of \n";
+  std::cout << "  the modified Airy function Gi(X).\n";
+  std::cout << "\n";
+  std::cout << "                X                     Gi\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1297,9 +1295,9 @@ void airy_gi_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(24) << setprecision ( 16 ) << x   << "  "
-         << setw(24) << setprecision ( 16 ) << bip << "\n";
+    std::cout                                           << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x   << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << bip << "\n";
   }
   return;
 }
@@ -1330,13 +1328,13 @@ void airy_hi_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "AIRY_HI_VALUES_TEST:\n";
-  cout << "  AIRY_HI_VALUES stores values of \n";
-  cout << "  the modified Airy function Hi(X).\n";
-  cout << "\n";
-  cout << "                X                     Hi\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AIRY_HI_VALUES_TEST:\n";
+  std::cout << "  AIRY_HI_VALUES stores values of \n";
+  std::cout << "  the modified Airy function Hi(X).\n";
+  std::cout << "\n";
+  std::cout << "                X                     Hi\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1348,9 +1346,9 @@ void airy_hi_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(24) << setprecision ( 16 ) << x   << "  "
-         << setw(24) << setprecision ( 16 ) << bip << "\n";
+    std::cout                                           << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x   << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << bip << "\n";
   }
   return;
 }
@@ -1381,12 +1379,12 @@ void arccos_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ARCCOS_VALUES_TEST:\n";
-  cout << "  ARCCOS_VALUES stores values of the arc cosine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ARCCOS_VALUES_TEST:\n";
+  std::cout << "  ARCCOS_VALUES stores values of the arc cosine function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1398,9 +1396,9 @@ void arccos_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1431,13 +1429,13 @@ void arccosh_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ARCCOSH_VALUES_TEST:\n";
-  cout << 
+  std::cout << "\n";
+  std::cout << "ARCCOSH_VALUES_TEST:\n";
+  std::cout << 
     "  ARCCOSH_VALUES stores values of the hyperbolic arc cosine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1449,9 +1447,9 @@ void arccosh_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1482,12 +1480,12 @@ void arcsin_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ARCSIN_VALUES_TEST:\n";
-  cout << "  ARCSIN_VALUES stores values of the arc sine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ARCSIN_VALUES_TEST:\n";
+  std::cout << "  ARCSIN_VALUES stores values of the arc sine function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1499,9 +1497,9 @@ void arcsin_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1532,13 +1530,13 @@ void arcsinh_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ARCSINH_VALUES_TEST:\n";
-  cout << 
+  std::cout << "\n";
+  std::cout << "ARCSINH_VALUES_TEST:\n";
+  std::cout << 
     "  ARCSINH_VALUES stores values of the hyperbolic arc sine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1550,9 +1548,9 @@ void arcsinh_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1583,12 +1581,12 @@ void arctan_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ARCTAN_VALUES_TEST:\n";
-  cout << "  ARCTAN_VALUES stores values of the arc tangent function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ARCTAN_VALUES_TEST:\n";
+  std::cout << "  ARCTAN_VALUES stores values of the arc tangent function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1600,9 +1598,9 @@ void arctan_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1633,13 +1631,13 @@ void arctan_int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ARCTAN_INT_VALUES_TEST:\n";
-  cout << "  ARCTAN_INT_VALUES stores values of \n";
-  cout << "  the arctangent integral.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ARCTAN_INT_VALUES_TEST:\n";
+  std::cout << "  ARCTAN_INT_VALUES stores values of \n";
+  std::cout << "  the arctangent integral.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1651,9 +1649,9 @@ void arctan_int_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(24) << setprecision ( 16 ) << x   << "  "
-         << setw(24) << setprecision ( 16 ) << bip << "\n";
+    std::cout                                           << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x   << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << bip << "\n";
   }
   return;
 }
@@ -1684,13 +1682,13 @@ void arctanh_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ARCTANH_VALUES_TEST:\n";
-  cout << 
+  std::cout << "\n";
+  std::cout << "ARCTANH_VALUES_TEST:\n";
+  std::cout << 
     "  ARCTANH_VALUES stores values of the hyperbolic arc tangent function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1702,9 +1700,9 @@ void arctanh_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1735,13 +1733,13 @@ void bei0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BEI0_VALUES_TEST:\n";
-  cout << "  BEI0_VALUES stores values of \n";
-  cout << "  the Kelvin function BEI of order 0.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BEI0_VALUES_TEST:\n";
+  std::cout << "  BEI0_VALUES stores values of \n";
+  std::cout << "  the Kelvin function BEI of order 0.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1753,9 +1751,9 @@ void bei0_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1786,13 +1784,13 @@ void bei1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BEI1_VALUES_TEST:\n";
-  cout << "  BEI1_VALUES stores values of \n";
-  cout << "  the Kelvin function BEI of order 1.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BEI1_VALUES_TEST:\n";
+  std::cout << "  BEI1_VALUES stores values of \n";
+  std::cout << "  the Kelvin function BEI of order 1.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1804,9 +1802,9 @@ void bei1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1837,13 +1835,13 @@ void bell_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "BELL_VALUES_TEST:\n";
-  cout << "  BELL_VALUES returns values of \n";
-  cout << "  the Bell numbers.\n";
-  cout << "\n";
-  cout << "     N        BELL(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BELL_VALUES_TEST:\n";
+  std::cout << "  BELL_VALUES returns values of \n";
+  std::cout << "  the Bell numbers.\n";
+  std::cout << "\n";
+  std::cout << "     N        BELL(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1855,9 +1853,9 @@ void bell_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(6)  << n << "  "
-         << setw(10) << c << "\n";
+    std::cout                  << "  "
+         << std::setw(6)  << n << "  "
+         << std::setw(10) << c << "\n";
   }
   return;
 }
@@ -1888,13 +1886,13 @@ void ber0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BER0_VALUES_TEST:\n";
-  cout << "  BER0_VALUES stores values of \n";
-  cout << "  the Kelvin function BER of order 0.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BER0_VALUES_TEST:\n";
+  std::cout << "  BER0_VALUES stores values of \n";
+  std::cout << "  the Kelvin function BER of order 0.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1906,9 +1904,9 @@ void ber0_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1939,13 +1937,13 @@ void ber1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BER1_VALUES_TEST:\n";
-  cout << "  BER1_VALUES stores values of \n";
-  cout << "  the Kelvin function BER of order 1.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BER1_VALUES_TEST:\n";
+  std::cout << "  BER1_VALUES stores values of \n";
+  std::cout << "  the Kelvin function BER of order 1.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1957,9 +1955,9 @@ void ber1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -1990,13 +1988,13 @@ void bernoulli_number_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "BERNOULLI_NUMBER_VALUES_TEST:\n";
-  cout << "  BERNOULLI_NUMBER_VALUES returns values of \n";
-  cout << "  the Bernoulli numbers.\n";
-  cout << "\n";
-  cout << "     N              B(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BERNOULLI_NUMBER_VALUES_TEST:\n";
+  std::cout << "  BERNOULLI_NUMBER_VALUES returns values of \n";
+  std::cout << "  the Bernoulli numbers.\n";
+  std::cout << "\n";
+  std::cout << "     N              B(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2008,9 +2006,9 @@ void bernoulli_number_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(6)  << n << "  "
-         << setw(12) << c << "\n";
+    std::cout                  << "  "
+         << std::setw(6)  << n << "  "
+         << std::setw(12) << c << "\n";
   }
   return;
 }
@@ -2042,13 +2040,13 @@ void bernoulli_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BERNOULLI_POLY_VALUES_TEST:\n";
-  cout << "  BERNOULLI_POLY_VALUES returns values of \n";
-  cout << "  the Bernoulli Polynomials.\n";
-  cout << "\n";
-  cout << "     N     X      BERNOULLI(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BERNOULLI_POLY_VALUES_TEST:\n";
+  std::cout << "  BERNOULLI_POLY_VALUES returns values of \n";
+  std::cout << "  the Bernoulli Polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N     X      BERNOULLI(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2060,10 +2058,10 @@ void bernoulli_poly_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(6)  << n << "  "
-         << setw(12) << x << "  "
-         << setw(12) << b << "\n";
+    std::cout                  << "  "
+         << std::setw(6)  << n << "  "
+         << std::setw(12) << x << "  "
+         << std::setw(12) << b << "\n";
   }
   return;
 }
@@ -2096,13 +2094,13 @@ void bernstein_poly_01_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BERNSTEIN_POLY_01_VALUES_TEST:\n";
-  cout << "  BERNSTEIN_POLY_01_VALUES returns values of \n";
-  cout << "  the Bernstein Polynomials.\n";
-  cout << "\n";
-  cout << "     N     K       X      BERNSTEIN(N,K)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BERNSTEIN_POLY_01_VALUES_TEST:\n";
+  std::cout << "  BERNSTEIN_POLY_01_VALUES returns values of \n";
+  std::cout << "  the Bernstein Polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N     K       X      BERNSTEIN(N,K)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2114,11 +2112,11 @@ void bernstein_poly_01_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(6)  << n << "  "
-         << setw(6)  << k << "  "
-         << setw(12) << x << "  "
-         << setw(12) << b << "\n";
+    std::cout                  << "  "
+         << std::setw(6)  << n << "  "
+         << std::setw(6)  << k << "  "
+         << std::setw(12) << x << "  "
+         << std::setw(12) << b << "\n";
   }
   return;
 }
@@ -2149,13 +2147,13 @@ void bessel_i0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_I0_VALUES_TEST:\n";
-  cout << "  BESSEL_I0_VALUES stores values of \n";
-  cout << "  the Bessel I0 function.\n";
-  cout << "\n";
-  cout << "      X         I0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_I0_VALUES_TEST:\n";
+  std::cout << "  BESSEL_I0_VALUES stores values of \n";
+  std::cout << "  the Bessel I0 function.\n";
+  std::cout << "\n";
+  std::cout << "      X         I0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2167,9 +2165,9 @@ void bessel_i0_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2200,13 +2198,13 @@ void bessel_i0_int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_I0_INT_VALUES_TEST:\n";
-  cout << "  BESSEL_I0_INT_VALUES stores values of \n";
-  cout << "  the integral of the Bessel I0 function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_I0_INT_VALUES_TEST:\n";
+  std::cout << "  BESSEL_I0_INT_VALUES stores values of \n";
+  std::cout << "  the integral of the Bessel I0 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2218,9 +2216,9 @@ void bessel_i0_int_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(24) << setprecision ( 16 ) << x   << "  "
-         << setw(24) << setprecision ( 16 ) << bip << "\n";
+    std::cout                                           << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x   << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << bip << "\n";
   }
   return;
 }
@@ -2251,13 +2249,13 @@ void bessel_i0_spherical_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_I0_SPHERICAL_VALUES_TEST:\n";
-  cout << "  BESSEL_I0_SPHERICAL_VALUES stores values of\n";
-  cout << "  the spherical Bessel i0 function.\n";
-  cout << "\n";
-  cout << "      X            i0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_I0_SPHERICAL_VALUES_TEST:\n";
+  std::cout << "  BESSEL_I0_SPHERICAL_VALUES stores values of\n";
+  std::cout << "  the spherical Bessel i0 function.\n";
+  std::cout << "\n";
+  std::cout << "      X            i0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2269,9 +2267,9 @@ void bessel_i0_spherical_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2302,13 +2300,13 @@ void bessel_i1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_I1_VALUES_TEST:\n";
-  cout << "  BESSEL_I1_VALUES stores values of \n";
-  cout << "  the Bessel I1 function.\n";
-  cout << "\n";
-  cout << "      X         I1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_I1_VALUES_TEST:\n";
+  std::cout << "  BESSEL_I1_VALUES stores values of \n";
+  std::cout << "  the Bessel I1 function.\n";
+  std::cout << "\n";
+  std::cout << "      X         I1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2320,9 +2318,9 @@ void bessel_i1_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2353,13 +2351,13 @@ void bessel_i1_spherical_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_I1_SPHERICAL_VALUES_TEST:\n";
-  cout << "  BESSEL_I1_SPHERICAL_VALUES stores values of\n";
-  cout << "  the spherical Bessel i1 function.\n";
-  cout << "\n";
-  cout << "      X            i1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_I1_SPHERICAL_VALUES_TEST:\n";
+  std::cout << "  BESSEL_I1_SPHERICAL_VALUES stores values of\n";
+  std::cout << "  the spherical Bessel i1 function.\n";
+  std::cout << "\n";
+  std::cout << "      X            i1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2371,9 +2369,9 @@ void bessel_i1_spherical_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2405,13 +2403,13 @@ void bessel_in_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_IN_VALUES_TEST:\n";
-  cout << "  BESSEL_IN_VALUES stores values of \n";
-  cout << "  the Bessel In function.\n";
-  cout << "\n";
-  cout << "      N     X         IN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_IN_VALUES_TEST:\n";
+  std::cout << "  BESSEL_IN_VALUES stores values of \n";
+  std::cout << "  the Bessel In function.\n";
+  std::cout << "\n";
+  std::cout << "      N     X         IN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2423,10 +2421,10 @@ void bessel_in_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2458,13 +2456,13 @@ void bessel_ix_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_IX_VALUES_TEST:\n";
-  cout << "  BESSEL_IX_VALUES stores values of \n";
-  cout << "  the Bessel In function for NONINTEGER order.\n";
-  cout << "\n";
-  cout << "      NU    X         IN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_IX_VALUES_TEST:\n";
+  std::cout << "  BESSEL_IX_VALUES stores values of \n";
+  std::cout << "  the Bessel In function for NONINTEGER order.\n";
+  std::cout << "\n";
+  std::cout << "      NU    X         IN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2476,10 +2474,10 @@ void bessel_ix_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << nu << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << nu << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2510,13 +2508,13 @@ void bessel_j0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_J0_VALUES_TEST:\n";
-  cout << "  BESSEL_J0_VALUES stores values of \n";
-  cout << "  the Bessel J0 function.\n";
-  cout << "\n";
-  cout << "      X         J0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_J0_VALUES_TEST:\n";
+  std::cout << "  BESSEL_J0_VALUES stores values of \n";
+  std::cout << "  the Bessel J0 function.\n";
+  std::cout << "\n";
+  std::cout << "      X         J0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2528,9 +2526,9 @@ void bessel_j0_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2561,13 +2559,13 @@ void bessel_j0_int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_J0_INT_VALUES_TEST:\n";
-  cout << "  BESSEL_J0_INT_VALUES stores values of \n";
-  cout << "  the integral of the Bessel J0 function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_J0_INT_VALUES_TEST:\n";
+  std::cout << "  BESSEL_J0_INT_VALUES stores values of \n";
+  std::cout << "  the integral of the Bessel J0 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2579,9 +2577,9 @@ void bessel_j0_int_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(24) << setprecision ( 16 ) << x   << "  "
-         << setw(24) << setprecision ( 16 ) << bip << "\n";
+    std::cout                                           << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x   << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << bip << "\n";
   }
   return;
 }
@@ -2612,13 +2610,13 @@ void bessel_j0_spherical_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_J0_SPHERICAL_VALUES_TEST:\n";
-  cout << "  BESSEL_J0_SPHERICAL_VALUES stores values of\n";
-  cout << "  the spherical Bessel j0 function.\n";
-  cout << "\n";
-  cout << "      X            j0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_J0_SPHERICAL_VALUES_TEST:\n";
+  std::cout << "  BESSEL_J0_SPHERICAL_VALUES stores values of\n";
+  std::cout << "  the spherical Bessel j0 function.\n";
+  std::cout << "\n";
+  std::cout << "      X            j0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2630,9 +2628,9 @@ void bessel_j0_spherical_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2663,13 +2661,13 @@ void bessel_j0_zero_values_test ( )
   int k;
   int n_data;
 
-  cout << "\n";
-  cout << "BESSEL_J0_ZERO_VALUES_TEST:\n";
-  cout << "  BESSEL_J0_ZERO_VALUES stores values of zeros of\n";
-  cout << "  the Bessel J0 function.\n";
-  cout << "\n";
-  cout << "       K         X(K)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_J0_ZERO_VALUES_TEST:\n";
+  std::cout << "  BESSEL_J0_ZERO_VALUES stores values of zeros of\n";
+  std::cout << "  the Bessel J0 function.\n";
+  std::cout << "\n";
+  std::cout << "       K         X(K)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2681,8 +2679,8 @@ void bessel_j0_zero_values_test ( )
     {
       break;
     }
-    cout << "  " << setw(6) << k
-         << "  " << setw(24) << fx << "\n";
+    std::cout << "  " << std::setw(6) << k
+         << "  " << std::setw(24) << fx << "\n";
   }
   return;
 }
@@ -2713,13 +2711,13 @@ void bessel_j1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_J1_VALUES_TEST:\n";
-  cout << "  BESSEL_J1_VALUES stores values of \n";
-  cout << "  the Bessel J1 function.\n";
-  cout << "\n";
-  cout << "      X         J1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_J1_VALUES_TEST:\n";
+  std::cout << "  BESSEL_J1_VALUES stores values of \n";
+  std::cout << "  the Bessel J1 function.\n";
+  std::cout << "\n";
+  std::cout << "      X         J1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2731,9 +2729,9 @@ void bessel_j1_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2764,13 +2762,13 @@ void bessel_j1_spherical_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_J1_SPHERICAL_VALUES_TEST:\n";
-  cout << "  BESSEL_J1_SPHERICAL_VALUES stores values of\n";
-  cout << "  the spherical Bessel j1 function.\n";
-  cout << "\n";
-  cout << "      X            j1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_J1_SPHERICAL_VALUES_TEST:\n";
+  std::cout << "  BESSEL_J1_SPHERICAL_VALUES stores values of\n";
+  std::cout << "  the spherical Bessel j1 function.\n";
+  std::cout << "\n";
+  std::cout << "      X            j1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2782,9 +2780,9 @@ void bessel_j1_spherical_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2816,13 +2814,13 @@ void bessel_jn_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_JN_VALUES_TEST:\n";
-  cout << "  BESSEL_JN_VALUES stores values of \n";
-  cout << "  the Bessel Jn function.\n";
-  cout << "\n";
-  cout << "      N     X         JN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_JN_VALUES_TEST:\n";
+  std::cout << "  BESSEL_JN_VALUES stores values of \n";
+  std::cout << "  the Bessel Jn function.\n";
+  std::cout << "\n";
+  std::cout << "      N     X         JN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2834,10 +2832,10 @@ void bessel_jn_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2869,13 +2867,13 @@ void bessel_jx_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_JX_VALUES_TEST:\n";
-  cout << "  BESSEL_JX_VALUES stores values of \n";
-  cout << "  the Bessel Jn function for NONINTEGER order.\n";
-  cout << "\n";
-  cout << "      NU      X         JN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_JX_VALUES_TEST:\n";
+  std::cout << "  BESSEL_JX_VALUES stores values of \n";
+  std::cout << "  the Bessel Jn function for NONINTEGER order.\n";
+  std::cout << "\n";
+  std::cout << "      NU      X         JN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2887,10 +2885,10 @@ void bessel_jx_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << nu << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << nu << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2921,13 +2919,13 @@ void bessel_k0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_K0_VALUES_TEST:\n";
-  cout << "  BESSEL_K0_VALUES stores values of \n";
-  cout << "  the Bessel K0 function.\n";
-  cout << "\n";
-  cout << "      X         K0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_K0_VALUES_TEST:\n";
+  std::cout << "  BESSEL_K0_VALUES stores values of \n";
+  std::cout << "  the Bessel K0 function.\n";
+  std::cout << "\n";
+  std::cout << "      X         K0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2939,9 +2937,9 @@ void bessel_k0_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -2972,13 +2970,13 @@ void bessel_k0_int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_K0_INT_VALUES_TEST:\n";
-  cout << "  BESSEL_K0_INT_VALUES stores values of \n";
-  cout << "  the integral of the Bessel K0 function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_K0_INT_VALUES_TEST:\n";
+  std::cout << "  BESSEL_K0_INT_VALUES stores values of \n";
+  std::cout << "  the integral of the Bessel K0 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2990,9 +2988,9 @@ void bessel_k0_int_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(24) << setprecision ( 16 ) << x   << "  "
-         << setw(24) << setprecision ( 16 ) << bip << "\n";
+    std::cout                                           << "  "
+         << std: std::setw(24) << std::setprecision ( 16 ) << x   << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << bip << "\n";
   }
   return;
 }
@@ -3023,13 +3021,13 @@ void bessel_k1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_K1_VALUES_TEST:\n";
-  cout << "  BESSEL_K1_VALUES stores values of \n";
-  cout << "  the Bessel K1 function.\n";
-  cout << "\n";
-  cout << "      X         K1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_K1_VALUES_TEST:\n";
+  std::cout << "  BESSEL_K1_VALUES stores values of \n";
+  std::cout << "  the Bessel K1 function.\n";
+  std::cout << "\n";
+  std::cout << "      X         K1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3041,9 +3039,9 @@ void bessel_k1_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -3075,13 +3073,13 @@ void bessel_kn_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_KN_VALUES_TEST:\n";
-  cout << "  BESSEL_KN_VALUES stores values of \n";
-  cout << "  the Bessel Kn function.\n";
-  cout << "\n";
-  cout << "      N      X         KN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_KN_VALUES_TEST:\n";
+  std::cout << "  BESSEL_KN_VALUES stores values of \n";
+  std::cout << "  the Bessel Kn function.\n";
+  std::cout << "\n";
+  std::cout << "      N      X         KN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3093,10 +3091,10 @@ void bessel_kn_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -3128,13 +3126,13 @@ void bessel_kx_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_KX_VALUES_TEST:\n";
-  cout << "  BESSEL_KX_VALUES stores values of \n";
-  cout << "  the Bessel Kn function for NONINTEGER order.\n";
-  cout << "\n";
-  cout << "      NU     X         KN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_KX_VALUES_TEST:\n";
+  std::cout << "  BESSEL_KX_VALUES stores values of \n";
+  std::cout << "  the Bessel Kn function for NONINTEGER order.\n";
+  std::cout << "\n";
+  std::cout << "      NU     X         KN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3146,10 +3144,10 @@ void bessel_kx_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << nu << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << nu << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -3180,13 +3178,13 @@ void bessel_y0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_Y0_VALUES_TEST:\n";
-  cout << "  BESSEL_Y0_VALUES stores values of \n";
-  cout << "  the Bessel Y0 function.\n";
-  cout << "\n";
-  cout << "      X         Y0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_Y0_VALUES_TEST:\n";
+  std::cout << "  BESSEL_Y0_VALUES stores values of \n";
+  std::cout << "  the Bessel Y0 function.\n";
+  std::cout << "\n";
+  std::cout << "      X         Y0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3198,9 +3196,9 @@ void bessel_y0_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -3231,13 +3229,13 @@ void bessel_y0_int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_Y0_INT_VALUES_TEST:\n";
-  cout << "  BESSEL_Y0_INT_VALUES stores values of \n";
-  cout << "  the integral of the Bessel Y0 function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_Y0_INT_VALUES_TEST:\n";
+  std::cout << "  BESSEL_Y0_INT_VALUES stores values of \n";
+  std::cout << "  the integral of the Bessel Y0 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3249,9 +3247,9 @@ void bessel_y0_int_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -3282,13 +3280,13 @@ void bessel_y0_spherical_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_Y0_SPHERICAL_VALUES_TEST:\n";
-  cout << "  BESSEL_Y0_SPHERICAL_VALUES stores values of\n";
-  cout << "  the spherical Bessel y0 function.\n";
-  cout << "\n";
-  cout << "                X                      y0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_Y0_SPHERICAL_VALUES_TEST:\n";
+  std::cout << "  BESSEL_Y0_SPHERICAL_VALUES stores values of\n";
+  std::cout << "  the spherical Bessel y0 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                      y0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3300,9 +3298,9 @@ void bessel_y0_spherical_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -3333,13 +3331,13 @@ void bessel_y1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_Y1_VALUES_TEST:\n";
-  cout << "  BESSEL_Y1_VALUES stores values of \n";
-  cout << "  the Bessel Y1 function.\n";
-  cout << "\n";
-  cout << "                X                   Y1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_Y1_VALUES_TEST:\n";
+  std::cout << "  BESSEL_Y1_VALUES stores values of \n";
+  std::cout << "  the Bessel Y1 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                   Y1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3351,9 +3349,9 @@ void bessel_y1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -3384,13 +3382,13 @@ void bessel_y1_spherical_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_Y1_SPHERICAL_VALUES_TEST:\n";
-  cout << "  BESSEL_Y1_SPHERICAL_VALUES stores values of\n";
-  cout << "  the spherical Bessel y1 function.\n";
-  cout << "\n";
-  cout << "                X                      y1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_Y1_SPHERICAL_VALUES_TEST:\n";
+  std::cout << "  BESSEL_Y1_SPHERICAL_VALUES stores values of\n";
+  std::cout << "  the spherical Bessel y1 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                      y1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3402,9 +3400,9 @@ void bessel_y1_spherical_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -3436,13 +3434,13 @@ void bessel_yn_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_YN_VALUES_TEST:\n";
-  cout << "  BESSEL_YN_VALUES stores values of \n";
-  cout << "  the Bessel Yn function.\n";
-  cout << "\n";
-  cout << "      N     X         YN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_YN_VALUES_TEST:\n";
+  std::cout << "  BESSEL_YN_VALUES stores values of \n";
+  std::cout << "  the Bessel Yn function.\n";
+  std::cout << "\n";
+  std::cout << "      N     X         YN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3454,10 +3452,10 @@ void bessel_yn_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -3489,13 +3487,13 @@ void bessel_yx_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BESSEL_YX_VALUES_TEST:\n";
-  cout << "  BESSEL_YX_VALUES stores values of \n";
-  cout << "  the Bessel Yn function for NONINTEGER order.\n";
-  cout << "\n";
-  cout << "      NU    X         YN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BESSEL_YX_VALUES_TEST:\n";
+  std::cout << "  BESSEL_YX_VALUES stores values of \n";
+  std::cout << "  the Bessel Yn function for NONINTEGER order.\n";
+  std::cout << "\n";
+  std::cout << "      NU    X         YN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3507,10 +3505,10 @@ void bessel_yx_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << nu << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << nu << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -3543,13 +3541,13 @@ void beta_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BETA_CDF_VALUES_TEST:\n";
-  cout << "  BETA_CDF_VALUES stores values of\n";
-  cout << "  the Beta CDF.\n";
-  cout << "\n";
-  cout << "      A            B            X            CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BETA_CDF_VALUES_TEST:\n";
+  std::cout << "  BETA_CDF_VALUES stores values of\n";
+  std::cout << "  the Beta CDF.\n";
+  std::cout << "\n";
+  std::cout << "      A            B            X            CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3561,11 +3559,11 @@ void beta_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << a  << "  "
-         << setw(12)                     << b  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(12)                     << b  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -3598,13 +3596,13 @@ void beta_inc_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BETA_INC_VALUES_TEST:\n";
-  cout << "  BETA_INC_VALUES stores values of\n";
-  cout << "  the incomplete Beta function.\n";
-  cout << "\n";
-  cout << "      A            B            X            BETA_INC(A,B)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BETA_INC_VALUES_TEST:\n";
+  std::cout << "  BETA_INC_VALUES stores values of\n";
+  std::cout << "  the incomplete Beta function.\n";
+  std::cout << "\n";
+  std::cout << "      A            B            X            BETA_INC(A,B)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3616,11 +3614,11 @@ void beta_inc_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << a  << "  "
-         << setw(12)                     << b  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(12)                     << b  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -3652,13 +3650,13 @@ void beta_log_values_test ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "BETA_LOG_VALUES_TEST:\n";
-  cout << "  BETA_LOG_VALUES stores values of\n";
-  cout << "  the logarithm of the Beta function.\n";
-  cout << "\n";
-  cout << "      X              Y         BETA_LOG(X,Y)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BETA_LOG_VALUES_TEST:\n";
+  std::cout << "  BETA_LOG_VALUES stores values of\n";
+  std::cout << "  the logarithm of the Beta function.\n";
+  std::cout << "\n";
+  std::cout << "      X              Y         BETA_LOG(X,Y)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3670,10 +3668,10 @@ void beta_log_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << x   << "  "
-         << setw(12)                     << y   << "  "
-         << setw(24) << setprecision(16) << fxy << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << x   << "  "
+         << std::setw(12)                     << y   << "  "
+         << std::setw(24) << std::setprecision(16) << fxy << "\n";
   }
   return;
 }
@@ -3707,13 +3705,13 @@ void beta_noncentral_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BETA_NONCENTRAL_CDF_VALUES_TEST:\n";
-  cout << "  BETA_NONCENTRAL_CDF_VALUES stores values of\n";
-  cout << "  the noncentral Beta CDF.\n";
-  cout << "\n";
-  cout << "      A            B       LAMBDA             X            CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BETA_NONCENTRAL_CDF_VALUES_TEST:\n";
+  std::cout << "  BETA_NONCENTRAL_CDF_VALUES stores values of\n";
+  std::cout << "  the noncentral Beta CDF.\n";
+  std::cout << "\n";
+  std::cout << "      A            B       LAMBDA             X            CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3725,12 +3723,12 @@ void beta_noncentral_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << a  << "  "
-         << setw(12)                     << b  << "  "
-         << setw(12)                     << lambda << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(12)                     << b  << "  "
+         << std: std::setw(12)                     << lambda << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -3763,13 +3761,13 @@ void beta_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BETA_PDF_VALUES_TEST:\n";
-  cout << "  BETA_PDF_VALUES stores values of\n";
-  cout << "  the Beta PDF.\n";
-  cout << "\n";
-  cout << "      ALPHA        BETA         X            PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BETA_PDF_VALUES_TEST:\n";
+  std::cout << "  BETA_PDF_VALUES stores values of\n";
+  std::cout << "  the Beta PDF.\n";
+  std::cout << "\n";
+  std::cout << "      ALPHA        BETA         X            PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3781,11 +3779,11 @@ void beta_pdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << alpha  << "  "
-         << setw(12)                     << beta  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << alpha  << "  "
+         << std::setw(12)                     << beta  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -3817,13 +3815,13 @@ void beta_values_test ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "BETA_VALUES_TEST:\n";
-  cout << "  BETA_VALUES stores values of\n";
-  cout << "  the Beta function.\n";
-  cout << "\n";
-  cout << "      X              Y         BETA(X,Y)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BETA_VALUES_TEST:\n";
+  std::cout << "  BETA_VALUES stores values of\n";
+  std::cout << "  the Beta function.\n";
+  std::cout << "\n";
+  std::cout << "      X              Y         BETA(X,Y)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3835,10 +3833,10 @@ void beta_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << x   << "  "
-         << setw(12)                     << y   << "  "
-         << setw(24) << setprecision(16) << fxy << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << x   << "  "
+         << std::setw(12)                     << y   << "  "
+         << std::setw(24) << std::setprecision(16) << fxy << "\n";
   }
   return;
 }
@@ -3870,13 +3868,13 @@ void binomial_values_test ( )
   int c;
   int n_data;
 
-  cout << "\n";
-  cout << "BINOMIAL_VALUES_TEST:\n";
-  cout << "  BINOMIAL_VALUES returns values of\n";
-  cout << "  the binomial numbers.\n";
-  cout << "\n";
-  cout << "     A     B        C(A,B)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BINOMIAL_VALUES_TEST:\n";
+  std::cout << "  BINOMIAL_VALUES returns values of\n";
+  std::cout << "  the binomial numbers.\n";
+  std::cout << "\n";
+  std::cout << "     A     B        C(A,B)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3888,10 +3886,10 @@ void binomial_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(6)  << a << "  "
-         << setw(6)  << b << "  "
-         << setw(12) << c << "\n";
+    std::cout                  << "  "
+         << std::setw(6)  << a << "  "
+         << std::setw(6)  << b << "  "
+         << std::setw(12) << c << "\n";
   }
   return;
 }
@@ -3924,13 +3922,13 @@ void binomial_cdf_values_test ( )
   int n_data;
   int x;
 
-  cout << "\n";
-  cout << "BINOMIAL_CDF_VALUES_TEST:\n";
-  cout << "  BINOMIAL_CDF_VALUES returns values of \n";
-  cout << "  the Binomial Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     A      B        X   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BINOMIAL_CDF_VALUES_TEST:\n";
+  std::cout << "  BINOMIAL_CDF_VALUES returns values of \n";
+  std::cout << "  the Binomial Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     A      B        X   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3942,11 +3940,11 @@ void binomial_cdf_values_test ( )
     {
       break;
     }
-    cout                                  << "  "
-         << setw(6)                      << a  << "  "
-         << setw(8)                      << b  << "  "
-         << setw(4)                      << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                  << "  "
+         << std::setw(6)                      << a  << "  "
+         << std::setw(8)                      << b  << "  "
+         << std::setw(4)                      << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -3979,13 +3977,13 @@ void binomial_pdf_values_test ( )
   int n_data;
   int x;
 
-  cout << "\n";
-  cout << "BINOMIAL_PDF_VALUES_TEST:\n";
-  cout << "  BINOMIAL_PDF_VALUES returns values of \n";
-  cout << "  the Binomial Probability Density Function.\n";
-  cout << "\n";
-  cout << "       A          B                    X       PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BINOMIAL_PDF_VALUES_TEST:\n";
+  std::cout << "  BINOMIAL_PDF_VALUES returns values of \n";
+  std::cout << "  the Binomial Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "       A          B                    X       PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3997,11 +3995,11 @@ void binomial_pdf_values_test ( )
     {
       break;
     }
-    cout                                  << "  "
-         << setw(6)                      << a  << "  "
-         << setw(24) << setprecision(16) << b  << "  "
-         << setw(4)                      << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                  << "  "
+         << std::setw(6)                      << a  << "  "
+         << std::setw(24) << std::setprecision(16) << b  << "  "
+         << std::setw(4)                      << x  << "  "
+         << std: std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -4034,13 +4032,13 @@ void bivariate_normal_cdf_values_test ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "BIVARIATE_NORMAL_CDF_VALUES_TEST:\n";
-  cout << "  BIVARIATE_NORMAL_CDF_VALUES stores values of\n";
-  cout << "  the bivariate normal CDF.\n";
-  cout << "\n";
-  cout << "      X            Y            R            F(R)(X,Y)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BIVARIATE_NORMAL_CDF_VALUES_TEST:\n";
+  std::cout << "  BIVARIATE_NORMAL_CDF_VALUES stores values of\n";
+  std::cout << "  the bivariate normal CDF.\n";
+  std::cout << "\n";
+  std::cout << "      X            Y            R            F(R)(X,Y)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4052,11 +4050,11 @@ void bivariate_normal_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << x   << "  "
-         << setw(12)                     << y   << "  "
-         << setw(12)                     << r   << "  "
-         << setw(24) << setprecision(16) << fxy << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << x   << "  "
+         << std::setw(12)                     << y   << "  "
+         << std::setw(12)                     << r   << "  "
+         << std::setw(24) << std::setprecision(16) << fxy << "\n";
   }
   return;
 }
@@ -4087,13 +4085,13 @@ void catalan_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "CATALAN_VALUES_TEST:\n";
-  cout << "  CATALAN_VALUES returns values of \n";
-  cout << "  the Catalan numbers.\n";
-  cout << "\n";
-  cout << "     N        C(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CATALAN_VALUES_TEST:\n";
+  std::cout << "  CATALAN_VALUES returns values of \n";
+  std::cout << "  the Catalan numbers.\n";
+  std::cout << "\n";
+  std::cout << "     N        C(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4105,9 +4103,9 @@ void catalan_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(6)  << n << "  "
-         << setw(10) << c << "\n";
+    std::cout                  << "  "
+         << std::setw(6)  << n << "  "
+         << std::setw(10) << c << "\n";
   }
   return;
 }
@@ -4140,13 +4138,13 @@ void cauchy_cdf_values_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "CAUCHY_CDF_VALUES_TEST:\n";
-  cout << "  CAUCHY_CDF_VALUES returns values of \n";
-  cout << "  the Cauchy Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     Mu      Sigma        X   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CAUCHY_CDF_VALUES_TEST:\n";
+  std::cout << "  CAUCHY_CDF_VALUES returns values of \n";
+  std::cout << "  the Cauchy Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     Mu      Sigma        X   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4158,11 +4156,11 @@ void cauchy_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(8)                      << mu    << "  "
-         << setw(8)                      << sigma << "  "
-         << setw(8)                      << x     << "  "
-         << setw(24) << setprecision(16) << fx    << "\n";
+    std::cout                                 << "  "
+         << std::setw(8)                      << mu    << "  "
+         << std::setw(8)                      << sigma << "  "
+         << std::setw(8)                      << x     << "  "
+         << std::setw(24) << std::setprecision(16) << fx    << "\n";
   }
   return;
 }
@@ -4193,12 +4191,12 @@ void cbrt_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CBRT_VALUES_TEST:\n";
-  cout << "  CBRT_VALUES stores values of the cube root function.\n";
-  cout << "\n";
-  cout << "      X            CBRT(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CBRT_VALUES_TEST:\n";
+  std::cout << "  CBRT_VALUES stores values of the cube root function.\n";
+  std::cout << "\n";
+  std::cout << "      X            CBRT(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4210,9 +4208,9 @@ void cbrt_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4244,13 +4242,13 @@ void cheby_t_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHEBY_T_POLY_VALUES_TEST:\n";
-  cout << "  CHEBY_T_POLY_VALUES returns values of\n";
-  cout << "  the Chebyshev T polynomials.\n";
-  cout << "\n";
-  cout << "     N       X      T(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_T_POLY_VALUES_TEST:\n";
+  std::cout << "  CHEBY_T_POLY_VALUES returns values of\n";
+  std::cout << "  the Chebyshev T polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N       X      T(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4262,10 +4260,10 @@ void cheby_t_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4297,13 +4295,13 @@ void cheby_t01_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHEBY_T01_POLY_VALUES_TEST:\n";
-  cout << "  CHEBY_T01_POLY_VALUES returns values of\n";
-  cout << "  the shifted Chebyshev T polynomials.\n";
-  cout << "\n";
-  cout << "     N       X      T01(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_T01_POLY_VALUES_TEST:\n";
+  std::cout << "  CHEBY_T01_POLY_VALUES returns values of\n";
+  std::cout << "  the shifted Chebyshev T polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N       X      T01(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4315,10 +4313,10 @@ void cheby_t01_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4350,13 +4348,13 @@ void cheby_u_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHEBY_U_POLY_VALUES_TEST:\n";
-  cout << "  CHEBY_U_POLY_VALUES returns values of\n";
-  cout << "  the Chebyshev U polynomials.\n";
-  cout << "\n";
-  cout << "     N       X      U(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_U_POLY_VALUES_TEST:\n";
+  std::cout << "  CHEBY_U_POLY_VALUES returns values of\n";
+  std::cout << "  the Chebyshev U polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N       X      U(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4368,10 +4366,10 @@ void cheby_u_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4403,13 +4401,13 @@ void cheby_u01_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHEBY_U01_POLY_VALUES_TEST:\n";
-  cout << "  CHEBY_U01_POLY_VALUES returns values of\n";
-  cout << "  the shifted Chebyshev U polynomials.\n";
-  cout << "\n";
-  cout << "     N       X      U01(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_U01_POLY_VALUES_TEST:\n";
+  std::cout << "  CHEBY_U01_POLY_VALUES returns values of\n";
+  std::cout << "  the shifted Chebyshev U polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N       X      U01(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4421,10 +4419,10 @@ void cheby_u01_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4456,13 +4454,13 @@ void cheby_v_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHEBY_V_POLY_VALUES_TEST:\n";
-  cout << "  CHEBY_V_POLY_VALUES returns values of\n";
-  cout << "  the Chebyshev V polynomials.\n";
-  cout << "\n";
-  cout << "     N       X      V(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_V_POLY_VALUES_TEST:\n";
+  std::cout << "  CHEBY_V_POLY_VALUES returns values of\n";
+  std::cout << "  the Chebyshev V polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N       X      V(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4474,10 +4472,10 @@ void cheby_v_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4509,13 +4507,13 @@ void cheby_v01_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHEBY_V01_POLY_VALUES_TEST:\n";
-  cout << "  CHEBY_V01_POLY_VALUES returns values of\n";
-  cout << "  the shifted Chebyshev V polynomials.\n";
-  cout << "\n";
-  cout << "     N       X      V01(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_V01_POLY_VALUES_TEST:\n";
+  std::cout << "  CHEBY_V01_POLY_VALUES returns values of\n";
+  std::cout << "  the shifted Chebyshev V polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N       X      V01(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4527,10 +4525,10 @@ void cheby_v01_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4562,13 +4560,13 @@ void cheby_w_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHEBY_W_POLY_VALUES_TEST:\n";
-  cout << "  CHEBY_W_POLY_VALUES returns values of\n";
-  cout << "  the Chebyshev W polynomials.\n";
-  cout << "\n";
-  cout << "     N       X      W(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_W_POLY_VALUES_TEST:\n";
+  std::cout << "  CHEBY_W_POLY_VALUES returns values of\n";
+  std::cout << "  the Chebyshev W polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N       X      W(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4580,10 +4578,10 @@ void cheby_w_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4615,13 +4613,13 @@ void cheby_w01_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHEBY_W01_POLY_VALUES_TEST:\n";
-  cout << "  CHEBY_W01_POLY_VALUES returns values of\n";
-  cout << "  the shifted Chebyshev W polynomials.\n";
-  cout << "\n";
-  cout << "     N       X      W01(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_W01_POLY_VALUES_TEST:\n";
+  std::cout << "  CHEBY_W01_POLY_VALUES returns values of\n";
+  std::cout << "  the shifted Chebyshev W polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N       X      W01(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4633,10 +4631,10 @@ void cheby_w01_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4667,13 +4665,13 @@ void chi_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHI_VALUES_TEST:\n";
-  cout << "  CHI_VALUES stores values of\n";
-  cout << "  the Hyperbolic Cosine Integral function CHI(X).\n";
-  cout << "\n";
-  cout << "      X            CHI(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHI_VALUES_TEST:\n";
+  std::cout << "  CHI_VALUES stores values of\n";
+  std::cout << "  the Hyperbolic Cosine Integral function CHI(X).\n";
+  std::cout << "\n";
+  std::cout << "      X            CHI(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4685,9 +4683,9 @@ void chi_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4719,13 +4717,13 @@ void chi_square_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHI_SQUARE_CDF_VALUES_TEST:\n";
-  cout << "  CHI_SQUARE_CDF_VALUES returns values of \n";
-  cout << "  the Chi-Squared Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     N       X    CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHI_SQUARE_CDF_VALUES_TEST:\n";
+  std::cout << "  CHI_SQUARE_CDF_VALUES returns values of \n";
+  std::cout << "  the Chi-Squared Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     N       X    CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4737,10 +4735,10 @@ void chi_square_cdf_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << a  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << a  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4772,13 +4770,13 @@ void chi_square_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHI_SQUARE_PDF_VALUES_TEST:\n";
-  cout << "  CHI_SQUARE_PDF_VALUES returns values of \n";
-  cout << "  the Chi-Squared Probability Density Function.\n";
-  cout << "\n";
-  cout << "     DF         X    PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHI_SQUARE_PDF_VALUES_TEST:\n";
+  std::cout << "  CHI_SQUARE_PDF_VALUES returns values of \n";
+  std::cout << "  the Chi-Squared Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     DF         X    PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4790,10 +4788,10 @@ void chi_square_pdf_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(8)  << df  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(8)  << df  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4826,13 +4824,13 @@ void chi_square_noncentral_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CHI_SQUARE_NONCENTRAL_CDF_VALUES_TEST:\n";
-  cout << "  CHI_SQUARE_NONCENTRAL_CDF_VALUES returns values of\n";
-  cout << "  the noncentral Chi-Squared Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "      X      LAMBDA     DF     CDF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHI_SQUARE_NONCENTRAL_CDF_VALUES_TEST:\n";
+  std::cout << "  CHI_SQUARE_NONCENTRAL_CDF_VALUES returns values of\n";
+  std::cout << "  the noncentral Chi-Squared Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "      X      LAMBDA     DF     CDF\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4844,11 +4842,11 @@ void chi_square_noncentral_cdf_values_test ( )
     {
       break;
     }
-    cout                       << "  "
-         << setw(10) << x      << "  "
-         << setw(8)  << lambda << "  "
-         << setw(4)  << df     << "  "
-         << setw(12) << fx     << "\n";
+    std::cout                       << "  "
+         << std::setw(10) << x      << "  "
+         << std: std::setw(8)  << lambda << "  "
+         << std::setw(4)  << df     << "  "
+         << std::setw(12) << fx     << "\n";
   }
   return;
 }
@@ -4879,13 +4877,13 @@ void ci_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CI_VALUES_TEST:\n";
-  cout << "  CI_VALUES stores values of\n";
-  cout << "  the Cosine Integral function CI(X).\n";
-  cout << "\n";
-  cout << "      X            CI(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CI_VALUES_TEST:\n";
+  std::cout << "  CI_VALUES stores values of\n";
+  std::cout << "  the Cosine Integral function CI(X).\n";
+  std::cout << "\n";
+  std::cout << "      X            CI(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4897,9 +4895,9 @@ void ci_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4930,13 +4928,13 @@ void cin_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CIN_VALUES_TEST:\n";
-  cout << "  CIN_VALUES stores values of\n";
-  cout << "  the Cosine Integral function CIN(X).\n";
-  cout << "\n";
-  cout << "      X            CIN(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CIN_VALUES_TEST:\n";
+  std::cout << "  CIN_VALUES stores values of\n";
+  std::cout << "  the Cosine Integral function CIN(X).\n";
+  std::cout << "\n";
+  std::cout << "      X            CIN(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4948,9 +4946,9 @@ void cin_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -4981,13 +4979,13 @@ void cinh_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CINH_VALUES_TEST:\n";
-  cout << "  CINH_VALUES stores values of\n";
-  cout << "  the Hyperbolic Cosine Integral function CINH(X).\n";
-  cout << "\n";
-  cout << "      X            CINH(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CINH_VALUES_TEST:\n";
+  std::cout << "  CINH_VALUES stores values of\n";
+  std::cout << "  the Hyperbolic Cosine Integral function CINH(X).\n";
+  std::cout << "\n";
+  std::cout << "      X            CINH(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4999,9 +4997,9 @@ void cinh_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -5032,13 +5030,13 @@ void clausen_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "CLAUSEN_VALUES_TEST:\n";
-  cout << "  CLAUSEN_VALUES stores values of \n";
-  cout << "  Clausen's integral function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CLAUSEN_VALUES_TEST:\n";
+  std::cout << "  CLAUSEN_VALUES stores values of \n";
+  std::cout << "  Clausen's integral function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5050,9 +5048,9 @@ void clausen_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5088,13 +5086,13 @@ void clebsch_gordan_values_test ( )
   double m3;
   int n_data;
 
-  cout << "\n";
-  cout << "CLEBSCH_GORDAN_VALUES_TEST:\n";
-  cout << "  CLEBSCH_GORDAN_VALUES returns values of\n";
-  cout << "  the Clebsch Gordan coefficient.\n";
-  cout << "\n";
-  cout << "      J1      J2      J3      M1      M2      M3        CG\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CLEBSCH_GORDAN_VALUES_TEST:\n";
+  std::cout << "  CLEBSCH_GORDAN_VALUES returns values of\n";
+  std::cout << "  the Clebsch Gordan coefficient.\n";
+  std::cout << "\n";
+  std::cout << "      J1      J2      J3      M1      M2      M3        CG\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5107,13 +5105,13 @@ void clebsch_gordan_values_test ( )
       break;
     }
 
-    cout << "  " << setw(6) << j1
-         << "  " << setw(6) << j2
-         << "  " << setw(6) << j3
-         << "  " << setw(6) << m1
-         << "  " << setw(6) << m2
-         << "  " << setw(6) << m3
-         << "  " << setprecision(16) << setw(24) << fx << "\n";
+    std::cout << "  " << std::setw(6) << j1
+         << "  " << std::setw(6) << j2
+         << "  " << std::setw(6) << j3
+         << "  " << std::setw(6) << m1
+         << "  " << std: std::setw(6) << m2
+         << "  " << std::setw(6) << m3
+         << "  " << std::setprecision(16) << std::setw(24) << fx << "\n";
   }
   return;
 }
@@ -5144,14 +5142,14 @@ void collatz_count_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "COLLATZ_COUNT_VALUES_TEST:\n";
-  cout << "  COLLATZ_COUNT_VALUES returns values of\n";
-  cout << "  the length of the Collatz sequence that\n";
-  cout << "  starts at N.\n";
-  cout << "\n";
-  cout << "         N      COLLATZ_COUNT(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COLLATZ_COUNT_VALUES_TEST:\n";
+  std::cout << "  COLLATZ_COUNT_VALUES returns values of\n";
+  std::cout << "  the length of the Collatz sequence that\n";
+  std::cout << "  starts at N.\n";
+  std::cout << "\n";
+  std::cout << "         N      COLLATZ_COUNT(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5163,8 +5161,8 @@ void collatz_count_values_test ( )
     {
       break;
     }
-    cout << "  " << setw(8)  << n
-         << "  " << setw(12) << count << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(12) << count << "\n";
   }
 
   return;
@@ -5196,12 +5194,12 @@ void cos_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "COS_VALUES_TEST:\n";
-  cout << "   COS_VALUES stores values of the cosine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COS_VALUES_TEST:\n";
+  std::cout << "   COS_VALUES stores values of the cosine function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5213,9 +5211,9 @@ void cos_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5246,12 +5244,12 @@ void cos_degree_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "COS_DEGREE_VALUES_TEST:\n";
-  cout << "   COS_DEGREE_VALUES stores values of the cosine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COS_DEGREE_VALUES_TEST:\n";
+  std::cout << "   COS_DEGREE_VALUES stores values of the cosine function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5263,9 +5261,9 @@ void cos_degree_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5298,13 +5296,13 @@ void cos_power_int_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "COS_POWER_INT_VALUES_TEST:\n";
-  cout << "  COS_POWER_INT_VALUES returns values of\n";
-  cout << "  the integral of the N-th power of the cosine function.\n";
-  cout << "\n";
-  cout << "         A         B       N        FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COS_POWER_INT_VALUES_TEST:\n";
+  std::cout << "  COS_POWER_INT_VALUES returns values of\n";
+  std::cout << "  the integral of the N-th power of the cosine function.\n";
+  std::cout << "\n";
+  std::cout << "         A         B       N        FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5316,11 +5314,11 @@ void cos_power_int_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(8)                      << a  << "  "
-         << setw(8)                      << b  << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(8)                      << a  << "  "
+         << std::setw(8)                      << b  << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -5351,12 +5349,12 @@ void cosh_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "COSH_VALUES_TEST:\n";
-  cout << "   COSH_VALUES stores values of the hyperbolic cosine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COSH_VALUES_TEST:\n";
+  std::cout << "   COSH_VALUES stores values of the hyperbolic cosine function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5368,9 +5366,9 @@ void cosh_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5401,12 +5399,12 @@ void cot_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "COT_VALUES_TEST:\n";
-  cout << "   COT_VALUES stores values of the cotangent function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COT_VALUES_TEST:\n";
+  std::cout << "   COT_VALUES stores values of the cotangent function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5418,9 +5416,9 @@ void cot_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5452,14 +5450,14 @@ void cp_values_test ( )
   double p;
   double tc;
 
-  cout << "\n";
-  cout << "CP_VALUES_TEST:\n";
-  cout << "  CP_VALUES stores values of\n";
-  cout << "  the specific heat CP\n";
-  cout << "  as a function of temperature and pressure.\n";
-  cout << "\n";
-  cout << "      T            P            CP(T,P)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CP_VALUES_TEST:\n";
+  std::cout << "  CP_VALUES stores values of\n";
+  std::cout << "  the specific heat CP\n";
+  std::cout << "  as a function of temperature and pressure.\n";
+  std::cout << "\n";
+  std::cout << "      T            P            CP(T,P)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5471,10 +5469,10 @@ void cp_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << tc << "  "
-         << setw(12) << p  << "  "
-         << setw(12) << cp << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << tc << "  "
+         << std::setw(12) << p  << "  "
+         << std::setw(12) << cp << "\n";
   }
   return;
 }
@@ -5505,13 +5503,13 @@ void dawson_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "DAWSON_VALUES_TEST:\n";
-  cout << "  DAWSON_VALUES stores values of\n";
-  cout << "  Dawson's integral function.\n";
-  cout << "\n";
-  cout << "      X          DAWSON(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "DAWSON_VALUES_TEST:\n";
+  std::cout << "  DAWSON_VALUES stores values of\n";
+  std::cout << "  Dawson's integral function.\n";
+  std::cout << "\n";
+  std::cout << "      X          DAWSON(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5523,9 +5521,9 @@ void dawson_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -5556,13 +5554,13 @@ void debye1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "DEBYE1_VALUES_TEST:\n";
-  cout << "  DEBYE1_VALUES stores values of \n";
-  cout << "  the Debye function of order 1.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "DEBYE1_VALUES_TEST:\n";
+  std::cout << "  DEBYE1_VALUES stores values of \n";
+  std::cout << "  the Debye function of order 1.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5574,9 +5572,9 @@ void debye1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5607,13 +5605,13 @@ void debye2_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "DEBYE2_VALUES_TEST:\n";
-  cout << "  DEBYE2_VALUES stores values of \n";
-  cout << "  the Debye function of order 2.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "DEBYE2_VALUES_TEST:\n";
+  std::cout << "  DEBYE2_VALUES stores values of \n";
+  std::cout << "  the Debye function of order 2.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5625,9 +5623,9 @@ void debye2_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5658,13 +5656,13 @@ void debye3_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "DEBYE3_VALUES_TEST:\n";
-  cout << "  DEBYE3_VALUES stores values of \n";
-  cout << "  the Debye function of order 3.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "DEBYE3_VALUES_TEST:\n";
+  std::cout << "  DEBYE3_VALUES stores values of \n";
+  std::cout << "  the Debye function of order 3.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5676,9 +5674,9 @@ void debye3_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5709,13 +5707,13 @@ void debye4_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "DEBYE4_VALUES_TEST:\n";
-  cout << "  DEBYE4_VALUES stores values of \n";
-  cout << "  the Debye function of order 4.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "DEBYE4_VALUES_TEST:\n";
+  std::cout << "  DEBYE4_VALUES stores values of \n";
+  std::cout << "  the Debye function of order 4.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5727,9 +5725,9 @@ void debye4_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -5762,13 +5760,13 @@ void dedekind_sum_values_test ( )
   int p;
   int q;
 
-  cout << "\n";
-  cout << "DEDEKIND_SUM_VALUES_TEST:\n";
-  cout << "  DEDEKIND_SUM_VALUES stores values of the Dedekind sum\n";
-  cout << "  (N/D) = Dedekind_Sum(P,Q).\n";
-  cout << "\n";
-  cout << "       P       Q       N       D\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "DEDEKIND_SUM_VALUES_TEST:\n";
+  std::cout << "  DEDEKIND_SUM_VALUES stores values of the Dedekind sum\n";
+  std::cout << "  (N/D) = Dedekind_Sum(P,Q).\n";
+  std::cout << "\n";
+  std::cout << "       P       Q       N       D\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5780,11 +5778,11 @@ void dedekind_sum_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(6) << p  << "  "
-         << setw(6) << q  << "  "
-         << setw(6) << n  << "  "
-         << setw(6) << d  << "\n";
+    std::cout                  << "  "
+         << std::setw(6) << p  << "  "
+         << std::setw(6) << q  << "  "
+         << std::setw(6) << n  << "  "
+         << std::setw(6) << d  << "\n";
   }
   return;
 }
@@ -5816,13 +5814,13 @@ void dielectric_values_test ( )
   double p;
   double tc;
 
-  cout << "\n";
-  cout << "DIELECTRIC_VALUES_TEST:\n";
-  cout << "  DIELECTRIC_VALUES stores values of\n";
-  cout << "  the dielectric function.\n";
-  cout << "\n";
-  cout << "      T           P            EPS(T,P)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "DIELECTRIC_VALUES_TEST:\n";
+  std::cout << "  DIELECTRIC_VALUES stores values of\n";
+  std::cout << "  the dielectric function.\n";
+  std::cout << "\n";
+  std::cout << "      T           P            EPS(T,P)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5834,10 +5832,10 @@ void dielectric_values_test ( )
     {
       break;
     }
-    cout                    << "  "
-         << setw(12) << tc  << "  "
-         << setw(12) << p   << "  "
-         << setw(12) << eps << "\n";
+    std::cout                    << "  "
+         << std::setw(12) << tc  << "  "
+         << std::setw(12) << p   << "  "
+         << std::setw(12) << eps << "\n";
   }
   return;
 }
@@ -5868,13 +5866,13 @@ void dilogarithm_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "DILOGARITHM_VALUES_TEST:\n";
-  cout << "  DILOGARITHM_VALUES stores values of\n";
-  cout << "  the dilogarithm function.\n";
-  cout << "\n";
-  cout << "      X          DILOGARITHM(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "DILOGARITHM_VALUES_TEST:\n";
+  std::cout << "  DILOGARITHM_VALUES stores values of\n";
+  std::cout << "  the dilogarithm function.\n";
+  std::cout << "\n";
+  std::cout << "      X          DILOGARITHM(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5886,9 +5884,9 @@ void dilogarithm_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -5919,13 +5917,13 @@ void e1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "E1_VALUES_TEST:\n";
-  cout << "  E1_VALUES stores values of\n";
-  cout << "  the exponential integral function E1(X).\n";
-  cout << "\n";
-  cout << "      X          E1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "E1_VALUES_TEST:\n";
+  std::cout << "  E1_VALUES stores values of\n";
+  std::cout << "  the exponential integral function E1(X).\n";
+  std::cout << "\n";
+  std::cout << "      X          E1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5937,9 +5935,9 @@ void e1_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -5970,13 +5968,13 @@ void ei_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "EI_VALUES_TEST:\n";
-  cout << "  EI_VALUES stores values of\n";
-  cout << "  the exponential integral function EI(X).\n";
-  cout << "\n";
-  cout << "      X          EI(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EI_VALUES_TEST:\n";
+  std::cout << "  EI_VALUES stores values of\n";
+  std::cout << "  the exponential integral function EI(X).\n";
+  std::cout << "\n";
+  std::cout << "      X          EI(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5988,9 +5986,9 @@ void ei_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -6021,14 +6019,14 @@ void elliptic_ea_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ELLIPTIC_EA_VALUES_TEST:\n";
-  cout << "  ELLIPTIC_EA_VALUES stores values of\n";
-  cout << "  the complete elliptic integral of the second\n";
-  cout << "  kind, with parameter angle ALPHA in degrees.\n";
-  cout << "\n";
-  cout << "    ALPHA        EA(ALPHA)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ELLIPTIC_EA_VALUES_TEST:\n";
+  std::cout << "  ELLIPTIC_EA_VALUES stores values of\n";
+  std::cout << "  the complete elliptic integral of the second\n";
+  std::cout << "  kind, with parameter angle ALPHA in degrees.\n";
+  std::cout << "\n";
+  std::cout << "    ALPHA        EA(ALPHA)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6040,9 +6038,9 @@ void elliptic_ea_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -6073,14 +6071,14 @@ void elliptic_em_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ELLIPTIC_EM_VALUES_TEST:\n";
-  cout << "  ELLIPTIC_EM_VALUES stores values of\n";
-  cout << "  the complete elliptic integral of the second\n";
-  cout << "  kind, with parameter modulus M.\n";
-  cout << "\n";
-  cout << "      M            EM(M)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ELLIPTIC_EM_VALUES_TEST:\n";
+  std::cout << "  ELLIPTIC_EM_VALUES stores values of\n";
+  std::cout << "  the complete elliptic integral of the second\n";
+  std::cout << "  kind, with parameter modulus M.\n";
+  std::cout << "\n";
+  std::cout << "      M            EM(M)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6092,9 +6090,9 @@ void elliptic_em_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -6125,14 +6123,14 @@ void elliptic_ka_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ELLIPTIC_KA_VALUES_TEST:\n";
-  cout << "  ELLIPTIC_KA_VALUES stores values of\n";
-  cout << "  the complete elliptic integral of the first\n";
-  cout << "  kind, with parameter angle ALPHA in degrees.\n";
-  cout << "\n";
-  cout << "    ALPHA        KA(ALPHA)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ELLIPTIC_KA_VALUES_TEST:\n";
+  std::cout << "  ELLIPTIC_KA_VALUES stores values of\n";
+  std::cout << "  the complete elliptic integral of the first\n";
+  std::cout << "  kind, with parameter angle ALPHA in degrees.\n";
+  std::cout << "\n";
+  std::cout << "    ALPHA        KA(ALPHA)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6144,9 +6142,9 @@ void elliptic_ka_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -6177,14 +6175,14 @@ void elliptic_km_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ELLIPTIC_KM_VALUES_TEST:\n";
-  cout << "  ELLIPTIC_KM_VALUES stores values of\n";
-  cout << "  the complete elliptic integral of the first\n";
-  cout << "  kind, with parameter modulus M.\n";
-  cout << "\n";
-  cout << "      M            KM(M)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ELLIPTIC_KM_VALUES_TEST:\n";
+  std::cout << "  ELLIPTIC_KM_VALUES stores values of\n";
+  std::cout << "  the complete elliptic integral of the first\n";
+  std::cout << "  kind, with parameter modulus M.\n";
+  std::cout << "\n";
+  std::cout << "      M            KM(M)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6196,9 +6194,9 @@ void elliptic_km_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -6229,13 +6227,13 @@ void erf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ERF_VALUES_TEST:\n";
-  cout << "  ERF_VALUES stores values of\n";
-  cout << "  the error function ERF(X).\n";
-  cout << "\n";
-  cout << "      X          ERF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ERF_VALUES_TEST:\n";
+  std::cout << "  ERF_VALUES stores values of\n";
+  std::cout << "  the error function ERF(X).\n";
+  std::cout << "\n";
+  std::cout << "      X          ERF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6247,9 +6245,9 @@ void erf_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -6280,13 +6278,13 @@ void erfc_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "ERFC_VALUES_TEST:\n";
-  cout << "  ERFC_VALUES stores values of\n";
-  cout << "  the complementary error function ERFC(X).\n";
-  cout << "\n";
-  cout << "      X          ERFC(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ERFC_VALUES_TEST:\n";
+  std::cout << "  ERFC_VALUES stores values of\n";
+  std::cout << "  the complementary error function ERFC(X).\n";
+  std::cout << "\n";
+  std::cout << "      X          ERFC(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6298,9 +6296,9 @@ void erfc_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -6331,13 +6329,13 @@ void euler_number_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "EULER_NUMBER_VALUES_TEST:\n";
-  cout << "  EULER_NUMBER_VALUES returns values of\n";
-  cout << "  the Euler numbers.\n";
-  cout << "\n";
-  cout << "     N        EULER_NUMBER(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EULER_NUMBER_VALUES_TEST:\n";
+  std::cout << "  EULER_NUMBER_VALUES returns values of\n";
+  std::cout << "  the Euler numbers.\n";
+  std::cout << "\n";
+  std::cout << "     N        EULER_NUMBER(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6349,9 +6347,9 @@ void euler_number_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(6)  << n << "  "
-         << setw(10) << c << "\n";
+    std::cout                  << "  "
+         << std::setw(6)  << n << "  "
+         << std::setw(10) << c << "\n";
   }
   return;
 }
@@ -6383,13 +6381,13 @@ void euler_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "EULER_POLY_VALUES_TEST:\n";
-  cout << "  EULER_POLY_VALUES returns values of\n";
-  cout << "  the Euler numbers.\n";
-  cout << "\n";
-  cout << "     N     X       EULER_POLY(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EULER_POLY_VALUES_TEST:\n";
+  std::cout << "  EULER_POLY_VALUES returns values of\n";
+  std::cout << "  the Euler numbers.\n";
+  std::cout << "\n";
+  std::cout << "     N     X       EULER_POLY(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6401,10 +6399,10 @@ void euler_poly_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(8)  << x  << "  "
-         << setw(16) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(16) << fx << "\n";
   }
   return;
 }
@@ -6435,12 +6433,12 @@ void exp_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "EXP_VALUES_TEST:\n";
-  cout << "   EXP_VALUES stores values of the exponential function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EXP_VALUES_TEST:\n";
+  std::cout << "   EXP_VALUES stores values of the exponential function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6452,9 +6450,9 @@ void exp_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -6485,13 +6483,13 @@ void exp3_int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "EXP3_INT_VALUES_TEST:\n";
-  cout << "  EXP3_INT_VALUES stores values of \n";
-  cout << "  the exponential integral function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EXP3_INT_VALUES_TEST:\n";
+  std::cout << "  EXP3_INT_VALUES stores values of \n";
+  std::cout << "  the exponential integral function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6503,9 +6501,9 @@ void exp3_int_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -6536,13 +6534,13 @@ void exponential_01_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "EXPONENTIAL_01_PDF_VALUES_TEST:\n";
-  cout << "  EXPONENTIAL_01_PDF_VALUES stores values of\n";
-  cout << "  the standard exponential Probability Density Function.\n";
-  cout << "\n";
-  cout << "            X                   PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EXPONENTIAL_01_PDF_VALUES_TEST:\n";
+  std::cout << "  EXPONENTIAL_01_PDF_VALUES stores values of\n";
+  std::cout << "  the standard exponential Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "            X                   PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6554,9 +6552,9 @@ void exponential_01_pdf_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -6588,13 +6586,13 @@ void exponential_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "EXPONENTIAL_CDF_VALUES_TEST:\n";
-  cout << "  EXPONENTIAL_CDF_VALUES stores values of \n";
-  cout << "  the exponential CDF.\n";
-  cout << "\n";
-  cout << "       LAMBDA         X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EXPONENTIAL_CDF_VALUES_TEST:\n";
+  std::cout << "  EXPONENTIAL_CDF_VALUES stores values of \n";
+  std::cout << "  the exponential CDF.\n";
+  std::cout << "\n";
+  std::cout << "       LAMBDA         X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6606,10 +6604,10 @@ void exponential_cdf_values_test ( )
     {
       break;
     }
-    cout                                              << "  "
-         << setw(24) << setprecision ( 8 )  << lambda << "  "
-         << setw(24) << setprecision ( 8 )  << x      << "  "
-         << setw(24) << setprecision ( 16 ) << fx     << "\n";
+    std::cout                                              << "  "
+         << std::setw(24) << std::setprecision ( 8 )  << lambda << "  "
+         << std::setw(24) << std::setprecision ( 8 )  << x      << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx     << "\n";
   }
   return;
 }
@@ -6641,13 +6639,13 @@ void exponential_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "EXPONENTIAL_PDF_VALUES_TEST:\n";
-  cout << "  EXPONENTIAL_PDF_VALUES stores values of \n";
-  cout << "  the exponential PDF.\n";
-  cout << "\n";
-  cout << "       LAMBDA         X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EXPONENTIAL_PDF_VALUES_TEST:\n";
+  std::cout << "  EXPONENTIAL_PDF_VALUES stores values of \n";
+  std::cout << "  the exponential PDF.\n";
+  std::cout << "\n";
+  std::cout << "       LAMBDA         X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6659,10 +6657,10 @@ void exponential_pdf_values_test ( )
     {
       break;
     }
-    cout                                              << "  "
-         << setw(24) << setprecision ( 8 )  << lambda << "  "
-         << setw(24) << setprecision ( 8 )  << x      << "  "
-         << setw(24) << setprecision ( 16 ) << fx     << "\n";
+    std::cout                                              << "  "
+         << std::setw(24) << std::setprecision ( 8 )  << lambda << "  "
+         << std::setw(24) << std::setprecision ( 8 )  << x      << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx     << "\n";
   }
   return;
 }
@@ -6695,13 +6693,13 @@ void extreme_values_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "EXTREME_VALUES_CDF_VALUES_TEST:\n";
-  cout << "  EXTREME_VALUES_CDF_VALUES stores values of \n";
-  cout << "  the extreme values CDF.\n";
-  cout << "\n";
-  cout << "        Alpha    Beta        X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EXTREME_VALUES_CDF_VALUES_TEST:\n";
+  std::cout << "  EXTREME_VALUES_CDF_VALUES stores values of \n";
+  std::cout << "  the extreme values CDF.\n";
+  std::cout << "\n";
+  std::cout << "        Alpha    Beta        X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6713,11 +6711,11 @@ void extreme_values_cdf_values_test ( )
     {
       break;
     }
-    cout                                              << "  "
-         << setw(12)                        << alpha  << "  "
-         << setw(12)                        << beta   << "  "
-         << setw(12)                        << x      << "  "
-         << setw(24) << setprecision ( 16 ) << fx     << "\n";
+    std::cout                                              << "  "
+         << std::setw(12)                        << alpha  << "  "
+         << std::setw(12)                        << beta   << "  "
+         << std::setw(12)                        << x      << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx     << "\n";
   }
   return;
 }
@@ -6750,13 +6748,13 @@ void f_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "F_CDF_VALUES_TEST:\n";
-  cout << "  F_CDF_VALUES stores values of\n";
-  cout << "  the F cumulative density function.\n";
-  cout << "\n";
-  cout << "     A       B            X            CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "F_CDF_VALUES_TEST:\n";
+  std::cout << "  F_CDF_VALUES stores values of\n";
+  std::cout << "  the F cumulative density function.\n";
+  std::cout << "\n";
+  std::cout << "     A       B            X            CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6768,11 +6766,11 @@ void f_cdf_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << a  << "  "
-         << setw(6)  << b  << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << a  << "  "
+         << std::setw(6)  << b  << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -6806,13 +6804,13 @@ void f_noncentral_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "F_NONCENTRAL_CDF_VALUES_TEST:\n";
-  cout << "  F_NONCENTRAL_CDF_VALUES stores values of\n";
-  cout << "  the F cumulative density function.\n";
-  cout << "\n";
-  cout << "     A       B            LAMBDA    X            CDF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "F_NONCENTRAL_CDF_VALUES_TEST:\n";
+  std::cout << "  F_NONCENTRAL_CDF_VALUES stores values of\n";
+  std::cout << "  the F cumulative density function.\n";
+  std::cout << "\n";
+  std::cout << "     A       B            LAMBDA    X            CDF\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6824,12 +6822,12 @@ void f_noncentral_cdf_values_test ( )
     {
       break;
     }
-    cout                       << "  "
-         << setw(6)  << a      << "  "
-         << setw(6)  << b      << "  "
-         << setw(8)  << lambda << "  "
-         << setw(12) << x      << "  "
-         << setw(12) << fx     << "\n";
+    std::cout                       << "  "
+         << std::setw(6)  << a      << "  "
+         << std::setw(6)  << b      << "  "
+         << std::setw(8)  << lambda << "  "
+         << std::setw(12) << x      << "  "
+         << std::setw(12) << fx     << "\n";
   }
   return;
 }
@@ -6860,13 +6858,13 @@ void fresnel_cos_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "FRESNEL_COS_VALUES_TEST:\n";
-  cout << "  FRESNEL_COS_VALUES stores values of\n";
-  cout << "  the Fresnel cosine integral C(X).\n";
-  cout << "\n";
-  cout << "      X           C(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "FRESNEL_COS_VALUES_TEST:\n";
+  std::cout << "  FRESNEL_COS_VALUES stores values of\n";
+  std::cout << "  the Fresnel cosine integral C(X).\n";
+  std::cout << "\n";
+  std::cout << "      X           C(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6878,9 +6876,9 @@ void fresnel_cos_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -6911,13 +6909,13 @@ void fresnel_sin_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "FRESNEL_SIN_VALUES_TEST:\n";
-  cout << "  FRESNEL_SIN_VALUES stores values of\n";
-  cout << "  the Fresnel sine integral S(X).\n";
-  cout << "\n";
-  cout << "      X           S(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "FRESNEL_SIN_VALUES_TEST:\n";
+  std::cout << "  FRESNEL_SIN_VALUES stores values of\n";
+  std::cout << "  the Fresnel sine integral S(X).\n";
+  std::cout << "\n";
+  std::cout << "      X           S(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6929,9 +6927,9 @@ void fresnel_sin_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -6964,10 +6962,10 @@ void frobenius_number_data_values_test ( )
   int n_data;
   int order;
 
-  cout << "\n";
-  cout << "FROBENIUS_NUMBER_DATA_VALUES_TEST:\n";
-  cout << "  FROBENIUS_NUMBER_DATA_VALUES returns the corresponding\n";
-  cout << "  coin denominations.\n";
+  std::cout << "\n";
+  std::cout << "FROBENIUS_NUMBER_DATA_VALUES_TEST:\n";
+  std::cout << "  FROBENIUS_NUMBER_DATA_VALUES returns the corresponding\n";
+  std::cout << "  coin denominations.\n";
 
   n_data = 0;
 
@@ -6984,14 +6982,14 @@ void frobenius_number_data_values_test ( )
 
     frobenius_number_data_values ( n_data, order, c, f );
 
-    cout << "\n";
-    cout << "  Order = " << order << "\n";
+    std::cout << "\n";
+    std::cout << "  Order = " << order << "\n";
     for ( i = 0; i < order; i++ )
     {
-      cout << "  " << setw(8) << c[i];
+      std::cout << "  " << std::setw(8) << c[i];
     }
-    cout << "\n";
-    cout << "  Frobenius number = " << f << "\n";
+    std::cout << "\n";
+    std::cout << "  Frobenius number = " << f << "\n";
 
     delete [] c;
   }
@@ -7023,13 +7021,13 @@ void frobenius_number_order_values_test ( )
   int n_data;
   int order;
 
-  cout << "\n";
-  cout << "FROBENIUS_NUMBER_ORDER_VALUES_TEST:\n";
-  cout << "  FROBENIUS_NUMBER_ORDER_VALUES returns the order for\n";
-  cout << "  a Frobenius problem;\n";
-  cout << "\n";
-  cout << "   Problem   ORDER\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "FROBENIUS_NUMBER_ORDER_VALUES_TEST:\n";
+  std::cout << "  FROBENIUS_NUMBER_ORDER_VALUES returns the order for\n";
+  std::cout << "  a Frobenius problem;\n";
+  std::cout << "\n";
+  std::cout << "   Problem   ORDER\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7042,9 +7040,9 @@ void frobenius_number_order_values_test ( )
       break;
     }
 
-    cout << "\n";
-    cout << "  " << setw(4) << n_data
-         << "  " << setw(4) << order << "\n";
+    std::cout << "\n";
+    std::cout << "  " << std::setw(4) << n_data
+         << "  " << std::setw(4) << order << "\n";
   }
   return;
 }
@@ -7076,13 +7074,13 @@ void frobenius_number_order2_values_test ( )
   int f;
   int n_data;
 
-  cout << "\n";
-  cout << "FROBENIUS_NUMBER_ORDER2_VALUES_TEST:\n";
-  cout << "  FROBENIUS_NUMBER_ORDER2_VALUES returns values of \n";
-  cout << "  the Frobenius number of order 2.\n";
-  cout << "\n";
-  cout << "         C1        C2          F(C1,C2)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "FROBENIUS_NUMBER_ORDER2_VALUES_TEST:\n";
+  std::cout << "  FROBENIUS_NUMBER_ORDER2_VALUES returns values of \n";
+  std::cout << "  the Frobenius number of order 2.\n";
+  std::cout << "\n";
+  std::cout << "         C1        C2          F(C1,C2)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7095,9 +7093,9 @@ void frobenius_number_order2_values_test ( )
       break;
     }
 
-    cout << "  " << setw(8) << c1
-         << "  " << setw(8) << c2
-         << "  " << setw(8) << f << "\n";
+    std::cout << "  " << std::setw(8) << c1
+         << "  " << std::setw(8) << c2
+         << "  " << std::setw(8) << f << "\n";
   }
 
   return;
@@ -7129,12 +7127,12 @@ void gamma_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_VALUES_TEST:\n";
-  cout << "  GAMMA_VALUES stores values of the Gamma function.\n";
-  cout << "\n";
-  cout << "      X            GAMMA(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_VALUES_TEST:\n";
+  std::cout << "  GAMMA_VALUES stores values of the Gamma function.\n";
+  std::cout << "\n";
+  std::cout << "      X            GAMMA(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7146,9 +7144,9 @@ void gamma_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7180,13 +7178,13 @@ void gamma_01_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_01_PDF_VALUES_TEST:\n";
-  cout << "  GAMMA_01_PDF_VALUES stores values of\n";
-  cout << "  the standard Gamma Probability Density Function.\n";
-  cout << "\n";
-  cout << "       ALPHA        X                   PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_01_PDF_VALUES_TEST:\n";
+  std::cout << "  GAMMA_01_PDF_VALUES stores values of\n";
+  std::cout << "  the standard Gamma Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "       ALPHA        X                   PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7198,10 +7196,10 @@ void gamma_01_pdf_values_test ( )
     {
       break;
     }
-    cout                                             << "  "
-         << setw(12)                        << alpha << "  "
-         << setw(12)                        << x     << "  "
-         << setw(24) << setprecision ( 16 ) << fx    << "\n";
+    std::cout                                             << "  "
+         << std::setw(12)                        << alpha << "  "
+         << std::setw(12)                        << x     << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx    << "\n";
   }
   return;
 }
@@ -7234,13 +7232,13 @@ void gamma_cdf_values_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_CDF_VALUES_TEST:\n";
-  cout << "  GAMMA_CDF_VALUES stores values of\n";
-  cout << "  the Gamma CDF.\n";
-  cout << "\n";
-  cout << "      M    Sigma      X            CDF((X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_CDF_VALUES_TEST:\n";
+  std::cout << "  GAMMA_CDF_VALUES stores values of\n";
+  std::cout << "  the Gamma CDF.\n";
+  std::cout << "\n";
+  std::cout << "      M    Sigma      X            CDF((X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7252,11 +7250,11 @@ void gamma_cdf_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(12)                     << mu     << "  "
-         << setw(12)                     << sigma  << "  "
-         << setw(12)                     << x      << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                           << "  "
+         << std::setw(12)                     << mu     << "  "
+         << std::setw(12)                     << sigma  << "  "
+         << std::setw(12)                     << x      << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7288,13 +7286,13 @@ void gamma_inc_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_INC_VALUES_TEST:\n";
-  cout << "   GAMMA_INC_VALUES stores values of\n";
-  cout << "   the incomplete Gamma function.\n";
-  cout << "\n";
-  cout << "      A            X            GAMMA_INC(A)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_INC_VALUES_TEST:\n";
+  std::cout << "   GAMMA_INC_VALUES stores values of\n";
+  std::cout << "   the incomplete Gamma function.\n";
+  std::cout << "\n";
+  std::cout << "      A            X            GAMMA_INC(A)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7306,10 +7304,10 @@ void gamma_inc_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << a  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7341,13 +7339,13 @@ void gamma_inc_p_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_INC_P_VALUES_TEST:\n";
-  cout << "   GAMMA_INC_P_VALUES stores values of\n";
-  cout << "   the incomplete Gamma P function.\n";
-  cout << "\n";
-  cout << "      A            X            F(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_INC_P_VALUES_TEST:\n";
+  std::cout << "   GAMMA_INC_P_VALUES stores values of\n";
+  std::cout << "   the incomplete Gamma P function.\n";
+  std::cout << "\n";
+  std::cout << "      A            X            F(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7359,10 +7357,10 @@ void gamma_inc_p_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << a  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7394,13 +7392,13 @@ void gamma_inc_q_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_INC_Q_VALUES_TEST:\n";
-  cout << "   GAMMA_INC_Q_VALUES stores values of\n";
-  cout << "   the incomplete Gamma Q function.\n";
-  cout << "\n";
-  cout << "      A            X            F(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_INC_Q_VALUES_TEST:\n";
+  std::cout << "   GAMMA_INC_Q_VALUES stores values of\n";
+  std::cout << "   the incomplete Gamma Q function.\n";
+  std::cout << "\n";
+  std::cout << "      A            X            F(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7412,10 +7410,10 @@ void gamma_inc_q_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << a  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7447,13 +7445,13 @@ void gamma_inc_tricomi_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_INC_TRICOMI_VALUES_TEST:\n";
-  cout << "   GAMMA_INC_TRICOMI_VALUES stores values of\n";
-  cout << "   the incomplete Tricomi Gamma function.\n";
-  cout << "\n";
-  cout << "      A            X            F(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_INC_TRICOMI_VALUES_TEST:\n";
+  std::cout << "   GAMMA_INC_TRICOMI_VALUES stores values of\n";
+  std::cout << "   the incomplete Tricomi Gamma function.\n";
+  std::cout << "\n";
+  std::cout << "      A            X            F(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7465,10 +7463,10 @@ void gamma_inc_tricomi_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << a  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7499,13 +7497,13 @@ void gamma_log_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_LOG_VALUES_TEST:\n";
-  cout << "  GAMMA_LOG_VALUES stores values of\n";
-  cout << "  the logarithm of the Gamma function.\n";
-  cout << "\n";
-  cout << "      X            GAMMA_LOG(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_LOG_VALUES_TEST:\n";
+  std::cout << "  GAMMA_LOG_VALUES stores values of\n";
+  std::cout << "  the logarithm of the Gamma function.\n";
+  std::cout << "\n";
+  std::cout << "      X            GAMMA_LOG(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7517,9 +7515,9 @@ void gamma_log_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7552,13 +7550,13 @@ void gamma_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GAMMA_PDF_VALUES_TEST:\n";
-  cout << "  GAMMA_PDF_VALUES stores values of\n";
-  cout << "  a Gamma Probability Density Function.\n";
-  cout << "\n";
-  cout << "       BETA          ALPHA        X                   PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GAMMA_PDF_VALUES_TEST:\n";
+  std::cout << "  GAMMA_PDF_VALUES stores values of\n";
+  std::cout << "  a Gamma Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "       BETA          ALPHA        X                   PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7570,11 +7568,11 @@ void gamma_pdf_values_test ( )
     {
       break;
     }
-    cout                                             << "  "
-         << setw(12)                        << beta  << "  "
-         << setw(12)                        << alpha << "  "
-         << setw(12)                        << x     << "  "
-         << setw(24) << setprecision ( 16 ) << fx    << "\n";
+    std::cout                                             << "  "
+         << std::setw(12)                        << beta  << "  "
+         << std::setw(12)                        << alpha << "  "
+         << std::setw(12)                        << x     << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx    << "\n";
   }
   return;
 }
@@ -7607,13 +7605,13 @@ void gegenbauer_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GEGENBAUER_POLY_VALUES_TEST:\n";
-  cout << "  GEGENBAUER_POLY_VALUES returns values of\n";
-  cout << "  the Gegenbauer polynomials.\n";
-  cout << "\n";
-  cout << "       N       A       X       G(N,A)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_POLY_VALUES_TEST:\n";
+  std::cout << "  GEGENBAUER_POLY_VALUES returns values of\n";
+  std::cout << "  the Gegenbauer polynomials.\n";
+  std::cout << "\n";
+  std::cout << "       N       A       X       G(N,A)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7625,11 +7623,11 @@ void gegenbauer_poly_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(10)                     << a  << "  "
-         << setw(10)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(10)                     << a  << "  "
+         << std::setw(10)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
 
   return;
@@ -7662,13 +7660,13 @@ void geometric_cdf_values_test ( )
   double p;
   int x;
 
-  cout << "\n";
-  cout << "GEOMETRIC_CDF_VALUES_TEST:\n";
-  cout << "  GEOMETRIC_CDF_VALUES stores values of\n";
-  cout << "  the Geometric Probability Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "      X      P       CDF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GEOMETRIC_CDF_VALUES_TEST:\n";
+  std::cout << "  GEOMETRIC_CDF_VALUES stores values of\n";
+  std::cout << "  the Geometric Probability Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "      X      P       CDF\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7680,10 +7678,10 @@ void geometric_cdf_values_test ( )
     {
       break;
     }
-    cout                                        << "  "
-         << setw(6)                      << x   << "  "
-         << setw(8)                      << p   << "  "
-         << setw(24) << setprecision(16) << cdf << "\n";
+    std::cout                                        << "  "
+         << std::setw(6)                      << x   << "  "
+         << std::setw(8)                      << p   << "  "
+         << std::setw(24) << std::setprecision(16) << cdf << "\n";
   }
   return;
 }
@@ -7714,13 +7712,13 @@ void goodwin_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GOODWIN_VALUES_TEST:\n";
-  cout << "  GOODWIN_VALUES stores values of \n";
-  cout << "  the Goodwin function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GOODWIN_VALUES_TEST:\n";
+  std::cout << "  GOODWIN_VALUES stores values of \n";
+  std::cout << "  the Goodwin function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7732,9 +7730,9 @@ void goodwin_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -7765,13 +7763,13 @@ void gud_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GUD_VALUES_TEST:\n";
-  cout << "  GUD_VALUES stores values of\n";
-  cout << "  the Gudermannian function.\n";
-  cout << "\n";
-  cout << "      X            GUD(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GUD_VALUES_TEST:\n";
+  std::cout << "  GUD_VALUES stores values of\n";
+  std::cout << "  the Gudermannian function.\n";
+  std::cout << "\n";
+  std::cout << "      X            GUD(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7783,9 +7781,9 @@ void gud_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7817,13 +7815,13 @@ void hermite_function_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "HERMITE_FUNCTION_VALUES_TEST\n";
-  cout << "  HERMITE_FUNCTION_VALUES stores values of\n";
-  cout << "  the Hermite function.\n";
-  cout << "\n";
-  cout << "     N      X            Hf(N,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_FUNCTION_VALUES_TEST\n";
+  std::cout << "  HERMITE_FUNCTION_VALUES stores values of\n";
+  std::cout << "  the Hermite function.\n";
+  std::cout << "\n";
+  std::cout << "     N      X            Hf(N,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7835,10 +7833,10 @@ void hermite_function_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7870,13 +7868,13 @@ void hermite_poly_phys_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "HERMITE_POLY_PHYS_VALUES_TEST\n";
-  cout << "  HERMITE_POLY_PHYS_VALUES stores values of\n";
-  cout << "  the physicist's Hermite polynomials.\n";
-  cout << "\n";
-  cout << "     N      X            H(N,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLY_PHYS_VALUES_TEST\n";
+  std::cout << "  HERMITE_POLY_PHYS_VALUES stores values of\n";
+  std::cout << "  the physicist's Hermite polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N      X            H(N,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7888,10 +7886,10 @@ void hermite_poly_phys_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7923,13 +7921,13 @@ void hermite_poly_prob_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "HERMITE_POLY_PROB_VALUES_TEST\n";
-  cout << "  HERMITE_POLY_PROB_VALUES stores values of\n";
-  cout << "  the probabilist's Hermite polynomials.\n";
-  cout << "\n";
-  cout << "     N      X            He(N,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLY_PROB_VALUES_TEST\n";
+  std::cout << "  HERMITE_POLY_PROB_VALUES stores values of\n";
+  std::cout << "  the probabilist's Hermite polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N      X            He(N,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7941,10 +7939,10 @@ void hermite_poly_prob_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -7977,13 +7975,13 @@ void hyper_1f1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "HYPER_1F1_VALUES_TEST:\n";
-  cout << "  HYPER_1F1_VALUES stores values of\n";
-  cout << "  the hypergeometric function 1F1.\n";
-  cout << "\n";
-  cout << "      A      B      X   Hyper_1F1(A,B,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HYPER_1F1_VALUES_TEST:\n";
+  std::cout << "  HYPER_1F1_VALUES stores values of\n";
+  std::cout << "  the hypergeometric function 1F1.\n";
+  std::cout << "\n";
+  std::cout << "      A      B      X   Hyper_1F1(A,B,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -7995,11 +7993,11 @@ void hyper_1f1_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(8)                      << a  << "  "
-         << setw(8)                      << b  << "  "
-         << setw(8)                      << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(8)                      << a  << "  "
+         << std::setw(8)                      << b  << "  "
+         << std::setw(8)                      << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -8033,13 +8031,13 @@ void hyper_2f1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "HYPER_2F1_VALUES_TEST:\n";
-  cout << "  HYPER_2F1_VALUES stores values of\n";
-  cout << "  the hypergeometric function 2F1.\n";
-  cout << "\n";
-  cout << "      A      B     C      X   Hyper_2F1(A,B,C,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HYPER_2F1_VALUES_TEST:\n";
+  std::cout << "  HYPER_2F1_VALUES stores values of\n";
+  std::cout << "  the hypergeometric function 2F1.\n";
+  std::cout << "\n";
+  std::cout << "      A      B     C      X   Hyper_2F1(A,B,C,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8051,12 +8049,12 @@ void hyper_2f1_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(8)                      << a  << "  "
-         << setw(8)                      << b  << "  "
-         << setw(8)                      << c  << "  "
-         << setw(8)                      << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(8)                      << a  << "  "
+         << std::setw(8)                      << b  << "  "
+         << std::setw(8)                      << c  << "  "
+         << std::setw(8)                      << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -8090,13 +8088,13 @@ void hypergeometric_cdf_values_test ( )
   int succ;
   int x;
 
-  cout << "\n";
-  cout << "HYPERGEOMETRIC_CDF_VALUES_TEST:\n";
-  cout << "  HYPERGEOMETRIC_CDF_VALUES stores values of\n";
-  cout << "  the Hypergeometric CDF.\n";
-  cout << "\n";
-  cout << "     SAM    SUC   POP     X   HyperCDF(S,S,P)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HYPERGEOMETRIC_CDF_VALUES_TEST:\n";
+  std::cout << "  HYPERGEOMETRIC_CDF_VALUES stores values of\n";
+  std::cout << "  the Hypergeometric CDF.\n";
+  std::cout << "\n";
+  std::cout << "     SAM    SUC   POP     X   HyperCDF(S,S,P)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8108,12 +8106,12 @@ void hypergeometric_cdf_values_test ( )
     {
       break;
     }
-    cout                                         << "  "
-         << setw(8)                      << sam  << "  "
-         << setw(8)                      << succ << "  "
-         << setw(8)                      << pop  << "  "
-         << setw(8)                      << x    << "  "
-         << setw(24) << setprecision(16) << fx   << "\n";
+    std::cout                                         << "  "
+         << std::setw(8)                      << sam  << "  "
+         << std::setw(8)                      << succ << "  "
+         << std::setw(8)                      << pop  << "  "
+         << std::setw(8)                      << x    << "  "
+         << std::setw(24) << std::setprecision(16) << fx   << "\n";
   }
   return;
 }
@@ -8147,13 +8145,13 @@ void hypergeometric_pdf_values_test ( )
   int succ;
   int x;
 
-  cout << "\n";
-  cout << "HYPERGEOMETRIC_PDF_VALUES_TEST:\n";
-  cout << "  HYPERGEOMETRIC_PDF_VALUES stores values of\n";
-  cout << "  the Hypergeometric PDF.\n";
-  cout << "\n";
-  cout << "     SAM    SUC   POP     X   HyperPDF(S,S,P)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HYPERGEOMETRIC_PDF_VALUES_TEST:\n";
+  std::cout << "  HYPERGEOMETRIC_PDF_VALUES stores values of\n";
+  std::cout << "  the Hypergeometric PDF.\n";
+  std::cout << "\n";
+  std::cout << "     SAM    SUC   POP     X   HyperPDF(S,S,P)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8165,12 +8163,12 @@ void hypergeometric_pdf_values_test ( )
     {
       break;
     }
-    cout                                         << "  "
-         << setw(8)                      << sam  << "  "
-         << setw(8)                      << succ << "  "
-         << setw(8)                      << pop  << "  "
-         << setw(8)                      << x    << "  "
-         << setw(24) << setprecision(16) << fx   << "\n";
+    std::cout                                         << "  "
+         << std::setw(8)                      << sam  << "  "
+         << std::setw(8)                      << succ << "  "
+         << std::setw(8)                      << pop  << "  "
+         << std::setw(8)                      << x    << "  "
+         << std::setw(24) << std::setprecision(16) << fx   << "\n";
   }
   return;
 }
@@ -8203,13 +8201,13 @@ void hypergeometric_u_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "HYPERGEOMETRIC_U_VALUES_TEST:\n";
-  cout << "  HYPERGEOMETRIC_U_VALUES stores values of\n";
-  cout << "  the hypergeometric function U.\n";
-  cout << "\n";
-  cout << "      A      B      X   HyperU(A,B,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HYPERGEOMETRIC_U_VALUES_TEST:\n";
+  std::cout << "  HYPERGEOMETRIC_U_VALUES stores values of\n";
+  std::cout << "  the hypergeometric function U.\n";
+  std::cout << "\n";
+  std::cout << "      A      B      X   HyperU(A,B,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8221,11 +8219,11 @@ void hypergeometric_u_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(8)                      << a  << "  "
-         << setw(8)                      << b  << "  "
-         << setw(8)                      << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(8)                      << a  << "  "
+         << std::setw(8)                      << b  << "  "
+         << std::setw(8)                      << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -8256,13 +8254,13 @@ void i0ml0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "I0ML0_VALUES_TEST:\n";
-  cout << "  I0ML0_VALUES stores values of \n";
-  cout << "  the I0-L0 function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I0ML0_VALUES_TEST:\n";
+  std::cout << "  I0ML0_VALUES stores values of \n";
+  std::cout << "  the I0-L0 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8274,9 +8272,9 @@ void i0ml0_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -8307,13 +8305,13 @@ void i1ml1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "I1ML1_VALUES_TEST:\n";
-  cout << "  I1ML1_VALUES stores values of \n";
-  cout << "  the I1-L1 function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I1ML1_VALUES_TEST:\n";
+  std::cout << "  I1ML1_VALUES stores values of \n";
+  std::cout << "  the I1-L1 function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8325,9 +8323,9 @@ void i1ml1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -8358,13 +8356,13 @@ void i4_factorial_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "I4_FACTORIAL_TEST:\n";
-  cout << "   I4_FACTORIAL_VALUES returns values of\n";
-  cout << "   the factorial function.\n";
-  cout << "\n";
-  cout << "      N        Factorial(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_FACTORIAL_TEST:\n";
+  std::cout << "   I4_FACTORIAL_VALUES returns values of\n";
+  std::cout << "   the factorial function.\n";
+  std::cout << "\n";
+  std::cout << "      N        Factorial(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8376,9 +8374,9 @@ void i4_factorial_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -8409,13 +8407,13 @@ void i4_factorial2_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "I4_FACTORIAL2_TEST:\n";
-  cout << "   I4_FACTORIAL2_VALUES return;s values of\n";
-  cout << "   the double factorial function.\n";
-  cout << "\n";
-  cout << "      N         DoubleFactorial(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_FACTORIAL2_TEST:\n";
+  std::cout << "   I4_FACTORIAL2_VALUES return;s values of\n";
+  std::cout << "   the double factorial function.\n";
+  std::cout << "\n";
+  std::cout << "      N         DoubleFactorial(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8427,9 +8425,9 @@ void i4_factorial2_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -8461,13 +8459,13 @@ void i4_fall_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "I4_FALL_VALUES_TEST:\n";
-  cout << "  I4_FALL_VALUES returns some exact values\n";
-  cout << "  of the integer falling factorial function:\n";
-  cout << "\n";
-  cout << "     M     N      I4_FALL(M,N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_FALL_VALUES_TEST:\n";
+  std::cout << "  I4_FALL_VALUES returns some exact values\n";
+  std::cout << "  of the integer falling factorial function:\n";
+  std::cout << "\n";
+  std::cout << "     M     N      I4_FALL(M,N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8479,10 +8477,10 @@ void i4_fall_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << m   << "  "
-         << setw(6)  << n   << "  "
-         << setw(12) << fmn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << m   << "  "
+         << std::setw(6)  << n   << "  "
+         << std::setw(12) << fmn << "\n";
   }
   return;
 }
@@ -8514,13 +8512,13 @@ void i4_rise_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "I4_RISE_VALUES_TEST:\n";
-  cout << "  I4_RISE_VALUES returns some exact values\n";
-  cout << "  of the integer rising factorial function:\n";
-  cout << "\n";
-  cout << "     M     N      I4_RISE(M,N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_RISE_VALUES_TEST:\n";
+  std::cout << "  I4_RISE_VALUES returns some exact values\n";
+  std::cout << "  of the integer rising factorial function:\n";
+  std::cout << "\n";
+  std::cout << "     M     N      I4_RISE(M,N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8532,10 +8530,10 @@ void i4_rise_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << m   << "  "
-         << setw(6)  << n   << "  "
-         << setw(12) << fmn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << m   << "  "
+         << std::setw(6)  << n   << "  "
+         << std::setw(12) << fmn << "\n";
   }
   return;
 }
@@ -8566,12 +8564,12 @@ void int_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "INT_VALUES_TEST:\n";
-  cout << "  INT_VALUES stores values of the integer part of a real number.\n";
-  cout << "\n";
-  cout << "      X            INT(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "INT_VALUES_TEST:\n";
+  std::cout << "  INT_VALUES stores values of the integer part of a real number.\n";
+  std::cout << "\n";
+  std::cout << "      X            INT(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8583,9 +8581,9 @@ void int_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -8617,13 +8615,13 @@ void inverse_chi_square_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "INVERSE_CHI_SQUARE_PDF_VALUES_TEST:\n";
-  cout << "  INVERSE_CHI_SQUARE_PDF_VALUES returns values of \n";
-  cout << "  the inverse Chi-Square Probability Density Function.\n";
-  cout << "\n";
-  cout << "     DF        X    PDF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "INVERSE_CHI_SQUARE_PDF_VALUES_TEST:\n";
+  std::cout << "  INVERSE_CHI_SQUARE_PDF_VALUES returns values of \n";
+  std::cout << "  the inverse Chi-Square Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     DF        X    PDF\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8635,10 +8633,10 @@ void inverse_chi_square_pdf_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(8)  << df  << "  "
-         << setw(8)  << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(8)  << df  << "  "
+         << std::setw(8)  << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -8671,13 +8669,13 @@ void inverse_gamma_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "INVERSE_GAMMA_PDF_VALUES_TEST:\n";
-  cout << "  INVERSE_GAMMA_PDF_VALUES returns values of \n";
-  cout << "  the inverse gamma Probability Density Function.\n";
-  cout << "\n";
-  cout << "     ALPHA        BETA      X    PDF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "INVERSE_GAMMA_PDF_VALUES_TEST:\n";
+  std::cout << "  INVERSE_GAMMA_PDF_VALUES returns values of \n";
+  std::cout << "  the inverse gamma Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     ALPHA        BETA      X    PDF\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8689,11 +8687,11 @@ void inverse_gamma_pdf_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(8) << alpha << "  "
-         << setw(8) << beta << "  "
-         << setw(8) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(8) << alpha << "  "
+         << std::setw(8) << beta << "  "
+         << std::setw(8) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -8725,13 +8723,13 @@ void jacobi_cn_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "JACOBI_CN_VALUES_TEST:\n";
-  cout << "  JACOBI_CN_VALUES returns values of \n";
-  cout << "  the Jacobi elliptic CN function.\n";
-  cout << "\n";
-  cout << "      A         X       CN(A,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JACOBI_CN_VALUES_TEST:\n";
+  std::cout << "  JACOBI_CN_VALUES returns values of \n";
+  std::cout << "  the Jacobi elliptic CN function.\n";
+  std::cout << "\n";
+  std::cout << "      A         X       CN(A,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8743,10 +8741,10 @@ void jacobi_cn_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(10)                     << a  << "  "
-         << setw(10)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(10)                     << a  << "  "
+         << std::setw(10)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -8778,13 +8776,13 @@ void jacobi_dn_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "JACOBI_DN_VALUES_TEST:\n";
-  cout << "  JACOBI_DN_VALUES returns values of \n";
-  cout << "  the Jacobi elliptic DN function.\n";
-  cout << "\n";
-  cout << "      A         X       DN(A,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JACOBI_DN_VALUES_TEST:\n";
+  std::cout << "  JACOBI_DN_VALUES returns values of \n";
+  std::cout << "  the Jacobi elliptic DN function.\n";
+  std::cout << "\n";
+  std::cout << "      A         X       DN(A,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8796,10 +8794,10 @@ void jacobi_dn_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(10)                     << a  << "  "
-         << setw(10)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(10)                     << a  << "  "
+         << std::setw(10)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -8833,13 +8831,13 @@ void jacobi_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "JACOBI_POLY_VALUES_TEST:\n";
-  cout << "  JACOBI_POLY_VALUES returns values of\n";
-  cout << "  the Jacobi polynomial.\n";
-  cout << "\n";
-  cout << "       N         A         B      X       J(N,A,B)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JACOBI_POLY_VALUES_TEST:\n";
+  std::cout << "  JACOBI_POLY_VALUES returns values of\n";
+  std::cout << "  the Jacobi polynomial.\n";
+  std::cout << "\n";
+  std::cout << "       N         A         B      X       J(N,A,B)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8851,12 +8849,12 @@ void jacobi_poly_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(8)                      << a  << "  "
-         << setw(8)                      << b  << "  "
-         << setw(10)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(8)                      << a  << "  "
+         << std::setw(8)                      << b  << "  "
+         << std::setw(10)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
 
   return;
@@ -8889,13 +8887,13 @@ void jacobi_sn_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "JACOBI_SN_VALUES_TEST:\n";
-  cout << "  JACOBI_SN_VALUES returns values of \n";
-  cout << "  the Jacobi elliptic SN function.\n";
-  cout << "\n";
-  cout << "      A         X       SN(A,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JACOBI_SN_VALUES_TEST:\n";
+  std::cout << "  JACOBI_SN_VALUES returns values of \n";
+  std::cout << "  the Jacobi elliptic SN function.\n";
+  std::cout << "\n";
+  std::cout << "      A         X       SN(A,X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8907,10 +8905,10 @@ void jacobi_sn_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(10)                     << a  << "  "
-         << setw(10)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(10)                     << a  << "  "
+         << std::setw(10)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -8944,14 +8942,14 @@ void jed_ce_values_test ( )
   int m;
   int y;
 
-  cout << "\n";
-  cout << "JED_CE_VALUES_TEST:\n";
-  cout << "  JED_CE_VALUES returns:\n";
-  cout << "  JED, a Julian Ephemeris Date, and\n";
-  cout << "  YMDF, the corresponding year, month, day, fraction.\n";
-  cout << "\n";
-  cout << "        JED          Y   M   D    F\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JED_CE_VALUES_TEST:\n";
+  std::cout << "  JED_CE_VALUES returns:\n";
+  std::cout << "  JED, a Julian Ephemeris Date, and\n";
+  std::cout << "  YMDF, the corresponding year, month, day, fraction.\n";
+  std::cout << "\n";
+  std::cout << "        JED          Y   M   D    F\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -8963,11 +8961,11 @@ void jed_ce_values_test ( )
     {
       break;
     }
-    cout << "  " << setw(12) << jed
-         << "  " << setw(6)  << y
-         << "  " << setw(2)  << m
-         << "  " << setw(2)  << d
-         << "  " << setw(6)  << f << "\n";
+    std::cout << "  " << std::setw(12) << jed
+         << "  " << std::setw(6)  << y
+         << "  " << std::setw(2)  << m
+         << "  " << std::setw(2)  << d
+         << "  " << std::setw(6)  << f << "\n";
   }
   return;
 }
@@ -8998,14 +8996,14 @@ void jed_mjd_values_test ( )
   int n_data;
   double mjd;
 
-  cout << "\n";
-  cout << "JED_MJD_VALUES_TEST:\n";
-  cout << "  JED_MJD_VALUES returns:\n";
-  cout << "  JED, a Julian Ephemeris Date, and\n";
-  cout << "  MJD, the corresponding Modified Julian Day count.\n";
-  cout << "\n";
-  cout << "   JED      MJD\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JED_MJD_VALUES_TEST:\n";
+  std::cout << "  JED_MJD_VALUES returns:\n";
+  std::cout << "  JED, a Julian Ephemeris Date, and\n";
+  std::cout << "  MJD, the corresponding Modified Julian Day count.\n";
+  std::cout << "\n";
+  std::cout << "   JED      MJD\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9017,9 +9015,9 @@ void jed_mjd_values_test ( )
     {
       break;
     }
-    cout                    << "  "
-         << setw(12) << jed << "  "
-         << setw(12) << mjd << "\n";
+    std::cout                    << "  "
+         << std::setw(12) << jed << "  "
+         << std::setw(12) << mjd << "\n";
   }
   return;
 }
@@ -9050,14 +9048,14 @@ void jed_rd_values_test ( )
   int n_data;
   double rd;
 
-  cout << "\n";
-  cout << "JED_RD_VALUES_TEST:\n";
-  cout << "  JED_RD_VALUES returns:\n";
-  cout << "  JED, a Julian Ephemeris Date, and\n";
-  cout << "  RD, the corresponding Reingold Dershowitz Day count.\n";
-  cout << "\n";
-  cout << "   JED      RD\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JED_RD_VALUES_TEST:\n";
+  std::cout << "  JED_RD_VALUES returns:\n";
+  std::cout << "  JED, a Julian Ephemeris Date, and\n";
+  std::cout << "  RD, the corresponding Reingold Dershowitz Day count.\n";
+  std::cout << "\n";
+  std::cout << "   JED      RD\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9069,9 +9067,9 @@ void jed_rd_values_test ( )
     {
       break;
     }
-    cout                    << "  "
-         << setw(12) << jed << "  "
-         << setw(12) << rd  << "\n";
+    std::cout                    << "  "
+         << std::setw(12) << jed << "  "
+         << std::setw(12) << rd  << "\n";
   }
   return;
 }
@@ -9101,17 +9099,17 @@ void jed_weekday_values_test ( )
   double jed;
   int n_data;
   int weekday;
-  string weekday_name[7] = {
+  std::string weekday_name[7] = {
     "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", 
     "Friday", "Saturday" };
 
-  cout << "\n";
-  cout << "JED_WEEKDAY_VALUES_TEST:\n";
-  cout << "  JED_WEEKDAY_VALUES returns Julian Ephemeris Dates \n";
-  cout << "  (JED) and the corresponding weekday\n";
-  cout << "\n";
-  cout << "   JED      #  Weekday\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JED_WEEKDAY_VALUES_TEST:\n";
+  std::cout << "  JED_WEEKDAY_VALUES returns Julian Ephemeris Dates \n";
+  std::cout << "  (JED) and the corresponding weekday\n";
+  std::cout << "\n";
+  std::cout << "   JED      #  Weekday\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9123,9 +9121,9 @@ void jed_weekday_values_test ( )
     {
       break;
     }
-    cout                            << "  "
-         << setw(12) << jed         << "  "
-         << setw(1)  << weekday     << "  "
+    std::cout                            << "  "
+         << std::setw(12) << jed         << "  "
+         << std::setw(1)  << weekday     << "  "
          << weekday_name[weekday-1] << "\n";
   }
   return;
@@ -9157,13 +9155,13 @@ void kei0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "KEI0_VALUES_TEST:\n";
-  cout << "  KEI0_VALUES stores values of \n";
-  cout << "  the Kelvin function KEI of order 0.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "KEI0_VALUES_TEST:\n";
+  std::cout << "  KEI0_VALUES stores values of \n";
+  std::cout << "  the Kelvin function KEI of order 0.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9175,9 +9173,9 @@ void kei0_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -9208,13 +9206,13 @@ void kei1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "KEI1_VALUES_TEST:\n";
-  cout << "  KEI1_VALUES stores values of \n";
-  cout << "  the Kelvin function KEI of order 1.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "KEI1_VALUES_TEST:\n";
+  std::cout << "  KEI1_VALUES stores values of \n";
+  std::cout << "  the Kelvin function KEI of order 1.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9226,9 +9224,9 @@ void kei1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -9259,13 +9257,13 @@ void ker0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "KER0_VALUES_TEST:\n";
-  cout << "  KER0_VALUES stores values of \n";
-  cout << "  the Kelvin function KER of order 0.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "KER0_VALUES_TEST:\n";
+  std::cout << "  KER0_VALUES stores values of \n";
+  std::cout << "  the Kelvin function KER of order 0.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9277,9 +9275,9 @@ void ker0_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -9310,13 +9308,13 @@ void ker1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "KER1_VALUES_TEST:\n";
-  cout << "  KER1_VALUES stores values of \n";
-  cout << "  the Kelvin function KER of order 1.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "KER1_VALUES_TEST:\n";
+  std::cout << "  KER1_VALUES stores values of \n";
+  std::cout << "  the Kelvin function KER of order 1.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9328,9 +9326,9 @@ void ker1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -9363,13 +9361,13 @@ void laguerre_associated_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LAGUERRE_ASSOCIATED_VALUES_TEST:\n";
-  cout << "  LAGUERRE_ASSOCIATED_VALUES stores values of\n";
-  cout << "  the associated Laguerre polynomials.\n";
-  cout << "\n";
-  cout << "     N     M    X             L(N,M)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LAGUERRE_ASSOCIATED_VALUES_TEST:\n";
+  std::cout << "  LAGUERRE_ASSOCIATED_VALUES stores values of\n";
+  std::cout << "  the associated Laguerre polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N     M    X             L(N,M)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9381,11 +9379,11 @@ void laguerre_associated_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(6)                      << n  << "  "
-         << setw(6)                      << m  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(6)                      << m  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9418,13 +9416,13 @@ void laguerre_general_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LAGUERRE_GENERAL_VALUES_TEST:\n";
-  cout << "  LAGUERRE_GENERAL_VALUES stores values of\n";
-  cout << "  the generalized Laguerre function.\n";
-  cout << "\n";
-  cout << "     N     A    X             L(N,A)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LAGUERRE_GENERAL_VALUES_TEST:\n";
+  std::cout << "  LAGUERRE_GENERAL_VALUES stores values of\n";
+  std::cout << "  the generalized Laguerre function.\n";
+  std::cout << "\n";
+  std::cout << "     N     A    X             L(N,A)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9436,11 +9434,11 @@ void laguerre_general_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                      << a  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                      << a  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9472,13 +9470,13 @@ void laguerre_polynomial_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LAGUERRE_POLYNOMIAL_VALUES_TEST:\n";
-  cout << "  LAGUERRE_POLYNOMIAL_VALUES stores values of \n";
-  cout << "  the Laguerre polynomials.\n";
-  cout << "\n";
-  cout << "     N     X            L(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LAGUERRE_POLYNOMIAL_VALUES_TEST:\n";
+  std::cout << "  LAGUERRE_POLYNOMIAL_VALUES stores values of \n";
+  std::cout << "  the Laguerre polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N     X            L(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9490,10 +9488,10 @@ void laguerre_polynomial_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9524,13 +9522,13 @@ void lambert_w_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LAMBERT_W_VALUES_TEST:\n";
-  cout << "  LAMBERT_W_VALUES stores values of \n";
-  cout << "  the Lambert W function.\n";
-  cout << "\n";
-  cout << "                X                     W(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LAMBERT_W_VALUES_TEST:\n";
+  std::cout << "  LAMBERT_W_VALUES stores values of \n";
+  std::cout << "  the Lambert W function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     W(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9542,9 +9540,9 @@ void lambert_w_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -9577,13 +9575,13 @@ void laplace_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LAPLACE_CDF_VALUES_TEST:\n";
-  cout << "  LAPLACE_CDF_VALUES returns values of \n";
-  cout << "  the Laplace Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     Mu      Beta         X   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LAPLACE_CDF_VALUES_TEST:\n";
+  std::cout << "  LAPLACE_CDF_VALUES returns values of \n";
+  std::cout << "  the Laplace Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     Mu      Beta         X   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9595,11 +9593,11 @@ void laplace_cdf_values_test ( )
     {
       break;
     }
-    cout                                         << "  "
-         << setw(8)                      << mu   << "  "
-         << setw(8)                      << beta << "  "
-         << setw(8)                      << x    << "  "
-         << setw(24) << setprecision(16) << fx   << "\n";
+    std::cout                                         << "  "
+         << std::setw(8)                      << mu   << "  "
+         << std::setw(8)                      << beta << "  "
+         << std::setw(8)                      << x    << "  "
+         << std::setw(24) << std::setprecision(16) << fx   << "\n";
   }
   return;
 }
@@ -9632,13 +9630,13 @@ void legendre_associated_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_ASSOCIATED_VALUES_TEST:\n";
-  cout << "  LEGENDRE_ASSOCIATED_VALUES stores values of\n";
-  cout << "  the associated Legendre polynomials.\n";
-  cout << "\n";
-  cout << "     N     M    X             P(N,M)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_ASSOCIATED_VALUES_TEST:\n";
+  std::cout << "  LEGENDRE_ASSOCIATED_VALUES stores values of\n";
+  std::cout << "  the associated Legendre polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N     M    X             P(N,M)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9650,11 +9648,11 @@ void legendre_associated_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(6)                      << m  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(6)                      << m  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9687,13 +9685,13 @@ void legendre_associated_normalized_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_ASSOCIATED_NORMALIZED_VALUES_TEST:\n";
-  cout << "  LEGENDRE_ASSOCIATED_NORMALIZED_VALUES stores values of\n";
-  cout << "  the normalized associated Legendre polynomials.\n";
-  cout << "\n";
-  cout << "     N     M    X             P(N,M)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_ASSOCIATED_NORMALIZED_VALUES_TEST:\n";
+  std::cout << "  LEGENDRE_ASSOCIATED_NORMALIZED_VALUES stores values of\n";
+  std::cout << "  the normalized associated Legendre polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N     M    X             P(N,M)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9705,11 +9703,11 @@ void legendre_associated_normalized_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(6)                      << m  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(6)                      << m  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9742,13 +9740,13 @@ void legendre_associated_normalized_sphere_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_ASSOCIATED_NORMALIZED_SPHERE_VALUES_TEST:\n";
-  cout << "  LEGENDRE_ASSOCIATED_NORMALIZED_SPHERE_VALUES stores values of\n";
-  cout << "  the associated Legendre polynomials, normalized for the unit sphere.\n";
-  cout << "\n";
-  cout << "     N     M    X             P(N,M)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_ASSOCIATED_NORMALIZED_SPHERE_VALUES_TEST:\n";
+  std::cout << "  LEGENDRE_ASSOCIATED_NORMALIZED_SPHERE_VALUES stores values of\n";
+  std::cout << "  the associated Legendre polynomials, normalized for the unit sphere.\n";
+  std::cout << "\n";
+  std::cout << "     N     M    X             P(N,M)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9760,11 +9758,11 @@ void legendre_associated_normalized_sphere_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(6)                      << m  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(6)                      << m  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9796,13 +9794,13 @@ void legendre_poly_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_POLY_VALUES_TEST:\n";
-  cout << "  LEGENDRE_POLY_VALUES stores values of \n";
-  cout << "  the Legendre polynomials.\n";
-  cout << "\n";
-  cout << "     N    X             P(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_POLY_VALUES_TEST:\n";
+  std::cout << "  LEGENDRE_POLY_VALUES stores values of \n";
+  std::cout << "  the Legendre polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N    X             P(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9814,10 +9812,10 @@ void legendre_poly_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9849,13 +9847,13 @@ void legendre_function_q_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_FUNCTION_Q_VALUES_TEST:\n";
-  cout << "  LEGENDRE_FUNCTION_Q_VALUES stores values of\n";
-  cout << "  the Legendre Q function.\n";
-  cout << "\n";
-  cout << "     N    X             Q(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_FUNCTION_Q_VALUES_TEST:\n";
+  std::cout << "  LEGENDRE_FUNCTION_Q_VALUES stores values of\n";
+  std::cout << "  the Legendre Q function.\n";
+  std::cout << "\n";
+  std::cout << "     N    X             Q(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9867,10 +9865,10 @@ void legendre_function_q_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9903,13 +9901,13 @@ void lerch_values_test ( )
   int s;
   double z;
 
-  cout << "\n";
-  cout << "LERCH_VALUES_TEST:\n";
-  cout << "  LERCH_VALUES returns values of\n";
-  cout << "  the Lerch transcendent function.\n";
-  cout << "\n";
-  cout << "      Z      S      A      Fx\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LERCH_VALUES_TEST:\n";
+  std::cout << "  LERCH_VALUES returns values of\n";
+  std::cout << "  the Lerch transcendent function.\n";
+  std::cout << "\n";
+  std::cout << "      Z      S      A      Fx\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9921,11 +9919,11 @@ void lerch_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(24) << setprecision(16) << z  << "  "
-         << setw(6)                      << s  << "  "
-         << setw(12)                     << a  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(24) << std::setprecision(16) << z  << "  "
+         << std::setw(6)                      << s  << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -9956,13 +9954,13 @@ void lobachevsky_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LOBACHEVSKY_VALUES_TEST:\n";
-  cout << "  LOBACHEVSKY_VALUES stores values of \n";
-  cout << "  the Lobachevsky function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOBACHEVSKY_VALUES_TEST:\n";
+  std::cout << "  LOBACHEVSKY_VALUES stores values of \n";
+  std::cout << "  the Lobachevsky function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -9974,9 +9972,9 @@ void lobachevsky_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(12)                        << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(12)                        << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -10008,13 +10006,13 @@ void lobatto_polynomial_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LOBATTO_POLYNOMIAL_VALUES_TEST:\n";
-  cout << "  LOBATTO_POLYNOMIAL_VALUES stores values of \n";
-  cout << "  the completed Lobatto polynomials.\n";
-  cout << "\n";
-  cout << "     N    X             Lo(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOBATTO_POLYNOMIAL_VALUES_TEST:\n";
+  std::cout << "  LOBATTO_POLYNOMIAL_VALUES stores values of \n";
+  std::cout << "  the completed Lobatto polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N    X             Lo(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10026,10 +10024,10 @@ void lobatto_polynomial_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -10061,13 +10059,13 @@ void lobatto_polynomial_derivatives_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LOBATTO_POLYNOMIAL_DERIVATIVES_TEST:\n";
-  cout << "  LOBATTO_POLYNOMIAL_VALUES stores derivatives of \n";
-  cout << "  the completed Lobatto polynomials.\n";
-  cout << "\n";
-  cout << "     N    X             Lo'(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOBATTO_POLYNOMIAL_DERIVATIVES_TEST:\n";
+  std::cout << "  LOBATTO_POLYNOMIAL_VALUES stores derivatives of \n";
+  std::cout << "  the completed Lobatto polynomials.\n";
+  std::cout << "\n";
+  std::cout << "     N    X             Lo'(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10079,10 +10077,10 @@ void lobatto_polynomial_derivatives_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -10113,12 +10111,12 @@ void log_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LOG_VALUES_TEST:\n";
-  cout << "   LOG_VALUES stores values of the natural logarithm function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOG_VALUES_TEST:\n";
+  std::cout << "   LOG_VALUES stores values of the natural logarithm function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10130,9 +10128,9 @@ void log_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -10165,13 +10163,13 @@ void log_normal_cdf_values_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "LOG_NORMAL_CDF_VALUES_TEST:\n";
-  cout << "  LOG_NORMAL_CDF_VALUES returns values of \n";
-  cout << "  the Log Normal Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     Mu      Sigma        X   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOG_NORMAL_CDF_VALUES_TEST:\n";
+  std::cout << "  LOG_NORMAL_CDF_VALUES returns values of \n";
+  std::cout << "  the Log Normal Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     Mu      Sigma        X   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10183,11 +10181,11 @@ void log_normal_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(8)                      << mu    << "  "
-         << setw(8)                      << sigma << "  "
-         << setw(8)                      << x     << "  "
-         << setw(24) << setprecision(16) << fx    << "\n";
+    std::cout                                 << "  "
+         << std::setw(8)                      << mu    << "  "
+         << std::setw(8)                      << sigma << "  "
+         << std::setw(8)                      << x     << "  "
+         << std::setw(24) << std::setprecision(16) << fx    << "\n";
   }
   return;
 }
@@ -10219,13 +10217,13 @@ void log_series_cdf_values_test ( )
   int n_data;
   double t;
 
-  cout << "\n";
-  cout << "LOG_SERIES_CDF_VALUES_TEST:\n";
-  cout << "  LOG_SERIES_CDF_VALUES returns values of \n";
-  cout << "  the Log Series Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     T      N   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOG_SERIES_CDF_VALUES_TEST:\n";
+  std::cout << "  LOG_SERIES_CDF_VALUES returns values of \n";
+  std::cout << "  the Log Series Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     T      N   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10237,10 +10235,10 @@ void log_series_cdf_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(24) << setprecision(16) << t  << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(24) << std::setprecision(16) << t  << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -10271,12 +10269,12 @@ void log10_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LOG10_VALUES_TEST:\n";
-  cout << "   LOG10_VALUES stores values of the base 10 logarithm function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOG10_VALUES_TEST:\n";
+  std::cout << "   LOG10_VALUES stores values of the base 10 logarithm function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10288,9 +10286,9 @@ void log10_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -10321,13 +10319,13 @@ void logarithmic_integral_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LOGARITHMIC_INTEGRAL_VALUES_TEST:\n";
-  cout << "  LOGARITHMIC_INTEGAL_VALUES stores values of\n";
-  cout << "  the logarithmic integral function.\n";
-  cout << "\n";
-  cout << "      X            LI(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOGARITHMIC_INTEGRAL_VALUES_TEST:\n";
+  std::cout << "  LOGARITHMIC_INTEGAL_VALUES stores values of\n";
+  std::cout << "  the logarithmic integral function.\n";
+  std::cout << "\n";
+  std::cout << "      X            LI(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10339,9 +10337,9 @@ void logarithmic_integral_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -10374,13 +10372,13 @@ void logistic_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LOGISTIC_CDF_VALUES_TEST:\n";
-  cout << "  LOGISTIC_CDF_VALUES returns values of \n";
-  cout << "  the Logistic Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     Mu      Beta         X   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOGISTIC_CDF_VALUES_TEST:\n";
+  std::cout << "  LOGISTIC_CDF_VALUES returns values of \n";
+  std::cout << "  the Logistic Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     Mu      Beta         X   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10392,11 +10390,11 @@ void logistic_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(8)                      << mu   << "  "
-         << setw(8)                      << beta << "  "
-         << setw(8)                      << x    << "  "
-         << setw(24) << setprecision(16) << fx   << "\n";
+    std::cout                                 << "  "
+         << std::setw(8)                      << mu   << "  "
+         << std::setw(8)                      << beta << "  "
+         << std::setw(8)                      << x    << "  "
+         << std::setw(24) << std::setprecision(16) << fx   << "\n";
   }
   return;
 }
@@ -10427,13 +10425,13 @@ void mertens_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "MERTENS_VALUES_TEST:\n";
-  cout << "  MERTENS_VALUES returns values of\n";
-  cout << "  the Mertens function.\n";
-  cout << "\n";
-  cout << "     N         MERTENS(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "MERTENS_VALUES_TEST:\n";
+  std::cout << "  MERTENS_VALUES returns values of\n";
+  std::cout << "  the Mertens function.\n";
+  std::cout << "\n";
+  std::cout << "     N         MERTENS(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10445,9 +10443,9 @@ void mertens_values_test ( )
     {
       break;
     } 
-    cout                   << "  "
-         << setw(8)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(8)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -10478,13 +10476,13 @@ void moebius_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "MOEBIUS_VALUES_TEST:\n";
-  cout << "  MOEBIUS_VALUES returns values of\n";
-  cout << "  the Moebius function.\n";
-  cout << "\n";
-  cout << "     N         MU(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "MOEBIUS_VALUES_TEST:\n";
+  std::cout << "  MOEBIUS_VALUES returns values of\n";
+  std::cout << "  the Moebius function.\n";
+  std::cout << "\n";
+  std::cout << "     N         MU(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10496,9 +10494,9 @@ void moebius_values_test ( )
     {
       break;
     } 
-    cout                   << "  "
-         << setw(8)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(8)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -10534,15 +10532,15 @@ void multinomial_pdf_values_test ( )
   double pdf;
   int *x;
 
-  cout << "\n";
-  cout << "MULTINOMIAL_PDF_VALUES_TEST:\n";
-  cout << "  MULTINOMIAL_PDF_VALUES stores values of the Multinomial PDF.\n";
-  cout << "  Given M possible outcomes on a single trial,\n";
-  cout << "  with each outcome having probability P,\n";
-  cout << "  PDF is the probability that after N trials,\n";
-  cout << "  outcome I occurred X(I) times.\n";
-  cout << "\n";
-  cout << "     N     M     I      P        X        PDF()\n";
+  std::cout << "\n";
+  std::cout << "MULTINOMIAL_PDF_VALUES_TEST:\n";
+  std::cout << "  MULTINOMIAL_PDF_VALUES stores values of the Multinomial PDF.\n";
+  std::cout << "  Given M possible outcomes on a single trial,\n";
+  std::cout << "  with each outcome having probability P,\n";
+  std::cout << "  PDF is the probability that after N trials,\n";
+  std::cout << "  outcome I occurred X(I) times.\n";
+  std::cout << "\n";
+  std::cout << "     N     M     I      P        X        PDF()\n";
 
   n_data1 = 0;
   n_data2 = 0;
@@ -10560,16 +10558,16 @@ void multinomial_pdf_values_test ( )
     x = new int[m];
     multinomial_pdf_values ( n_data2, m, n, p, x, pdf );
 
-    cout << "\n";
+    std::cout << "\n";
     for ( i = 0; i < m; i++ )
     {
-      cout << "              " << setw(4) << i
-           << "  " << setw(8) << p[i]
-           << "  " << setw(4) << x[i] << "\n";
+      std::cout << "              " << std::setw(4) << i
+           << "  " << std::setw(8) << p[i]
+           << "  " << std::setw(4) << x[i] << "\n";
     }
-    cout << "  " << setw(4) << n
-         << "  " << setw(4) << m
-         << "                        " << setw(14) << pdf << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(4) << m
+         << "                        " << std::setw(14) << pdf << "\n";
 
     delete [] p;
     delete [] x;
@@ -10605,13 +10603,13 @@ void negative_binomial_cdf_values_test ( )
   double p;
   int s;
 
-  cout << "\n";
-  cout << "NEGATIVE_BINOMIAL_CDF_VALUES_TEST:\n";
-  cout << "  NEGATIVE_BINOMIAL_CDF_VALUES stores values of\n";
-  cout << "  the Negative Binomial Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     F     S         P         CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "NEGATIVE_BINOMIAL_CDF_VALUES_TEST:\n";
+  std::cout << "  NEGATIVE_BINOMIAL_CDF_VALUES stores values of\n";
+  std::cout << "  the Negative Binomial Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     F     S         P         CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10623,11 +10621,11 @@ void negative_binomial_cdf_values_test ( )
     {
       break;
     }
-    cout                                        << "  "
-         << setw(6)                      << f   << "  "
-         << setw(6)                      << s   << "  "
-         << setw(12)                     << p   << "  "
-         << setw(24) << setprecision(16) << cdf << "\n";
+    std::cout                                        << "  "
+         << std::setw(6)                      << f   << "  "
+         << std::setw(6)                      << s   << "  "
+         << std::setw(12)                     << p   << "  "
+         << std::setw(24) << std::setprecision(16) << cdf << "\n";
   }
   return;
 }
@@ -10666,14 +10664,14 @@ void nine_j_values_test ( )
   double j9;
   int n_data;
 
-  cout << "\n";
-  cout << "NINE_J_VALUES_TEST:\n";
-  cout << "  NINE_J_VALUES returns values of\n";
-  cout << "  the Wigner 9J coefficient.\n";
-  cout << "\n";
-  cout << "      J1      J2      J3      J4      J5      J6"
+  std::cout << "\n";
+  std::cout << "NINE_J_VALUES_TEST:\n";
+  std::cout << "  NINE_J_VALUES returns values of\n";
+  std::cout << "  the Wigner 9J coefficient.\n";
+  std::cout << "\n";
+  std::cout << "      J1      J2      J3      J4      J5      J6"
        << "      J7      J8      J9        NINE_J\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10686,16 +10684,16 @@ void nine_j_values_test ( )
       break;
     }
 
-    cout << "  " << setw(6) << j1
-         << "  " << setw(6) << j2
-         << "  " << setw(6) << j3
-         << "  " << setw(6) << j4
-         << "  " << setw(6) << j5
-         << "  " << setw(6) << j6
-         << "  " << setw(6) << j7
-         << "  " << setw(6) << j8
-         << "  " << setw(6) << j9
-         << "  " << setprecision(16) << setw(24) << fx << "\n";
+    std::cout << "  " << std::setw(6) << j1
+         << "  " << std::setw(6) << j2
+         << "  " << std::setw(6) << j3
+         << "  " << std::setw(6) << j4
+         << "  " << std::setw(6) << j5
+         << "  " << std::setw(6) << j6
+         << "  " << std::setw(6) << j7
+         << "  " << std::setw(6) << j8
+         << "  " << std::setw(6) << j9
+         << "  " << std::setprecision(16) << std::setw(24) << fx << "\n";
   }
   return;
 }
@@ -10726,13 +10724,13 @@ void normal_01_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "NORMAL_01_CDF_VALUES_TEST:\n";
-  cout << "  NORMAL_01_CDF_VALUES stores values of\n";
-  cout << "  the Normal 01 Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "            X                   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "NORMAL_01_CDF_VALUES_TEST:\n";
+  std::cout << "  NORMAL_01_CDF_VALUES stores values of\n";
+  std::cout << "  the Normal 01 Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "            X                   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10744,9 +10742,9 @@ void normal_01_cdf_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -10777,13 +10775,13 @@ void normal_01_pdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "NORMAL_01_PDF_VALUES_TEST:\n";
-  cout << "  NORMAL_01_PDF_VALUES stores values of\n";
-  cout << "  the Normal 01 Probability Density Function.\n";
-  cout << "\n";
-  cout << "            X                   PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "NORMAL_01_PDF_VALUES_TEST:\n";
+  std::cout << "  NORMAL_01_PDF_VALUES stores values of\n";
+  std::cout << "  the Normal 01 Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "            X                   PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10795,9 +10793,9 @@ void normal_01_pdf_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -10830,13 +10828,13 @@ void normal_cdf_values_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "NORMAL_CDF_VALUES_TEST:\n";
-  cout << "  NORMAL_CDF_VALUES stores values of\n";
-  cout << "  the Normal Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "            X                   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "NORMAL_CDF_VALUES_TEST:\n";
+  std::cout << "  NORMAL_CDF_VALUES stores values of\n";
+  std::cout << "  the Normal Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "            X                   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10848,11 +10846,11 @@ void normal_cdf_values_test ( )
     {
       break;
     }
-    cout                                             << "  "
-         << setw(12)                        << mu    << "  "
-         << setw(12)                        << sigma << "  "
-         << setw(12)                        << x     << "  "
-         << setw(24) << setprecision ( 16 ) << fx    << "\n";
+    std::cout                                             << "  "
+         << std::setw(12)                        << mu    << "  "
+         << std::setw(12)                        << sigma << "  "
+         << std::setw(12)                        << x     << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx    << "\n";
   }
   return;
 }
@@ -10885,13 +10883,13 @@ void normal_pdf_values_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "NORMAL_PDF_VALUES_TEST:\n";
-  cout << "  NORMAL_PDF_VALUES stores values of\n";
-  cout << "  the Normal Probability Density Function.\n";
-  cout << "\n";
-  cout << "            X                   PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "NORMAL_PDF_VALUES_TEST:\n";
+  std::cout << "  NORMAL_PDF_VALUES stores values of\n";
+  std::cout << "  the Normal Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "            X                   PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10903,11 +10901,11 @@ void normal_pdf_values_test ( )
     {
       break;
     }
-    cout                                             << "  "
-         << setw(12)                        << mu    << "  "
-         << setw(12)                        << sigma << "  "
-         << setw(12)                        << x     << "  "
-         << setw(24) << setprecision ( 16 ) << fx    << "\n";
+    std::cout                                             << "  "
+         << std::setw(12)                        << mu    << "  "
+         << std::setw(12)                        << sigma << "  "
+         << std::setw(12)                        << x     << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx    << "\n";
   }
   return;
 }
@@ -10938,13 +10936,13 @@ void omega_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "OMEGA_VALUES_TEST:\n";
-  cout << "  OMEGA_VALUES returns values of\n";
-  cout << "  the Omega function.\n";
-  cout << "\n";
-  cout << "     N           OMEGA(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "OMEGA_VALUES_TEST:\n";
+  std::cout << "  OMEGA_VALUES returns values of\n";
+  std::cout << "  the Omega function.\n";
+  std::cout << "\n";
+  std::cout << "     N           OMEGA(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -10956,9 +10954,9 @@ void omega_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << n  << "  "
-         << setw(10) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << n  << "  "
+         << std::setw(10) << fn << "\n";
   }
   return;
 }
@@ -10990,13 +10988,13 @@ void owen_values_test ( )
   int n_data;
   double t;
 
-  cout << "\n";
-  cout << "OWEN_VALUES_TEST\n";
-  cout << "  OWEN_VALUES stores values of\n";
-  cout << "  Owen's T function.\n";
-  cout << "\n";
-  cout << "          H            A            T\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "OWEN_VALUES_TEST\n";
+  std::cout << "  OWEN_VALUES stores values of\n";
+  std::cout << "  Owen's T function.\n";
+  std::cout << "\n";
+  std::cout << "          H            A            T\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11008,10 +11006,10 @@ void owen_values_test ( )
     {
       break;
     }
-    cout                                      << "  "
-         << setw(12)                     << h << "  "
-         << setw(12)                     << a << "  "
-         << setw(24) << setprecision(16) << t << "\n";
+    std::cout                                      << "  "
+         << std::setw(12)                     << h << "  "
+         << std::setw(12)                     << a << "  "
+         << std::setw(24) << std::setprecision(16) << t << "\n";
   }
   return;
 }
@@ -11042,13 +11040,13 @@ void partition_count_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "PARTITION_COUNT_VALUES_TEST:\n";
-  cout << "  PARTITION_COUNT_VALUES returns values of \n";
-  cout << "  the integer partition count function.\n";
-  cout << "\n";
-  cout << "     N         P(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PARTITION_COUNT_VALUES_TEST:\n";
+  std::cout << "  PARTITION_COUNT_VALUES returns values of \n";
+  std::cout << "  the integer partition count function.\n";
+  std::cout << "\n";
+  std::cout << "     N         P(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11060,9 +11058,9 @@ void partition_count_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -11093,13 +11091,13 @@ void partition_distinct_count_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "PARTITION_DISTINCT_COUNT_VALUES_TEST:\n";
-  cout << "  PARTITION_DISTINCT_COUNT_VALUES returns values of \n";
-  cout << "  the integer distinct partition count function.\n";
-  cout << "\n";
-  cout << "     N         Q(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PARTITION_DISTINCT_COUNT_VALUES_TEST:\n";
+  std::cout << "  PARTITION_DISTINCT_COUNT_VALUES returns values of \n";
+  std::cout << "  the integer distinct partition count function.\n";
+  std::cout << "\n";
+  std::cout << "     N         Q(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11111,9 +11109,9 @@ void partition_distinct_count_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -11144,13 +11142,13 @@ void phi_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "PHI_VALUES_TEST:\n";
-  cout << "  PHI_VALUES returns values of\n";
-  cout << "  the PHI function.\n";
-  cout << "\n";
-  cout << "     N         PHI(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PHI_VALUES_TEST:\n";
+  std::cout << "  PHI_VALUES returns values of\n";
+  std::cout << "  the PHI function.\n";
+  std::cout << "\n";
+  std::cout << "     N         PHI(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11162,9 +11160,9 @@ void phi_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(10) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(10) << fn << "\n";
   }
   return;
 }
@@ -11195,13 +11193,13 @@ void pi_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "PI_VALUES_TEST:\n";
-  cout << "  PI_VALUES returns values of\n";
-  cout << "  the PI function.\n";
-  cout << "\n";
-  cout << "     N         PI(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PI_VALUES_TEST:\n";
+  std::cout << "  PI_VALUES returns values of\n";
+  std::cout << "  the PI function.\n";
+  std::cout << "\n";
+  std::cout << "     N         PI(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11213,9 +11211,9 @@ void pi_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << n  << "  "
-         << setw(10) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << n  << "  "
+         << std::setw(10) << fn << "\n";
   }
   return;
 }
@@ -11247,13 +11245,13 @@ void poisson_cdf_values_test ( )
   int n_data;
   int x;
 
-  cout << "\n";
-  cout << "POISSON_CDF_VALUES_TEST:\n";
-  cout << "  POISSON_CDF_VALUES returns values of\n";
-  cout << "  the Poisson Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "      A     X       CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "POISSON_CDF_VALUES_TEST:\n";
+  std::cout << "  POISSON_CDF_VALUES returns values of\n";
+  std::cout << "  the Poisson Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "      A     X       CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11265,10 +11263,10 @@ void poisson_cdf_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(8)                      << a  << "  "
-         << setw(4)                      << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(8)                      << a  << "  "
+         << std::setw(4)                      << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -11300,13 +11298,13 @@ void polylogarithm_values_test ( )
   int n_data;
   double z;
 
-  cout << "\n";
-  cout << "POLYLOGARITHM_VALUES_TEST:\n";
-  cout << "  POLYLOGARITHM_VALUES returns values of \n";
-  cout << "  the polylogarithm function.\n";
-  cout << "\n";
-  cout << "     N      Z          Fx\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "POLYLOGARITHM_VALUES_TEST:\n";
+  std::cout << "  POLYLOGARITHM_VALUES returns values of \n";
+  std::cout << "  the polylogarithm function.\n";
+  std::cout << "\n";
+  std::cout << "     N      Z          Fx\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11318,10 +11316,10 @@ void polylogarithm_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << z  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << z  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -11353,14 +11351,14 @@ void prandtl_values_test ( )
   double pr;
   double tc;
 
-  cout << "\n";
-  cout << "PRANDTL_VALUES_TEST:\n";
-  cout << "  PRANDTL_VALUES stores values of\n";
-  cout << "  the Prandtl number of water\n";
-  cout << "  as a function of temperature and pressure.\n";
-  cout << "\n";
-  cout << "      T            P            Pr(T,P)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PRANDTL_VALUES_TEST:\n";
+  std::cout << "  PRANDTL_VALUES stores values of\n";
+  std::cout << "  the Prandtl number of water\n";
+  std::cout << "  as a function of temperature and pressure.\n";
+  std::cout << "\n";
+  std::cout << "      T            P            Pr(T,P)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11372,10 +11370,10 @@ void prandtl_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << tc << "  "
-         << setw(12) << p  << "  "
-         << setw(12) << pr << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << tc << "  "
+         << std::setw(12) << p  << "  "
+         << std::setw(12) << pr << "\n";
   }
   return;
 }
@@ -11406,13 +11404,13 @@ void prime_values_test ( )
   int n_data;
   int p;
 
-  cout << "\n";
-  cout << "PRIME_VALUES_TEST:\n";
-  cout << "  PRIME_VALUES returns values of\n";
-  cout << "  the prime function.\n";
-  cout << "\n";
-  cout << "           N          P[N]\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PRIME_VALUES_TEST:\n";
+  std::cout << "  PRIME_VALUES returns values of\n";
+  std::cout << "  the prime function.\n";
+  std::cout << "\n";
+  std::cout << "           N          P[N]\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11424,9 +11422,9 @@ void prime_values_test ( )
     {
       break;
     }
-    cout                  << "  "
-         << setw(12) << n << "  "
-         << setw(12) << p << "\n";
+    std::cout                  << "  "
+         << std::setw(12) << n << "  "
+         << std::setw(12) << p << "\n";
   }
 
   return;
@@ -11458,14 +11456,14 @@ void psat_values_test ( )
   double psat;
   double tc;
 
-  cout << "\n";
-  cout << "PSAT_VALUES_TEST:\n";
-  cout << "  PSAT_VALUES stores values of\n";
-  cout << "  the saturation pressure of water\n";
-  cout << "  as a function of temperature.\n";
-  cout << "\n";
-  cout << "      T            PSAT(T)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PSAT_VALUES_TEST:\n";
+  std::cout << "  PSAT_VALUES stores values of\n";
+  std::cout << "  the saturation pressure of water\n";
+  std::cout << "  as a function of temperature.\n";
+  std::cout << "\n";
+  std::cout << "      T            PSAT(T)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11477,9 +11475,9 @@ void psat_values_test ( )
     {
       break;
     }
-    cout                                         << "  "
-         << setw(24) << setprecision(16) << tc   << "  "
-         << setw(24) << setprecision(16) << psat << "\n";
+    std::cout                                         << "  "
+         << std::setw(24) << std::setprecision(16) << tc   << "  "
+         << std::setw(24) << std::setprecision(16) << psat << "\n";
   }
   return;
 }
@@ -11510,13 +11508,13 @@ void psi_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "PSI_VALUES_TEST\n";
-  cout << "  PSI_VALUES stores values of\n";
-  cout << "  the PSI function.\n";
-  cout << "\n";
-  cout << "      X            PSI(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PSI_VALUES_TEST\n";
+  std::cout << "  PSI_VALUES stores values of\n";
+  std::cout << "  the PSI function.\n";
+  std::cout << "\n";
+  std::cout << "      X            PSI(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11528,9 +11526,9 @@ void psi_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -11561,13 +11559,13 @@ void r8_factorial_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "R8_FACTORIAL_VALUES_TEST:\n";
-  cout << "  R8_FACTORIAL_VALUES stores values of\n";
-  cout << "  the factorial function (using double arithmetic).\n";
-  cout << "\n";
-  cout << "      N       Factorial(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_FACTORIAL_VALUES_TEST:\n";
+  std::cout << "  R8_FACTORIAL_VALUES stores values of\n";
+  std::cout << "  the factorial function (using double arithmetic).\n";
+  std::cout << "\n";
+  std::cout << "      N       Factorial(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11579,9 +11577,9 @@ void r8_factorial_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << fn << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << fn << "\n";
   }
   return;
 }
@@ -11612,14 +11610,14 @@ void r8_factorial_log_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "R8_FACTORIAL_LOG_VALUES_TEST:\n";
-  cout << "  R8_FACTORIAL_LOG_VALUES stores values of\n";
-  cout << "  the logarithm of the factorial function\n";
-  cout << "  (using real arithmetic).\n";
-  cout << "\n";
-  cout << "      N       Log(Factorial(N))\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_FACTORIAL_LOG_VALUES_TEST:\n";
+  std::cout << "  R8_FACTORIAL_LOG_VALUES stores values of\n";
+  std::cout << "  the logarithm of the factorial function\n";
+  std::cout << "  (using real arithmetic).\n";
+  std::cout << "\n";
+  std::cout << "      N       Log(Factorial(N))\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11631,9 +11629,9 @@ void r8_factorial_log_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << fn << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << fn << "\n";
   }
   return;
 }
@@ -11664,13 +11662,13 @@ void r8_factorial2_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "R8_FACTORIAL2_VALUES_TEST:\n";
-  cout << "  R8_FACTORIAL2_VALUES stores values of\n";
-  cout << "  the double factorial function (using double arithmetic).\n";
-  cout << "\n";
-  cout << "      N       F\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_FACTORIAL2_VALUES_TEST:\n";
+  std::cout << "  R8_FACTORIAL2_VALUES stores values of\n";
+  std::cout << "  the double factorial function (using double arithmetic).\n";
+  std::cout << "\n";
+  std::cout << "      N       F\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11682,9 +11680,9 @@ void r8_factorial2_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << f << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << f << "\n";
   }
   return;
 }
@@ -11716,13 +11714,13 @@ void r8_fall_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "R8_FALL_VALUES_TEST:\n";
-  cout << "  R8_FALL_VALUES returns some exact values\n";
-  cout << "  of the falling factorial function:\n";
-  cout << "\n";
-  cout << "     X     N      R8_FALL(X,N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_FALL_VALUES_TEST:\n";
+  std::cout << "  R8_FALL_VALUES returns some exact values\n";
+  std::cout << "  of the falling factorial function:\n";
+  std::cout << "\n";
+  std::cout << "     X     N      R8_FALL(X,N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11734,10 +11732,10 @@ void r8_fall_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(8)  << x << "  "
-         << setw(8)  << n << "  "
-         << setw(12) << f << "\n";
+    std::cout                   << "  "
+         << std::setw(8)  << x << "  "
+         << std::setw(8)  << n << "  "
+         << std::setw(12) << f << "\n";
   }
   return;
 }
@@ -11769,13 +11767,13 @@ void r8_rise_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "R8_RISE_VALUES_TEST:\n";
-  cout << "  R8_RISE_VALUES returns some exact values\n";
-  cout << "  of the  rising factorial function:\n";
-  cout << "\n";
-  cout << "     X     N      R8_RISE(X,N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_RISE_VALUES_TEST:\n";
+  std::cout << "  R8_RISE_VALUES returns some exact values\n";
+  std::cout << "  of the  rising factorial function:\n";
+  std::cout << "\n";
+  std::cout << "     X     N      R8_RISE(X,N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11787,10 +11785,10 @@ void r8_rise_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(8)  << x << "  "
-         << setw(8)  << n << "  "
-         << setw(12) << f << "\n";
+    std::cout                   << "  "
+         << std::setw(8)  << x << "  "
+         << std::setw(8)  << n << "  "
+         << std::setw(12) << f << "\n";
   }
   return;
 }
@@ -11822,13 +11820,13 @@ void rayleigh_cdf_values_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "RAYLEIGH_CDF_VALUES_TEST:\n";
-  cout << "  RAYLEIGH_CDF_VALUES stores values of\n";
-  cout << "  the Rayleigh CDF.\n";
-  cout << "\n";
-  cout << "      SIGMA        X            CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "RAYLEIGH_CDF_VALUES_TEST:\n";
+  std::cout << "  RAYLEIGH_CDF_VALUES stores values of\n";
+  std::cout << "  the Rayleigh CDF.\n";
+  std::cout << "\n";
+  std::cout << "      SIGMA        X            CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11840,10 +11838,10 @@ void rayleigh_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << sigma  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << sigma  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -11876,13 +11874,13 @@ void scaled_inverse_chi_square_pdf_values_test ( )
   double x;
   double xi;
 
-  cout << "\n";
-  cout << "SCALED_INVERSE_CHI_SQUARE_PDF_VALUES_TEST:\n";
-  cout << "  SCALED_INVERSE_CHI_SQUARE_PDF_VALUES returns values of \n";
-  cout << "  the scaled inverse Chi-Square Probability Density Function.\n";
-  cout << "\n";
-  cout << "     DF        XI        X    PDF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SCALED_INVERSE_CHI_SQUARE_PDF_VALUES_TEST:\n";
+  std::cout << "  SCALED_INVERSE_CHI_SQUARE_PDF_VALUES returns values of \n";
+  std::cout << "  the scaled inverse Chi-Square Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     DF        XI        X    PDF\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11894,11 +11892,11 @@ void scaled_inverse_chi_square_pdf_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(8) << df << "  "
-         << setw(8) << xi << "  "
-         << setw(8) << x  << "  "
-         << setw(12) << fx << "\n";
+    std::cout                   << "  "
+         << std::setw(8) << df << "  "
+         << std::setw(8) << xi << "  "
+         << std::setw(8) << x  << "  "
+         << std::setw(12) << fx << "\n";
   }
   return;
 }
@@ -11929,14 +11927,14 @@ void secvir_values_test ( )
   double tc;
   double vir;
 
-  cout << "\n";
-  cout << "SECVIR_VALUES_TEST:\n";
-  cout << "  SECVIR_VALUES stores values of\n";
-  cout << "  the second virial coefficient of water\n";
-  cout << "  as a function of temperature.\n";
-  cout << "\n";
-  cout << "      T            VIR(T)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SECVIR_VALUES_TEST:\n";
+  std::cout << "  SECVIR_VALUES stores values of\n";
+  std::cout << "  the second virial coefficient of water\n";
+  std::cout << "  as a function of temperature.\n";
+  std::cout << "\n";
+  std::cout << "      T            VIR(T)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11948,9 +11946,9 @@ void secvir_values_test ( )
     {
       break;
     }
-    cout                    << "  "
-         << setw(12) << tc  << "  "
-         << setw(12) << vir << "\n";
+    std::cout                    << "  "
+         << std::setw(12) << tc  << "  "
+         << std::setw(12) << vir << "\n";
   }
   return;
 }
@@ -11981,13 +11979,13 @@ void shi_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "SHI_VALUES_TEST:\n";
-  cout << "  SHI_VALUES stores values of\n";
-  cout << "  the hyperbolic sine integral function.\n";
-  cout << "\n";
-  cout << "      X            SHI(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SHI_VALUES_TEST:\n";
+  std::cout << "  SHI_VALUES stores values of\n";
+  std::cout << "  the hyperbolic sine integral function.\n";
+  std::cout << "\n";
+  std::cout << "      X            SHI(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -11999,9 +11997,9 @@ void shi_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12032,13 +12030,13 @@ void si_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "SI_VALUES_TEST:\n";
-  cout << "  SI_VALUES stores values of\n";
-  cout << "  the sine integral function.\n";
-  cout << "\n";
-  cout << "      X            SI(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SI_VALUES_TEST:\n";
+  std::cout << "  SI_VALUES stores values of\n";
+  std::cout << "  the sine integral function.\n";
+  std::cout << "\n";
+  std::cout << "      X            SI(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12050,9 +12048,9 @@ void si_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12083,13 +12081,13 @@ void sigma_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "SIGMA_VALUES_TEST:\n";
-  cout << "  SIGMA_VALUES returns values of\n";
-  cout << "  the SIGMA function.\n";
-  cout << "\n";
-  cout << "       N         SIGMA(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SIGMA_VALUES_TEST:\n";
+  std::cout << "  SIGMA_VALUES returns values of\n";
+  std::cout << "  the SIGMA function.\n";
+  std::cout << "\n";
+  std::cout << "       N         SIGMA(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12101,9 +12099,9 @@ void sigma_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -12134,12 +12132,12 @@ void sin_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "SIN_VALUES_TEST:\n";
-  cout << "   SIN_VALUES stores values of the sine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SIN_VALUES_TEST:\n";
+  std::cout << "   SIN_VALUES stores values of the sine function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12151,9 +12149,9 @@ void sin_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -12184,12 +12182,12 @@ void sin_degree_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "SIN_DEGREE_VALUES_TEST:\n";
-  cout << "   SIN_DEGREE_VALUES stores values of the sine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SIN_DEGREE_VALUES_TEST:\n";
+  std::cout << "   SIN_DEGREE_VALUES stores values of the sine function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12201,9 +12199,9 @@ void sin_degree_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -12236,13 +12234,13 @@ void sin_power_int_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "SIN_POWER_INT_VALUES_TEST:\n";
-  cout << "  SIN_POWER_INT_VALUES returns values of\n";
-  cout << "  the integral of the N-th power of the sine function.\n";
-  cout << "\n";
-  cout << "         A         B       N        FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SIN_POWER_INT_VALUES_TEST:\n";
+  std::cout << "  SIN_POWER_INT_VALUES returns values of\n";
+  std::cout << "  the integral of the N-th power of the sine function.\n";
+  std::cout << "\n";
+  std::cout << "         A         B       N        FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12254,11 +12252,11 @@ void sin_power_int_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(8)                      << a  << "  "
-         << setw(8)                      << b  << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(8)                      << a  << "  "
+         << std::setw(8)                      << b  << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12289,12 +12287,12 @@ void sinh_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "SINH_VALUES_TEST:\n";
-  cout << "   SINH_VALUES stores values of the hyperbolic sine function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SINH_VALUES_TEST:\n";
+  std::cout << "   SINH_VALUES stores values of the hyperbolic sine function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12306,9 +12304,9 @@ void sinh_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -12344,14 +12342,14 @@ void six_j_values_test ( )
   double j6;
   int n_data;
 
-  cout << "\n";
-  cout << "SIX_J_VALUES_TEST:\n";
-  cout << "  SIX_J_VALUES returns values of \n";
-  cout << "  the Wigner 6J coefficient.\n";
-  cout << "\n";
-  cout << 
+  std::cout << "\n";
+  std::cout << "SIX_J_VALUES_TEST:\n";
+  std::cout << "  SIX_J_VALUES returns values of \n";
+  std::cout << "  the Wigner 6J coefficient.\n";
+  std::cout << "\n";
+  std::cout << 
     "      J1      J2      J3      J4      J5      J6        SIX_J\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12363,13 +12361,13 @@ void six_j_values_test ( )
     {
       break;
     }
-    cout << "  " << setw(6) << j1
-         << "  " << setw(6) << j2
-         << "  " << setw(6) << j3
-         << "  " << setw(6) << j4
-         << "  " << setw(6) << j5
-         << "  " << setw(6) << j6
-         << "  " << setprecision(16) << setw(24) << fx << "\n";
+    std::cout << "  " << std::setw(6) << j1
+         << "  " << std::setw(6) << j2
+         << "  " << std::setw(6) << j3
+         << "  " << std::setw(6) << j4
+         << "  " << std::setw(6) << j5
+         << "  " << std::setw(6) << j6
+         << "  " << std::setprecision(16) << std::setw(24) << fx << "\n";
   }
 
   return;
@@ -12402,14 +12400,14 @@ void sound_values_test ( )
   double p;
   double tc;
 
-  cout << "\n";
-  cout << "SOUND_VALUES_TEST:\n";
-  cout << "  SOUND_VALUES stores values of\n";
-  cout << "  the spead of sound in water\n";
-  cout << "  as a function of temperature and pressure.\n";
-  cout << "\n";
-  cout << "      T            P            C(T,P)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SOUND_VALUES_TEST:\n";
+  std::cout << "  SOUND_VALUES stores values of\n";
+  std::cout << "  the spead of sound in water\n";
+  std::cout << "  as a function of temperature and pressure.\n";
+  std::cout << "\n";
+  std::cout << "      T            P            C(T,P)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12421,10 +12419,10 @@ void sound_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << tc << "  "
-         << setw(12) << p  << "  "
-         << setw(12) << c  << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << tc << "  "
+         << std::setw(12) << p  << "  "
+         << std::setw(12) << c  << "\n";
   }
   return;
 }
@@ -12455,13 +12453,13 @@ void sphere_unit_area_values_test ( )
   int n_data;
   int n;
 
-  cout << "\n";
-  cout << "SPHERE_UNIT_AREA_VALUES_TEST:\n";
-  cout << "  SPHERE_UNIT_AREA_VALUES stores values of\n";
-  cout << "  the area of the unit sphere in various dimensions.\n";
-  cout << "\n";
-  cout << "      N           AREA\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SPHERE_UNIT_AREA_VALUES_TEST:\n";
+  std::cout << "  SPHERE_UNIT_AREA_VALUES stores values of\n";
+  std::cout << "  the area of the unit sphere in various dimensions.\n";
+  std::cout << "\n";
+  std::cout << "      N           AREA\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12473,9 +12471,9 @@ void sphere_unit_area_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12506,13 +12504,13 @@ void sphere_unit_volume_values_test ( )
   int n_data;
   int n;
 
-  cout << "\n";
-  cout << "SPHERE_UNIT_VOLUME_VALUES_TEST:\n";
-  cout << "  SPHERE_UNIT_VOLUME_VALUES stores values of\n";
-  cout << "  the volume of the unit sphere in various dimensions.\n";
-  cout << "\n";
-  cout << "      N           VOLUME\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SPHERE_UNIT_VOLUME_VALUES_TEST:\n";
+  std::cout << "  SPHERE_UNIT_VOLUME_VALUES stores values of\n";
+  std::cout << "  the volume of the unit sphere in various dimensions.\n";
+  std::cout << "\n";
+  std::cout << "      N           VOLUME\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12524,9 +12522,9 @@ void sphere_unit_volume_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(6)                      << n  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(6)                      << n  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12562,13 +12560,13 @@ void spherical_harmonic_values_test ( )
   double yi;
   double yr;
 
-  cout << "\n";
-  cout << "SPHERICAL_HARMONIC_VALUES_TEST:\n";
-  cout << "  SPHERICAL_HARMONIC_VALUES stores values of\n";
-  cout << "  the spherical harmonic function.\n";
-  cout << "\n";
-  cout << "   L   M    THETA       PHI           Yr                    Yi\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SPHERICAL_HARMONIC_VALUES_TEST:\n";
+  std::cout << "  SPHERICAL_HARMONIC_VALUES stores values of\n";
+  std::cout << "  the spherical harmonic function.\n";
+  std::cout << "\n";
+  std::cout << "   L   M    THETA       PHI           Yr                    Yi\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12580,13 +12578,13 @@ void spherical_harmonic_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(2)                      << l     << "  "
-         << setw(2)                      << m     << "  "
-         << setw(8)  << setprecision(4)  << theta << "  "
-         << setw(8)  << setprecision(4)  << phi   << "  "
-         << setw(24) << setprecision(16) << yr    << "  "
-         << setw(24) << setprecision(16) << yi    << "\n";
+    std::cout                                          << "  "
+         << std::setw(2)                      << l     << "  "
+         << std::setw(2)                      << m     << "  "
+         << std::setw(8)  << std::setprecision(4)  << theta << "  "
+         << std::setw(8)  << std::setprecision(4)  << phi   << "  "
+         << std::setw(24) << std::setprecision(16) << yr    << "  "
+         << std::setw(24) << std::setprecision(16) << yi    << "\n";
   }
   return;
 }
@@ -12617,12 +12615,12 @@ void sqrt_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "SQRT_VALUES_TEST:\n";
-  cout << "  SQRT_VALUES returns some exact values.\n";
-  cout << "\n";
-  cout << "     X       Fx\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SQRT_VALUES_TEST:\n";
+  std::cout << "  SQRT_VALUES returns some exact values.\n";
+  std::cout << "\n";
+  std::cout << "     X       Fx\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12635,9 +12633,9 @@ void sqrt_values_test ( )
       break;
     }
 
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12669,13 +12667,13 @@ void stirling1_values_test ( )
   int n_data;
   int s1;
 
-  cout << "\n";
-  cout << "STIRLING1_VALUES_TEST:\n";
-  cout << "  STIRLING1_VALUES returns values of\n";
-  cout << "  the Stirling numbers of the first kind.\n";
-  cout << "\n";
-  cout << "     N     N        S1\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STIRLING1_VALUES_TEST:\n";
+  std::cout << "  STIRLING1_VALUES returns values of\n";
+  std::cout << "  the Stirling numbers of the first kind.\n";
+  std::cout << "\n";
+  std::cout << "     N     N        S1\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12687,10 +12685,10 @@ void stirling1_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(6)  << m  << "  "
-         << setw(12) << s1 << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(6)  << m  << "  "
+         << std::setw(12) << s1 << "\n";
   }
   return;
 }
@@ -12722,13 +12720,13 @@ void stirling2_values_test ( )
   int n_data;
   int s2;
 
-  cout << "\n";
-  cout << "STIRLING2_VALUES_TEST:\n";
-  cout << "  STIRLING2_VALUES returns values of\n";
-  cout << "  the Stirling numbers of the second kind.\n";
-  cout << "\n";
-  cout << "     N     N        S2\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STIRLING2_VALUES_TEST:\n";
+  std::cout << "  STIRLING2_VALUES returns values of\n";
+  std::cout << "  the Stirling numbers of the second kind.\n";
+  std::cout << "\n";
+  std::cout << "     N     N        S2\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12740,10 +12738,10 @@ void stirling2_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(6)  << m  << "  "
-         << setw(12) << s2 << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(6)  << m  << "  "
+         << std::setw(12) << s2 << "\n";
   }
   return;
 }
@@ -12774,13 +12772,13 @@ void stromgen_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "STROMGEN_VALUES_TEST:\n";
-  cout << "  STROMGEN_VALUES stores values of \n";
-  cout << "  the Stromgen function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STROMGEN_VALUES_TEST:\n";
+  std::cout << "  STROMGEN_VALUES stores values of \n";
+  std::cout << "  the Stromgen function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12792,9 +12790,9 @@ void stromgen_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -12825,13 +12823,13 @@ void struve_h0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "STRUVE_H0_VALUES_TEST:\n";
-  cout << "  STRUVE_H0_VALUES stores values of\n";
-  cout << "  the Struve H0 function.\n";
-  cout << "\n";
-  cout << "      X            H0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STRUVE_H0_VALUES_TEST:\n";
+  std::cout << "  STRUVE_H0_VALUES stores values of\n";
+  std::cout << "  the Struve H0 function.\n";
+  std::cout << "\n";
+  std::cout << "      X            H0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12843,9 +12841,9 @@ void struve_h0_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12876,13 +12874,13 @@ void struve_h1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "STRUVE_H1_VALUES_TEST:\n";
-  cout << "  STRUVE_H1_VALUES stores values of\n";
-  cout << "  the Struve H1 function.\n";
-  cout << "\n";
-  cout << "      X            H1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STRUVE_H1_VALUES_TEST:\n";
+  std::cout << "  STRUVE_H1_VALUES stores values of\n";
+  std::cout << "  the Struve H1 function.\n";
+  std::cout << "\n";
+  std::cout << "      X            H1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12894,9 +12892,9 @@ void struve_h1_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12927,13 +12925,13 @@ void struve_l0_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "STRUVE_L0_VALUES_TEST:\n";
-  cout << "  STRUVE_L0_VALUES stores values of\n";
-  cout << "  the Struve L0 function.\n";
-  cout << "\n";
-  cout << "      X            L0(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STRUVE_L0_VALUES_TEST:\n";
+  std::cout << "  STRUVE_L0_VALUES stores values of\n";
+  std::cout << "  the Struve L0 function.\n";
+  std::cout << "\n";
+  std::cout << "      X            L0(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12945,9 +12943,9 @@ void struve_l0_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -12978,13 +12976,13 @@ void struve_l1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "STRUVE_L1_VALUES_TEST:\n";
-  cout << "  STRUVE_L1_VALUES stores values of\n";
-  cout << "  the Struve L1 function.\n";
-  cout << "\n";
-  cout << "      X            L1(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STRUVE_L1_VALUES_TEST:\n";
+  std::cout << "  STRUVE_L1_VALUES stores values of\n";
+  std::cout << "  the Struve L1 function.\n";
+  std::cout << "\n";
+  std::cout << "      X            L1(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -12996,9 +12994,9 @@ void struve_l1_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -13030,13 +13028,13 @@ void student_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "STUDENT_CDF_VALUES_TEST:\n";
-  cout << "  STUDENT_CDF_VALUES returns values of\n";
-  cout << "  the Student T Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "      C     X       CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STUDENT_CDF_VALUES_TEST:\n";
+  std::cout << "  STUDENT_CDF_VALUES returns values of\n";
+  std::cout << "  the Student T Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "      C     X       CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13048,10 +13046,10 @@ void student_cdf_values_test ( )
     {
       break;
     }
-    cout                                       << "  "
-         << setw(16)                     << c  << "  "
-         << setw(16)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                       << "  "
+         << std::setw(16)                     << c  << "  "
+         << std::setw(16)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -13084,13 +13082,13 @@ void student_noncentral_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "STUDENT_NONCENTRAL_CDF_VALUES_TEST:\n";
-  cout << "  STUDENT_NONCENTRAL_CDF_VALUES returns values of\n";
-  cout << "  the noncentral Student T Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "    DF     LAMBDA        X        CDF\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STUDENT_NONCENTRAL_CDF_VALUES_TEST:\n";
+  std::cout << "  STUDENT_NONCENTRAL_CDF_VALUES returns values of\n";
+  std::cout << "  the noncentral Student T Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "    DF     LAMBDA        X        CDF\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13102,11 +13100,11 @@ void student_noncentral_cdf_values_test ( )
     {
       break;
     }
-    cout                                           << "  "
-         << setw(6)                      << df     << "  "
-         << setw(8)                      << lambda << "  "
-         << setw(8)                      << x      << "  "
-         << setw(24) << setprecision(16) << fx     << "\n";
+    std::cout                                           << "  "
+         << std::setw(6)                      << df     << "  "
+         << std::setw(8)                      << lambda << "  "
+         << std::setw(8)                      << x      << "  "
+         << std::setw(24) << std::setprecision(16) << fx     << "\n";
   }
   return;
 }
@@ -13137,13 +13135,13 @@ void subfactorial_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "SUBFACTORIAL_VALUES_TEST:\n";
-  cout << "  SUBFACTORIAL_VALUES returns values of\n";
-  cout << "  the subfactorial function.\n";
-  cout << "\n";
-  cout << "      N       Subfactorial[N]\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SUBFACTORIAL_VALUES_TEST:\n";
+  std::cout << "  SUBFACTORIAL_VALUES returns values of\n";
+  std::cout << "  the subfactorial function.\n";
+  std::cout << "\n";
+  std::cout << "      N       Subfactorial[N]\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13155,9 +13153,9 @@ void subfactorial_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -13188,14 +13186,14 @@ void surten_values_test ( )
   double sigma;
   double tc;
 
-  cout << "\n";
-  cout << "SURTEN_VALUES_TEST:\n";
-  cout << "  SURTEN_VALUES stores values of\n";
-  cout << "  the surface tension of water\n";
-  cout << "  as a function of temperature.\n";
-  cout << "\n";
-  cout << "      T            SIGMA(T)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SURTEN_VALUES_TEST:\n";
+  std::cout << "  SURTEN_VALUES stores values of\n";
+  std::cout << "  the surface tension of water\n";
+  std::cout << "  as a function of temperature.\n";
+  std::cout << "\n";
+  std::cout << "      T            SIGMA(T)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13207,9 +13205,9 @@ void surten_values_test ( )
     {
       break;
     }
-    cout                      << "  "
-         << setw(12) << tc    << "  "
-         << setw(12) << sigma << "\n";
+    std::cout                      << "  "
+         << std::setw(12) << tc    << "  "
+         << std::setw(12) << sigma << "\n";
   }
   return;
 }
@@ -13240,13 +13238,13 @@ void synch1_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "SYNCH1_VALUES_TEST:\n";
-  cout << "  SYNCH1_VALUES stores values of \n";
-  cout << "  the Synchrotron function of order 1.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SYNCH1_VALUES_TEST:\n";
+  std::cout << "  SYNCH1_VALUES stores values of \n";
+  std::cout << "  the Synchrotron function of order 1.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13258,9 +13256,9 @@ void synch1_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13291,13 +13289,13 @@ void synch2_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "SYNCH2_VALUES_TEST:\n";
-  cout << "  SYNCH2_VALUES stores values of \n";
-  cout << "  the Synchrotron function of order 2.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SYNCH2_VALUES_TEST:\n";
+  std::cout << "  SYNCH2_VALUES stores values of \n";
+  std::cout << "  the Synchrotron function of order 2.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13309,9 +13307,9 @@ void synch2_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13342,12 +13340,12 @@ void tan_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TAN_VALUES_TEST:\n";
-  cout << "   TAN_VALUES stores values of the tangent function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TAN_VALUES_TEST:\n";
+  std::cout << "   TAN_VALUES stores values of the tangent function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13359,9 +13357,9 @@ void tan_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13392,12 +13390,12 @@ void tanh_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TANH_VALUES_TEST:\n";
-  cout << "   TANH_VALUES stores values of the hyperbolic tangent function.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TANH_VALUES_TEST:\n";
+  std::cout << "   TANH_VALUES stores values of the hyperbolic tangent function.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13409,9 +13407,9 @@ void tanh_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13442,13 +13440,13 @@ void tau_values_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "TAU_VALUES_TEST:\n";
-  cout << "  TAU_VALUES returns values of\n";
-  cout << "  the TAU function.\n";
-  cout << "\n";
-  cout << "     N         TAU(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TAU_VALUES_TEST:\n";
+  std::cout << "  TAU_VALUES returns values of\n";
+  std::cout << "  the TAU function.\n";
+  std::cout << "\n";
+  std::cout << "     N         TAU(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13460,9 +13458,9 @@ void tau_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(12) << fn << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(12) << fn << "\n";
   }
   return;
 }
@@ -13494,14 +13492,14 @@ void thercon_values_test ( )
   double p;
   double tc;
 
-  cout << "\n";
-  cout << "THERCON_VALUES_TEST:\n";
-  cout << "  THERCON_VALUES stores values of\n";
-  cout << "  the thermal conductivity of water\n";
-  cout << "  as a function of temperature and pressure.\n";
-  cout << "\n";
-  cout << "      T            P            LAMBDA(T,P)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "THERCON_VALUES_TEST:\n";
+  std::cout << "  THERCON_VALUES stores values of\n";
+  std::cout << "  the thermal conductivity of water\n";
+  std::cout << "  as a function of temperature and pressure.\n";
+  std::cout << "\n";
+  std::cout << "      T            P            LAMBDA(T,P)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13513,10 +13511,10 @@ void thercon_values_test ( )
     {
       break;
     }
-    cout                       << "  "
-         << setw(12) << tc     << "  "
-         << setw(12) << p      << "  "
-         << setw(12) << lambda << "\n";
+    std::cout                       << "  "
+         << std::setw(12) << tc     << "  "
+         << std::setw(12) << p      << "  "
+         << std::setw(12) << lambda << "\n";
   }
   return;
 }
@@ -13552,13 +13550,13 @@ void three_j_values_test ( )
   double m3;
   int n_data;
 
-  cout << "\n";
-  cout << "THREE_J_VALUES_TEST:\n";
-  cout << "  THREE_J_VALUES returns values of\n";
-  cout << "  the Wigner 3J coefficient.\n";
-  cout << "\n";
-  cout << "      J1      J2      J3      M1      M2      M3        THREE_J\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "THREE_J_VALUES_TEST:\n";
+  std::cout << "  THREE_J_VALUES returns values of\n";
+  std::cout << "  the Wigner 3J coefficient.\n";
+  std::cout << "\n";
+  std::cout << "      J1      J2      J3      M1      M2      M3        THREE_J\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13571,13 +13569,13 @@ void three_j_values_test ( )
       break;
     }
 
-    cout << "  " << setw(6) << j1
-         << "  " << setw(6) << j2
-         << "  " << setw(6) << j3
-         << "  " << setw(6) << m1
-         << "  " << setw(6) << m2
-         << "  " << setw(6) << m3
-         << "  " << setprecision(16) << setw(24) << fx << "\n";
+    std::cout << "  " << std::setw(6) << j1
+         << "  " << std::setw(6) << j2
+         << "  " << std::setw(6) << j3
+         << "  " << std::setw(6) << m1
+         << "  " << std::setw(6) << m2
+         << "  " << std::setw(6) << m3
+         << "  " << std::setprecision(16) << std::setw(24) << fx << "\n";
   }
   return;
 }
@@ -13608,13 +13606,13 @@ void tran02_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRAN02_VALUES_TEST:\n";
-  cout << "  TRAN02_VALUES stores values of \n";
-  cout << "  the Transport function of order 2.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRAN02_VALUES_TEST:\n";
+  std::cout << "  TRAN02_VALUES stores values of \n";
+  std::cout << "  the Transport function of order 2.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13626,9 +13624,9 @@ void tran02_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13659,13 +13657,13 @@ void tran03_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRAN03_VALUES_TEST:\n";
-  cout << "  TRAN03_VALUES stores values of \n";
-  cout << "  the Transport function of order 3.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRAN03_VALUES_TEST:\n";
+  std::cout << "  TRAN03_VALUES stores values of \n";
+  std::cout << "  the Transport function of order 3.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13677,9 +13675,9 @@ void tran03_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13710,13 +13708,13 @@ void tran04_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRAN04_VALUES_TEST:\n";
-  cout << "  TRAN04_VALUES stores values of \n";
-  cout << "  the Transport function of order 4.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRAN04_VALUES_TEST:\n";
+  std::cout << "  TRAN04_VALUES stores values of \n";
+  std::cout << "  the Transport function of order 4.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13728,9 +13726,9 @@ void tran04_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13761,13 +13759,13 @@ void tran05_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRAN05_VALUES_TEST:\n";
-  cout << "  TRAN05_VALUES stores values of \n";
-  cout << "  the Transport function of order 5.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRAN05_VALUES_TEST:\n";
+  std::cout << "  TRAN05_VALUES stores values of \n";
+  std::cout << "  the Transport function of order 5.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13779,9 +13777,9 @@ void tran05_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13812,13 +13810,13 @@ void tran06_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRAN06_VALUES_TEST:\n";
-  cout << "  TRAN06_VALUES stores values of \n";
-  cout << "  the Transport function of order 6.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRAN06_VALUES_TEST:\n";
+  std::cout << "  TRAN06_VALUES stores values of \n";
+  std::cout << "  the Transport function of order 6.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13830,9 +13828,9 @@ void tran06_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13863,13 +13861,13 @@ void tran07_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRAN07_VALUES_TEST:\n";
-  cout << "  TRAN07_VALUES stores values of \n";
-  cout << "  the Transport function of order 7.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRAN07_VALUES_TEST:\n";
+  std::cout << "  TRAN07_VALUES stores values of \n";
+  std::cout << "  the Transport function of order 7.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13881,9 +13879,9 @@ void tran07_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13914,13 +13912,13 @@ void tran08_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRAN08_VALUES_TEST:\n";
-  cout << "  TRAN08_VALUES stores values of \n";
-  cout << "  the Transport function of order 8.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRAN08_VALUES_TEST:\n";
+  std::cout << "  TRAN08_VALUES stores values of \n";
+  std::cout << "  the Transport function of order 8.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13932,8 +13930,8 @@ void tran08_values_test ( )
     {
       break;
     }
-    cout << "  " << setw(24) << setprecision ( 16 ) << x  
-         << "  " << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout << "  " << std::setw(24) << std::setprecision ( 16 ) << x  
+         << "  " << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -13964,13 +13962,13 @@ void tran09_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRAN09_VALUES_TEST:\n";
-  cout << "  TRAN09_VALUES stores values of \n";
-  cout << "  the Transport function of order 9.\n";
-  cout << "\n";
-  cout << "                X                     FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRAN09_VALUES_TEST:\n";
+  std::cout << "  TRAN09_VALUES stores values of \n";
+  std::cout << "  the Transport function of order 9.\n";
+  std::cout << "\n";
+  std::cout << "                X                     FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -13982,9 +13980,9 @@ void tran09_values_test ( )
     {
       break;
     }
-    cout                                          << "  "
-         << setw(24) << setprecision ( 16 ) << x  << "  "
-         << setw(24) << setprecision ( 16 ) << fx << "\n";
+    std::cout                                          << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << x  << "  "
+         << std::setw(24) << std::setprecision ( 16 ) << fx << "\n";
   }
   return;
 }
@@ -14015,13 +14013,13 @@ void trigamma_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TRIGAMMA_VALUES_TEST\n";
-  cout << "  TRIGAMMA_VALUES stores values of\n";
-  cout << "  the TriGamma function.\n";
-  cout << "\n";
-  cout << "      X            FX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRIGAMMA_VALUES_TEST\n";
+  std::cout << "  TRIGAMMA_VALUES stores values of\n";
+  std::cout << "  the TriGamma function.\n";
+  std::cout << "\n";
+  std::cout << "      X            FX\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14033,8 +14031,8 @@ void trigamma_values_test ( )
     {
       break;
     }
-    cout << "  " << setw(12)                     << x  
-         << "  " << setw(24) << setprecision(16) << fx << "\n";
+    std::cout << "  " << std::setw(12)                     << x  
+         << "  " << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -14069,13 +14067,13 @@ void truncated_normal_ab_cdf_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "TRUNCATED_NORMAL_AB_CDF_VALUES_TEST:\n";
-  cout << "  TRUNCATED_NORMAL_AB_CDF_VALUES stores values of\n";
-  cout << "  the Truncated Normal Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "        MU     SIGMA       A         B         X        CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRUNCATED_NORMAL_AB_CDF_VALUES_TEST:\n";
+  std::cout << "  TRUNCATED_NORMAL_AB_CDF_VALUES stores values of\n";
+  std::cout << "  the Truncated Normal Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "        MU     SIGMA       A         B         X        CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14087,12 +14085,12 @@ void truncated_normal_ab_cdf_test ( )
     {
       break;
     }
-    cout << "  " << setw(8) << mu
-         << "  " << setw(8) << sigma
-         << "  " << setw(8) << a
-         << "  " << setw(8) << b
-         << "  " << setw(8) << x
-         << "  " << setw(24) << setprecision(16) << fx << "\n";
+    std::cout << "  " << std::setw(8) << mu
+         << "  " << std::setw(8) << sigma
+         << "  " << std::setw(8) << a
+         << "  " << std::setw(8) << b
+         << "  " << std::setw(8) << x
+         << "  " << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -14127,13 +14125,13 @@ void truncated_normal_ab_pdf_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "TEST1547:\n";
-  cout << "  TRUNCATED_NORMAL_AB_PDF_VALUES stores values of\n";
-  cout << "  the Truncated Normal Probability Density Function.\n";
-  cout << "\n";
-  cout << "        MU     SIGMA       A         B         X        PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST1547:\n";
+  std::cout << "  TRUNCATED_NORMAL_AB_PDF_VALUES stores values of\n";
+  std::cout << "  the Truncated Normal Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "        MU     SIGMA       A         B         X        PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14145,12 +14143,12 @@ void truncated_normal_ab_pdf_test ( )
     {
       break;
     }
-    cout << "  " << setw(8) << mu
-         << "  " << setw(8) << sigma
-         << "  " << setw(8) << a
-         << "  " << setw(8) << b
-         << "  " << setw(8) << x
-         << "  " << setw(24) << setprecision(16) << fx << "\n";
+    std::cout << "  " << std::setw(8) << mu
+         << "  " << std::setw(8) << sigma
+         << "  " << std::setw(8) << a
+         << "  " << std::setw(8) << b
+         << "  " << std::setw(8) << x
+         << "  " << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -14184,13 +14182,13 @@ void truncated_normal_a_cdf_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "TEST1548:\n";
-  cout << "  TRUNCATED_NORMAL_A_CDF_VALUES stores values of\n";
-  cout << "  the lower Truncated Normal Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "        MU     SIGMA       A         X        CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST1548:\n";
+  std::cout << "  TRUNCATED_NORMAL_A_CDF_VALUES stores values of\n";
+  std::cout << "  the lower Truncated Normal Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "        MU     SIGMA       A         X        CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14202,11 +14200,11 @@ void truncated_normal_a_cdf_test ( )
     {
       break;
     }
-    cout << "  " << setw(8) << mu
-         << "  " << setw(8) << sigma
-         << "  " << setw(8) << a
-         << "  " << setw(8) << x
-         << "  " << setw(24) << setprecision(16) << fx << "\n";
+    std::cout << "  " << std::setw(8) << mu
+         << "  " << std::setw(8) << sigma
+         << "  " << std::setw(8) << a
+         << "  " << std::setw(8) << x
+         << "  " << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -14240,13 +14238,13 @@ void truncated_normal_a_pdf_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "TRUNCATED_NORMAL_A_PDF_VALUES_TEST:\n";
-  cout << "  TRUNCATED_NORMAL_A_PDF_VALUES stores values of\n";
-  cout << "  the lower Truncated Normal Probability Density Function.\n";
-  cout << "\n";
-  cout << "        MU     SIGMA       A         X        PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRUNCATED_NORMAL_A_PDF_VALUES_TEST:\n";
+  std::cout << "  TRUNCATED_NORMAL_A_PDF_VALUES stores values of\n";
+  std::cout << "  the lower Truncated Normal Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "        MU     SIGMA       A         X        PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14258,11 +14256,11 @@ void truncated_normal_a_pdf_test ( )
     {
       break;
     }
-    cout << "  " << setw(8) << mu
-         << "  " << setw(8) << sigma
-         << "  " << setw(8) << a
-         << "  " << setw(8) << x
-         << "  " << setw(24) << setprecision(16) << fx << "\n";
+    std::cout << "  " << std::setw(8) << mu
+         << "  " << std::setw(8) << sigma
+         << "  " << std::setw(8) << a
+         << "  " << std::setw(8) << x
+         << "  " << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -14296,13 +14294,13 @@ void truncated_normal_b_cdf_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "TRUNCATED_NORMAL_B_CDF_VALUES_TEST:\n";
-  cout << "  TRUNCATED_NORMAL_B_CDF_VALUES stores values of\n";
-  cout << "  the upper Truncated Normal Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "        MU     SIGMA       B         X        CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRUNCATED_NORMAL_B_CDF_VALUES_TEST:\n";
+  std::cout << "  TRUNCATED_NORMAL_B_CDF_VALUES stores values of\n";
+  std::cout << "  the upper Truncated Normal Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "        MU     SIGMA       B         X        CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14314,11 +14312,11 @@ void truncated_normal_b_cdf_test ( )
     {
       break;
     }
-    cout << "  " << setw(8) << mu
-         << "  " << setw(8) << sigma
-         << "  " << setw(8) << b
-         << "  " << setw(8) << x
-         << "  " << setw(24) << setprecision(16) << fx << "\n";
+    std::cout << "  " << std::setw(8) << mu
+         << "  " << std::setw(8) << sigma
+         << "  " << std::setw(8) << b
+         << "  " << std::setw(8) << x
+         << "  " << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -14353,13 +14351,13 @@ void truncated_normal_b_pdf_test ( )
   double sigma;
   double x;
 
-  cout << "\n";
-  cout << "TRUNCATED_NORMAL_B_PDF_VALUES_TEST:\n";
-  cout << "  TRUNCATED_NORMAL_B_PDF_VALUES stores values of\n";
-  cout << "  the upper Truncated Normal Probability Density Function.\n";
-  cout << "\n";
-  cout << "        MU     SIGMA       B         X        PDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRUNCATED_NORMAL_B_PDF_VALUES_TEST:\n";
+  std::cout << "  TRUNCATED_NORMAL_B_PDF_VALUES stores values of\n";
+  std::cout << "  the upper Truncated Normal Probability Density Function.\n";
+  std::cout << "\n";
+  std::cout << "        MU     SIGMA       B         X        PDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14371,11 +14369,11 @@ void truncated_normal_b_pdf_test ( )
     {
       break;
     }
-    cout << "  " << setw(8) << mu
-         << "  " << setw(8) << sigma
-         << "  " << setw(8) << b
-         << "  " << setw(8) << x
-         << "  " << setw(24) << setprecision(16) << fx << "\n";
+    std::cout << "  " << std::setw(8) << mu
+         << "  " << std::setw(8) << sigma
+         << "  " << std::setw(8) << b
+         << "  " << std::setw(8) << x
+         << "  " << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -14406,14 +14404,14 @@ void tsat_values_test ( )
   double p;
   double tc;
 
-  cout << "\n";
-  cout << "TSAT_VALUES_TEST:\n";
-  cout << "  TSAT_VALUES stores values of\n";
-  cout << "  the saturation temperature\n";
-  cout << "  as a function of pressure.\n";
-  cout << "\n";
-  cout << "      P           Tsat(P)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TSAT_VALUES_TEST:\n";
+  std::cout << "  TSAT_VALUES stores values of\n";
+  std::cout << "  the saturation temperature\n";
+  std::cout << "  as a function of pressure.\n";
+  std::cout << "\n";
+  std::cout << "      P           Tsat(P)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14425,9 +14423,9 @@ void tsat_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << p  << "  "
-         << setw(12) << tc << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << p  << "  "
+         << std::setw(12) << tc << "\n";
   }
   return;
 }
@@ -14459,13 +14457,13 @@ void van_der_corput_values_test ( )
   int seed;
   double value;
 
-  cout << "\n";
-  cout << "VAN_DER_CORPUT_VALUES_TEST:\n";
-  cout << "  VAN_DER_CORPUT_VALUES stores values of\n";
-  cout << "  the van der Corput sequence in a given base.\n";
-  cout << "\n";
-  cout << "      BASE      SEED    VDC(BASE,SEED)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "VAN_DER_CORPUT_VALUES_TEST:\n";
+  std::cout << "  VAN_DER_CORPUT_VALUES stores values of\n";
+  std::cout << "  the van der Corput sequence in a given base.\n";
+  std::cout << "\n";
+  std::cout << "      BASE      SEED    VDC(BASE,SEED)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14478,10 +14476,10 @@ void van_der_corput_values_test ( )
       break;
     }
 
-    cout                      << "  "
-         << setw(8)  << base  << "  "
-         << setw(8)  << seed  << "  "
-         << setw(14) << value << "\n";
+    std::cout                      << "  "
+         << std::setw(8)  << base  << "  "
+         << std::setw(8)  << seed  << "  "
+         << std::setw(14) << value << "\n";
 
   }
 
@@ -14515,14 +14513,14 @@ void viscosity_values_test ( )
   double p;
   double tc;
 
-  cout << "\n";
-  cout << "VISCOSITY_VALUES_TEST:\n";
-  cout << "  VISCOSITY_VALUES stores values of\n";
-  cout << "  the viscosity of water\n";
-  cout << "  as a function of temperature and pressure.\n";
-  cout << "\n";
-  cout << "      T            P            ETA(T,P)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "VISCOSITY_VALUES_TEST:\n";
+  std::cout << "  VISCOSITY_VALUES stores values of\n";
+  std::cout << "  the viscosity of water\n";
+  std::cout << "  as a function of temperature and pressure.\n";
+  std::cout << "\n";
+  std::cout << "      T            P            ETA(T,P)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14534,10 +14532,10 @@ void viscosity_values_test ( )
     {
       break;
     }
-    cout                   << "  "
-         << setw(12) << tc  << "  "
-         << setw(12) << p   << "  "
-         << setw(12) << eta << "\n";
+    std::cout                   << "  "
+         << std::setw(12) << tc  << "  "
+         << std::setw(12) << p   << "  "
+         << std::setw(12) << eta << "\n";
   }
   return;
 }
@@ -14570,13 +14568,13 @@ void von_mises_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "VON_MISES_CDF_VALUES_TEST:\n";
-  cout << "  VON_MISES_CDF_VALUES stores values of\n";
-  cout << "  the von Mises CDF.\n";
-  cout << "\n";
-  cout << "      A            B            X            CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "VON_MISES_CDF_VALUES_TEST:\n";
+  std::cout << "  VON_MISES_CDF_VALUES stores values of\n";
+  std::cout << "  the von Mises CDF.\n";
+  std::cout << "\n";
+  std::cout << "      A            B            X            CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14588,11 +14586,11 @@ void von_mises_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(12)                     << a  << "  "
-         << setw(12)                     << b  << "  "
-         << setw(12)                     << x  << "  "
-         << setw(24) << setprecision(16) << fx << "\n";
+    std::cout                                 << "  "
+         << std::setw(12)                     << a  << "  "
+         << std::setw(12)                     << b  << "  "
+         << std::setw(12)                     << x  << "  "
+         << std::setw(24) << std::setprecision(16) << fx << "\n";
   }
   return;
 }
@@ -14625,13 +14623,13 @@ void weekday_values_test ( )
   int w;
   int y;
 
-  cout << "\n";
-  cout << "WEEKDAY_VALUES_TEST:\n";
-  cout << "  WEEKDAY_VALUES returns values of \n";
-  cout << "  the weekday for a given Y/M/D date.\n";
-  cout << "\n";
-  cout << "     Y     M     D     W\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "WEEKDAY_VALUES_TEST:\n";
+  std::cout << "  WEEKDAY_VALUES returns values of \n";
+  std::cout << "  the weekday for a given Y/M/D date.\n";
+  std::cout << "\n";
+  std::cout << "     Y     M     D     W\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14643,10 +14641,10 @@ void weekday_values_test ( )
     {
       break;
     }
-    cout << "  " << setw(4) << y
-         << "  " << setw(4) << m
-         << "  " << setw(4) << d 
-         << "  " << setw(4) << w << "\n";
+    std::cout << "  " << std::setw(4) << y
+         << "  " << std::setw(4) << m
+         << "  " << std::setw(4) << d 
+         << "  " << std::setw(4) << w << "\n";
   }
   return;
 }
@@ -14679,13 +14677,13 @@ void weibull_cdf_values_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "WEIBULL_CDF_VALUES_TEST:\n";
-  cout << "  WEIBULL_CDF_VALUES returns values of \n";
-  cout << "  the Weibull Cumulative Density Function.\n";
-  cout << "\n";
-  cout << "     Alpha   Beta        X   CDF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "WEIBULL_CDF_VALUES_TEST:\n";
+  std::cout << "  WEIBULL_CDF_VALUES returns values of \n";
+  std::cout << "  the Weibull Cumulative Density Function.\n";
+  std::cout << "\n";
+  std::cout << "     Alpha   Beta        X   CDF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14697,11 +14695,11 @@ void weibull_cdf_values_test ( )
     {
       break;
     }
-    cout                                 << "  "
-         << setw(8)                      << alpha << "  "
-         << setw(8)                      << beta  << "  "
-         << setw(8)                      << x     << "  "
-         << setw(24) << setprecision(16) << fx    << "\n";
+    std::cout                                 << "  "
+         << std::setw(8)                      << alpha << "  "
+         << std::setw(8)                      << beta  << "  "
+         << std::setw(8)                      << x     << "  "
+         << std::setw(24) << std::setprecision(16) << fx    << "\n";
   }
   return;
 }
@@ -14732,13 +14730,13 @@ void zeta_values_test ( )
   int n_data;
   double zeta;
 
-  cout << "\n";
-  cout << "ZETA_VALUES_TEST:\n";
-  cout << "  ZETA_VALUES returns values of \n";
-  cout << "  the Riemann Zeta function.\n";
-  cout << "\n";
-  cout << "     N        ZETA(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ZETA_VALUES_TEST:\n";
+  std::cout << "  ZETA_VALUES returns values of \n";
+  std::cout << "  the Riemann Zeta function.\n";
+  std::cout << "\n";
+  std::cout << "     N        ZETA(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -14750,9 +14748,9 @@ void zeta_values_test ( )
     {
       break;
     }
-    cout                                         << "  "
-         << setw(6)                      << n    << "  "
-         << setw(24) << setprecision(16) << zeta << "\n";
+    std::cout                                         << "  "
+         << std::setw(6)                      << n    << "  "
+         << std::setw(24) << std::setprecision(16) << zeta << "\n";
   }
   return;
 }

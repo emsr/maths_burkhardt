@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "toms443.hpp"
 
 //****************************************************************************80

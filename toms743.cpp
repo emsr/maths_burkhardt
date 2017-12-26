@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "toms743.hpp"
 
 //****************************************************************************80
@@ -671,10 +669,10 @@ double wapr ( double x, int nb, int &nerror, int l )
     if ( delx < 0.0 )
     {
       nerror = 1;
-      cerr << "\n";
-      cerr << "WAPR - Fatal error!\n";
-      cerr << "  The offset X is negative.\n";
-      cerr << "  It must be nonnegative.\n";
+      std::cerr << "\n";
+      std::cerr << "WAPR - Fatal error!\n";
+      std::cerr << "  The offset X is negative.\n";
+      std::cerr << "  It must be nonnegative.\n";
       exit ( 1 );
     }
 

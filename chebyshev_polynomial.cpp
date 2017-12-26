@@ -7,8 +7,6 @@
 # include <iostream>
 # include <stdio.h>
 
-using namespace std;
-
 # include "chebyshev_polynomial.hpp"
 
 //****************************************************************************80
@@ -1439,7 +1437,7 @@ void dswap ( int n, double x[], int incx, double y[], int incy )
 
 //****************************************************************************80
 
-string i4_to_string ( int i4, string format )
+std::string i4_to_string ( int i4, std::string format )
 
 //****************************************************************************80
 //
@@ -1469,11 +1467,11 @@ string i4_to_string ( int i4, string format )
 //
 {
   char i4_char[80];
-  string i4_string;
+  std::string i4_string;
 
   sprintf ( i4_char, format.c_str ( ), i4 );
 
-  i4_string = string ( i4_char );
+  i4_string = std::string ( i4_char );
 
   return i4_string;
 }
@@ -1713,9 +1711,9 @@ double *r8vec_uniform_ab_new ( int n, double a, double b, int &seed )
 
   if ( seed == 0 )
   {
-    cerr << "\n";
-    cerr << "R8VEC_UNIFORM_AB_NEW - Fatal error!\n";
-    cerr << "  Input value of SEED = 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8VEC_UNIFORM_AB_NEW - Fatal error!\n";
+    std::cerr << "  Input value of SEED = 0.\n";
     exit ( 1 );
   }
 
@@ -1828,11 +1826,11 @@ double *svd_solve ( int m, int n, double a[], double b[] )
 
   if ( info != 0 )
   {
-    cerr << "\n";
-    cerr << "SVD_SOLVE - Failure!\n";
-    cerr << "  The SVD could not be calculated.\n";
-    cerr << "  LINPACK routine DSVDC returned a nonzero\n";
-    cerr << "  value of the error flag, INFO = " << info << "\n";
+    std::cerr << "\n";
+    std::cerr << "SVD_SOLVE - Failure!\n";
+    std::cerr << "  The SVD could not be calculated.\n";
+    std::cerr << "  LINPACK routine DSVDC returned a nonzero\n";
+    std::cerr << "  value of the error flag, INFO = " << info << "\n";
     exit ( 1 );
   }
 
@@ -2553,7 +2551,7 @@ double *t_polynomial_coefficients ( int n )
 }
 //****************************************************************************80
 
-void t_polynomial_plot ( int n_num, int n_val[], string output_filename )
+void t_polynomial_plot ( int n_num, int n_val[], std::string output_filename )
 
 //****************************************************************************80
 //
@@ -2588,10 +2586,10 @@ void t_polynomial_plot ( int n_num, int n_val[], string output_filename )
   double a;
   double b;
   int column;
-  string command_filename;
-  ofstream command_unit;
-  string data_filename;
-  ofstream data_unit;
+  std::string command_filename;
+  std::ofstream command_unit;
+  std::string data_filename;
+  std::ofstream data_unit;
   int i;
   int j;
   int m = 501;
@@ -2625,8 +2623,8 @@ void t_polynomial_plot ( int n_num, int n_val[], string output_filename )
     data_unit << "\n";
   }
   data_unit.close ( );
-  cout << "\n";
-  cout << "  Created graphics data file '" << data_filename << "'.\n";
+  std::cout << "\n";
+  std::cout << "  Created graphics data file '" << data_filename << "'.\n";
 //
 //  Plot the selected data.
 //
@@ -2669,7 +2667,7 @@ void t_polynomial_plot ( int n_num, int n_val[], string output_filename )
   }
 
   command_unit.close ( );
-  cout << "  Created graphics command file '" << command_filename << "'.\n";
+  std::cout << "  Created graphics command file '" << command_filename << "'.\n";
 //
 //  Free memory.
 //
@@ -3127,9 +3125,9 @@ double *t_project_coefficients_data ( double a, double b, int m, int n,
 
   if ( !r8vec_in_ab ( m, x, a, b ) )
   {
-    cerr << "\n";
-    cerr << "T_PROJECT_COEFFICIENTS_DATA- Fatal error!\n";
-    cerr << "  Some X not in [A,B].\n";
+    std::cerr << "\n";
+    std::cerr << "T_PROJECT_COEFFICIENTS_DATA- Fatal error!\n";
+    std::cerr << "  Some X not in [A,B].\n";
     exit ( 1 );
   }
 //
@@ -3481,16 +3479,16 @@ double tt_product_integral ( int i, int j )
 
   if ( i < 0 )
   {
-    cout << "\n";
-    cout << "TT_PRODUCT_INTEGRAL - Fatal error!\n";
-    cout << "  0 <= I, is required.\n";
+    std::cout << "\n";
+    std::cout << "TT_PRODUCT_INTEGRAL - Fatal error!\n";
+    std::cout << "  0 <= I, is required.\n";
     exit ( 1 );
   }
   if ( j < 0 )
   {
-    cout << "\n";
-    cout << "TT_PRODUCT_INTEGRAL - Fatal error!\n";
-    cout << "  0 <= J is required.\n";
+    std::cout << "\n";
+    std::cout << "TT_PRODUCT_INTEGRAL - Fatal error!\n";
+    std::cout << "  0 <= J is required.\n";
     exit ( 1 );
   }
   if ( i != j )
@@ -4190,7 +4188,7 @@ double *u_polynomial_coefficients ( int n )
 }
 //****************************************************************************80
 
-void u_polynomial_plot ( int n_num, int n_val[], string output_filename )
+void u_polynomial_plot ( int n_num, int n_val[], std::string output_filename )
 
 //****************************************************************************80
 //
@@ -4225,10 +4223,10 @@ void u_polynomial_plot ( int n_num, int n_val[], string output_filename )
   double a;
   double b;
   int column;
-  string command_filename;
-  ofstream command_unit;
-  string data_filename;
-  ofstream data_unit;
+  std::string command_filename;
+  std::ofstream command_unit;
+  std::string data_filename;
+  std::ofstream data_unit;
   int i;
   int j;
   int m = 501;
@@ -4262,8 +4260,8 @@ void u_polynomial_plot ( int n_num, int n_val[], string output_filename )
     data_unit << "\n";
   }
   data_unit.close ( );
-  cout << "\n";
-  cout << "  Created graphics data file '" << data_filename << "'.\n";
+  std::cout << "\n";
+  std::cout << "  Created graphics data file '" << data_filename << "'.\n";
 //
 //  Plot the selected data.
 //
@@ -4306,7 +4304,7 @@ void u_polynomial_plot ( int n_num, int n_val[], string output_filename )
   }
 
   command_unit.close ( );
-  cout << "  Created graphics command file '" << command_filename << "'.\n";
+  std::cout << "  Created graphics command file '" << command_filename << "'.\n";
 //
 //  Free memory.
 //
@@ -4689,16 +4687,16 @@ double uu_product_integral ( int i, int j )
 
   if ( i < 0 )
   {
-    cout << "\n";
-    cout << "UU_PRODUCT_INTEGRAL - Fatal error!\n";
-    cout << "  0 <= I, is required.\n";
+    std::cout << "\n";
+    std::cout << "UU_PRODUCT_INTEGRAL - Fatal error!\n";
+    std::cout << "  0 <= I, is required.\n";
     exit ( 1 );
   }
   if ( j < 0 )
   {
-    cout << "\n";
-    cout << "UU_PRODUCT_INTEGRAL - Fatal error!\n";
-    cout << "  0 <= J is required.\n";
+    std::cout << "\n";
+    std::cout << "UU_PRODUCT_INTEGRAL - Fatal error!\n";
+    std::cout << "  0 <= J is required.\n";
     exit ( 1 );
   }
   if ( i != j )
@@ -5268,7 +5266,7 @@ double *v_polynomial_coefficients ( int n )
 }
 //****************************************************************************80
 
-void v_polynomial_plot ( int n_num, int n_val[], string output_filename )
+void v_polynomial_plot ( int n_num, int n_val[], std::string output_filename )
 
 //****************************************************************************80
 //
@@ -5303,10 +5301,10 @@ void v_polynomial_plot ( int n_num, int n_val[], string output_filename )
   double a;
   double b;
   int column;
-  string command_filename;
-  ofstream command_unit;
-  string data_filename;
-  ofstream data_unit;
+  std::string command_filename;
+  std::ofstream command_unit;
+  std::string data_filename;
+  std::ofstream data_unit;
   int i;
   int j;
   int m = 501;
@@ -5340,8 +5338,8 @@ void v_polynomial_plot ( int n_num, int n_val[], string output_filename )
     data_unit << "\n";
   }
   data_unit.close ( );
-  cout << "\n";
-  cout << "  Created graphics data file '" << data_filename << "'.\n";
+  std::cout << "\n";
+  std::cout << "  Created graphics data file '" << data_filename << "'.\n";
 //
 //  Plot the selected data.
 //
@@ -5384,7 +5382,7 @@ void v_polynomial_plot ( int n_num, int n_val[], string output_filename )
   }
 
   command_unit.close ( );
-  cout << "  Created graphics command file '" << command_filename << "'.\n";
+  std::cout << "  Created graphics command file '" << command_filename << "'.\n";
 //
 //  Free memory.
 //
@@ -5723,16 +5721,16 @@ double vv_product_integral ( int i, int j )
 
   if ( i < 0 )
   {
-    cout << "\n";
-    cout << "VV_PRODUCT_INTEGRAL - Fatal error!\n";
-    cout << "  0 <= I, is required.\n";
+    std::cout << "\n";
+    std::cout << "VV_PRODUCT_INTEGRAL - Fatal error!\n";
+    std::cout << "  0 <= I, is required.\n";
     exit ( 1 );
   }
   if ( j < 0 )
   {
-    cout << "\n";
-    cout << "VV_PRODUCT_INTEGRAL - Fatal error!\n";
-    cout << "  0 <= J is required.\n";
+    std::cout << "\n";
+    std::cout << "VV_PRODUCT_INTEGRAL - Fatal error!\n";
+    std::cout << "  0 <= J is required.\n";
     exit ( 1 );
   }
   if ( i != j )
@@ -6302,7 +6300,7 @@ double *w_polynomial_coefficients ( int n )
 }
 //****************************************************************************80
 
-void w_polynomial_plot ( int n_num, int n_val[], string output_filename )
+void w_polynomial_plot ( int n_num, int n_val[], std::string output_filename )
 
 //****************************************************************************80
 //
@@ -6337,10 +6335,10 @@ void w_polynomial_plot ( int n_num, int n_val[], string output_filename )
   double a;
   double b;
   int column;
-  string command_filename;
-  ofstream command_unit;
-  string data_filename;
-  ofstream data_unit;
+  std::string command_filename;
+  std::ofstream command_unit;
+  std::string data_filename;
+  std::ofstream data_unit;
   int i;
   int j;
   int m = 501;
@@ -6374,8 +6372,8 @@ void w_polynomial_plot ( int n_num, int n_val[], string output_filename )
     data_unit << "\n";
   }
   data_unit.close ( );
-  cout << "\n";
-  cout << "  Created graphics data file '" << data_filename << "'.\n";
+  std::cout << "\n";
+  std::cout << "  Created graphics data file '" << data_filename << "'.\n";
 //
 //  Plot the selected data.
 //
@@ -6418,7 +6416,7 @@ void w_polynomial_plot ( int n_num, int n_val[], string output_filename )
   }
 
   command_unit.close ( );
-  cout << "  Created graphics command file '" << command_filename << "'.\n";
+  std::cout << "  Created graphics command file '" << command_filename << "'.\n";
 //
 //  Free memory.
 //
@@ -6752,16 +6750,16 @@ double ww_product_integral ( int i, int j )
 
   if ( i < 0 )
   {
-    cout << "\n";
-    cout << "WW_PRODUCT_INTEGRAL - Fatal error!\n";
-    cout << "  0 <= I, is required.\n";
+    std::cout << "\n";
+    std::cout << "WW_PRODUCT_INTEGRAL - Fatal error!\n";
+    std::cout << "  0 <= I, is required.\n";
     exit ( 1 );
   }
   if ( j < 0 )
   {
-    cout << "\n";
-    cout << "WW_PRODUCT_INTEGRAL - Fatal error!\n";
-    cout << "  0 <= J is required.\n";
+    std::cout << "\n";
+    std::cout << "WW_PRODUCT_INTEGRAL - Fatal error!\n";
+    std::cout << "  0 <= J is required.\n";
     exit ( 1 );
   }
   if ( i != j )

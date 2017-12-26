@@ -5,8 +5,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "hermite_polynomial.hpp"
 
 //****************************************************************************80

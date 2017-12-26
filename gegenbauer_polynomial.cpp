@@ -4,8 +4,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "gegenbauer_polynomial.hpp"
 
 //****************************************************************************80
@@ -54,11 +52,11 @@ bool gegenbauer_alpha_check ( double alpha )
     check = false;
     if ( squawk )
     {
-      cerr << "\n";
-      cerr << "GEGENBAUER_ALPHA_CHECK - Fatal error!\n";
-      cerr << "  Illegal value of ALPHA.\n";
-      cerr << "  ALPHA = " << alpha << "\n";
-      cerr << "  but ALPHA must be greater than -0.5.\n";
+      std::cerr << "\n";
+      std::cerr << "GEGENBAUER_ALPHA_CHECK - Fatal error!\n";
+      std::cerr << "  Illegal value of ALPHA.\n";
+      std::cerr << "  ALPHA = " << alpha << "\n";
+      std::cerr << "  but ALPHA must be greater than -0.5.\n";
     }
   }
 
@@ -129,9 +127,9 @@ void gegenbauer_ek_compute ( int n, double alpha, double x[], double w[] )
 //
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "GEGENBAUER_EK_COMPUTE - Fatal error!\n";
-    cerr << "  1 <= N is required.\n";
+    std::cerr << "\n";
+    std::cerr << "GEGENBAUER_EK_COMPUTE - Fatal error!\n";
+    std::cerr << "  1 <= N is required.\n";
     exit ( 1 );
   }
 //
@@ -140,9 +138,9 @@ void gegenbauer_ek_compute ( int n, double alpha, double x[], double w[] )
   check = gegenbauer_alpha_check ( alpha );
   if ( ! check )
   {
-    cerr << "\n";
-    cerr << "GEGENBAUER_EK_COMPUTE - Fatal error!\n";
-    cerr << "  Illegal value of ALPHA.\n";
+    std::cerr << "\n";
+    std::cerr << "GEGENBAUER_EK_COMPUTE - Fatal error!\n";
+    std::cerr << "  Illegal value of ALPHA.\n";
     exit ( 1 );
   }
 //
@@ -344,9 +342,9 @@ double *gegenbauer_polynomial_value ( int m, int n, double alpha, double x[] )
   check = gegenbauer_alpha_check ( alpha );
   if ( ! check )
   {
-    cerr << "\n";
-    cerr << "GEGENBAUER_POLYNOMIAL_VALUE - Fatal error!\n";
-    cerr << "  Illegal value of ALPHA.\n";
+    std::cerr << "\n";
+    std::cerr << "GEGENBAUER_POLYNOMIAL_VALUE - Fatal error!\n";
+    std::cerr << "  Illegal value of ALPHA.\n";
     exit ( 1 );
   }
 
@@ -689,9 +687,9 @@ void gegenbauer_ss_compute ( int order, double alpha, double xtab[],
 //
   if ( order < 1 )
   {
-    cerr << "\n";
-    cerr << "GEGENBAUER_SS_COMPUTE - Fatal error!\n";
-    cerr << "  1 <= ORDER is required.\n";
+    std::cerr << "\n";
+    std::cerr << "GEGENBAUER_SS_COMPUTE - Fatal error!\n";
+    std::cerr << "  1 <= ORDER is required.\n";
     exit ( 1 );
   }
   
@@ -701,9 +699,9 @@ void gegenbauer_ss_compute ( int order, double alpha, double xtab[],
 //
   if ( alpha <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "GEGENBAUER_SS_COMPUTE - Fatal error!\n";
-    cerr << "  -1.0 < ALPHA is required.\n";
+    std::cerr << "\n";
+    std::cerr << "GEGENBAUER_SS_COMPUTE - Fatal error!\n";
+    std::cerr << "  -1.0 < ALPHA is required.\n";
     exit ( 1 );
   }
 //

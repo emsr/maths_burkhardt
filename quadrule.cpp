@@ -5,8 +5,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "quadrule.hpp"
 
 //****************************************************************************80
@@ -331,10 +329,10 @@ void chebyshev_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 through 7, and 9.\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 through 7, and 9.\n";
     exit ( 1 );
   }
 
@@ -401,9 +399,9 @@ void chebyshev1_compute ( int n, double x[], double w[] )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV1_COMPUTE - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV1_COMPUTE - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
     exit ( 1 );
   }
 
@@ -665,10 +663,10 @@ void chebyshev1_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV1_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 through 10.\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV1_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 through 10.\n";
     exit ( 1 );
   }
 
@@ -731,9 +729,9 @@ void chebyshev2_compute ( int n, double x[], double w[] )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV2_COMPUTE - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV2_COMPUTE - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
     exit ( 1 );
   }
 
@@ -993,10 +991,10 @@ void chebyshev2_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV2_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 through 10.\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV2_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 through 10.\n";
     exit ( 1 );
   }
 
@@ -1076,10 +1074,10 @@ void chebyshev3_compute ( int n, double x[], double w[] )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV3_COMPUTE - Fatal error!\n";
-    cerr << "  N must be at least 1.\n";
-    cerr << "  The input value was N = " << n << "\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV3_COMPUTE - Fatal error!\n";
+    std::cerr << "  N must be at least 1.\n";
+    std::cerr << "  The input value was N = " << n << "\n";
     exit ( 1 );
   }
 //
@@ -1353,10 +1351,10 @@ void chebyshev3_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "CHEBYSHEV3_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 through 10.\n";
+    std::cerr << "\n";
+    std::cerr << "CHEBYSHEV3_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 through 10.\n";
     exit ( 1 );
   }
 
@@ -1453,9 +1451,9 @@ double class_matrix ( int kind, int m, double alpha, double beta, double aj[],
 
   if ( 500.0 * temp < r8_abs ( pow ( r8_gamma ( temp2 ), 2 ) - pi ) )
   {
-    cerr << "\n";
-    cerr << "CLASS_MATRIX - Fatal error!\n";
-    cerr << "  Gamma function does not match machine parameters.\n";
+    std::cerr << "\n";
+    std::cerr << "CLASS_MATRIX - Fatal error!\n";
+    std::cerr << "  Gamma function does not match machine parameters.\n";
     exit ( 1 );
   }
 
@@ -1704,9 +1702,9 @@ void clenshaw_curtis_compute ( int n, double x[], double w[] )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "CLENSHAW_CURTIS_COMPUTE - Fatal error!\n";
-    cerr << "  N < 1.\n";
+    std::cerr << "\n";
+    std::cerr << "CLENSHAW_CURTIS_COMPUTE - Fatal error!\n";
+    std::cerr << "  N < 1.\n";
     exit ( 1 );
   }
 
@@ -2671,10 +2669,10 @@ void clenshaw_curtis_set ( int order, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "CLENSHAW_CURTIS_SET - Fatal error!\n";
-    cerr << "  Illegal value of ORDER = " << order << "\n";
-    cerr << "  Legal values are 1 to 17, 33, 65 or 129.\n";
+    std::cerr << "\n";
+    std::cerr << "CLENSHAW_CURTIS_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of ORDER = " << order << "\n";
+    std::cerr << "  Legal values are 1 to 17, 33, 65 or 129.\n";
     exit ( 1 );
   }
 
@@ -2742,9 +2740,9 @@ void fejer1_compute ( int n, double x[], double w[] )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "FEJER1_COMPUTE - Fatal error!\n";
-    cerr << "  N < 1.\n";
+    std::cerr << "\n";
+    std::cerr << "FEJER1_COMPUTE - Fatal error!\n";
+    std::cerr << "  N < 1.\n";
     exit ( 1 );
   }
 
@@ -2990,10 +2988,10 @@ void fejer1_set ( int n, double xtab[], double weight[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "FEJER1_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 through 10.\n";
+    std::cerr << "\n";
+    std::cerr << "FEJER1_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 through 10.\n";
     exit ( 1 );
   }
 
@@ -3064,9 +3062,9 @@ void fejer2_compute ( int n, double x[], double w[] )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "FEJER2_COMPUTE - Fatal error!\n";
-    cerr << "  N < 1.\n";
+    std::cerr << "\n";
+    std::cerr << "FEJER2_COMPUTE - Fatal error!\n";
+    std::cerr << "  N < 1.\n";
     exit ( 1 );
   }
 
@@ -3327,10 +3325,10 @@ void fejer2_set ( int n, double xtab[], double weight[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "FEJER2_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 through 10.\n";
+    std::cerr << "\n";
+    std::cerr << "FEJER2_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 through 10.\n";
     exit ( 1 );
   }
 
@@ -3401,9 +3399,9 @@ void gegenbauer_ek_compute ( int n, double alpha, double a, double b,
 //
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "GEGENBAUER_EK_COMPUTE - Fatal error!\n";
-    cerr << "  1 <= N is required.\n";
+    std::cerr << "\n";
+    std::cerr << "GEGENBAUER_EK_COMPUTE - Fatal error!\n";
+    std::cerr << "  1 <= N is required.\n";
     exit ( 1 );
   }
 //
@@ -3411,9 +3409,9 @@ void gegenbauer_ek_compute ( int n, double alpha, double a, double b,
 //
   if ( alpha <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "GEGENBAUER_EK_COMPUTE - Fatal error!\n";
-    cerr << "  -1.0 < ALPHA is required.\n";
+    std::cerr << "\n";
+    std::cerr << "GEGENBAUER_EK_COMPUTE - Fatal error!\n";
+    std::cerr << "  -1.0 < ALPHA is required.\n";
     exit ( 1 );
   }
 //
@@ -4730,10 +4728,10 @@ void hermite_gk16_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "HERMITE_GK16_SET - Fatal error!\n";
-    cerr << "  Illegal input value of N.\n";
-    cerr << "  N must be 1, 3, 7, 9, 17, 19, 31, 33 or 35.\n";
+    std::cerr << "\n";
+    std::cerr << "HERMITE_GK16_SET - Fatal error!\n";
+    std::cerr << "  Illegal input value of N.\n";
+    std::cerr << "  N must be 1, 3, 7, 9, 17, 19, 31, 33 or 35.\n";
     exit ( 1 );
   }
   return;
@@ -4968,10 +4966,10 @@ void hermite_gk18_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "HERMITE_GK18_SET - Fatal error!\n";
-    cerr << "  Illegal input value of N.\n";
-    cerr << "  N must be 1, 3, 9, 19, or 37.\n";
+    std::cerr << "\n";
+    std::cerr << "HERMITE_GK18_SET - Fatal error!\n";
+    std::cerr << "  Illegal input value of N.\n";
+    std::cerr << "  N must be 1, 3, 9, 19, or 37.\n";
     exit ( 1 );
   }
   return;
@@ -5209,10 +5207,10 @@ void hermite_gk22_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "HERMITE_GK22_SET - Fatal error!\n";
-    cerr << "  Illegal input value of N.\n";
-    cerr << "  N must be 1, 3, 9, 19, or 41.\n";
+    std::cerr << "\n";
+    std::cerr << "HERMITE_GK22_SET - Fatal error!\n";
+    std::cerr << "  Illegal input value of N.\n";
+    std::cerr << "  N must be 1, 3, 9, 19, or 41.\n";
     exit ( 1 );
   }
   return;
@@ -5454,10 +5452,10 @@ void hermite_gk24_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "HERMITE_GK24_SET - Fatal error!\n";
-    cerr << "  Illegal input value of N.\n";
-    cerr << "  N must be 1, 3, 9, 19, or 43.\n";
+    std::cerr << "\n";
+    std::cerr << "HERMITE_GK24_SET - Fatal error!\n";
+    std::cerr << "  Illegal input value of N.\n";
+    std::cerr << "  N must be 1, 3, 9, 19, or 43.\n";
     exit ( 1 );
   }
   return;
@@ -5722,10 +5720,10 @@ void hermite_probabilist_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "HERMITE_PROBABILIST_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 to 10.\n";
+    std::cerr << "\n";
+    std::cerr << "HERMITE_PROBABILIST_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 to 10.\n";
     exit ( 1 );
   }
 
@@ -7761,10 +7759,10 @@ void hermite_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "HERMITE_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1:20, 31/32/33, 63/64/65, 127/128/129.\n";
+    std::cerr << "\n";
+    std::cerr << "HERMITE_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1:20, 31/32/33, 63/64/65, 127/128/129.\n";
     exit ( 1 );
   }
 
@@ -7959,10 +7957,10 @@ void hermite_1_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "HERMITE_1_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 to 10.\n";
+    std::cerr << "\n";
+    std::cerr << "HERMITE_1_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 to 10.\n";
     exit ( 1 );
   }
   return;
@@ -8485,17 +8483,17 @@ void jacobi_ss_compute ( int order, double alpha, double beta, double xtab[],
 //
   if ( alpha <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "JACOBI_SS_COMPUTE - Fatal error!\n";
-    cerr << "  -1.0 < ALPHA is required.\n";
+    std::cerr << "\n";
+    std::cerr << "JACOBI_SS_COMPUTE - Fatal error!\n";
+    std::cerr << "  -1.0 < ALPHA is required.\n";
     exit ( 1 );
   }
 
   if ( beta <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "JACOBI_SS_COMPUTE - Fatal error!\n";
-    cerr << "  -1.0 < BETA is required.\n";
+    std::cerr << "\n";
+    std::cerr << "JACOBI_SS_COMPUTE - Fatal error!\n";
+    std::cerr << "  -1.0 < BETA is required.\n";
     exit ( 1 );
   }
 
@@ -9075,10 +9073,10 @@ void kronrod_set ( int order, double xtab[], double weight[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "KRONROD_SET - Fatal error!\n";
-    cerr << "  Illegal value of ORDER = " << order << "\n";
-    cerr << "  Legal values are 15, 21, 31 or 41.\n";
+    std::cerr << "\n";
+    std::cerr << "KRONROD_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of ORDER = " << order << "\n";
+    std::cerr << "  Legal values are 15, 21, 31 or 41.\n";
     exit ( 1 );
   }
 
@@ -11179,10 +11177,10 @@ void laguerre_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "LAGUERRE_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 to 20, 31/32/33, 63/64/65 or 127/128/129.\n";
+    std::cerr << "\n";
+    std::cerr << "LAGUERRE_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 to 20, 31/32/33, 63/64/65 or 127/128/129.\n";
     exit ( 1 );
   }
 
@@ -11381,10 +11379,10 @@ void laguerre_1_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "LAGUERRE_1_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 to 10\n";
+    std::cerr << "\n";
+    std::cerr << "LAGUERRE_1_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 to 10\n";
     exit ( 1 );
   }
   return;
@@ -11738,9 +11736,9 @@ double laguerre_sum ( double func ( double x ), double a, int order,
 
   if ( order < 1 )
   {
-    cerr << "\n";
-    cerr << "LAGUERRE_SUM - Fatal error!\n";
-    cerr << "  Nonpositive ORDER = " << order << "\n";
+    std::cerr << "\n";
+    std::cerr << "LAGUERRE_SUM - Fatal error!\n";
+    std::cerr << "  Nonpositive ORDER = " << order << "\n";
     exit ( 1 );
   }
 
@@ -11834,9 +11832,9 @@ void legendre_dr_compute ( int order, double xtab[], double weight[] )
 
   if ( order < 1 )
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_DR_COMPUTE - Fatal error!\n";
-    cerr << "  Illegal value of ORDER = " << order << "\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_DR_COMPUTE - Fatal error!\n";
+    std::cerr << "  Illegal value of ORDER = " << order << "\n";
     exit ( 1 );
   }
 
@@ -16200,10 +16198,10 @@ void legendre_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "LEGENDRE_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1:33, 63/64/65, 127/128/129, 255/256/257\n";
+    std::cerr << "\n";
+    std::cerr << "LEGENDRE_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1:33, 63/64/65, 127/128/129, 255/256/257\n";
     exit ( 1 );
   }
   return;
@@ -16926,10 +16924,10 @@ void lobatto_set ( int order, double xtab[], double weight[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "LOBATTO_SET - Fatal error!\n";
-    cerr << "  Illegal value of ORDER = " << order << "\n";
-    cerr << "  Legal values are between 1 and 20.\n";
+    std::cerr << "\n";
+    std::cerr << "LOBATTO_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of ORDER = " << order << "\n";
+    std::cerr << "  Legal values are between 1 and 20.\n";
     exit ( 1 );
   }
 
@@ -18017,10 +18015,10 @@ void ncc_set ( int order, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "NCC_SET - Fatal error!\n";
-    cerr << "  Illegal value of ORDER = " << order << "\n";
-    cerr << "  Legal values are 1 through 21.\n";
+    std::cerr << "\n";
+    std::cerr << "NCC_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of ORDER = " << order << "\n";
+    std::cerr << "  Legal values are 1 through 21.\n";
     exit ( 1 );
   }
 
@@ -18259,10 +18257,10 @@ void nco_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "NCO_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 to 10.\n";
+    std::cerr << "\n";
+    std::cerr << "NCO_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 to 10.\n";
     exit ( 1 );
   }
 //
@@ -18642,10 +18640,10 @@ void ncoh_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "NCOH_SET - Fatal error!\n";
-    cerr << "  Illegal value of N = " << n << "\n";
-    cerr << "  Legal values are 1 to 17.\n";
+    std::cerr << "\n";
+    std::cerr << "NCOH_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of N = " << n << "\n";
+    std::cerr << "  Legal values are 1 to 17.\n";
     exit ( 1 );
   }
 //
@@ -18718,9 +18716,9 @@ void parchk ( int kind, int m, double alpha, double beta )
 
   if ( kind <= 0 )
   {
-    cerr << "\n";
-    cerr << "PARCHK - Fatal error!\n";
-    cerr << "  KIND <= 0.\n";
+    std::cerr << "\n";
+    std::cerr << "PARCHK - Fatal error!\n";
+    std::cerr << "  KIND <= 0.\n";
     exit ( 1 );
   }
 //
@@ -18728,9 +18726,9 @@ void parchk ( int kind, int m, double alpha, double beta )
 //
   if ( 3 <= kind && kind <= 8 && alpha <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "PARCHK - Fatal error!\n";
-    cerr << "  3 <= KIND and ALPHA <= -1.\n";
+    std::cerr << "\n";
+    std::cerr << "PARCHK - Fatal error!\n";
+    std::cerr << "  3 <= KIND and ALPHA <= -1.\n";
     exit ( 1 );
   }
 //
@@ -18738,9 +18736,9 @@ void parchk ( int kind, int m, double alpha, double beta )
 //
   if ( kind == 4 && beta <= -1.0 )
   {
-    cerr << "\n";
-    cerr << "PARCHK - Fatal error!\n";
-    cerr << "  KIND == 4 and BETA <= -1.0.\n";
+    std::cerr << "\n";
+    std::cerr << "PARCHK - Fatal error!\n";
+    std::cerr << "  KIND == 4 and BETA <= -1.0.\n";
     exit ( 1 );
   }
 //
@@ -18751,9 +18749,9 @@ void parchk ( int kind, int m, double alpha, double beta )
     tmp = alpha + beta + m + 1.0;
     if ( 0.0 <= tmp || tmp <= beta )
     {
-      cerr << "\n";
-      cerr << "PARCHK - Fatal error!\n";
-      cerr << "  KIND == 8 but condition on ALPHA and BETA fails.\n";
+      std::cerr << "\n";
+      std::cerr << "PARCHK - Fatal error!\n";
+      std::cerr << "  KIND == 8 but condition on ALPHA and BETA fails.\n";
       exit ( 1 );
     }
   }
@@ -20898,10 +20896,10 @@ void patterson_set ( int n, double x[], double w[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "PATTERSON_SET - Fatal error!\n";
-    cerr << "  Illegal input value of N.\n";
-    cerr << "  N must be 1, 3, 7, 15, 31, 63, 127, 255 or 511.\n";
+    std::cerr << "\n";
+    std::cerr << "PATTERSON_SET - Fatal error!\n";
+    std::cerr << "  Illegal input value of N.\n";
+    std::cerr << "  N must be 1, 3, 7, 15, 31, 63, 127, 255 or 511.\n";
     exit ( 1 );
   }
   return;
@@ -21000,10 +20998,10 @@ void radau_compute ( int n, double x[], double w[] )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "RADAU_COMPUTE - Fatal error!\n";
-    cerr << "  Illegal value of ORDER = " << n << "\n";
-    cerr << "  ORDER must be at least 1.\n";
+    std::cerr << "\n";
+    std::cerr << "RADAU_COMPUTE - Fatal error!\n";
+    std::cerr << "  Illegal value of ORDER = " << n << "\n";
+    std::cerr << "  ORDER must be at least 1.\n";
     exit ( 1 );
   }
 
@@ -21443,10 +21441,10 @@ void radau_set ( int order, double xtab[], double weight[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "RADAU_SET - Fatal error!\n";
-    cerr << "  Illegal value of ORDER = " << order << "\n";
-    cerr << "  Legal values are 1 to 15.\n";
+    std::cerr << "\n";
+    std::cerr << "RADAU_SET - Fatal error!\n";
+    std::cerr << "  Illegal value of ORDER = " << order << "\n";
+    std::cerr << "  Legal values are 1 to 15.\n";
     exit ( 1 );
   }
 
@@ -21549,9 +21547,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
     be = 0.0;
     if ( r8_abs ( b - a ) <= temp )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  |B - A| too small.\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -21563,9 +21561,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
     be = -0.5;
     if ( r8_abs ( b - a ) <= temp )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  |B - A| too small.\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -21577,9 +21575,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
     be = alpha;
     if ( r8_abs ( b - a ) <= temp )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  |B - A| too small.\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -21592,9 +21590,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
 
     if ( r8_abs ( b - a ) <= temp )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  |B - A| too small.\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -21604,9 +21602,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
   {
     if ( b <= 0.0 )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  B <= 0\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  B <= 0\n";
       exit ( 1 );
     }
     shft = a;
@@ -21618,9 +21616,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
   {
     if ( b <= 0.0 )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  B <= 0.\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  B <= 0.\n";
       exit ( 1 );
     }
     shft = a;
@@ -21634,9 +21632,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
     be = 0.0;
     if ( r8_abs ( b - a ) <= temp )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  |B - A| too small.\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -21646,9 +21644,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
   {
     if ( a + b <= 0.0 )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  A + B <= 0.\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  A + B <= 0.\n";
       exit ( 1 );
     }
     shft = a;
@@ -21662,9 +21660,9 @@ void scqf ( int nt, double t[], int mlt[], double wts[], int /*nwts*/, int ndx[]
     be = 0.5;
     if ( r8_abs ( b - a ) <= temp )
     {
-      cerr << "\n";
-      cerr << "SCQF - Fatal error!\n";
-      cerr << "  |B - A| too small.\n";
+      std::cerr << "\n";
+      std::cerr << "SCQF - Fatal error!\n";
+      std::cerr << "  |B - A| too small.\n";
       exit ( 1 );
     }
     shft = ( a + b ) / 2.0;
@@ -21750,9 +21748,9 @@ void sgqf ( int nt, double aj[], double bj[], double zemu, double t[],
 //
   if ( zemu <= 0.0 )
   {
-    cerr << "\n";
-    cerr << "SGQF - Fatal error!\n";
-    cerr << "  ZEMU <= 0.\n";
+    std::cerr << "\n";
+    std::cerr << "SGQF - Fatal error!\n";
+    std::cerr << "  ZEMU <= 0.\n";
     exit ( 1 );
   }
 //

@@ -4,8 +4,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "test_int.hpp"
 
 //****************************************************************************80
@@ -317,9 +315,9 @@ int i4_power ( int i, int j )
     }
     else if ( i == 0 )
     {
-      cerr << "\n";
-      cerr << "I4_POWER - Fatal error!\n";
-      cerr << "  I^J requested, with I = 0 and J negative.\n";
+      std::cerr << "\n";
+      std::cerr << "I4_POWER - Fatal error!\n";
+      std::cerr << "  I^J requested, with I = 0 and J negative.\n";
       exit ( 1 );
     }
     else
@@ -331,9 +329,9 @@ int i4_power ( int i, int j )
   {
     if ( i == 0 )
     {
-      cerr << "\n";
-      cerr << "I4_POWER - Fatal error!\n";
-      cerr << "  I^J requested, with I = 0 and J = 0.\n";
+      std::cerr << "\n";
+      std::cerr << "I4_POWER - Fatal error!\n";
+      std::cerr << "  I^J requested, with I = 0 and J = 0.\n";
       exit ( 1 );
     }
     else
@@ -418,10 +416,10 @@ double *i4_to_halton_number_sequence_new ( int seed, int base, int n )
 
   if ( base <= 1 )
   {
-    cerr << "\n";
-    cerr << "I4_TO_HALTON_NUMBER_SEQUENCE - Fatal error!\n";
-    cerr << "  The input base BASE is <= 1!\n";
-    cerr << "  BASE = " << base << "\n";
+    std::cerr << "\n";
+    std::cerr << "I4_TO_HALTON_NUMBER_SEQUENCE - Fatal error!\n";
+    std::cerr << "  The input base BASE is <= 1!\n";
+    std::cerr << "  BASE = " << base << "\n";
     exit ( 1 );
   }
 
@@ -808,9 +806,9 @@ double p00_exact ( int prob )
   }
   else
   {
-    cerr << "\n";
-    cerr << "P00_EXACT - Fatal error!\n";
-    cerr << "  Illegal problem number = " << prob << "\n";
+    std::cerr << "\n";
+    std::cerr << "P00_EXACT - Fatal error!\n";
+    std::cerr << "  Illegal problem number = " << prob << "\n";
     exit ( 1 );
   }
   return exact;
@@ -1080,9 +1078,9 @@ double *p00_fun ( int prob, int n, double x[] )
   }
   else
   {
-    cerr << "\n";
-    cerr << "P00_FUN - Fatal error!\n";
-    cerr << "  Illegal problem number = " << prob << "\n";
+    std::cerr << "\n";
+    std::cerr << "P00_FUN - Fatal error!\n";
+    std::cerr << "  Illegal problem number = " << prob << "\n";
     exit ( 1 );
   }
   return fx;
@@ -1502,9 +1500,9 @@ void p00_lim ( int prob, double &a, double &b )
   }
   else
   {
-    cerr << "\n";
-    cerr << "P00_LIM - Fatal error!\n";
-    cerr << "  Illegal problem number = " << prob << "\n";
+    std::cerr << "\n";
+    std::cerr << "P00_LIM - Fatal error!\n";
+    std::cerr << "  Illegal problem number = " << prob << "\n";
     exit ( 1 );
   }
   return;
@@ -6711,7 +6709,7 @@ void p36_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p36_param ( string action, string name, double &value )
+void p36_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -6755,9 +6753,9 @@ void p36_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P36_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P36_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -6769,17 +6767,17 @@ void p36_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P36_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P36_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P36_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P36_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -6996,7 +6994,7 @@ void p37_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p37_param ( string action, string name, double &value )
+void p37_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -7040,9 +7038,9 @@ void p37_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P37_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P37_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -7054,17 +7052,17 @@ void p37_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P37_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P37_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P37_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P37_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -7285,7 +7283,7 @@ void p38_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p38_param ( string action, string name, double &value )
+void p38_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -7329,9 +7327,9 @@ void p38_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P38_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P38_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -7343,17 +7341,17 @@ void p38_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P38_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P38_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P38_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P38_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -7575,7 +7573,7 @@ void p39_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p39_param ( string action, string name, double &value )
+void p39_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -7619,9 +7617,9 @@ void p39_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P39_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P39_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -7633,17 +7631,17 @@ void p39_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P39_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P39_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P39_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P39_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
   return;
@@ -7859,7 +7857,7 @@ void p40_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p40_param ( string action, string name, double &value )
+void p40_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -7903,9 +7901,9 @@ void p40_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P40_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P40_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -7917,17 +7915,17 @@ void p40_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P40_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P40_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P40_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P40_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -8150,7 +8148,7 @@ void p41_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p41_param ( string action, string name, double &value )
+void p41_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -8194,9 +8192,9 @@ void p41_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P41_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P41_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -8208,17 +8206,17 @@ void p41_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P41_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P41_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P41_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P41_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -8455,7 +8453,7 @@ void p42_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p42_param ( string action, string name, double &value )
+void p42_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -8499,9 +8497,9 @@ void p42_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P42_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P42_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -8513,17 +8511,17 @@ void p42_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P42_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P42_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P42_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P42_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -8774,7 +8772,7 @@ void p43_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p43_param ( string action, string name, double &value )
+void p43_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -8818,9 +8816,9 @@ void p43_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P43_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P43_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -8832,17 +8830,17 @@ void p43_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P43_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P43_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P43_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P43_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -9060,7 +9058,7 @@ void p44_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p44_param ( string action, string name, double &value )
+void p44_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -9104,9 +9102,9 @@ void p44_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P44_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P44_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -9118,17 +9116,17 @@ void p44_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P44_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P44_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P44_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P44_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -9357,7 +9355,7 @@ void p45_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p45_param ( string action, string name, double &value )
+void p45_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -9401,9 +9399,9 @@ void p45_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P45_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P45_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -9415,17 +9413,17 @@ void p45_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P45_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P45_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P45_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P45_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -9641,7 +9639,7 @@ void p46_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p46_param ( string action, string name, double &value )
+void p46_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -9693,9 +9691,9 @@ void p46_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P46_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P46_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -9707,17 +9705,17 @@ void p46_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P46_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P46_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P46_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P46_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
 
@@ -11027,7 +11025,7 @@ void p55_lim ( double &a, double &b )
 }
 //****************************************************************************80
 
-void p55_param ( string action, string name, double &value )
+void p55_param ( std::string action, std::string name, double &value )
 
 //****************************************************************************80
 //
@@ -11079,9 +11077,9 @@ void p55_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P55_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P55_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
@@ -11097,17 +11095,17 @@ void p55_param ( string action, string name, double &value )
     }
     else
     {
-      cerr << "\n";
-      cerr << "P55_PARAM - Fatal error!\n";
-      cerr << "  Unrecognized name.\n";
+      std::cerr << "\n";
+      std::cerr << "P55_PARAM - Fatal error!\n";
+      std::cerr << "  Unrecognized name.\n";
       exit ( 1 );
     }
   }
   else
   {
-    cerr << "\n";
-    cerr << "P55_PARAM - Fatal error!\n";
-    cerr << "  Unrecognized action.\n";
+    std::cerr << "\n";
+    std::cerr << "P55_PARAM - Fatal error!\n";
+    std::cerr << "  Unrecognized action.\n";
     exit ( 1 );
   }
   return;
@@ -11713,9 +11711,9 @@ void r8_b0mp ( double x, double &ampl, double &theta )
 
   if ( x < 4.0 )
   {
-    cerr << "\n";
-    cerr << "R8_B0MP - Fatal error!\n";
-    cerr << "  X < 4.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_B0MP - Fatal error!\n";
+    std::cerr << "  X < 4.\n";
     exit ( 1 );
   }
   else if ( x <= 8.0 )
@@ -11906,9 +11904,9 @@ double r8_ci ( double x )
 
   if ( x <= 0.0 )
   {
-    cerr << "\n";
-    cerr << "R8_CI - Fatal error!\n";
-    cerr << "  X <= 0.0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_CI - Fatal error!\n";
+    std::cerr << "  X <= 0.0.\n";
     exit ( 1 );
   }
   else if ( x <= xsml )
@@ -11979,25 +11977,25 @@ double r8_ci ( double x )
 
   if ( n < 1 )
   {
-    cerr << "\n";
-    cerr << "R8_CSEVL - Fatal error!\n";
-    cerr << "  Number of terms <= 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_CSEVL - Fatal error!\n";
+    std::cerr << "  Number of terms <= 0.\n";
     exit ( 1 );
   }
 
   if ( 1000 < n )
   {
-    cerr << "\n";
-    cerr << "R8_CSEVL - Fatal error!\n";
-    cerr << "  Number of terms greater than 1000.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_CSEVL - Fatal error!\n";
+    std::cerr << "  Number of terms greater than 1000.\n";
     exit ( 1 );
  }
 
   if ( x < -1.1 || 1.1 < x )
   {
-    cerr << "\n";
-    cerr << "R8_CSEVL - Fatal error!\n";
-    cerr << "  X outside (-1,+1).\n";
+    std::cerr << "\n";
+    std::cerr << "R8_CSEVL - Fatal error!\n";
+    std::cerr << "  X outside (-1,+1).\n";
     exit ( 1 );
   }
 
@@ -12365,9 +12363,9 @@ double r8_erfc ( double x )
 
   if ( xmax < x )
   {
-    cerr << "\n";
-    cerr << "R8_ERFC - Warning!\n";
-    cerr << "  X so big that ERFC underflows.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_ERFC - Warning!\n";
+    std::cerr << "  X so big that ERFC underflows.\n";
     value = 0.0;
     return value;
   }
@@ -12491,15 +12489,15 @@ void r8_gaml ( double &xmin, double &xmax )
           return;
         }
       }
-      cerr << "\n";
-      cerr << "R8_GAML - Fatal error!\n";
-      cerr << "  Unable to find XMAX.\n";
+      std::cerr << "\n";
+      std::cerr << "R8_GAML - Fatal error!\n";
+      std::cerr << "  Unable to find XMAX.\n";
       exit ( 1 );
     }
   }
-  cerr << "\n";
-  cerr << "R8_GAML - Fatal error!\n";
-  cerr << "  Unable to find XMIN.\n";
+  std::cerr << "\n";
+  std::cerr << "R8_GAML - Fatal error!\n";
+  std::cerr << "  Unable to find XMIN.\n";
   exit ( 1 );
 }
 //****************************************************************************80
@@ -12631,33 +12629,33 @@ double r8_gamma ( double x )
 
       if ( x == 0.0 )
       {
-        cerr << "\n";
-        cerr << "R8_GAMMA - Fatal error!\n";
-        cerr << "  X is 0.\n";
+        std::cerr << "\n";
+        std::cerr << "R8_GAMMA - Fatal error!\n";
+        std::cerr << "  X is 0.\n";
         exit ( 1 );
       }
 
       if ( x < 0.0 && x + double( n - 2 ) == 0.0 )
       {
-        cerr << "\n";
-        cerr << "R8_GAMMA - Fatal error!\n";
-        cerr << "  X is a negative int.\n";
+        std::cerr << "\n";
+        std::cerr << "R8_GAMMA - Fatal error!\n";
+        std::cerr << "  X is a negative int.\n";
         exit ( 1 );
       }
 
       if ( x < - 0.5 && r8_abs ( ( x - r8_aint ( x - 0.5 ) ) / x ) < dxrel )
       {
-        cerr << "\n";
-        cerr << "R8_GAMMA - Warning!\n";
-        cerr << "  X too near a negative int,\n";
-        cerr << "  answer is half precision.\n";
+        std::cerr << "\n";
+        std::cerr << "R8_GAMMA - Warning!\n";
+        std::cerr << "  X too near a negative int,\n";
+        std::cerr << "  answer is half precision.\n";
       }
 
       if ( y < xsml )
       {
-        cerr << "\n";
-        cerr << "R8_GAMMA - Fatal error!\n";
-        cerr << "  X is so close to zero that Gamma overflows.\n";
+        std::cerr << "\n";
+        std::cerr << "R8_GAMMA - Fatal error!\n";
+        std::cerr << "  X is so close to zero that Gamma overflows.\n";
         exit ( 1 );
       }
 
@@ -12682,9 +12680,9 @@ double r8_gamma ( double x )
   {
     if ( xmax < x )
     {
-      cerr << "\n";
-      cerr << "R8_GAMMA - Fatal error!\n";
-      cerr << "  X so big that Gamma overflows.\n";
+      std::cerr << "\n";
+      std::cerr << "R8_GAMMA - Fatal error!\n";
+      std::cerr << "  X so big that Gamma overflows.\n";
       exit ( 1 );
     }
 //
@@ -12705,19 +12703,19 @@ double r8_gamma ( double x )
 
     if ( r8_abs ( ( x - r8_aint ( x - 0.5 ) ) / x ) < dxrel )
     {
-      cerr << "\n";
-      cerr << "R8_GAMMA - Warning!\n";
-      cerr << "  X too near a negative int,\n";
-      cerr << "  answer is half precision.\n";
+      std::cerr << "\n";
+      std::cerr << "R8_GAMMA - Warning!\n";
+      std::cerr << "  X too near a negative int,\n";
+      std::cerr << "  answer is half precision.\n";
     }
 
     sinpiy = sin ( r8_pi * y );
 
     if ( sinpiy == 0.0 )
     {
-      cerr << "\n";
-      cerr << "R8_GAMMA - Fatal error!\n";
-      cerr << "  X is a negative int.\n";
+      std::cerr << "\n";
+      std::cerr << "R8_GAMMA - Fatal error!\n";
+      std::cerr << "  X is a negative int.\n";
       exit ( 1 );
     }
     value = - r8_pi / ( y * sinpiy * value );
@@ -12812,9 +12810,9 @@ int r8_inits ( double dos[], int nos, double eta )
 
   if ( nos < 1 )
   {
-    cerr << "\n";
-    cerr << "R8_INITS - Fatal error!\n";
-    cerr << "  Number of coefficients < 1.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_INITS - Fatal error!\n";
+    std::cerr << "  Number of coefficients < 1.\n";
     exit ( 1 );
   }
 
@@ -12831,9 +12829,9 @@ int r8_inits ( double dos[], int nos, double eta )
   }
 
   value = i;
-  cerr << "\n";
-  cerr << "R8_INITS - Warning!\n";
-  cerr << "  ETA may be too small.\n";
+  std::cerr << "\n";
+  std::cerr << "R8_INITS - Warning!\n";
+  std::cerr << "  ETA may be too small.\n";
 
   return value;
 }
@@ -12917,9 +12915,9 @@ double r8_lgmc ( double x )
 
   if ( x < 10.0 )
   {
-    cerr << "\n";
-    cerr << "R8_LGMC - Fatal error!\n";
-    cerr << "  X must be at least 10.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_LGMC - Fatal error!\n";
+    std::cerr << "  X must be at least 10.\n";
     exit ( 1 );
   }
   else if ( x < xbig )
@@ -12993,11 +12991,11 @@ double r8_mach ( int i )
 
   if ( i < 1 )
   {
-    cout << "\n";
-    cout << "R8_MACH - Fatal error!\n";
-    cout << "  The input argument I is out of bounds.\n";
-    cout << "  Legal values satisfy 1 <= I <= 5.\n";
-    cout << "  I = " << i << "\n";
+    std::cout << "\n";
+    std::cout << "R8_MACH - Fatal error!\n";
+    std::cout << "  The input argument I is out of bounds.\n";
+    std::cout << "  Legal values satisfy 1 <= I <= 5.\n";
+    std::cout << "  I = " << i << "\n";
     value = 0.0;
     exit ( 1 );
   }
@@ -13023,11 +13021,11 @@ double r8_mach ( int i )
   }
   else if ( 5 < i )
   {
-    cout << "\n";
-    cout << "R8_MACH - Fatal error!\n";
-    cout << "  The input argument I is out of bounds.\n";
-    cout << "  Legal values satisfy 1 <= I <= 5.\n";
-    cout << "  I = " << i << "\n";
+    std::cout << "\n";
+    std::cout << "R8_MACH - Fatal error!\n";
+    std::cout << "  The input argument I is out of bounds.\n";
+    std::cout << "  Legal values satisfy 1 <= I <= 5.\n";
+    std::cout << "  I = " << i << "\n";
     value = 0.0;
     exit ( 1 );
   }
@@ -13617,9 +13615,9 @@ void r8_sifg ( double x, double &f, double &g )
 
   if ( x < 4.0 )
   {
-    cerr << "\n";
-    cerr << "R8_SIFG - Fatal error!\n";
-    cerr << "  Approximation invalid for X < 4.\n";
+    std::cerr << "\n";
+    std::cerr << "R8_SIFG - Fatal error!\n";
+    std::cerr << "  Approximation invalid for X < 4.\n";
     exit ( 1 );
   }
   else if ( x <= xbnd )
@@ -13885,9 +13883,9 @@ double *r8vec_uniform_01_new ( int n, int *seed )
 
   if ( *seed == 0 )
   {
-    cerr << "\n";
-    cerr << "R8VEC_UNIFORM_01_NEW - Fatal error!\n";
-    cerr << "  Input value of SEED = 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8VEC_UNIFORM_01_NEW - Fatal error!\n";
+    std::cerr << "  Input value of SEED = 0.\n";
     exit ( 1 );
   }
 
@@ -13911,7 +13909,7 @@ double *r8vec_uniform_01_new ( int n, int *seed )
 }
 //****************************************************************************80
 
-bool s_eqi ( string s1, string s2 )
+bool s_eqi ( std::string s1, std::string s2 )
 
 //****************************************************************************80
 //

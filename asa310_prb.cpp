@@ -5,8 +5,6 @@
 
 # include "asa310.hpp"
 
-using namespace std;
-
 int main ( );
 void test01 ( );
 
@@ -38,19 +36,19 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "ASA310_PRB:\n";
-  cout << "  C++ version\n";
-  cout << "  Test the ASA310 library.\n";
+  std::cout << "\n";
+  std::cout << "ASA310_PRB:\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the ASA310 library.\n";
 
   test01 ( );
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "ASA310_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ASA310_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -88,16 +86,16 @@ void test01 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST01:\n";
-  cout << "  NCBETA computes the noncentral incomplete Beta function.\n";
-  cout << "  Compare to tabulated values.\n";
-  cout << "\n";
-  cout << "      A        B     LAMBDA        X      "
+  std::cout << "\n";
+  std::cout << "TEST01:\n";
+  std::cout << "  NCBETA computes the noncentral incomplete Beta function.\n";
+  std::cout << "  Compare to tabulated values.\n";
+  std::cout << "\n";
+  std::cout << "      A        B     LAMBDA        X      "
        << "    FX                        FX2\n";
-  cout << "                                          "
+  std::cout << "                                          "
        << "    (Tabulated)               (NCBETA)            DIFF\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -112,13 +110,13 @@ void test01 ( )
 
     fx2 = ncbeta ( a, b, lambda, x, errmax, &ifault );
 
-    cout << "  " << setprecision(2) << setw(7) << a
-         << "  " << setprecision(2) << setw(7) << b
-         << "  " << setprecision(3) << setw(7) << lambda
-         << "  " << setprecision(4) << setw(10) << x
-         << "  " << setprecision(16) << setw(24) << fx
-         << "  " << setprecision(16) << setw(24) << fx2
-         << "  " << setprecision(4) << setw(10) << fabs ( fx - fx2 ) << "\n";
+    std::cout << "  " << std::setprecision(2) << std::setw(7) << a
+         << "  " << std::setprecision(2) << std::setw(7) << b
+         << "  " << std::setprecision(3) << std::setw(7) << lambda
+         << "  " << std::setprecision(4) << std::setw(10) << x
+         << "  " << std::setprecision(16) << std::setw(24) << fx
+         << "  " << std::setprecision(16) << std::setw(24) << fx2
+         << "  " << std::setprecision(4) << std::setw(10) << fabs ( fx - fx2 ) << "\n";
   }
 
   return;

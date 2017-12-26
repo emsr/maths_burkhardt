@@ -6,8 +6,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "lobatto_polynomial.hpp"
 
 //****************************************************************************80
@@ -282,7 +280,7 @@ void lobatto_polynomial_derivatives ( int &n_data, int &n, double &x, double &fx
 }
 //****************************************************************************80
 
-void lobatto_polynomial_plot ( int ndx_num, int ndx[], string prefix )
+void lobatto_polynomial_plot ( int ndx_num, int ndx[], std::string prefix )
 
 //****************************************************************************80
 //
@@ -312,16 +310,16 @@ void lobatto_polynomial_plot ( int ndx_num, int ndx[], string prefix )
 //    Input, string PREFIX. the filename prefix.
 //
 {
-  string command_filename;
-  ofstream command_unit;
-  string data_filename;
-  ofstream data_unit;
+  std::string command_filename;
+  std::ofstream command_unit;
+  std::string data_filename;
+  std::ofstream data_unit;
   int i;
   int j;
   double *l;
   double *lp;
   int n;
-  string plot_filename;
+  std::string plot_filename;
   double *x;
   double x_hi;
   double x_lo;
@@ -357,7 +355,7 @@ void lobatto_polynomial_plot ( int ndx_num, int ndx[], string prefix )
     delete [] lp;
   }
 
-  cout << "\n";
+  std::cout << "\n";
 //
 //  Make data file for values.
 //
@@ -376,7 +374,7 @@ void lobatto_polynomial_plot ( int ndx_num, int ndx[], string prefix )
   }
   data_unit.close ( );
 
-  cout << "  Lobatto value data in '" << data_filename << "'\n";
+  std::cout << "  Lobatto value data in '" << data_filename << "'\n";
 //
 //  Make command file for values.
 //
@@ -422,7 +420,7 @@ void lobatto_polynomial_plot ( int ndx_num, int ndx[], string prefix )
 
   command_unit.close ( );
 
-  cout << "  Lobatto value commands in '" << command_filename << "'\n";
+  std::cout << "  Lobatto value commands in '" << command_filename << "'\n";
 //
 //  Make data file for derivatives.
 //
@@ -441,7 +439,7 @@ void lobatto_polynomial_plot ( int ndx_num, int ndx[], string prefix )
   }
   data_unit.close ( );
 
-   cout << "  Lobatto derivative data stored in '" << data_filename << "'\n";
+   std::cout << "  Lobatto derivative data stored in '" << data_filename << "'\n";
 //
 //  Make command file for derivatives.
 //
@@ -487,7 +485,7 @@ void lobatto_polynomial_plot ( int ndx_num, int ndx[], string prefix )
 
   command_unit.close ( );
 
-  cout << "  Lobatto derivative commands in '" << command_filename << "'\n";
+  std::cout << "  Lobatto derivative commands in '" << command_filename << "'\n";
 
   delete [] x;
   delete [] y;

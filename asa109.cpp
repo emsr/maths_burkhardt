@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "asa109.hpp"
 
 //****************************************************************************80
@@ -376,18 +374,18 @@ double betain ( double x, double p, double q, double beta, int &ifault )
 //
   if ( p <= 0.0 || q <= 0.0 )
   {
-    cerr << "\n";
-    cerr << "BETAIN - Fatal error!\n";
-    cerr << "  P <= 0.0 or Q <= 0.0\n";
+    std::cerr << "\n";
+    std::cerr << "BETAIN - Fatal error!\n";
+    std::cerr << "  P <= 0.0 or Q <= 0.0\n";
     ifault = 1;
     exit ( 1 );
   }
 
   if ( x < 0.0 || 1.0 < x )
   {
-    cerr << "\n";
-    cerr << "BETAIN - Fatal error!\n";
-    cerr << "  X < 0.0 or 1 < X\n";
+    std::cerr << "\n";
+    std::cerr << "BETAIN - Fatal error!\n";
+    std::cerr << "  X < 0.0 or 1 < X\n";
     ifault = 2;
     exit ( 1 );
   }
@@ -565,27 +563,27 @@ double xinbta ( double p, double q, double beta, double alpha, int &ifault )
 //
   if ( p <= 0.0 )
   {
-    cerr << "\n";
-    cerr << "XINBTA - Fatal error!\n";
-    cerr << "  P <= 0.0.\n";
+    std::cerr << "\n";
+    std::cerr << "XINBTA - Fatal error!\n";
+    std::cerr << "  P <= 0.0.\n";
     ifault = 1;
     exit ( 1 );
   }
 
   if ( q <= 0.0 )
   {
-    cerr << "\n";
-    cerr << "XINBTA - Fatal error!\n";
-    cerr << "  Q <= 0.0.\n";
+    std::cerr << "\n";
+    std::cerr << "XINBTA - Fatal error!\n";
+    std::cerr << "  Q <= 0.0.\n";
     ifault = 1;
     exit ( 1 );
   }
 
   if ( alpha < 0.0 || 1.0 < alpha )
   {
-    cerr << "\n";
-    cerr << "XINBTA - Fatal error!\n";
-    cerr << "  ALPHA not between 0 and 1.\n";
+    std::cerr << "\n";
+    std::cerr << "XINBTA - Fatal error!\n";
+    std::cerr << "  ALPHA not between 0 and 1.\n";
     ifault = 2;
     exit ( 1 );
   }
@@ -694,9 +692,9 @@ double xinbta ( double p, double q, double beta, double alpha, int &ifault )
 
     if ( ifault != 0 )
     {
-      cerr << "\n";
-      cerr << "XINBTA - Fatal error!\n";
-      cerr << "  BETAIN returned IFAULT = " << ifault << "\n";
+      std::cerr << "\n";
+      std::cerr << "XINBTA - Fatal error!\n";
+      std::cerr << "  BETAIN returned IFAULT = " << ifault << "\n";
       ifault = 1;
       exit ( 1 );
     }

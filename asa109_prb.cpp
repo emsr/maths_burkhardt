@@ -5,8 +5,6 @@
 
 # include "asa109.hpp"
 
-using namespace std;
-
 int main ( );
 void test01 ( );
 void test02 ( );
@@ -39,20 +37,20 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "ASA109_PRB:\n";
-  cout << "  C++ version\n";
-  cout << "  Test the ASA109 library.\n";
+  std::cout << "\n";
+  std::cout << "ASA109_PRB:\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the ASA109 library.\n";
 
   test01 ( );
   test02 ( );
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "ASA109_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ASA109_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -89,16 +87,16 @@ void test01 ( )
   double x;
   double x2;
 
-  cout << "\n";
-  cout << "TEST01:\n";
-  cout << "  XINBTA inverts the incomplete Beta function.\n";
-  cout << "  Given CDF, it computes an X.\n";
-  cout << "\n";
-  cout << "           A           B           CDF    "
+  std::cout << "\n";
+  std::cout << "TEST01:\n";
+  std::cout << "  XINBTA inverts the incomplete Beta function.\n";
+  std::cout << "  Given CDF, it computes an X.\n";
+  std::cout << "\n";
+  std::cout << "           A           B           CDF    "
        << "    X                         X\n";
-  cout << "                                          "
+  std::cout << "                                          "
        << "    (Tabulated)               (XINBTA)            DIFF\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -117,12 +115,12 @@ void test01 ( )
 
     x2 = xinbta ( a, b, beta_log, fx, ifault );
 
-    cout << "  " << setprecision(4) << setw(10) << a
-         << "  " << setprecision(4) << setw(10) << b
-         << "  " << setprecision(4) << setw(10) << fx
-         << "  " << setprecision(16) << setw(24) << x
-         << "  " << setprecision(16) << setw(24) << x2
-         << "  " << setprecision(4) << setw(10) << fabs ( x - x2 ) << "\n";
+    std::cout << "  " << std::setprecision(4) << std::setw(10) << a
+         << "  " << std::setprecision(4) << std::setw(10) << b
+         << "  " << std::setprecision(4) << std::setw(10) << fx
+         << "  " << std::setprecision(16) << std::setw(24) << x
+         << "  " << std::setprecision(16) << std::setw(24) << x2
+         << "  " << std::setprecision(4) << std::setw(10) << fabs ( x - x2 ) << "\n";
   }
 
   return;
@@ -159,13 +157,13 @@ void test02 ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "TEST02:\n";
-  cout << "  BETA_INC_VALUES stores values of\n";
-  cout << "  the incomplete Beta function.\n";
-  cout << "\n";
-  cout << "      A            B            X            BETA_INC(A,B)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST02:\n";
+  std::cout << "  BETA_INC_VALUES stores values of\n";
+  std::cout << "  the incomplete Beta function.\n";
+  std::cout << "\n";
+  std::cout << "      A            B            X            BETA_INC(A,B)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -185,12 +183,12 @@ void test02 ( )
     ifault = 0;
     fx2 = betain ( x, a, b, beta_log, ifault );
 
-    cout << "  " << setprecision(4) << setw(10) << a
-         << "  " << setprecision(4) << setw(10) << b
-         << "  " << setprecision(4) << setw(10) << x
-         << "  " << setprecision(16) << setw(24) << fx
-         << "  " << setprecision(16) << setw(24) << fx2
-         << "  " << setprecision(4) << setw(10) << fabs ( fx - fx2 ) << "\n";
+    std::cout << "  " << std::setprecision(4) << std::setw(10) << a
+         << "  " << std::setprecision(4) << std::setw(10) << b
+         << "  " << std::setprecision(4) << std::setw(10) << x
+         << "  " << std::setprecision(16) << std::setw(24) << fx
+         << "  " << std::setprecision(16) << std::setw(24) << fx2
+         << "  " << std::setprecision(4) << std::setw(10) << fabs ( fx - fx2 ) << "\n";
   }
   return;
 }

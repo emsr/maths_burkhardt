@@ -6,8 +6,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "hermite_polynomial.hpp"
 
 int main ( );
@@ -60,10 +58,10 @@ int main ( )
   int p;
 
   timestamp ( );
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_PRB:\n";
-  cout << "  C++ version.\n";
-  cout << "  Test the HERMITE_POLYNOMIAL library.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_PRB:\n";
+  std::cout << "  C++ version.\n";
+  std::cout << "  Test the HERMITE_POLYNOMIAL library.\n";
 
   hermite_polynomial_test01 ( );
   hermite_polynomial_test02 ( );
@@ -127,10 +125,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -167,15 +165,15 @@ void hermite_polynomial_test01 ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST01:\n";
-  cout << "  H_POLYNOMIAL_VALUES stores values of\n";
-  cout << "  the physicist's Hermite polynomials.\n";
-  cout << "  H_POLYNOMIAL_VALUE evaluates the polynomial.\n";
-  cout << "\n";
-  cout << "                        Tabulated                 Computed\n";
-  cout << "     N        X           H(N,X)                    H(N,X)                     Error\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST01:\n";
+  std::cout << "  H_POLYNOMIAL_VALUES stores values of\n";
+  std::cout << "  the physicist's Hermite polynomials.\n";
+  std::cout << "  H_POLYNOMIAL_VALUE evaluates the polynomial.\n";
+  std::cout << "\n";
+  std::cout << "                        Tabulated                 Computed\n";
+  std::cout << "     N        X           H(N,X)                    H(N,X)                     Error\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -195,11 +193,11 @@ void hermite_polynomial_test01 ( )
 
     e = fx1 - fx2;
 
-    cout << "  " << setw(4) << n
-         << "  " << setw(12) << x
-         << "  " << setprecision(16) << setw(24) << fx1
-         << "  " << setprecision(16) << setw(24) << fx2
-         << "  " << setw(8) << e << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(12) << x
+         << "  " << std::setprecision(16) << std::setw(24) << fx1
+         << "  " << std::setprecision(16) << std::setw(24) << fx2
+         << "  " << std::setw(8) << e << "\n";
   }
   return;
 }
@@ -235,15 +233,15 @@ void hermite_polynomial_test02 ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST02:\n";
-  cout << "  HE_POLYNOMIAL_VALUES stores values of\n";
-  cout << "  the probabilist's Hermite polynomials.\n";
-  cout << "  HE_POLYNOMIAL_VALUE evaluates the polynomial.\n";
-  cout << "\n";
-  cout << "                        Tabulated                 Computed\n";
-  cout << "     N        X          He(N,X)                   He(N,X)                     Error\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST02:\n";
+  std::cout << "  HE_POLYNOMIAL_VALUES stores values of\n";
+  std::cout << "  the probabilist's Hermite polynomials.\n";
+  std::cout << "  HE_POLYNOMIAL_VALUE evaluates the polynomial.\n";
+  std::cout << "\n";
+  std::cout << "                        Tabulated                 Computed\n";
+  std::cout << "     N        X          He(N,X)                   He(N,X)                     Error\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -263,11 +261,11 @@ void hermite_polynomial_test02 ( )
 
     e = fx1 - fx2;
 
-    cout << "  " << setw(4) << n
-         << "  " << setw(12) << x
-         << "  " << setprecision(16) << setw(24) << fx1
-         << "  " << setprecision(16) << setw(24) << fx2
-         << "  " << setw(8) << e << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(12) << x
+         << "  " << std::setprecision(16) << std::setw(24) << fx1
+         << "  " << std::setprecision(16) << std::setw(24) << fx2
+         << "  " << std::setw(8) << e << "\n";
   }
   return;
 }
@@ -303,15 +301,15 @@ void hermite_polynomial_test03 ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST03:\n";
-  cout << "  HF_FUNCTION_VALUES stores values of\n";
-  cout << "  the Hermite function Hf(n,x).\n";
-  cout << "  HF_FUNCTION_VALUE evaluates the function.\n";
-  cout << "\n";
-  cout << "                        Tabulated                 Computed\n";
-  cout << "     N        X          Hf(N,X)                   Hf(N,X)                   Error\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST03:\n";
+  std::cout << "  HF_FUNCTION_VALUES stores values of\n";
+  std::cout << "  the Hermite function Hf(n,x).\n";
+  std::cout << "  HF_FUNCTION_VALUE evaluates the function.\n";
+  std::cout << "\n";
+  std::cout << "                        Tabulated                 Computed\n";
+  std::cout << "     N        X          Hf(N,X)                   Hf(N,X)                   Error\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -331,11 +329,11 @@ void hermite_polynomial_test03 ( )
 
     e = fx1 - fx2;
 
-    cout << "  " << setw(4) << n
-         << "  " << setw(12) << x
-         << "  " << setprecision(16) << setw(24) << fx1
-         << "  " << setprecision(16) << setw(24) << fx2
-         << "  " << setprecision(6)  << setw(14) << e << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(12) << x
+         << "  " << std::setprecision(16) << std::setw(24) << fx1
+         << "  " << std::setprecision(16) << std::setw(24) << fx2
+         << "  " << std::setprecision(6)  << std::setw(14) << e << "\n";
   }
   return;
 }
@@ -364,13 +362,13 @@ void hermite_polynomial_test04 ( )
 {
   int degree;
   double *hz;
-  string title;
+  std::string title;
   double *z;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST04:\n";
-  cout << "  H_POLYNOMIAL_ZEROS computes the zeros of H(n,x)\n";
-  cout << "  Check by calling H_POLYNOMIAL there.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST04:\n";
+  std::cout << "  H_POLYNOMIAL_ZEROS computes the zeros of H(n,x)\n";
+  std::cout << "  Check by calling H_POLYNOMIAL there.\n";
 
   for ( degree = 1; degree <= 5; degree++ )
   {
@@ -412,13 +410,13 @@ void hermite_polynomial_test05 ( )
 {
   int degree;
   double *hz;
-  string title;
+  std::string title;
   double *z;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST05:\n";
-  cout << "  HE_POLYNOMIAL_ZEROS computes the zeros of He(n,x)\n";
-  cout << "  Check by calling HE_POLYNOMIAL there.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST05:\n";
+  std::cout << "  HE_POLYNOMIAL_ZEROS computes the zeros of He(n,x)\n";
+  std::cout << "  Check by calling HE_POLYNOMIAL there.\n";
 
   for ( degree = 1; degree <= 5; degree++ )
   {
@@ -467,10 +465,10 @@ void hermite_polynomial_test06 ( )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST06:\n";
-  cout << "  H_QUADRATURE_RULE computes the quadrature rule\n";
-  cout << "  associated with H(n,x)\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST06:\n";
+  std::cout << "  H_QUADRATURE_RULE computes the quadrature rule\n";
+  std::cout << "  associated with H(n,x)\n";
 
   n = 7;
   x = new double[n];
@@ -480,13 +478,13 @@ void hermite_polynomial_test06 ( )
 
   r8vec2_print ( n, x, w, "      X            W" );
 
-  cout << "\n";
-  cout << "  Use the quadrature rule to estimate:\n";
-  cout << "\n";
-  cout << "    Q = Integral ( -oo < X < +00 ) X^E exp(-X^2) dx\n";
-  cout << "\n";
-  cout << "   E       Q_Estimate      Q_Exact\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Use the quadrature rule to estimate:\n";
+  std::cout << "\n";
+  std::cout << "    Q = Integral ( -oo < X < +00 ) X^E exp(-X^2) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Q_Estimate      Q_Exact\n";
+  std::cout << "\n";
 
   f = new double[n];
 
@@ -508,9 +506,9 @@ void hermite_polynomial_test06 ( )
     }
     q = r8vec_dot_product ( n, w, f );
     q_exact = h_integral ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << q
-         << "  " << setw(14) << q_exact << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << q
+         << "  " << std::setw(14) << q_exact << "\n";
   }
 
   delete [] f;
@@ -551,10 +549,10 @@ void hermite_polynomial_test07 ( )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST07:\n";
-  cout << "  HE_QUADRATURE_RULE computes the quadrature rule\n";
-  cout << "  associated with He(n,x)\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST07:\n";
+  std::cout << "  HE_QUADRATURE_RULE computes the quadrature rule\n";
+  std::cout << "  associated with He(n,x)\n";
 
   n = 7;
   x = new double[n];
@@ -564,13 +562,13 @@ void hermite_polynomial_test07 ( )
 
   r8vec2_print ( n, x, w, "      X            W" );
 
-  cout << "\n";
-  cout << "  Use the quadrature rule to estimate:\n";
-  cout << "\n";
-  cout << "    Q = Integral ( -oo < X < +00 ) X^E exp(-X^2) dx\n";
-  cout << "\n";
-  cout << "   E       Q_Estimate      Q_Exact\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Use the quadrature rule to estimate:\n";
+  std::cout << "\n";
+  std::cout << "    Q = Integral ( -oo < X < +00 ) X^E exp(-X^2) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Q_Estimate      Q_Exact\n";
+  std::cout << "\n";
 
   f = new double[n];
 
@@ -592,9 +590,9 @@ void hermite_polynomial_test07 ( )
     }
     q = r8vec_dot_product ( n, w, f );
     q_exact = he_integral ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << q
-         << "  " << setw(14) << q_exact << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << q
+         << "  " << std::setw(14) << q_exact << "\n";
   }
   delete [] f;
   delete [] w;
@@ -634,17 +632,17 @@ void hermite_polynomial_test08 ( int p, double b )
 {
   double *table;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST08\n";
-  cout << "  Compute a normalized physicist''s Hermite exponential product table.\n";
-  cout << "\n";
-  cout << "  Tij = integral ( -oo < X < +oo ) exp(B*X) Hn(I,X) Hn(J,X) exp(-X*X) dx\n";
-  cout << "\n";
-  cout << "  where Hn(I,X) = normalized physicist''s Hermite polynomial of degree I.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST08\n";
+  std::cout << "  Compute a normalized physicist''s Hermite exponential product table.\n";
+  std::cout << "\n";
+  std::cout << "  Tij = integral ( -oo < X < +oo ) exp(B*X) Hn(I,X) Hn(J,X) exp(-X*X) dx\n";
+  std::cout << "\n";
+  std::cout << "  where Hn(I,X) = normalized physicist''s Hermite polynomial of degree I.\n";
 
-  cout << "\n";
-  cout << "  Maximum degree P = " << p << "\n";
-  cout << "  Exponential argument coefficient B = " << b << "\n";
+  std::cout << "\n";
+  std::cout << "  Maximum degree P = " << p << "\n";
+  std::cout << "  Exponential argument coefficient B = " << b << "\n";
 
   table = hn_exponential_product ( p, b );
 
@@ -686,17 +684,17 @@ void hermite_polynomial_test09 ( int p, int e )
 {
   double *table;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST09\n";
-  cout << "  Compute a normalized physicist''s Hermite power product table.\n";
-  cout << "\n";
-  cout << "  Tij = integral ( -oo < X < +oo ) X^E Hn(I,X) Hn(J,X) exp(-X*X) dx\n";
-  cout << "\n";
-  cout << "  where Hn(I,X) = normalized physicist''s Hermite polynomial of degree I.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST09\n";
+  std::cout << "  Compute a normalized physicist''s Hermite power product table.\n";
+  std::cout << "\n";
+  std::cout << "  Tij = integral ( -oo < X < +oo ) X^E Hn(I,X) Hn(J,X) exp(-X*X) dx\n";
+  std::cout << "\n";
+  std::cout << "  where Hn(I,X) = normalized physicist''s Hermite polynomial of degree I.\n";
 
-  cout << "\n";
-  cout << "  Maximum degree P = " << p << "\n";
-  cout << "  Exponent of X, E = " << e << "\n";
+  std::cout << "\n";
+  std::cout << "  Maximum degree P = " << p << "\n";
+  std::cout << "  Exponent of X, E = " << e << "\n";
 
   table = hn_power_product ( p, e );
 
@@ -738,17 +736,17 @@ void hermite_polynomial_test10 ( int p, double b )
 {
   double *table;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST10\n";
-  cout << "  Compute a normalized probabilist''s Hermite exponential product table.\n";
-  cout << "\n";
-  cout << "  Tij = integral ( -oo < X < +oo ) exp(B*X) Hen(I,X) Hen(J,X) exp(-0.5*X*X) dx\n";
-  cout << "\n";
-  cout << "  where Hen(I,X) = normalized probabilist''s Hermite polynomial of degree I.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST10\n";
+  std::cout << "  Compute a normalized probabilist''s Hermite exponential product table.\n";
+  std::cout << "\n";
+  std::cout << "  Tij = integral ( -oo < X < +oo ) exp(B*X) Hen(I,X) Hen(J,X) exp(-0.5*X*X) dx\n";
+  std::cout << "\n";
+  std::cout << "  where Hen(I,X) = normalized probabilist''s Hermite polynomial of degree I.\n";
 
-  cout << "\n";
-  cout << "  Maximum degree P = " << p << "\n";
-  cout << "  Exponential argument coefficient B = " << b << "\n";
+  std::cout << "\n";
+  std::cout << "  Maximum degree P = " << p << "\n";
+  std::cout << "  Exponential argument coefficient B = " << b << "\n";
 
   table = hen_exponential_product ( p, b );
 
@@ -790,17 +788,17 @@ void hermite_polynomial_test11 ( int p, int e )
 {
   double *table;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST11\n";
-  cout << "  Compute a normalized probabilist''s Hermite power product table.\n";
-  cout << "\n";
-  cout << "  Tij = integral ( -oo < X < +oo ) X^E Hen(I,X) Hen(J,X) exp(-X*X) dx\n";
-  cout << "\n";
-  cout << "  where Hen(I,X) = normalized probabilist''s Hermite polynomial of degree I.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST11\n";
+  std::cout << "  Compute a normalized probabilist''s Hermite power product table.\n";
+  std::cout << "\n";
+  std::cout << "  Tij = integral ( -oo < X < +oo ) X^E Hen(I,X) Hen(J,X) exp(-X*X) dx\n";
+  std::cout << "\n";
+  std::cout << "  where Hen(I,X) = normalized probabilist''s Hermite polynomial of degree I.\n";
 
-  cout << "\n";
-  cout << "  Maximum degree P = " << p << "\n";
-  cout << "  Exponent of X, E = " << e << "\n";
+  std::cout << "\n";
+  std::cout << "  Maximum degree P = " << p << "\n";
+  std::cout << "  Exponent of X, E = " << e << "\n";
 
   table = hen_power_product ( p, e );
 
@@ -842,17 +840,17 @@ void hermite_polynomial_test12 ( int p, double b )
 {
   double *table;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST12\n";
-  cout << "  Compute a Hermite function exponential product table.\n";
-  cout << "\n";
-  cout << "  Tij = integral ( -oo < X < +oo ) exp(B*X) Hf(I,X) Hf(J,X) dx\n";
-  cout << "\n";
-  cout << "  where Hf(I,X) = Hermite function of \"degree\" I.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST12\n";
+  std::cout << "  Compute a Hermite function exponential product table.\n";
+  std::cout << "\n";
+  std::cout << "  Tij = integral ( -oo < X < +oo ) exp(B*X) Hf(I,X) Hf(J,X) dx\n";
+  std::cout << "\n";
+  std::cout << "  where Hf(I,X) = Hermite function of \"degree\" I.\n";
 
-  cout << "\n";
-  cout << "  Maximum degree P = " << p << "\n";
-  cout << "  Exponential argument coefficient B = " << b << "\n";
+  std::cout << "\n";
+  std::cout << "  Maximum degree P = " << p << "\n";
+  std::cout << "  Exponential argument coefficient B = " << b << "\n";
 
   table = hf_exponential_product ( p, b );
 
@@ -894,17 +892,17 @@ void hermite_polynomial_test13 ( int p, int e )
 {
   double *table;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST13\n";
-  cout << "  Compute a Hermite function product table.\n";
-  cout << "\n";
-  cout << "  Tij = integral ( -oo < X < +oo ) X^E Hf(I,X) Hf(J,X) exp(-X*X) dx\n";
-  cout << "\n";
-  cout << "  where Hf(I,X) = Hermite function of \"degree\" I.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST13\n";
+  std::cout << "  Compute a Hermite function product table.\n";
+  std::cout << "\n";
+  std::cout << "  Tij = integral ( -oo < X < +oo ) X^E Hf(I,X) Hf(J,X) exp(-X*X) dx\n";
+  std::cout << "\n";
+  std::cout << "  where Hf(I,X) = Hermite function of \"degree\" I.\n";
 
-  cout << "\n";
-  cout << "  Maximum degree P = " << p << "\n";
-  cout << "  Exponent of X, E = " << e << "\n";
+  std::cout << "\n";
+  std::cout << "  Maximum degree P = " << p << "\n";
+  std::cout << "  Exponent of X, E = " << e << "\n";
 
   table = hf_power_product ( p, e );
 
@@ -942,17 +940,17 @@ void hermite_polynomial_test14 ( )
   int j;
   int n = 10;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST14\n";
-  cout << "  H_POLYNOMIAL_COEFFICIENTS determines physicist's Hermite polynomial coefficients.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST14\n";
+  std::cout << "  H_POLYNOMIAL_COEFFICIENTS determines physicist's Hermite polynomial coefficients.\n";
 
   c = h_polynomial_coefficients ( n );
  
   for ( i = 0; i <= n; i++ )
   {
-    cout << "\n";
-    cout << "  H(" << i << ",x) =\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  H(" << i << ",x) =\n";
+    std::cout << "\n";
     for ( j = i; 0 <= j; j-- )
     {
       if ( c[i+j*(n+1)] == 0.0 )
@@ -960,15 +958,15 @@ void hermite_polynomial_test14 ( )
       }
       else if ( j == 0 )
       {
-        cout << setw(14) << c[i+j*(n+1)] << "\n";;
+        std::cout << std::setw(14) << c[i+j*(n+1)] << "\n";;
       }
       else if ( j == 1 )
       {
-        cout << setw(14) << c[i+j*(n+1)] << " * x\n";
+        std::cout << std::setw(14) << c[i+j*(n+1)] << " * x\n";
       }
       else
       {
-        cout << setw(14) << c[i+j*(n+1)] << " * x^" << j << "\n";
+        std::cout << std::setw(14) << c[i+j*(n+1)] << " * x^" << j << "\n";
       }
     }
   }
@@ -1004,17 +1002,17 @@ void hermite_polynomial_test15 ( )
   int j;
   int n = 10;
 
-  cout << "\n";
-  cout << "HERMITE_POLYNOMIAL_TEST15\n";
-  cout << "  HE_POLYNOMIAL_COEFFICIENTS determines probabilist's Hermite polynomial coefficients.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLYNOMIAL_TEST15\n";
+  std::cout << "  HE_POLYNOMIAL_COEFFICIENTS determines probabilist's Hermite polynomial coefficients.\n";
 
   c = he_polynomial_coefficients ( n );
  
   for ( i = 0; i <= n; i++ )
   {
-    cout << "\n";
-    cout << "  He(" << i << ") =\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  He(" << i << ") =\n";
+    std::cout << "\n";
     for ( j = i; 0 <= j; j-- )
     {
       if ( c[i+j*(n+1)] == 0.0 )
@@ -1022,15 +1020,15 @@ void hermite_polynomial_test15 ( )
       }
       else if ( j == 0 )
       {
-        cout << setw(14) << c[i+j*(n+1)] << "\n";;
+        std::cout << std::setw(14) << c[i+j*(n+1)] << "\n";;
       }
       else if ( j == 1 )
       {
-        cout << setw(14) << c[i+j*(n+1)] << " * x\n";
+        std::cout << std::setw(14) << c[i+j*(n+1)] << " * x\n";
       }
       else
       {
-        cout << setw(14) << c[i+j*(n+1)] << " * x^" << j << "\n";
+        std::cout << std::setw(14) << c[i+j*(n+1)] << " * x^" << j << "\n";
       }
     }
   }
@@ -1070,7 +1068,7 @@ string i4_to_string ( int i4 )
 //
 {
   ostringstream fred;
-  string value;
+  std::string value;
 
   fred << i4;
 

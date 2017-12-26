@@ -4,8 +4,6 @@
 # include <iostream>
 # include <iomanip>
 
-using namespace std;
-
 # include "polpak.hpp"
 
 int main ( );
@@ -155,10 +153,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "POLPAK_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the POLPAK library.\n";
+  std::cout << "\n";
+  std::cout << "POLPAK_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the POLPAK library.\n";
 
   agud_test ( );
   align_enum_test ( );
@@ -279,10 +277,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "POLPAK_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "POLPAK_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -315,12 +313,12 @@ void agud_test ( )
   double x;
   double x2;
 
-  cout << "\n";
-  cout << "AGUD_TEST\n";
-  cout << "  AGUD computes the inverse Gudermannian;\n";
-  cout << "\n";
-  cout << "         X     GUD(X)     AGUD(GUD(X))\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "AGUD_TEST\n";
+  std::cout << "  AGUD computes the inverse Gudermannian;\n";
+  std::cout << "\n";
+  std::cout << "         X     GUD(X)     AGUD(GUD(X))\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 10; i++ )
   {
@@ -328,9 +326,9 @@ void agud_test ( )
     g = gud ( x );
     x2 = agud ( g );
 
-    cout << "  " << setw(10) << x
-         << "  " << setw(10) << g
-         << "  " << setw(10) << x2    << "\n";
+    std::cout << "  " << std::setw(10) << x
+         << "  " << std::setw(10) << g
+         << "  " << std::setw(10) << x2    << "\n";
   }
 
   return;
@@ -364,50 +362,50 @@ void align_enum_test ( )
   int i;
   int j;
 
-  cout << "\n";
-  cout << "ALIGN_ENUM_TEST\n";
-  cout << "  ALIGN_ENUM counts the number of possible\n";
-  cout << "  alignments of two biological sequences.\n";
+  std::cout << "\n";
+  std::cout << "ALIGN_ENUM_TEST\n";
+  std::cout << "  ALIGN_ENUM counts the number of possible\n";
+  std::cout << "  alignments of two biological sequences.\n";
 
-  cout << "\n";
-  cout << "  Alignment enumeration table:\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Alignment enumeration table:\n";
+  std::cout << "\n";
 
-  cout << "      ";
+  std::cout << "      ";
   for ( j = 0; j <= 5; j++ )
   {
-    cout << setw(8) << j << "  ";
+    std::cout << std::setw(8) << j << "  ";
   }
-  cout << "\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= M_MAX; i++ )
   {
-    cout << "  " << setw(2) << i << "  ";
+    std::cout << "  " << std::setw(2) << i << "  ";
     for ( j = 0; j <= 5; j++ )
     {
-      cout << setw(8) << align_enum ( i, j ) << "  ";
+      std::cout << std::setw(8) << align_enum ( i, j ) << "  ";
     }
-    cout << "\n";
+    std::cout << "\n";
   }
 
-  cout << "\n";
-  cout << "      ";
+  std::cout << "\n";
+  std::cout << "      ";
   for ( j = 6; j <= N_MAX; j++ )
   {
-    cout << setw(8) << j << "  ";
+    std::cout << std::setw(8) << j << "  ";
   }
-  cout << "\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= M_MAX; i++ )
   {
-    cout << "  " << setw(2) << i << "  ";
+    std::cout << "  " << std::setw(2) << i << "  ";
     for ( j = 6; j <= N_MAX; j++ )
     {
-      cout << setw(8) << align_enum ( i, j ) << "  ";
+      std::cout << std::setw(8) << align_enum ( i, j ) << "  ";
     }
-    cout << "\n";
+    std::cout << "\n";
   }
   return;
 # undef M_MAX
@@ -441,12 +439,12 @@ void bell_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "BELL_TEST\n";
-  cout << "  BELL computes Bell numbers.\n";
-  cout << "\n";
-  cout << "  N  exact C(I)  computed C(I)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BELL_TEST\n";
+  std::cout << "  BELL computes Bell numbers.\n";
+  std::cout << "\n";
+  std::cout << "  N  exact C(I)  computed C(I)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -463,10 +461,10 @@ void bell_test ( )
 
     bell ( n, c2 );
 
-    cout                     << "  "
-         << setw(4) << n     << "  "
-         << setw(8) << c     << "  "
-         << setw(8) << c2[n] << "\n";
+    std::cout                     << "  "
+         << std::setw(4) << n     << "  "
+         << std::setw(8) << c     << "  "
+         << std::setw(8) << c2[n] << "\n";
 
     delete [] c2;
 
@@ -499,19 +497,19 @@ void benford_test ( )
 {
   int i;
 
-  cout << "\n";
-  cout << "BENFORD_TEST\n";
-  cout << "  BENFORD(I) is the Benford probability of the\n";
-  cout << "  initial digit sequence I.\n";
-  cout << "\n";
-  cout << "     I  BENFORD(I)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BENFORD_TEST\n";
+  std::cout << "  BENFORD(I) is the Benford probability of the\n";
+  std::cout << "  initial digit sequence I.\n";
+  std::cout << "\n";
+  std::cout << "     I  BENFORD(I)\n";
+  std::cout << "\n";
 
   for ( i = 1; i <= 9; i++ )
   {
-    cout                              << "  "
-         << setw(4) << i              << "  "
-         << setw(10) << benford ( i ) << "\n";
+    std::cout                              << "  "
+         << std::setw(4) << i              << "  "
+         << std::setw(10) << benford ( i ) << "\n";
   }
 
   return;
@@ -544,13 +542,13 @@ void bernoulli_number_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "BERNOULLI_NUMBER_TEST\n";
-  cout << "  BERNOULLI_NUMBER computes Bernoulli numbers;\n";
+  std::cout << "\n";
+  std::cout << "BERNOULLI_NUMBER_TEST\n";
+  std::cout << "  BERNOULLI_NUMBER computes Bernoulli numbers;\n";
 
-  cout << "\n";
-  cout << "   I      Exact     BERNOULLI_NUMBER\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   I      Exact     BERNOULLI_NUMBER\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -565,10 +563,10 @@ void bernoulli_number_test ( )
 
     bernoulli_number ( n, c1 );
 
-    cout                      << "  "
-         << setw(4)  << n     << "  "
-         << setw(10) << c0    << "  "
-         << setw(10) << c1[n] << "\n";
+    std::cout                      << "  "
+         << std::setw(4)  << n     << "  "
+         << std::setw(10) << c0    << "  "
+         << std::setw(10) << c1[n] << "\n";
   }
 
   return;
@@ -601,12 +599,12 @@ void bernoulli_number2_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "BERNOULLI_NUMBER2_TEST\n";
-  cout << "  BERNOULLI_NUMBER2 computes Bernoulli numbers;\n";
-  cout << "\n";
-  cout << "   I      Exact     BERNOULLI_NUMBER2\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BERNOULLI_NUMBER2_TEST\n";
+  std::cout << "  BERNOULLI_NUMBER2 computes Bernoulli numbers;\n";
+  std::cout << "\n";
+  std::cout << "   I      Exact     BERNOULLI_NUMBER2\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -621,10 +619,10 @@ void bernoulli_number2_test ( )
 
     bernoulli_number2 ( n, c1 );
 
-    cout                      << "  "
-         << setw(4)  << n     << "  "
-         << setw(10) << c0    << "  "
-         << setw(10) << c1[n] << "\n";
+    std::cout                      << "  "
+         << std::setw(4)  << n     << "  "
+         << std::setw(10) << c0    << "  "
+         << std::setw(10) << c1[n] << "\n";
   }
 
   return;
@@ -657,12 +655,12 @@ void bernoulli_number3_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "BERNOULLI_NUMBER3_TEST\n";
-  cout << "  BERNOULLI_NUMBER3 computes Bernoulli numbers.\n";
-  cout << "\n";
-  cout << "   I      Exact     BERNOULLI_NUMBER3\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BERNOULLI_NUMBER3_TEST\n";
+  std::cout << "  BERNOULLI_NUMBER3 computes Bernoulli numbers.\n";
+  std::cout << "\n";
+  std::cout << "   I      Exact     BERNOULLI_NUMBER3\n";
+  std::cout << "\n";
   
   n_data = 0;
 
@@ -677,10 +675,10 @@ void bernoulli_number3_test ( )
 
     c1 = bernoulli_number3 ( n );
 
-    cout                   << "  "
-         << setw(4)  << n  << "  "
-         << setw(14) << c0 << "  "
-         << setw(14) << c1 << "\n";
+    std::cout                   << "  "
+         << std::setw(4)  << n  << "  "
+         << std::setw(14) << c0 << "  "
+         << std::setw(14) << c1 << "\n";
 
   }
  
@@ -716,22 +714,22 @@ void bernoulli_poly_test ( )
 
   x = 0.2;
 
-  cout << "\n";
-  cout << "BERNOULLI_POLY_TEST\n";
-  cout << "  BERNOULLI_POLY evaluates Bernoulli polynomials;\n";
-  cout << "\n";
-  cout << "  X = " << x << "\n";
-  cout << "\n";
-  cout << "  I          BX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BERNOULLI_POLY_TEST\n";
+  std::cout << "  BERNOULLI_POLY evaluates Bernoulli polynomials;\n";
+  std::cout << "\n";
+  std::cout << "  X = " << x << "\n";
+  std::cout << "\n";
+  std::cout << "  I          BX\n";
+  std::cout << "\n";
 
   for ( i = 1; i <= n; i++ )
   {
     bx = bernoulli_poly ( i, x );
 
-    cout                   << "  "
-         << setw(6)  << i  << "  "
-         << setw(10) << bx << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << i  << "  "
+         << std::setw(10) << bx << "\n";
   }
 
   return;
@@ -766,22 +764,22 @@ void bernoulli_poly2_test ( )
 
   x = 0.2;
  
-  cout << "\n";
-  cout << "BERNOULLI_POLY2_TEST\n";
-  cout << "  BERNOULLI_POLY2 evaluates Bernoulli polynomials.\n";
-  cout << "\n";
-  cout << "  X = " << x << "\n";
-  cout << "\n";
-  cout << "  I          BX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BERNOULLI_POLY2_TEST\n";
+  std::cout << "  BERNOULLI_POLY2 evaluates Bernoulli polynomials.\n";
+  std::cout << "\n";
+  std::cout << "  X = " << x << "\n";
+  std::cout << "\n";
+  std::cout << "  I          BX\n";
+  std::cout << "\n";
  
   for ( i = 1; i <= n; i++ )
   {
     bx = bernoulli_poly2 ( i, x );
 
-    cout                   << "  "
-         << setw(2)  << i  << "  "
-         << setw(16) << bx << "\n";
+    std::cout                   << "  "
+         << std::setw(2)  << i  << "  "
+         << std::setw(16) << bx << "\n";
   }
  
   return;
@@ -816,12 +814,12 @@ void bernstein_poly_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "BERNSTEIN_POLY_TEST:\n";
-  cout << "  BERNSTEIN_POLY evaluates the Bernstein polynomials.\n";
-  cout << "\n";
-  cout << "   N   K   X   Exact   B(N,K)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BERNSTEIN_POLY_TEST:\n";
+  std::cout << "  BERNSTEIN_POLY evaluates the Bernstein polynomials.\n";
+  std::cout << "\n";
+  std::cout << "   N   K   X   Exact   B(N,K)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -836,11 +834,11 @@ void bernstein_poly_test ( )
 
     bernstein_poly ( n, x, bvec );
 
-    cout << "  " << setw(4)  << n
-         << "  " << setw(4)  << k
-         << "  " << setw(7)  << x
-         << "  " << setw(14) << b
-         << "  " << setw(14) << bvec[k] << "\n";
+    std::cout << "  " << std::setw(4)  << n
+         << "  " << std::setw(4)  << k
+         << "  " << std::setw(7)  << x
+         << "  " << std::setw(14) << b
+         << "  " << std::setw(14) << bvec[k] << "\n";
   }
 
   return;
@@ -876,10 +874,10 @@ void bpab_test ( )
   int i;
   double x;
 
-  cout << "\n";
-  cout << "BPAB_TEST\n";
-  cout << "  BPAB evaluates Bernstein polynomials.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BPAB_TEST\n";
+  std::cout << "  BPAB evaluates Bernstein polynomials.\n";
+  std::cout << "\n";
 
   x = 0.3;
   a = 0.0;
@@ -887,16 +885,16 @@ void bpab_test ( )
 
   bpab ( N, x, a, b, bern );
 
-  cout << "  The Bernstein polynomials of degree " << N << "\n";
-  cout << "  based on the interval from " << a << "\n";
-  cout << "  to " << b << "\n";
-  cout << "  evaluated at X = " << x << "\n";
-  cout << "\n";
+  std::cout << "  The Bernstein polynomials of degree " << N << "\n";
+  std::cout << "  based on the interval from " << a << "\n";
+  std::cout << "  to " << b << "\n";
+  std::cout << "  evaluated at X = " << x << "\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= N; i++ )
   {
-    cout << "  " << setw(4)  << i       
-         << "  " << setw(14) << bern[i] << "\n";
+    std::cout << "  " << std::setw(4)  << i       
+         << "  " << std::setw(14) << bern[i] << "\n";
   }
 
   return;
@@ -935,24 +933,24 @@ void cardan_poly_test ( )
   double s;
   double x;
 
-  cout << "\n";
-  cout << "CARDAN_POLY_TEST\n";
-  cout << "  CARDAN_POLY evaluates a Cardan polynomial directly.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CARDAN_POLY_TEST\n";
+  std::cout << "  CARDAN_POLY evaluates a Cardan polynomial directly.\n";
+  std::cout << "\n";
 
   n = N_MAX;
   x = 0.25;
   s = 0.5;
 
-  cout << "\n";
-  cout << "  Compare CARDAN_POLY_COEF + R8POLY_VALUE_HORNER\n";
-  cout << "  versus CARDAN_POLY alone.\n";
-  cout << "\n";
-  cout << "  Evaluate polynomials at X = " << x << "\n";
-  cout << "  We use the parameter S = " << s << "\n";
-  cout << "\n";
-  cout << "  Order       Horner          Direct\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Compare CARDAN_POLY_COEF + R8POLY_VALUE_HORNER\n";
+  std::cout << "  versus CARDAN_POLY alone.\n";
+  std::cout << "\n";
+  std::cout << "  Evaluate polynomials at X = " << x << "\n";
+  std::cout << "  We use the parameter S = " << s << "\n";
+  std::cout << "\n";
+  std::cout << "  Order       Horner          Direct\n";
+  std::cout << "\n";
 
   cx2 = cardan_poly ( n, x, s );
 
@@ -962,9 +960,9 @@ void cardan_poly_test ( )
 
     cx1 = r8poly_value_horner ( n, c, x );
 
-    cout << "  " << setw(2)  << n
-         << "  " << setw(14) << cx1
-         << "  " << setw(14) << cx2[n] << "\n";
+    std::cout << "  " << std::setw(2)  << n
+         << "  " << std::setw(14) << cx1
+         << "  " << std::setw(14) << cx2[n] << "\n";
   }
   delete [] cx2;
 
@@ -1006,26 +1004,26 @@ void cardan_poly_coef_test ( )
 
   s = 1.0;
 
-  cout << "\n";
-  cout << "CARDAN_POLY_COEF_TEST\n";
-  cout << "  CARDAN_POLY_COEF returns the coefficients of a\n";
-  cout << "  Cardan polynomial.\n";
-  cout << "\n";
-  cout << "  We use the parameter S = " << s << "\n";
-  cout << "\n";
-  cout << "  Table of polynomial coefficients:\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CARDAN_POLY_COEF_TEST\n";
+  std::cout << "  CARDAN_POLY_COEF returns the coefficients of a\n";
+  std::cout << "  Cardan polynomial.\n";
+  std::cout << "\n";
+  std::cout << "  We use the parameter S = " << s << "\n";
+  std::cout << "\n";
+  std::cout << "  Table of polynomial coefficients:\n";
+  std::cout << "\n";
 
   for ( n = 0; n <= N_MAX; n++ )
   {
     cardan_poly_coef ( n, s, c );
-    cout << "  "
-         << setw(2) << n << "  ";
+    std::cout << "  "
+         << std::setw(2) << n << "  ";
     for ( i = 0; i <= n; i++ )
     {
-      cout << setw(5) << c[i] << "  ";
+      std::cout << std::setw(5) << c[i] << "  ";
     }
-    cout << "\n";
+    std::cout << "\n";
   }
 
   return;
@@ -1061,15 +1059,15 @@ void cardinal_cos_test ( )
   const double r8_pi = 3.141592653589793;
   double *t;
 
-  cout << "\n";
-  cout << "CARDINAL_COS_TEST\n";
-  cout << "  CARDINAL_COS evaluates cardinal cosine functions.\n";
-  cout << "  Ci(Tj) = Delta(i,j), where Tj = cos(pi*i/(n+1)).\n";
-  cout << "  A simple check of all pairs should form the identity matrix.\n";
+  std::cout << "\n";
+  std::cout << "CARDINAL_COS_TEST\n";
+  std::cout << "  CARDINAL_COS evaluates cardinal cosine functions.\n";
+  std::cout << "  Ci(Tj) = Delta(i,j), where Tj = cos(pi*i/(n+1)).\n";
+  std::cout << "  A simple check of all pairs should form the identity matrix.\n";
 
-  cout << "\n";
-  cout << "  The CARDINAL_COS test matrix:\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  The CARDINAL_COS test matrix:\n";
+  std::cout << "\n";
 
   t = r8vec_linspace_new ( m + 2, 0.0, r8_pi );
 
@@ -1078,9 +1076,9 @@ void cardinal_cos_test ( )
     c = cardinal_cos ( j, m, m + 2, t );
     for ( i = 0; i <= m + 1; i++ )
     {
-      cout << "  " << setw(4) << c[i];
+      std::cout << "  " << std::setw(4) << c[i];
     }
-    cout << "\n";
+    std::cout << "\n";
     delete [] c;
   }
 
@@ -1118,25 +1116,25 @@ void cardinal_sin_test ( )
   double *s;
   double *t;
 
-  cout << "\n";
-  cout << "CARDINAL_SIN_TEST\n";
-  cout << "  CARDINAL_SIN evaluates cardinal sine functions.\n";
-  cout << "  Si(Tj) = Delta(i,j), where Tj = cos(pi*i/(n+1)).\n";
-  cout << "  A simple check of all pairs should form the identity matrix.\n";
+  std::cout << "\n";
+  std::cout << "CARDINAL_SIN_TEST\n";
+  std::cout << "  CARDINAL_SIN evaluates cardinal sine functions.\n";
+  std::cout << "  Si(Tj) = Delta(i,j), where Tj = cos(pi*i/(n+1)).\n";
+  std::cout << "  A simple check of all pairs should form the identity matrix.\n";
 
   t = r8vec_linspace_new ( m + 2, 0.0, r8_pi );
 
-  cout << "\n";
-  cout << "  The CARDINAL_SIN test matrix:\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  The CARDINAL_SIN test matrix:\n";
+  std::cout << "\n";
   for ( j = 0; j <= m + 1; j++ )
   {
     s = cardinal_sin ( j, m, m + 2, t );
     for ( i = 0; i <= m + 1; i++ )
     {
-      cout << "  " << setw(4) << s[i];
+      std::cout << "  " << std::setw(4) << s[i];
     }
-    cout << "\n";
+    std::cout << "\n";
     delete [] s;
   }
 
@@ -1172,12 +1170,12 @@ void catalan_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "CATALAN_TEST\n";
-  cout << "  CATALAN computes Catalan numbers.\n";
-  cout << "\n";
-  cout << "  N  exact C(I)  computed C(I)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CATALAN_TEST\n";
+  std::cout << "  CATALAN computes Catalan numbers.\n";
+  std::cout << "\n";
+  std::cout << "  N  exact C(I)  computed C(I)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1194,9 +1192,9 @@ void catalan_test ( )
 
     catalan ( n, c2 );
 
-    cout << "  " << setw(4) << n
-         << "  " << setw(8) << c
-         << "  " << setw(8) << c2[n] << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(8) << c
+         << "  " << std::setw(8) << c2[n] << "\n";
 
     delete [] c2;
   }
@@ -1233,27 +1231,27 @@ void catalan_row_next_test ( )
   int n;
   bool next;
 
-  cout << "\n";
-  cout << "CATALAN_ROW_NEXT_TEST\n";
-  cout << "  CATALAN_ROW_NEXT computes a row of Catalan''s triangle.\n";
-  cout << "\n";
-  cout << "  First, compute row 7:\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CATALAN_ROW_NEXT_TEST\n";
+  std::cout << "  CATALAN_ROW_NEXT computes a row of Catalan''s triangle.\n";
+  std::cout << "\n";
+  std::cout << "  First, compute row 7:\n";
+  std::cout << "\n";
 
   next = false;
   n = 7;
   catalan_row_next ( next, n, c );
 
-  cout << setw(4) << n << "  ";
+  std::cout << std::setw(4) << n << "  ";
   for ( i = 0; i <= n; i++ )
   {
-    cout << setw(8) << c[i] << "  ";
+    std::cout << std::setw(8) << c[i] << "  ";
   }
-  cout << "\n";
+  std::cout << "\n";
 
-  cout << "\n";
-  cout << "  Now compute rows consecutively, one at a time:\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Now compute rows consecutively, one at a time:\n";
+  std::cout << "\n";
 
   next = false;
 
@@ -1262,12 +1260,12 @@ void catalan_row_next_test ( )
     catalan_row_next ( next, n, c );
     next = true;
 
-    cout << setw(4) << i << "  ";
+    std::cout << std::setw(4) << i << "  ";
     for ( i = 0; i <= n; i++ )
     {
-      cout << setw(8) << c[i] << "  ";
+      std::cout << std::setw(8) << c[i] << "  ";
     }
-    cout << "\n";
+    std::cout << "\n";
 
   }
 
@@ -1309,19 +1307,19 @@ void charlier_test ( )
   double x;
   double value[N+1];
 
-  cout << "\n";
-  cout << "CHARLIER_TEST:\n";
-  cout << "  CHARLIER evaluates Charlier polynomials.\n";
-  cout << "\n";
-  cout << "       N      A         X        P(N,A,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHARLIER_TEST:\n";
+  std::cout << "  CHARLIER evaluates Charlier polynomials.\n";
+  std::cout << "\n";
+  std::cout << "       N      A         X        P(N,A,X)\n";
+  std::cout << "\n";
 
   for ( test = 0; test < TEST_NUM; test++ )
   {
     n = N;
     a = a_test[test];
 
-    cout << "\n";
+    std::cout << "\n";
 
     for ( j = 0; j <= 5; j++ )
     {
@@ -1329,14 +1327,14 @@ void charlier_test ( )
 
       charlier ( n, a, x, value );
 
-      cout << "\n";
+      std::cout << "\n";
       for ( i = 0; i <= 5; i++ )
       {
 
-        cout << "  " << setw(6)  << i     
-             << "  " << setw(8)  << a
-             << "  " << setw(8)  << x
-             << "  " << setw(14) << value[i] << "\n";
+        std::cout << "  " << std::setw(6)  << i     
+             << "  " << std::setw(8)  << a
+             << "  " << std::setw(8)  << x
+             << "  " << std::setw(14) << value[i] << "\n";
       }
     }
   }
@@ -1377,12 +1375,12 @@ void cheby_t_poly_test ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "CHEBY_T_POLY_TEST:\n";
-  cout << "  CHEBY_T_POLY evaluates the Chebyshev T polynomial.\n";
-  cout << "\n";
-  cout << "     N      X        Exact F       T(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_T_POLY_TEST:\n";
+  std::cout << "  CHEBY_T_POLY evaluates the Chebyshev T polynomial.\n";
+  std::cout << "\n";
+  std::cout << "     N      X        Exact F       T(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1398,10 +1396,10 @@ void cheby_t_poly_test ( )
     x_vec[0] = x;
     fx2 = cheby_t_poly ( 1, n, x_vec );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2[n] << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2[n] << "\n";
 
     delete [] fx2;
 
@@ -1440,12 +1438,12 @@ void cheby_t_poly_zero_test ( )
   int n;
   double *z;
 
-  cout << "\n";
-  cout << "CHEBY_T_POLY_ZERO_TEST:\n";
-  cout << "  CHEBY_T_POLY_ZERO returns zeroes of T(N,X).\n";
-  cout << "\n";
-  cout << "       N      X        T(N,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_T_POLY_ZERO_TEST:\n";
+  std::cout << "  CHEBY_T_POLY_ZERO returns zeroes of T(N,X).\n";
+  std::cout << "\n";
+  std::cout << "       N      X        T(N,X)\n";
+  std::cout << "\n";
 
   for ( n = 1; n <= N_MAX; n++ )
   {
@@ -1453,11 +1451,11 @@ void cheby_t_poly_zero_test ( )
     fx = cheby_t_poly ( n, n, z );
     for ( i = 0; i < n; i++ )
     {
-      cout << "  " << setw(8) << n
-           << "  " << setw(8) << z[i]
-           << "  " << setw(14) << fx[i+n*n] << "\n";
+      std::cout << "  " << std::setw(8) << n
+           << "  " << std::setw(8) << z[i]
+           << "  " << std::setw(14) << fx[i+n*n] << "\n";
     }
-    cout << "\n";
+    std::cout << "\n";
     delete [] fx;
     delete [] z;
   }
@@ -1493,33 +1491,33 @@ void cheby_t_poly_coef_test ( )
   int j;
   int n = 5;
 
-  cout << "\n";
-  cout << "CHEBY_T_POLY_COEF_TEST\n";
-  cout << "  CHEBY_T_POLY_COEF determines the  polynomial coefficients\n";
-  cout << "  of the Chebyshev polynomial T(n,x).\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_T_POLY_COEF_TEST\n";
+  std::cout << "  CHEBY_T_POLY_COEF determines the  polynomial coefficients\n";
+  std::cout << "  of the Chebyshev polynomial T(n,x).\n";
 
   c = cheby_t_poly_coef ( n );
  
   for ( i = 0; i <= n; i++ )
   {
-    cout << "\n";
-    cout << "  T(" << i << ",x)\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  T(" << i << ",x)\n";
+    std::cout << "\n";
     for ( j = i; 0 <= j; j-- )
     {
       if ( c[i+j*(n+1)] != 0.0 )
       {
         if ( j == 0 )
         {
-          cout << setw(14) << c[i+j*(n+1)] << "\n";;
+          std::cout << std::setw(14) << c[i+j*(n+1)] << "\n";;
         }
         else if ( j == 1 )
         {
-          cout << setw(14) << c[i+j*(n+1)] << " * x\n";
+          std::cout << std::setw(14) << c[i+j*(n+1)] << " * x\n";
         }
         else
         {
-          cout << setw(14) << c[i+j*(n+1)] << " * x^" << j << "\n";
+          std::cout << std::setw(14) << c[i+j*(n+1)] << " * x^" << j << "\n";
         }
       }
     }
@@ -1561,12 +1559,12 @@ void cheby_u_poly_test ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "CHEBY_U_POLY_TEST:\n";
-  cout << "  CHEBY_U_POLY evaluates the Chebyshev U polynomial.\n";
-  cout << "\n";
-  cout << "     N      X        Exact F       U(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_U_POLY_TEST:\n";
+  std::cout << "  CHEBY_U_POLY evaluates the Chebyshev U polynomial.\n";
+  std::cout << "\n";
+  std::cout << "     N      X        Exact F       U(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1582,10 +1580,10 @@ void cheby_u_poly_test ( )
     x_vec[0] = x;
     fx2 = cheby_u_poly ( 1, n, x_vec );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2[n] << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2[n] << "\n";
 
     delete [] fx2;
 
@@ -1623,33 +1621,33 @@ void cheby_u_poly_coef_test ( )
   int i;
   int j;
 
-  cout << "\n";
-  cout << "CHEBY_U_POLY_COEF_TEST\n";
-  cout << "  CHEBY_U_POLY_COEF determines the polynomial coefficients\n";
-  cout << "  of the Chebyshev polynomial U(n,x).\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_U_POLY_COEF_TEST\n";
+  std::cout << "  CHEBY_U_POLY_COEF determines the polynomial coefficients\n";
+  std::cout << "  of the Chebyshev polynomial U(n,x).\n";
 
   cheby_u_poly_coef ( N, c );
  
   for ( i = 0; i <= N; i++ )
   {
-    cout << "\n";
-    cout << "  U(" << i << ",x)\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  U(" << i << ",x)\n";
+    std::cout << "\n";
     for ( j = i; 0 <= j; j-- )
     {
       if ( c[i+j*(N+1)] != 0.0 )
       {
         if ( j == 0 )
         {
-          cout << setw(14) << c[i+j*(N+1)] << "\n";
+          std::cout << std::setw(14) << c[i+j*(N+1)] << "\n";
         }
         else if ( j == 1 )
         {
-          cout << setw(14) << c[i+j*(N+1)] << " * x\n";
+          std::cout << std::setw(14) << c[i+j*(N+1)] << " * x\n";
         }
         else
         {
-          cout << setw(14) << c[i+j*(N+1)] << " * x^" << j << "\n";
+          std::cout << std::setw(14) << c[i+j*(N+1)] << " * x^" << j << "\n";
         }
       }
     }
@@ -1688,12 +1686,12 @@ void cheby_u_poly_zero_test ( )
   int n;
   double *z;
 
-  cout << "\n";
-  cout << "CHEBY_U_POLY_ZERO_TEST:\n";
-  cout << "  CHEBY_U_POLY_ZERO returns zeroes of U(N,X).\n";
-  cout << "\n";
-  cout << "       N      X        U(N,X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBY_U_POLY_ZERO_TEST:\n";
+  std::cout << "  CHEBY_U_POLY_ZERO returns zeroes of U(N,X).\n";
+  std::cout << "\n";
+  std::cout << "       N      X        U(N,X)\n";
+  std::cout << "\n";
 
   for ( n = 1; n <= N_MAX; n++ )
   {
@@ -1701,11 +1699,11 @@ void cheby_u_poly_zero_test ( )
     fx = cheby_u_poly ( n, n, z );
     for ( i = 0; i < n; i++ )
     {
-      cout << "  " << setw(8) << n
-           << "  " << setw(8) << z[i]
-           << "  " << setw(14) << fx[i+n*n] << "\n";
+      std::cout << "  " << std::setw(8) << n
+           << "  " << std::setw(8) << z[i]
+           << "  " << std::setw(14) << fx[i+n*n] << "\n";
     }
-    cout << "\n";
+    std::cout << "\n";
     delete [] fx;
     delete [] z;
   }
@@ -1746,11 +1744,11 @@ void chebyshev_discrete_test ( )
   double x;
   double value[N+1];
 
-  cout << "\n";
-  cout << "CHEBYSHEV_DISCRETE_TEST:\n";
-  cout << "  CHEBYSHEV_DISCRETE evaluates discrete Chebyshev polynomials.\n";
-  cout << "\n";
-  cout << "       N      M         X        T(N,M,X)\n";
+  std::cout << "\n";
+  std::cout << "CHEBYSHEV_DISCRETE_TEST:\n";
+  std::cout << "  CHEBYSHEV_DISCRETE evaluates discrete Chebyshev polynomials.\n";
+  std::cout << "\n";
+  std::cout << "       N      M         X        T(N,M,X)\n";
 
   m = 5;
   n = N;
@@ -1761,13 +1759,13 @@ void chebyshev_discrete_test ( )
 
     chebyshev_discrete ( n, m, x, value );
 
-    cout << "\n";
+    std::cout << "\n";
     for ( i = 0; i <= 5; i++ )
     {
-      cout << "  " << setw(6)  << i     
-           << "  " << setw(8)  << m
-           << "  " << setw(8)  << x
-           << "  " << setw(14) << value[i] << "\n";
+      std::cout << "  " << std::setw(6)  << i     
+           << "  " << std::setw(8)  << m
+           << "  " << std::setw(8)  << x
+           << "  " << std::setw(14) << value[i] << "\n";
     }
   }
 
@@ -1803,14 +1801,14 @@ void collatz_count_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "COLLATZ_COUNT_TEST:\n";
-  cout << "  COLLATZ_COUNT(N) counts the length of the\n";
-  cout << "  Collatz sequence beginning with N.\n";
-  cout << "\n";
-  cout << "       N       COUNT(N)     COUNT(N)\n";
-  cout << "              (computed)    (table)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COLLATZ_COUNT_TEST:\n";
+  std::cout << "  COLLATZ_COUNT(N) counts the length of the\n";
+  std::cout << "  Collatz sequence beginning with N.\n";
+  std::cout << "\n";
+  std::cout << "       N       COUNT(N)     COUNT(N)\n";
+  std::cout << "              (computed)    (table)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1825,9 +1823,9 @@ void collatz_count_test ( )
 
     count2 = collatz_count ( n );
 
-    cout << "  " << setw(8) << n
-         << "  " << setw(8) << count
-         << "  " << setw(8) << count2 << "\n";
+    std::cout << "  " << std::setw(8) << n
+         << "  " << std::setw(8) << count
+         << "  " << std::setw(8) << count2 << "\n";
   }
 
   return;
@@ -1859,13 +1857,13 @@ void collatz_count_max_test ( )
   int j_max;
   int n;
 
-  cout << "\n";
-  cout << "COLLATZ_COUNT_MAX_TEST:\n";
-  cout << "  COLLATZ_COUNT_MAX(N) returns the length of the\n";
-  cout << "  longest Collatz sequence from 1 to N.\n";
-  cout << "\n";
-  cout << "         N     I_MAX     J_MAX\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COLLATZ_COUNT_MAX_TEST:\n";
+  std::cout << "  COLLATZ_COUNT_MAX(N) returns the length of the\n";
+  std::cout << "  longest Collatz sequence from 1 to N.\n";
+  std::cout << "\n";
+  std::cout << "         N     I_MAX     J_MAX\n";
+  std::cout << "\n";
 
   n = 10;
 
@@ -1873,9 +1871,9 @@ void collatz_count_max_test ( )
   {
     collatz_count_max ( n, &i_max, &j_max );
 
-    cout << "  " << setw(8) << n
-         << "  " << setw(8) << i_max
-         << "  " << setw(8) << j_max << "\n";
+    std::cout << "  " << std::setw(8) << n
+         << "  " << std::setw(8) << i_max
+         << "  " << std::setw(8) << j_max << "\n";
 
     n = n * 10;
   }
@@ -1911,20 +1909,20 @@ void comb_row_next_test ( )
   int i;
   int n;
 
-  cout << "\n";
-  cout << "COMB_ROW_NEXT_TEST\n";
-  cout << "  COMB_ROW_NEXT computes the next row of Pascal's triangle.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COMB_ROW_NEXT_TEST\n";
+  std::cout << "  COMB_ROW_NEXT computes the next row of Pascal's triangle.\n";
+  std::cout << "\n";
 
   for ( n = 0; n <= N_MAX; n++ )
   {
     comb_row_next ( n, c );
-    cout << "  " << setw(2) << n << "  ";
+    std::cout << "  " << std::setw(2) << n << "  ";
     for ( i = 0; i <= n; i++ )
     {
-      cout << setw(5) << c[i];
+      std::cout << std::setw(5) << c[i];
     }
-    cout << "\n";
+    std::cout << "\n";
   }
 
   return;
@@ -1959,40 +1957,40 @@ void commul_test ( )
   int ncomb;
   int nfactor;
 
-  cout << "\n";
-  cout << "COMMUL_TEST\n";
-  cout << "  COMMUL computes a multinomial coefficient.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COMMUL_TEST\n";
+  std::cout << "  COMMUL computes a multinomial coefficient.\n";
+  std::cout << "\n";
 
   n = 8;
   nfactor = 2;
   factor[0] = 6;
   factor[1] = 2;
   ncomb = commul ( n, nfactor, factor );
-  cout << "\n";
-  cout << "  N = " << n << "\n";
-  cout << "  Number of factors = " << factor << "\n";
+  std::cout << "\n";
+  std::cout << "  N = " << n << "\n";
+  std::cout << "  Number of factors = " << factor << "\n";
   for ( i = 0; i < nfactor; i++ )
   {
-    cout << "  " << setw(2) << i
-         << "  " << setw(8) << factor[i] << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(8) << factor[i] << "\n";
   }
-  cout << "  Value of coefficient = " << ncomb << "\n";
+  std::cout << "  Value of coefficient = " << ncomb << "\n";
 
   n = 8;
   nfactor = 3;
   factor[0] = 2;
   factor[1] = 2;
   factor[2] = 4;
-  cout << "\n";
-  cout << "  N = " << n << "\n";
-  cout << "  Number of factors = " << factor << "\n";
+  std::cout << "\n";
+  std::cout << "  N = " << n << "\n";
+  std::cout << "  Number of factors = " << factor << "\n";
   for ( i = 0; i < nfactor; i++ )
   {
-    cout << "  " << setw(2) << i
-         << "  " << setw(8) << factor[i] << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(8) << factor[i] << "\n";
   }
-  cout << "  Value of coefficient = " << ncomb << "\n";
+  std::cout << "  Value of coefficient = " << ncomb << "\n";
 
   n = 13;
   nfactor = 4;
@@ -2001,15 +1999,15 @@ void commul_test ( )
   factor[2] = 3;
   factor[3] = 2;
   ncomb = commul ( n, nfactor, factor );
-  cout << "\n";
-  cout << "  N = " << n << "\n";
-  cout << "  Number of factors = " << factor << "\n";
+  std::cout << "\n";
+  std::cout << "  N = " << n << "\n";
+  std::cout << "  Number of factors = " << factor << "\n";
   for ( i = 0; i < nfactor; i++ )
   {
-    cout << "  " << setw(2) << i
-         << "  " << setw(8) << factor[i] << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(8) << factor[i] << "\n";
   }
-  cout << "  Value of coefficient = " << ncomb << "\n";
+  std::cout << "  Value of coefficient = " << ncomb << "\n";
 
   return;
 }
@@ -2043,26 +2041,26 @@ void complete_symmetric_poly_test ( )
   double value;
   double x[5] = { 1.0, 2.0, 3.0, 4.0, 5.0 };
 
-  cout << "\n";
-  cout << "COMPLETE_SYMMETRIC_POLY_TEST\n";
-  cout << "  COMPLETE_SYMMETRIC_POLY evaluates a complete symmetric.\n";
-  cout << "  polynomial in a given set of variables X.\n";
+  std::cout << "\n";
+  std::cout << "COMPLETE_SYMMETRIC_POLY_TEST\n";
+  std::cout << "  COMPLETE_SYMMETRIC_POLY evaluates a complete symmetric.\n";
+  std::cout << "  polynomial in a given set of variables X.\n";
  
   r8vec_print ( n, x, "  Variable vector X:" );
 
-  cout << "\n";
-  cout << "   N\\R     0       1       2       3       4       5\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   N\\R     0       1       2       3       4       5\n";
+  std::cout << "\n";
 
   for ( nn = 0; nn <= n; nn++ )
   {
-    cout << "  " << setw(2) <<  nn;
+    std::cout << "  " << std::setw(2) <<  nn;
     for ( rr = 0; rr <= 5; rr++ )
     {
       value = complete_symmetric_poly ( nn, rr, x );
-      cout << "  " << setw(6) << value;
+      std::cout << "  " << std::setw(6) << value;
     }
-    cout << "\n";
+    std::cout << "\n";
   }
 
   return;
@@ -2097,13 +2095,13 @@ void cos_power_int_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "COS_POWER_INT_TEST:\n";
-  cout << "  COS_POWER_INT computes the integral of the N-th power\n";
-  cout << "  of the cosine function.\n";
-  cout << "\n";
-  cout << "         A         B       N        Exact    Computed\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "COS_POWER_INT_TEST:\n";
+  std::cout << "  COS_POWER_INT computes the integral of the N-th power\n";
+  std::cout << "  of the cosine function.\n";
+  std::cout << "\n";
+  std::cout << "         A         B       N        Exact    Computed\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2118,12 +2116,12 @@ void cos_power_int_test ( )
 
     fx2 = cos_power_int ( a, b, n );
 
-    cout                    << "  "
-         << setw(8)  << a   << "  "
-         << setw(8)  << b   << "  "
-         << setw(6)  << n   << "  "
-         << setw(12) << fx  << "  "
-         << setw(12) << fx2 << "\n";
+    std::cout                    << "  "
+         << std::setw(8)  << a   << "  "
+         << std::setw(8)  << b   << "  "
+         << std::setw(6)  << n   << "  "
+         << std::setw(12) << fx  << "  "
+         << std::setw(12) << fx2 << "\n";
   }
   return;
 }
@@ -2155,12 +2153,12 @@ void euler_number_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "EULER_NUMBER_TEST\n";
-  cout << "  EULER_NUMBER computes Euler numbers.\n";
-  cout << "\n";
-  cout << "  N  exact   EULER_NUMBER\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EULER_NUMBER_TEST\n";
+  std::cout << "  EULER_NUMBER computes Euler numbers.\n";
+  std::cout << "\n";
+  std::cout << "  N  exact   EULER_NUMBER\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2175,10 +2173,10 @@ void euler_number_test ( )
 
     euler_number ( n, c2 );
 
-    cout                      << "  "
-         << setw(4)  << n     << "  "
-         << setw(12) << c1    << "  "
-         << setw(12) << c2[n] << "\n";
+    std::cout                      << "  "
+         << std::setw(4)  << n     << "  "
+         << std::setw(12) << c1    << "  "
+         << std::setw(12) << c2[n] << "\n";
 
   }
  
@@ -2212,12 +2210,12 @@ void euler_number2_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "EULER_NUMBER2_TEST\n";
-  cout << "  EULER_NUMBER2 computes Euler numbers.\n";
-  cout << "\n";
-  cout << "  N  exact   EULER_NUMBER2\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EULER_NUMBER2_TEST\n";
+  std::cout << "  EULER_NUMBER2 computes Euler numbers.\n";
+  std::cout << "\n";
+  std::cout << "  N  exact   EULER_NUMBER2\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2232,10 +2230,10 @@ void euler_number2_test ( )
 
     c2 = euler_number2 ( n );
 
-    cout                   << "  "
-         << setw(4)  << n  << "  "
-         << setw(12) << c1 << "  "
-         << setw(14) << c2 << "\n";
+    std::cout                   << "  "
+         << std::setw(4)  << n  << "  "
+         << std::setw(12) << c1 << "  "
+         << std::setw(14) << c2 << "\n";
 
   }
  
@@ -2271,21 +2269,21 @@ void euler_poly_test ( )
 
   x = 0.5;
  
-  cout << "\n";
-  cout << "EULER_POLY_TEST\n";
-  cout << "  EULER_POLY evaluates Euler polynomials.\n";
-  cout << "\n";
-  cout << "  N         X              F(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EULER_POLY_TEST\n";
+  std::cout << "  EULER_POLY evaluates Euler polynomials.\n";
+  std::cout << "\n";
+  std::cout << "  N         X              F(X)\n";
+  std::cout << "\n";
    
   for ( i = 0; i <= n; i++ )
   {
     f = euler_poly ( i, x );
 
-    cout                  << "  "
-         << setw(2)  << i << "  "
-         << setw(14) << x << "  "
-         << setw(14) << f << "\n";
+    std::cout                  << "  "
+         << std::setw(2)  << i << "  "
+         << std::setw(14) << x << "  "
+         << std::setw(14) << f << "\n";
   }
  
   return;
@@ -2319,10 +2317,10 @@ void eulerian_test ( )
   int i;
   int j;
 
-  cout << "\n";
-  cout << "EULERIAN_TEST\n";
-  cout << "  EULERIAN evaluates Eulerian numbers.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "EULERIAN_TEST\n";
+  std::cout << "  EULERIAN evaluates Eulerian numbers.\n";
+  std::cout << "\n";
  
   eulerian ( N, e );
 
@@ -2330,9 +2328,9 @@ void eulerian_test ( )
   {
     for ( j = 0; j < N; j++ )
     {
-      cout << setw(6) << e[i+j*N] << "  ";
+      std::cout << std::setw(6) << e[i+j*N] << "  ";
     }
-    cout << "\n";
+    std::cout << "\n";
   }
  
   return;
@@ -2364,21 +2362,21 @@ void f_hofstadter_test ( )
   int f;
   int i;
 
-  cout << "\n";
-  cout << "F_HOFSTADTER_TEST\n";
-  cout << "  F_HOFSTADTER evaluates Hofstadter's recursive\n";
-  cout << "  F function.\n";
-  cout << "\n";
-  cout << "     N   F(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "F_HOFSTADTER_TEST\n";
+  std::cout << "  F_HOFSTADTER evaluates Hofstadter's recursive\n";
+  std::cout << "  F function.\n";
+  std::cout << "\n";
+  std::cout << "     N   F(N)\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 30; i++ )
   {
     f = f_hofstadter ( i );
 
-    cout                 << "  "
-         << setw(6) << i << "  "
-         << setw(6) << f << "\n";
+    std::cout                 << "  "
+         << std::setw(6) << i << "  "
+         << std::setw(6) << f << "\n";
   }
 
   return;
@@ -2410,18 +2408,18 @@ void fibonacci_direct_test ( )
   int i;
   int n = 20;
 
-  cout << "\n";
-  cout << "FIBONACCI_DIRECT_TEST\n";
-  cout << "  FIBONACCI_DIRECT evalutes a Fibonacci number directly.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "FIBONACCI_DIRECT_TEST\n";
+  std::cout << "  FIBONACCI_DIRECT evalutes a Fibonacci number directly.\n";
+  std::cout << "\n";
   
   for ( i = 1; i <= n; i++ )
   {
     f = fibonacci_direct ( i );
 
-    cout                  << "  "
-         << setw(6)  << i << "  "
-         << setw(10) << f << "\n";
+    std::cout                  << "  "
+         << std::setw(6)  << i << "  "
+         << std::setw(10) << f << "\n";
   }
  
   return;
@@ -2453,22 +2451,22 @@ void fibonacci_floor_test ( )
   int i;
   int n;
 
-  cout << "\n";
-  cout << "FIBONACCI_FLOOR_TEST\n";
-  cout << "  FIBONACCI_FLOOR computes the largest Fibonacci number\n";
-  cout << "  less than or equal to a given positive integer.\n";
-  cout << "\n";
-  cout << "     N  Fibonacci  Index\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "FIBONACCI_FLOOR_TEST\n";
+  std::cout << "  FIBONACCI_FLOOR computes the largest Fibonacci number\n";
+  std::cout << "  less than or equal to a given positive integer.\n";
+  std::cout << "\n";
+  std::cout << "     N  Fibonacci  Index\n";
+  std::cout << "\n";
 
   for ( n = 1; n <= 20; n++ )
   {
     fibonacci_floor ( n, &f, &i );
 
-    cout                 << "  "
-         << setw(6) << n << "  "
-         << setw(6) << f << "  "
-         << setw(6) << i << "\n";
+    std::cout                 << "  "
+         << std::setw(6) << n << "  "
+         << std::setw(6) << f << "  "
+         << std::setw(6) << i << "\n";
   }
  
   return;
@@ -2501,18 +2499,18 @@ void fibonacci_recursive_test ( )
   int f[N];
   int i;
 
-  cout << "\n";
-  cout << "FIBONACCI_RECURSIVE_TEST\n";
-  cout << "  FIBONACCI_RECURSIVE computes the Fibonacci sequence.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "FIBONACCI_RECURSIVE_TEST\n";
+  std::cout << "  FIBONACCI_RECURSIVE computes the Fibonacci sequence.\n";
+  std::cout << "\n";
  
   fibonacci_recursive ( N, f );
  
   for ( i = 1; i <= N; i++ )
   {
-    cout                       << "  "
-         << setw(6)  << i      << "  "
-         << setw(10) << f[i-1] << "\n";
+    std::cout                       << "  "
+         << std::setw(6)  << i      << "  "
+         << std::setw(10) << f[i-1] << "\n";
   }
  
   return;
@@ -2543,19 +2541,19 @@ void g_hofstadter_test ( )
 {
   int i;
 
-  cout << "\n";
-  cout << "G_HOFSTADTER_TEST\n";
-  cout << "  G_HOFSTADTER evaluates Hofstadter's recursive\n";
-  cout << "  G function.\n";
-  cout << "\n";
-  cout << "     N   G(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "G_HOFSTADTER_TEST\n";
+  std::cout << "  G_HOFSTADTER evaluates Hofstadter's recursive\n";
+  std::cout << "  G function.\n";
+  std::cout << "\n";
+  std::cout << "     N   G(N)\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 30; i++ )
   {
-    cout                                  << "  "
-         << setw(6) << i                  << "  "
-         << setw(6) << g_hofstadter ( i ) << "\n";
+    std::cout                                  << "  "
+         << std::setw(6) << i                  << "  "
+         << std::setw(6) << g_hofstadter ( i ) << "\n";
   }
 
   return;
@@ -2591,12 +2589,12 @@ void gegenbauer_poly_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GEGENBAUER_POLY_TEST\n";
-  cout << "  GEGENBAUER_POLY evaluates the Gegenbauer polynomials.\n";
-  cout << "\n";
-  cout << "        N       A       X       GPV      GEGENBAUER\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GEGENBAUER_POLY_TEST\n";
+  std::cout << "  GEGENBAUER_POLY evaluates the Gegenbauer polynomials.\n";
+  std::cout << "\n";
+  std::cout << "        N       A       X       GPV      GEGENBAUER\n";
+  std::cout << "\n";
  
   n_data = 0;
 
@@ -2615,12 +2613,12 @@ void gegenbauer_poly_test ( )
     gegenbauer_poly ( n, a, x, c );
     fx2 = c[n];
 
-    cout                    << "  "
-         << setw(6)  << n   << "  "
-         << setw(10) << a   << "  "
-         << setw(10) << x   << "  "
-         << setw(14) << fx  << "  "
-         << setw(14) << fx2 << "\n";
+    std::cout                    << "  "
+         << std::setw(6)  << n   << "  "
+         << std::setw(10) << a   << "  "
+         << std::setw(10) << x   << "  "
+         << std::setw(14) << fx  << "  "
+         << std::setw(14) << fx2 << "\n";
 
     delete [] c;
   }
@@ -2661,10 +2659,10 @@ void gen_hermite_poly_test ( )
   double x;
   double x_test[N_TEST] = { 0.0, 1.0, 0.0, 0.5, 0.5, 0.5 };
 
-  cout << "\n";
-  cout << "GEN_HERMITE_POLY_TEST\n";
-  cout << "  GEN_HERMITE_POLY evaluates the generalized Hermite\n";
-  cout << "  polynomial.\n";
+  std::cout << "\n";
+  std::cout << "GEN_HERMITE_POLY_TEST\n";
+  std::cout << "  GEN_HERMITE_POLY evaluates the generalized Hermite\n";
+  std::cout << "  polynomial.\n";
 
   for ( i = 0; i < N_TEST; i++ )
   {
@@ -2672,21 +2670,21 @@ void gen_hermite_poly_test ( )
     x = x_test[i];
     mu = mu_test[i];
 
-    cout << "\n";
-    cout << "  Table of H(N,MU)(X) for\n";
-    cout << "\n";
-    cout << "    N(max) = " << N << "\n";
-    cout << "    MU =     " << mu << "\n";
-    cout << "    X =      " << x << "\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  Table of H(N,MU)(X) for\n";
+    std::cout << "\n";
+    std::cout << "    N(max) = " << N << "\n";
+    std::cout << "    MU =     " << mu << "\n";
+    std::cout << "    X =      " << x << "\n";
+    std::cout << "\n";
   
     gen_hermite_poly ( N, x, mu, c );
  
     for ( j = 0; j <= N; j++ )
     {
-      cout                     << "  "
-           << setw(6)  << j    << "  "
-           << setw(14) << c[j] << "\n";
+      std::cout                     << "  "
+           << std::setw(6)  << j    << "  "
+           << std::setw(14) << c[j] << "\n";
     }
   }
  
@@ -2728,10 +2726,10 @@ void gen_laguerre_poly_test ( )
   double x;
   double x_test[N_TEST] = { 0.0, 1.0, 0.0, 0.5, 0.5, 0.5 };
 
-  cout << "\n";
-  cout << "GEN_LAGUERRE_POLY_TEST\n";
-  cout << "  GEN_LAGUERRE_POLY evaluates the generalized Laguerre\n";
-  cout << "  functions.\n";
+  std::cout << "\n";
+  std::cout << "GEN_LAGUERRE_POLY_TEST\n";
+  std::cout << "  GEN_LAGUERRE_POLY evaluates the generalized Laguerre\n";
+  std::cout << "  functions.\n";
 
   for ( i = 0; i < N_TEST; i++ )
   {
@@ -2739,21 +2737,21 @@ void gen_laguerre_poly_test ( )
     x = x_test[i];
     alpha = alpha_test[i];
 
-    cout << "\n";
-    cout << "  Table of L(N,ALPHA)(X) for\n";
-    cout << "\n";
-    cout << "    N(max) = " << N << "\n";
-    cout << "    ALPHA =  " << alpha << "\n";
-    cout << "    X =      " << x << "\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  Table of L(N,ALPHA)(X) for\n";
+    std::cout << "\n";
+    std::cout << "    N(max) = " << N << "\n";
+    std::cout << "    ALPHA =  " << alpha << "\n";
+    std::cout << "    X =      " << x << "\n";
+    std::cout << "\n";
   
     gen_laguerre_poly ( N, alpha, x, c );
  
     for ( j = 0; j <= N; j++ )
     {
-      cout                     << "  "
-           << setw(6)  << j    << "  "
-           << setw(14) << c[j] << "\n";
+      std::cout                     << "  "
+           << std::setw(6)  << j    << "  "
+           << std::setw(14) << c[j] << "\n";
     }
   }
  
@@ -2789,12 +2787,12 @@ void gud_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "GUD_TEST:\n";
-  cout << "  GUD evaluates the Gudermannian function.\n";
-  cout << "\n";
-  cout << "     X      Exact F       GUD(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "GUD_TEST:\n";
+  std::cout << "  GUD evaluates the Gudermannian function.\n";
+  std::cout << "\n";
+  std::cout << "     X      Exact F       GUD(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2809,10 +2807,10 @@ void gud_test ( )
 
     fx2 = gud ( x );
 
-    cout                    << "  "
-         << setw(10) << x   << "  "
-         << setw(10) << fx  << "  "
-         << setw(10) << fx2 << "\n";
+    std::cout                    << "  "
+         << std::setw(10) << x   << "  "
+         << std::setw(10) << fx  << "  "
+         << std::setw(10) << fx2 << "\n";
   }
 
   return;
@@ -2842,19 +2840,19 @@ void hail_test ( )
 {
   int i;
 
-  cout << "\n";
-  cout << "HAIL_TEST\n";
-  cout << "  HAIL(I) computes the length of the hail sequence\n";
-  cout << "  for I, also known as the 3*N+1 sequence.\n";
-  cout << "\n";
-  cout << "  I,  HAIL(I)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HAIL_TEST\n";
+  std::cout << "  HAIL(I) computes the length of the hail sequence\n";
+  std::cout << "  for I, also known as the 3*N+1 sequence.\n";
+  std::cout << "\n";
+  std::cout << "  I,  HAIL(I)\n";
+  std::cout << "\n";
 
   for ( i = 1; i <= 20; i++ )
   {
-    cout                          << "  "
-         << setw(4) << i          << "  "
-         << setw(6) << hail ( i ) << "\n";
+    std::cout                          << "  "
+         << std::setw(4) << i          << "  "
+         << std::setw(6) << hail ( i ) << "\n";
   }
  
   return;
@@ -2884,20 +2882,20 @@ void h_hofstadter_test ( )
 {
   int i;
 
-  cout << "\n";
-  cout << "H_HOFSTADTER_TEST\n";
-  cout << "  H_HOFSTADTER evaluates Hofstadter's recursive\n";
-  cout << "  H function.\n";
+  std::cout << "\n";
+  std::cout << "H_HOFSTADTER_TEST\n";
+  std::cout << "  H_HOFSTADTER evaluates Hofstadter's recursive\n";
+  std::cout << "  H function.\n";
 
-  cout << "\n";
-  cout << "     N   H(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "     N   H(N)\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 30; i++ )
   {
-    cout                                  << "  "
-         << setw(6) << i                  << "  "
-         << setw(6) << h_hofstadter ( i ) << "\n";
+    std::cout                                  << "  "
+         << std::setw(6) << i                  << "  "
+         << std::setw(6) << h_hofstadter ( i ) << "\n";
   }
 
   return;
@@ -2933,12 +2931,12 @@ void hermite_poly_phys_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "HERMITE_POLY_PHYS_TEST:\n";
-  cout << "  HERMITE_POLY_PHYS evaluates the physicist's Hermite polynomial.\n";
-  cout << "\n";
-  cout << "     N      X        Exact F       H(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLY_PHYS_TEST:\n";
+  std::cout << "  HERMITE_POLY_PHYS evaluates the physicist's Hermite polynomial.\n";
+  std::cout << "\n";
+  std::cout << "     N      X        Exact F       H(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2953,11 +2951,11 @@ void hermite_poly_phys_test ( )
 
     hermite_poly_phys ( n, x, fx2 );
 
-    cout                       << "  "
-         << setw(8)  << n      << "  "
-         << setw(8)  << x      << "  "
-         << setw(14) << fx     << "  "
-         << setw(14) << fx2[n] << "\n";
+    std::cout                       << "  "
+         << std::setw(8)  << n      << "  "
+         << std::setw(8)  << x      << "  "
+         << std::setw(14) << fx     << "  "
+         << std::setw(14) << fx2[n] << "\n";
   }
 
   return;
@@ -2992,30 +2990,30 @@ void hermite_poly_phys_coef_test ( )
   int i;
   int j;
 
-  cout << "\n";
-  cout << "HERMITE_POLY_PHYS_COEF_TEST\n";
-  cout << "  HERMITE_POLY_PHYS_COEF: physicist's Hermite polynomial coefficients.\n";
+  std::cout << "\n";
+  std::cout << "HERMITE_POLY_PHYS_COEF_TEST\n";
+  std::cout << "  HERMITE_POLY_PHYS_COEF: physicist's Hermite polynomial coefficients.\n";
 
   hermite_poly_phys_coef ( N, c );
  
   for ( i = 0; i <= N; i++ )
   {
-    cout << "\n";
-    cout << "  H(" << i << ")\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  H(" << i << ")\n";
+    std::cout << "\n";
     for ( j = i; 0 <= j; j-- )
     {
       if ( j == 0 )
       {
-        cout << setw(14) << c[i+j*(N+1)] << "\n";;
+        std::cout << std::setw(14) << c[i+j*(N+1)] << "\n";;
       }
       else if ( j == 1 )
       {
-        cout << setw(14) << c[i+j*(N+1)] << " * x\n";
+        std::cout << std::setw(14) << c[i+j*(N+1)] << " * x\n";
       }
       else
       {
-        cout << setw(14) << c[i+j*(N+1)] << " * x^" << j << "\n";
+        std::cout << std::setw(14) << c[i+j*(N+1)] << " * x^" << j << "\n";
       }
     }
   }
@@ -3050,12 +3048,12 @@ void i4_choose_test ( )
   int k;
   int n;
 
-  cout << "\n";
-  cout << "I4_CHOOSE_TEST\n";
-  cout << "  I4_CHOOSE evaluates C(N,K).\n";
-  cout << "\n";
-  cout << "   N     K    CNK\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_CHOOSE_TEST\n";
+  std::cout << "  I4_CHOOSE evaluates C(N,K).\n";
+  std::cout << "\n";
+  std::cout << "   N     K    CNK\n";
+  std::cout << "\n";
 
   for ( n = 0; n <= 4; n++ )
   {
@@ -3063,10 +3061,10 @@ void i4_choose_test ( )
     {
       cnk = i4_choose ( n, k );
 
-      cout                   << "  "
-           << setw(6) << n   << "  "
-           << setw(6) << k   << "  "
-           << setw(6) << cnk << "\n";
+      std::cout                   << "  "
+           << std::setw(6) << n   << "  "
+           << std::setw(6) << k   << "  "
+           << std::setw(6) << cnk << "\n";
     }
   }
 
@@ -3105,23 +3103,23 @@ void i4_factor_test ( )
   int factor[10];
   int power[10];
 
-  cout << "\n";
-  cout << "I4_FACTOR_TEST:\n";
-  cout << "  I4_FACTOR tries to factor an I4\n";
+  std::cout << "\n";
+  std::cout << "I4_FACTOR_TEST:\n";
+  std::cout << "  I4_FACTOR tries to factor an I4\n";
 
   for ( i = 0; i < 3; i++ )
   {
     n = n_test[i];
     i4_factor ( n, maxfactor, nfactor, factor, power, nleft );
-    cout << "\n";
-    cout << "  Factors of N = " << n << "\n";
+    std::cout << "\n";
+    std::cout << "  Factors of N = " << n << "\n";
     for ( j = 0; j < nfactor; j++ )
     {
-      cout << "    " << factor[j] << "^" <<  power[j] << "\n";
+      std::cout << "    " << factor[j] << "^" <<  power[j] << "\n";
     }
     if ( nleft != 1 )
     {
-      cout << "  Unresolved factor NLEFT = " << nleft << "\n";
+      std::cout << "  Unresolved factor NLEFT = " << nleft << "\n";
     }
   }
 
@@ -3155,12 +3153,12 @@ void i4_factorial_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "I4_FACTORIAL_TEST:\n";
-  cout << "  I4_FACTORIAL evaluates the factorial function.\n";
-  cout << "\n";
-  cout << "     X       Exact F       I4_FACTORIAL(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_FACTORIAL_TEST:\n";
+  std::cout << "  I4_FACTORIAL evaluates the factorial function.\n";
+  std::cout << "\n";
+  std::cout << "     X       Exact F       I4_FACTORIAL(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3175,10 +3173,10 @@ void i4_factorial_test ( )
 
     fn2 = i4_factorial ( n );
 
-    cout                    << "  "
-         << setw(4)  << n   << "  "
-         << setw(12) << fn  << "  "
-         << setw(12) << fn2 << "\n";
+    std::cout                    << "  "
+         << std::setw(4)  << n   << "  "
+         << std::setw(12) << fn  << "  "
+         << std::setw(12) << fn2 << "\n";
 
   }
 
@@ -3212,12 +3210,12 @@ void i4_factorial2_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "I4_FACTORIAL2_TEST:\n";
-  cout << "  I4_FACTORIAL2 evaluates the double factorial function.\n";
-  cout << "\n";
-  cout << "   N   Exact  I4_FACTORIAL2(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_FACTORIAL2_TEST:\n";
+  std::cout << "  I4_FACTORIAL2 evaluates the double factorial function.\n";
+  std::cout << "\n";
+  std::cout << "   N   Exact  I4_FACTORIAL2(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3232,10 +3230,10 @@ void i4_factorial2_test ( )
 
     fn2 = i4_factorial2 ( n );
 
-    cout                   << "  "
-         << setw(4) << n   << "  "
-         << setw(8) << fn  << "  "
-         << setw(8) << fn2 << "\n";
+    std::cout                   << "  "
+         << std::setw(4) << n   << "  "
+         << std::setw(8) << fn  << "  "
+         << std::setw(8) << fn2 << "\n";
   }
 
   return;
@@ -3270,20 +3268,20 @@ void i4_is_triangular_test ( )
   int k2;
   bool l;
 
-  cout << "\n";
-  cout << "I4_IS_TRIANGULAR_TEST\n";
-  cout << "  I4_IS_TRIANGULAR returns 0 or 1 depending on\n";
-  cout << "  whether I is triangular.\n";
-  cout << "\n";
-  cout << "   I  =>   0/1\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_IS_TRIANGULAR_TEST\n";
+  std::cout << "  I4_IS_TRIANGULAR returns 0 or 1 depending on\n";
+  std::cout << "  whether I is triangular.\n";
+  std::cout << "\n";
+  std::cout << "   I  =>   0/1\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 20; i++ )
   {
     l = i4_is_triangular ( i );
 
-    cout << "  " << setw(4) << i  
-         << "  " << setw(1) << l << "\n";
+    std::cout << "  " << std::setw(4) << i  
+         << "  " << std::setw(1) << l << "\n";
   }
  
   return;
@@ -3317,14 +3315,14 @@ void i4_partition_distinct_count_test ( )
   int n_data;
   int n_max = 20;
 
-  cout << "\n";
-  cout << "I4_PARTITION_DISTINCT_COUNT_TEST:\n";
-  cout << "  For the number of partitions of an integer\n";
-  cout << "  into distinct parts,\n";
-  cout << "  I4_PARTITION_DISTINCT_COUNT computes any value.\n";
-  cout << "\n";
-  cout << "     N       Exact F    Q(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_PARTITION_DISTINCT_COUNT_TEST:\n";
+  std::cout << "  For the number of partitions of an integer\n";
+  std::cout << "  into distinct parts,\n";
+  std::cout << "  I4_PARTITION_DISTINCT_COUNT computes any value.\n";
+  std::cout << "\n";
+  std::cout << "     N       Exact F    Q(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3344,10 +3342,10 @@ void i4_partition_distinct_count_test ( )
 
     c2 = i4_partition_distinct_count ( n );
 
-    cout                   << "  "
-         << setw(10) << n  << "  "
-         << setw(10) << c  << "  "
-         << setw(10) << c2 << "\n";
+    std::cout                   << "  "
+         << std::setw(10) << n  << "  "
+         << std::setw(10) << c  << "  "
+         << std::setw(10) << c2 << "\n";
 
   }
 
@@ -3380,21 +3378,21 @@ void i4_to_triangle_test ( )
   int j;
   int k;
 
-  cout << "\n";
-  cout << "I4_TO_TRIANGLE_TEST\n";
-  cout << "  I4_TO_TRIANGLE converts a linear index to a\n";
-  cout << "  triangular one.\n";
-  cout << "\n";
-  cout << "     K  => I     J\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "I4_TO_TRIANGLE_TEST\n";
+  std::cout << "  I4_TO_TRIANGLE converts a linear index to a\n";
+  std::cout << "  triangular one.\n";
+  std::cout << "\n";
+  std::cout << "     K  => I     J\n";
+  std::cout << "\n";
 
   for ( k = 0; k <= 20; k++ )
   {
     i4_to_triangle ( k, &i, &j );
 
-    cout << "  " << setw(4) << k  
-         << "  " << setw(4) << i
-         << "  " << setw(4) << j << "\n";
+    std::cout << "  " << std::setw(4) << k  
+         << "  " << std::setw(4) << i
+         << "  " << std::setw(4) << j << "\n";
   }
  
   return;
@@ -3431,13 +3429,13 @@ void jacobi_poly_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "JACOBI_POLY_TEST\n";
-  cout << "  JACOBI_POLY evaluates the Jacobi polynomials.\n";
-  cout << "  the Jacobi polynomials.\n";
-  cout << "\n";
-  cout << "        N       A       B      X       JPV      JACOBI\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "JACOBI_POLY_TEST\n";
+  std::cout << "  JACOBI_POLY evaluates the Jacobi polynomials.\n";
+  std::cout << "  the Jacobi polynomials.\n";
+  std::cout << "\n";
+  std::cout << "        N       A       B      X       JPV      JACOBI\n";
+  std::cout << "\n";
  
   n_data = 0;
 
@@ -3454,13 +3452,13 @@ void jacobi_poly_test ( )
     c = jacobi_poly ( n, a, b, x );
     fx2 = c[n];
 
-    cout                    << "  "
-         << setw(6)  << n   << "  "
-         << setw(6)  << a   << "  "
-         << setw(6)  << b   << "  "
-         << setw(10) << x   << "  "
-         << setw(14) << fx  << "  "
-         << setw(14) << fx2 << "\n";
+    std::cout                    << "  "
+         << std::setw(6)  << n   << "  "
+         << std::setw(6)  << a   << "  "
+         << std::setw(6)  << b   << "  "
+         << std::setw(10) << x   << "  "
+         << std::setw(14) << fx  << "  "
+         << std::setw(14) << fx2 << "\n";
 
     delete [] c;
   }
@@ -3497,23 +3495,23 @@ void jacobi_symbol_test ( )
   int ptest[N_TEST] = { 3, 9, 10, 12 };
   int q;
 
-  cout << "\n";
-  cout << "JACOBI_SYMBOL_TEST\n";
-  cout << "  JACOBI_SYMBOL computes the Jacobi symbol\n";
-  cout << "  (Q/P), which records if Q is a quadratic\n";
-  cout << "  residue modulo the number P.\n";
+  std::cout << "\n";
+  std::cout << "JACOBI_SYMBOL_TEST\n";
+  std::cout << "  JACOBI_SYMBOL computes the Jacobi symbol\n";
+  std::cout << "  (Q/P), which records if Q is a quadratic\n";
+  std::cout << "  residue modulo the number P.\n";
 
   for ( i = 0; i < N_TEST; i++ )
   {
     p = ptest[i];
-    cout << "\n";
-    cout << "Jacobi Symbols for P = " << p << "\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "Jacobi Symbols for P = " << p << "\n";
+    std::cout << "\n";
     for ( q = 0; q <= p; q++ )
     {
-      cout << "  " << setw(8) << p
-           << "  " << setw(8) << q
-           << "  " << setw(8) << jacobi_symbol ( q, p ) << "\n";
+      std::cout << "  " << std::setw(8) << p
+           << "  " << std::setw(8) << q
+           << "  " << std::setw(8) << jacobi_symbol ( q, p ) << "\n";
     }
   }
 
@@ -3556,12 +3554,12 @@ void krawtchouk_test ( )
   double x;
   double value[N+1];
 
-  cout << "\n";
-  cout << "KRAWTCHOUK_TEST:\n";
-  cout << "  KRAWTCHOUK evaluates Krawtchouk polynomials.\n";
-  cout << "\n";
-  cout << "        N         P         X          M      K(N,P,X,M)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "KRAWTCHOUK_TEST:\n";
+  std::cout << "  KRAWTCHOUK evaluates Krawtchouk polynomials.\n";
+  std::cout << "\n";
+  std::cout << "        N         P         X          M      K(N,P,X,M)\n";
+  std::cout << "\n";
 
   m = 5;
   n = N;
@@ -3570,7 +3568,7 @@ void krawtchouk_test ( )
   {
     p = p_test[test];
 
-    cout << "\n";
+    std::cout << "\n";
 
     for ( j = 0; j <= 5; j++ )
     {
@@ -3578,15 +3576,15 @@ void krawtchouk_test ( )
 
       krawtchouk ( n, p, x, m, value );
 
-      cout << "\n";
+      std::cout << "\n";
       for ( i = 0; i <= 5; i++ )
       {
 
-        cout << "  " << setw(8)  << i     
-             << "  " << setw(8)  << p
-             << "  " << setw(8)  << x
-             << "  " << setw(8)  << m
-             << "  " << setw(14) << value[i] << "\n";
+        std::cout << "  " << std::setw(8)  << i     
+             << "  " << std::setw(8)  << p
+             << "  " << std::setw(8)  << x
+             << "  " << std::setw(8)  << m
+             << "  " << std::setw(14) << value[i] << "\n";
       }
     }
   }
@@ -3629,31 +3627,31 @@ void laguerre_associated_test ( )
   double x;
   double x_test[N_TEST] = { 0.0, 1.0, 0.0, 0.5, 0.5, 0.5 };
 
-  cout << "\n";
-  cout << "LAGUERRE_ASSOCIATED_TEST\n";
-  cout << "  LAGUERRE_ASSOCIATED evaluates the associated Laguerre\n";
-  cout << "  polynomials.\n";
+  std::cout << "\n";
+  std::cout << "LAGUERRE_ASSOCIATED_TEST\n";
+  std::cout << "  LAGUERRE_ASSOCIATED evaluates the associated Laguerre\n";
+  std::cout << "  polynomials.\n";
 
   for ( i = 0; i < N_TEST; i++ )
   {
     m = m_test[i];
     x = x_test[i];
 
-    cout << "\n";
-    cout << "  Table of L(N,M)(X) for\n";
-    cout << "\n";
-    cout << "  N(max) = " << N << "\n";
-    cout << "  M      = " << m << "\n";
-    cout << "  X =      " << x << "\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  Table of L(N,M)(X) for\n";
+    std::cout << "\n";
+    std::cout << "  N(max) = " << N << "\n";
+    std::cout << "  M      = " << m << "\n";
+    std::cout << "  X =      " << x << "\n";
+    std::cout << "\n";
  
     laguerre_associated ( N, m, x, c );
  
     for ( j = 0; j <= N; j++ )
     {
-      cout                     << "  "
-           << setw(6)  << j    << "  "
-           << setw(14) << c[j] << "\n";
+      std::cout                     << "  "
+           << std::setw(6)  << j    << "  "
+           << std::setw(14) << c[j] << "\n";
     }
  
   }
@@ -3693,12 +3691,12 @@ void laguerre_poly_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LAGUERRE_POLY_COEF:\n";
-  cout << "  LAGUERRE_POLY evaluates the Laguerre polynomial.\n";
-  cout << "\n";
-  cout << "     N      X        Exact F       L(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LAGUERRE_POLY_COEF:\n";
+  std::cout << "  LAGUERRE_POLY evaluates the Laguerre polynomial.\n";
+  std::cout << "\n";
+  std::cout << "     N      X        Exact F       L(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3713,11 +3711,11 @@ void laguerre_poly_test ( )
 
     laguerre_poly ( n, x, fx2 );
 
-    cout                       << "  "
-         << setw(8)  << n      << "  "
-         << setw(8)  << x      << "  "
-         << setw(14) << fx     << "  "
-         << setw(14) << fx2[n] << "\n";
+    std::cout                       << "  "
+         << std::setw(8)  << n      << "  "
+         << std::setw(8)  << x      << "  "
+         << std::setw(14) << fx     << "  "
+         << std::setw(14) << fx2[n] << "\n";
   }
 
   return;
@@ -3753,31 +3751,31 @@ void laguerre_poly_coef_test ( )
   int i;
   int j;
 
-  cout << "\n";
-  cout << "LAGUERRE_POLY_COEF_TEST\n";
-  cout << "  LAGUERRE_POLY_COEF determines Laguerre \n";
-  cout << "  polynomial coefficients.\n";
+  std::cout << "\n";
+  std::cout << "LAGUERRE_POLY_COEF_TEST\n";
+  std::cout << "  LAGUERRE_POLY_COEF determines Laguerre \n";
+  std::cout << "  polynomial coefficients.\n";
 
   laguerre_poly_coef ( N, c );
  
   for ( i = 0; i <= N; i++ )
   {
-    cout << "\n";
-    cout << "  L(" << i << ")\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  L(" << i << ")\n";
+    std::cout << "\n";
     for ( j = i; 0 <= j; j-- )
     {
       if ( j == 0 )
       {
-        cout << setw(14) << c[i+j*(N+1)] << "\n";;
+        std::cout << std::setw(14) << c[i+j*(N+1)] << "\n";;
       }
       else if ( j == 1 )
       {
-        cout << setw(14) << c[i+j*(N+1)] << " * x\n";
+        std::cout << std::setw(14) << c[i+j*(N+1)] << " * x\n";
       }
       else
       {
-        cout << setw(14) << c[i+j*(N+1)] << " * x^" << j << "\n";
+        std::cout << std::setw(14) << c[i+j*(N+1)] << " * x^" << j << "\n";
       }
     }
   }
@@ -3785,22 +3783,22 @@ void laguerre_poly_coef_test ( )
   for ( i = 0; i <= N; i++ )
   {
     fact = r8_factorial ( i );
-    cout << "\n";
-    cout << "  Factorially scaled L(" << i << ")\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  Factorially scaled L(" << i << ")\n";
+    std::cout << "\n";
     for ( j = i; 0 <= j; j-- )
     {
       if ( j == 0 )
       {
-        cout << setw(14) << fact *c[i+j*(N+1)] << "\n";;
+        std::cout << std::setw(14) << fact *c[i+j*(N+1)] << "\n";;
       }
       else if ( j == 1 )
       {
-        cout << setw(14) << fact *c[i+j*(N+1)] << " * x\n";
+        std::cout << std::setw(14) << fact *c[i+j*(N+1)] << " * x\n";
       }
       else
       {
-        cout << setw(14) << fact *c[i+j*(N+1)] << " * x^" << j << "\n";
+        std::cout << std::setw(14) << fact *c[i+j*(N+1)] << " * x^" << j << "\n";
       }
     }
   }
@@ -3839,12 +3837,12 @@ void legendre_poly_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_POLY_TEST:\n";
-  cout << "  LEGENDRE_POLY evaluates the Legendre PN function.\n";
-  cout << "\n";
-  cout << "     N      X        Exact F       P(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_POLY_TEST:\n";
+  std::cout << "  LEGENDRE_POLY evaluates the Legendre PN function.\n";
+  std::cout << "\n";
+  std::cout << "     N      X        Exact F       P(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3859,11 +3857,11 @@ void legendre_poly_test ( )
 
     legendre_poly ( n, x, fx2, fp2 );
 
-    cout                       << "  "
-         << setw(8)  << n      << "  "
-         << setw(8)  << x      << "  "
-         << setw(14) << fx     << "  "
-         << setw(14) << fx2[n] << "\n";
+    std::cout                       << "  "
+         << std::setw(8)  << n      << "  "
+         << std::setw(8)  << x      << "  "
+         << std::setw(14) << fx     << "  "
+         << std::setw(14) << fx2[n] << "\n";
 
   }
 
@@ -3899,31 +3897,31 @@ void legendre_poly_coef_test ( )
   int i;
   int j;
 
-  cout << "\n";
-  cout << "LEGENDRE_POLY_COEF_TEST\n";
-  cout << "  LEGENDRE_POLY_COEF determines the Legendre P \n";
-  cout << "  polynomial coefficients.\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_POLY_COEF_TEST\n";
+  std::cout << "  LEGENDRE_POLY_COEF determines the Legendre P \n";
+  std::cout << "  polynomial coefficients.\n";
 
   legendre_poly_coef ( N, c );
  
   for ( i = 0; i <= N; i++ )
   {
-    cout << "\n";
-    cout << "  P(" << i << ")\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  P(" << i << ")\n";
+    std::cout << "\n";
     for ( j = i; 0 <= j; j-- )
     {
       if ( j == 0 )
       {
-        cout << setw(14) << c[i+j*(N+1)] << "\n";;
+        std::cout << std::setw(14) << c[i+j*(N+1)] << "\n";;
       }
       else if ( j == 1 )
       {
-        cout << setw(14) << c[i+j*(N+1)] << " * x\n";
+        std::cout << std::setw(14) << c[i+j*(N+1)] << " * x\n";
       }
       else
       {
-        cout << setw(14) << c[i+j*(N+1)] << " * x^" << j << "\n";
+        std::cout << std::setw(14) << c[i+j*(N+1)] << " * x^" << j << "\n";
       }
     }
   }
@@ -3963,12 +3961,12 @@ void legendre_associated_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_ASSOCIATED_TEST:\n";
-  cout << "  LEGENDRE_ASSOCIATED evaluates associated Legendre functions.\n";
-  cout << "\n";
-  cout << "      N       M    X     Exact F     PNM(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_ASSOCIATED_TEST:\n";
+  std::cout << "  LEGENDRE_ASSOCIATED evaluates associated Legendre functions.\n";
+  std::cout << "\n";
+  std::cout << "      N       M    X     Exact F     PNM(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3983,12 +3981,12 @@ void legendre_associated_test ( )
 
     legendre_associated ( n, m, x, fx2 );
 
-    cout                       << "  "
-         << setw(8)  << n      << "  "
-         << setw(8)  << m      << "  "
-         << setw(8)  << x      << "  "
-         << setw(14) << fx     << "  "
-         << setw(14) << fx2[n] << "\n";
+    std::cout                       << "  "
+         << std::setw(8)  << n      << "  "
+         << std::setw(8)  << m      << "  "
+         << std::setw(8)  << x      << "  "
+         << std::setw(14) << fx     << "  "
+         << std::setw(14) << fx2[n] << "\n";
 
   }
 
@@ -4027,13 +4025,13 @@ void legendre_associated_normalized_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_ASSOCIATED_NORMALIZED_TEST:\n";
-  cout << "  LEGENDRE_ASSOCIATED_NORMALIZED evaluates \n";
-  cout << "  normalized associated Legendre functions.\n";
-  cout << "\n";
-  cout << "      N       M    X     Exact F     PNM(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_ASSOCIATED_NORMALIZED_TEST:\n";
+  std::cout << "  LEGENDRE_ASSOCIATED_NORMALIZED evaluates \n";
+  std::cout << "  normalized associated Legendre functions.\n";
+  std::cout << "\n";
+  std::cout << "      N       M    X     Exact F     PNM(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4048,12 +4046,12 @@ void legendre_associated_normalized_test ( )
 
     legendre_associated_normalized ( n, m, x, fx2 );
 
-    cout                       << "  "
-         << setw(8)  << n      << "  "
-         << setw(8)  << m      << "  "
-         << setw(8)  << x      << "  "
-         << setw(14) << fx     << "  "
-         << setw(14) << fx2[n] << "\n";
+    std::cout                       << "  "
+         << std::setw(8)  << n      << "  "
+         << std::setw(8)  << m      << "  "
+         << std::setw(8)  << x      << "  "
+         << std::setw(14) << fx     << "  "
+         << std::setw(14) << fx2[n] << "\n";
 
   }
 
@@ -4091,12 +4089,12 @@ void legendre_function_q_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LEGENDRE_FUNCTION_Q_TEST:\n";
-  cout << "  LEGENDRE_FUNCTION_Q evaluates the Legendre Q function.\n";
-  cout << "\n";
-  cout << "     N      X        Exact F       Q(N)(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_FUNCTION_Q_TEST:\n";
+  std::cout << "  LEGENDRE_FUNCTION_Q evaluates the Legendre Q function.\n";
+  std::cout << "\n";
+  std::cout << "     N      X        Exact F       Q(N)(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4111,11 +4109,11 @@ void legendre_function_q_test ( )
 
     legendre_function_q ( n, x, fx2 );
 
-    cout                       << "  "
-         << setw(8)  << n      << "  "
-         << setw(8)  << x      << "  "
-         << setw(14) << fx     << "  "
-         << setw(14) << fx2[n] << "\n";
+    std::cout                       << "  "
+         << std::setw(8)  << n      << "  "
+         << std::setw(8)  << x      << "  "
+         << std::setw(14) << fx     << "  "
+         << std::setw(14) << fx2[n] << "\n";
 
   }
 
@@ -4153,24 +4151,24 @@ void legendre_symbol_test ( )
   int ptest[N_TEST] = { 7, 11, 13, 17 };
   int q;
 
-  cout << "\n";
-  cout << "LEGENDRE_SYMBOL_TEST\n";
-  cout << "  LEGENDRE_SYMBOL computes the Legendre\n";
-  cout << "  symbol (Q/P) which records whether Q is \n";
-  cout << "  a quadratic residue modulo the prime P.\n";
+  std::cout << "\n";
+  std::cout << "LEGENDRE_SYMBOL_TEST\n";
+  std::cout << "  LEGENDRE_SYMBOL computes the Legendre\n";
+  std::cout << "  symbol (Q/P) which records whether Q is \n";
+  std::cout << "  a quadratic residue modulo the prime P.\n";
 
   for ( i = 0; i < N_TEST; i++ )
   {
     p = ptest[i];
-    cout << "\n";
-    cout << "  Legendre Symbols for P = " << p << "\n";
-    cout << "\n";
+    std::cout << "\n";
+    std::cout << "  Legendre Symbols for P = " << p << "\n";
+    std::cout << "\n";
     for ( q = 0; q <= p; q++ )
     {
-      cout                                        << "  "
-           << setw(8) << p                        << "  "
-           << setw(8) << q                        << "  "
-           << setw(8) << legendre_symbol ( q, p ) << "\n";
+      std::cout                                        << "  "
+           << std::setw(8) << p                        << "  "
+           << std::setw(8) << q                        << "  "
+           << std::setw(8) << legendre_symbol ( q, p ) << "\n";
     }
   }
 
@@ -4207,13 +4205,13 @@ void lerch_test ( )
   int s;
   double z;
 
-  cout << "\n";
-  cout << "LERCH_TEST:\n";
-  cout << "  LERCH evaluates the Lerch function.\n";
-  cout << "\n";
-  cout << "       Z       S       A         Lerch           Lerch\n";
-  cout << "                             Tabulated        Computed\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LERCH_TEST:\n";
+  std::cout << "  LERCH evaluates the Lerch function.\n";
+  std::cout << "\n";
+  std::cout << "       Z       S       A         Lerch           Lerch\n";
+  std::cout << "                             Tabulated        Computed\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4228,12 +4226,12 @@ void lerch_test ( )
 
     fx2 = lerch ( z, s, a );
 
-    cout                    << "  "
-         << setw(8)  << z   << "  "
-         << setw(4)  << s   << "  "
-         << setw(8)  << a   << "  "
-         << setw(14) << fx  << "  "
-         << setw(14) << fx2 << "\n";
+    std::cout                    << "  "
+         << std::setw(8)  << z   << "  "
+         << std::setw(4)  << s   << "  "
+         << std::setw(8)  << a   << "  "
+         << std::setw(14) << fx  << "  "
+         << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -4266,13 +4264,13 @@ void lgamma_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "LGAMMA_TEST:\n";
-  cout << "  LGAMMA is a C math library function which evaluates\n";
-  cout << "  the logarithm of the Gamma function.\n";
-  cout << "\n";
-  cout << "     X       Exact F       LGAMMA(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LGAMMA_TEST:\n";
+  std::cout << "  LGAMMA is a C math library function which evaluates\n";
+  std::cout << "  the logarithm of the Gamma function.\n";
+  std::cout << "\n";
+  std::cout << "     X       Exact F       LGAMMA(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4287,10 +4285,10 @@ void lgamma_test ( )
 
     fx2 = lgamma ( x );
 
-    cout                    << "  "
-         << setw(8)  << x   << "  "
-         << setw(10) << fx  << "  "
-         << setw(10) << fx2 << "\n";
+    std::cout                    << "  "
+         << std::setw(8)  << x   << "  "
+         << std::setw(10) << fx  << "  "
+         << std::setw(10) << fx2 << "\n";
 
   }
 
@@ -4324,20 +4322,20 @@ void lock_test ( )
   int a[N+1];
   int i;
 
-  cout << "\n";
-  cout << "LOCK_TEST\n";
-  cout << "  LOCK counts the combinations on a button lock.\n";
-  cout << "\n";
-  cout << "  I,  LOCK(I)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LOCK_TEST\n";
+  std::cout << "  LOCK counts the combinations on a button lock.\n";
+  std::cout << "\n";
+  std::cout << "  I,  LOCK(I)\n";
+  std::cout << "\n";
 
   lock ( N, a );
 
   for ( i = 0; i <= N; i++ )
   {
-    cout                     << "  "
-         << setw(4)  << i    << "  "
-         << setw(10) << a[i] << "\n";
+    std::cout                     << "  "
+         << std::setw(4)  << i    << "  "
+         << std::setw(10) << a[i] << "\n";
   }
  
   return;
@@ -4380,11 +4378,11 @@ void meixner_test ( )
   double v[N+1];
   double x;
 
-  cout << "\n";
-  cout << "MEIXNER_TEST:\n";
-  cout << "  MEIXNER evaluates Meixner polynomials.\n";
-  cout << "\n";
-  cout << "       N      BETA         C         X        M(N,BETA,C,X)\n";
+  std::cout << "\n";
+  std::cout << "MEIXNER_TEST:\n";
+  std::cout << "  MEIXNER evaluates Meixner polynomials.\n";
+  std::cout << "\n";
+  std::cout << "       N      BETA         C         X        M(N,BETA,C,X)\n";
 
   for ( test = 0; test < TEST_NUM; test++ )
   {
@@ -4398,15 +4396,15 @@ void meixner_test ( )
 
       meixner ( n, beta, c, x, v );
 
-      cout << "\n";
+      std::cout << "\n";
 
       for ( i = 0; i <= n; i++ )
       {
-        cout << "  " << setw(8) << i
-             << "  " << setw(8) << beta
-             << "  " << setw(8) << c
-             << "  " << setw(8) << x
-             << "  " << setw(14) << v[i] << "\n";
+        std::cout << "  " << std::setw(8) << i
+             << "  " << std::setw(8) << beta
+             << "  " << std::setw(8) << c
+             << "  " << std::setw(8) << x
+             << "  " << std::setw(14) << v[i] << "\n";
       }
     }
   }
@@ -4442,12 +4440,12 @@ void mertens_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "MERTENS_TEST\n";
-  cout << "  MERTENS computes the Mertens function.\n";
-  cout << "\n";
-  cout << "      N   Exact   MERTENS(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "MERTENS_TEST\n";
+  std::cout << "  MERTENS computes the Mertens function.\n";
+  std::cout << "\n";
+  std::cout << "      N   Exact   MERTENS(N)\n";
+  std::cout << "\n";
  
   n_data = 0;
 
@@ -4460,10 +4458,10 @@ void mertens_test ( )
       break;
     }
 
-    cout                              << "  "
-         << setw(8)  << n             << "  "
-         << setw(10) << c             << "  "
-         << setw(10) << mertens ( n ) << "\n";
+    std::cout                              << "  "
+         << std::setw(8)  << n             << "  "
+         << std::setw(10) << c             << "  "
+         << std::setw(10) << mertens ( n ) << "\n";
   }
  
   return;
@@ -4495,12 +4493,12 @@ void moebius_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "MOEBIUS_TEST\n";
-  cout << "  MOEBIUS computes the Moebius function.\n";
-  cout << "\n";
-  cout << "      N   Exact   MOEBIUS(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "MOEBIUS_TEST\n";
+  std::cout << "  MOEBIUS computes the Moebius function.\n";
+  std::cout << "\n";
+  std::cout << "      N   Exact   MOEBIUS(N)\n";
+  std::cout << "\n";
  
   n_data = 0;
 
@@ -4513,10 +4511,10 @@ void moebius_test ( )
       break;
     }
 
-    cout                              << "  "
-         << setw(8)  << n             << "  "
-         << setw(10) << c             << "  "
-         << setw(10) << moebius ( n ) << "\n";
+    std::cout                              << "  "
+         << std::setw(8)  << n             << "  "
+         << std::setw(10) << c             << "  "
+         << std::setw(10) << moebius ( n ) << "\n";
   }
  
   return;
@@ -4549,21 +4547,21 @@ void motzkin_test ( )
   int a[N+1];
   int i;
 
-  cout << "\n";
-  cout << "MOTZKIN_TEST\n";
-  cout << "  MOTZKIN computes the Motzkin numbers A(0:N).\n";
-  cout << "  A(N) counts the paths from (0,0) to (N,0).\n";
-  cout << "\n";
-  cout << "  I,  A(I)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "MOTZKIN_TEST\n";
+  std::cout << "  MOTZKIN computes the Motzkin numbers A(0:N).\n";
+  std::cout << "  A(N) counts the paths from (0,0) to (N,0).\n";
+  std::cout << "\n";
+  std::cout << "  I,  A(I)\n";
+  std::cout << "\n";
 
   motzkin ( N, a );
 
   for ( i = 0; i <= N; i++ )
   {
-    cout                     << "  "
-         << setw(4)  << i    << "  "
-         << setw(10) << a[i] << "\n";
+    std::cout                     << "  "
+         << std::setw(4)  << i    << "  "
+         << std::setw(10) << a[i] << "\n";
   }
 
   return;
@@ -4597,12 +4595,12 @@ void normal_01_cdf_inverse_test ( )
   double x;
   double x2;
 
-  cout << "\n";
-  cout << "NORMAL_01_CDF_INVERSE_TEST:\n";
-  cout << "  NORMAL_01_CDF_INVERSE inverts the normal 01 CDF.\n";
-  cout << "\n";
-  cout << "    FX      X    NORMAL_01_CDF_INVERSE(FX)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "NORMAL_01_CDF_INVERSE_TEST:\n";
+  std::cout << "  NORMAL_01_CDF_INVERSE inverts the normal 01 CDF.\n";
+  std::cout << "\n";
+  std::cout << "    FX      X    NORMAL_01_CDF_INVERSE(FX)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -4617,10 +4615,10 @@ void normal_01_cdf_inverse_test ( )
 
     x2 = normal_01_cdf_inverse ( fx );
 
-    cout                    << "  "
-         << setw(8)  << fx   << "  "
-         << setw(14) << x  << "  "
-         << setw(14) << x2 << "\n";
+    std::cout                    << "  "
+         << std::setw(8)  << fx   << "  "
+         << std::setw(14) << x  << "  "
+         << std::setw(14) << x2 << "\n";
   }
 
   return;
@@ -4652,12 +4650,12 @@ void omega_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "OMEGA_TEST\n";
-  cout << "  OMEGA computes the OMEGA function.\n";
-  cout << "\n";
-  cout << "          N   Exact   OMEGA(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "OMEGA_TEST\n";
+  std::cout << "  OMEGA computes the OMEGA function.\n";
+  std::cout << "\n";
+  std::cout << "          N   Exact   OMEGA(N)\n";
+  std::cout << "\n";
  
   n_data = 0;
 
@@ -4670,10 +4668,10 @@ void omega_test ( )
       break;
     }
 
-    cout                            << "  "
-         << setw(12) << n           << "  "
-         << setw(10) << c           << "  "
-         << setw(10) << omega ( n ) << "\n";
+    std::cout                            << "  "
+         << std::setw(12) << n           << "  "
+         << std::setw(10) << c           << "  "
+         << std::setw(10) << omega ( n ) << "\n";
 
   }
  
@@ -4704,15 +4702,15 @@ void pentagon_num_test ( )
 {
   int n;
 
-  cout << "\n";
-  cout << "PENTAGON_NUM_TEST\n";
-  cout << "  PENTAGON_NUM computes the pentagonal numbers.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PENTAGON_NUM_TEST\n";
+  std::cout << "  PENTAGON_NUM computes the pentagonal numbers.\n";
+  std::cout << "\n";
  
   for ( n = 1; n <= 10; n++ )
   {
-    cout << "  " << setw(4) << n
-         << "  " << setw(6) << pentagon_num ( n ) << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(6) << pentagon_num ( n ) << "\n";
   }
  
   return;
@@ -4744,12 +4742,12 @@ void phi_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "PHI_TEST\n";
-  cout << "  PHI computes the PHI function.\n";
-  cout << "\n";
-  cout << "  N   Exact   PHI(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PHI_TEST\n";
+  std::cout << "  PHI computes the PHI function.\n";
+  std::cout << "\n";
+  std::cout << "  N   Exact   PHI(N)\n";
+  std::cout << "\n";
  
   n_data = 0;
 
@@ -4762,10 +4760,10 @@ void phi_test ( )
       break;
     }
 
-    cout                          << "  "
-         << setw(4)  << n         << "  "
-         << setw(10) << c         << "  "
-         << setw(10) << phi ( n ) << "\n";
+    std::cout                          << "  "
+         << std::setw(4)  << n         << "  "
+         << std::setw(10) << c         << "  "
+         << std::setw(10) << phi ( n ) << "\n";
 
   }
  
@@ -4796,16 +4794,16 @@ void plane_partition_num_test ( )
 {
   int n;
 
-  cout << "\n";
-  cout << "PLANE_PARTITION_NUM_TEST\n";
-  cout << "  PLANE_PARTITION_NUM computes the number of plane\n";
-  cout << "  partitions of an integer.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PLANE_PARTITION_NUM_TEST\n";
+  std::cout << "  PLANE_PARTITION_NUM computes the number of plane\n";
+  std::cout << "  partitions of an integer.\n";
+  std::cout << "\n";
  
   for ( n = 1; n <= 10; n++ )
   {
-    cout << "  " << setw(4) << n
-         << "  " << setw(6) << plane_partition_num ( n ) << "\n";
+    std::cout << "  " << std::setw(4) << n
+         << "  " << std::setw(6) << plane_partition_num ( n ) << "\n";
   }
  
   return;
@@ -4837,24 +4835,24 @@ void poly_bernoulli_test ( )
   int k;
   int n;
 
-  cout << "\n";
-  cout << "POLY_BERNOULLI_TEST\n";
-  cout << "  POLY_BERNOULLI computes the poly-Bernoulli numbers\n";
-  cout << "  of negative index, B_n^(-k)\n";
-  cout << "\n";
-  cout << "   N   K    B_N^(-K)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "POLY_BERNOULLI_TEST\n";
+  std::cout << "  POLY_BERNOULLI computes the poly-Bernoulli numbers\n";
+  std::cout << "  of negative index, B_n^(-k)\n";
+  std::cout << "\n";
+  std::cout << "   N   K    B_N^(-K)\n";
+  std::cout << "\n";
 
   for ( k = 0; k <= 6; k++ )
   {
-    cout << "\n";
+    std::cout << "\n";
     for ( n = 0; n <= 6; n++ )
     {
       b = poly_bernoulli ( n, k );
 
-      cout << "  " << setw(2)  << n
-           << "  " << setw(2)  << k
-           << "  " << setw(12) << b << "\n";
+      std::cout << "  " << std::setw(2)  << n
+           << "  " << std::setw(2)  << k
+           << "  " << std::setw(12) << b << "\n";
     }
   }
 
@@ -4887,21 +4885,21 @@ void poly_coef_count_test ( )
   int dim;
   int n;
 
-  cout << "\n";
-  cout << "POLY_COEF_COUNT_TEST\n";
-  cout << "  POLY_COEF_COUNT counts the number of coefficients\n";
-  cout << "  in a polynomial of degree DEGREE and dimension DIM.\n";
-  cout << "\n";
-  cout << " Dimension    Degree     Count\n";
+  std::cout << "\n";
+  std::cout << "POLY_COEF_COUNT_TEST\n";
+  std::cout << "  POLY_COEF_COUNT counts the number of coefficients\n";
+  std::cout << "  in a polynomial of degree DEGREE and dimension DIM.\n";
+  std::cout << "\n";
+  std::cout << " Dimension    Degree     Count\n";
 
   for ( dim = 1; dim <= 10; dim = dim + 3 )
   {
-    cout << "\n";
+    std::cout << "\n";
     for ( degree = 0; degree <= 5; degree++ )
     {
-      cout << "  " << setw(8) << dim
-           << "  " << setw(8) << degree
-           << "  " << setw(8) << poly_coef_count ( dim, degree ) << "\n";
+      std::cout << "  " << std::setw(8) << dim
+           << "  " << std::setw(8) << degree
+           << "  " << std::setw(8) << poly_coef_count ( dim, degree ) << "\n";
     }
   }
 
@@ -4934,29 +4932,29 @@ void prime_test ( )
   int n;
   int prime_max;
 
-  cout << "\n";
-  cout << "PRIME_TEST\n";
-  cout << "  PRIME returns primes from a table.\n";
+  std::cout << "\n";
+  std::cout << "PRIME_TEST\n";
+  std::cout << "  PRIME returns primes from a table.\n";
 
   n = -1;
   prime_max = prime ( n );
-  cout << "\n";
-  cout << "  Number of primes stored is " << prime_max << "\n";
-  cout << "\n";
-  cout << "     I    Prime(I)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Number of primes stored is " << prime_max << "\n";
+  std::cout << "\n";
+  std::cout << "     I    Prime(I)\n";
+  std::cout << "\n";
   for ( i = 1; i <= 10; i++ )
   {
-    cout << "  "
-         << setw(4) << i << "  "
-         << setw(6) << prime ( i ) << "\n";
+    std::cout << "  "
+         << std::setw(4) << i << "  "
+         << std::setw(6) << prime ( i ) << "\n";
   }
-  cout << "\n";
+  std::cout << "\n";
   for ( i = prime_max - 10; i <= prime_max; i++ )
   {
-    cout << "  "
-         << setw(4) << i << "  "
-         << setw(6) << prime ( i ) << "\n";
+    std::cout << "  "
+         << std::setw(4) << i << "  "
+         << std::setw(6) << prime ( i ) << "\n";
   }
   
   return;
@@ -4986,16 +4984,16 @@ void pyramid_num_test ( )
 {
   int n;
 
-  cout << "\n";
-  cout << "PYRAMID_NUM_TEST\n";
-  cout << "  PYRAMID_NUM computes the pyramidal numbers.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PYRAMID_NUM_TEST\n";
+  std::cout << "  PYRAMID_NUM computes the pyramidal numbers.\n";
+  std::cout << "\n";
  
   for ( n = 1; n <= 10; n++ )
   {
-    cout                                 << "  "
-         << setw(4) << n                 << "  "
-         << setw(6) << pyramid_num ( n ) << "\n";
+    std::cout                                 << "  "
+         << std::setw(4) << n                 << "  "
+         << std::setw(6) << pyramid_num ( n ) << "\n";
   }
  
   return;
@@ -5025,16 +5023,16 @@ void pyramid_square_num_test ( )
 {
   int n;
 
-  cout << "\n";
-  cout << "PYRAMID_SQUARE_NUM_TEST\n";
-  cout << "  PYRAMID_SQUARE_NUM computes the pyramidal square numbers.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "PYRAMID_SQUARE_NUM_TEST\n";
+  std::cout << "  PYRAMID_SQUARE_NUM computes the pyramidal square numbers.\n";
+  std::cout << "\n";
  
   for ( n = 1; n <= 10; n++ )
   {
-    cout << "  "
-         << setw(6) << n << "  "
-         << setw(6) << pyramid_square_num ( n ) << "\n";
+    std::cout << "  "
+         << std::setw(6) << n << "  "
+         << std::setw(6) << pyramid_square_num ( n ) << "\n";
   }
  
   return;
@@ -5068,15 +5066,15 @@ void r8_agm_test ( )
   double fx2;
   int n_data;
 
-  cout << "\n";
-  cout << "R8_AGM_TEST\n";
-  cout << "  R8_AGM computes the arithmetic geometric mean.\n";
-  cout << "\n";
-  cout << "           A           B         "
+  std::cout << "\n";
+  std::cout << "R8_AGM_TEST\n";
+  std::cout << "  R8_AGM computes the arithmetic geometric mean.\n";
+  std::cout << "\n";
+  std::cout << "           A           B         "
        << "   AGM                       AGM               Diff\n";
-  cout << "                             "
+  std::cout << "                             "
        << "      (Tabulated)             R8_AGM(A,B)\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5091,11 +5089,11 @@ void r8_agm_test ( )
 
     fx2 = r8_agm ( a, b );
 
-    cout << "  " << setprecision(6)  << setw(10) << a   
-         << "  " << setprecision(6)  << setw(10) << b   
-         << "  " << setprecision(16) << setw(24) << fx  
-         << "  " << setprecision(16) << setw(24) << fx2 
-         << "  " << setprecision(6)  << setw(10) << fabs ( fx - fx2 ) << "\n";
+    std::cout << "  " << std::setprecision(6)  << std::setw(10) << a   
+         << "  " << std::setprecision(6)  << std::setw(10) << b   
+         << "  " << std::setprecision(16) << std::setw(24) << fx  
+         << "  " << std::setprecision(16) << std::setw(24) << fx2 
+         << "  " << std::setprecision(6)  << std::setw(10) << fabs ( fx - fx2 ) << "\n";
   }
 
   return;
@@ -5129,12 +5127,12 @@ void r8_beta_test ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "R8_BETA_TEST:\n";
-  cout << "  R8_BETA evaluates the Beta function.\n";
-  cout << "\n";
-  cout << "     X      Y        Exact F       R8_BETA(X,Y)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_BETA_TEST:\n";
+  std::cout << "  R8_BETA evaluates the Beta function.\n";
+  std::cout << "\n";
+  std::cout << "     X      Y        Exact F       R8_BETA(X,Y)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5149,11 +5147,11 @@ void r8_beta_test ( )
 
     fxy2 = r8_beta ( x, y );
 
-    cout                     << "  "
-         << setw(10) << x    << "  "
-         << setw(10) << y    << "  "
-         << setw(10) << fxy  << "  "
-         << setw(10) << fxy2 << "\n";
+    std::cout                     << "  "
+         << std::setw(10) << x    << "  "
+         << std::setw(10) << y    << "  "
+         << std::setw(10) << fxy  << "  "
+         << std::setw(10) << fxy2 << "\n";
   }
 
   return;
@@ -5185,12 +5183,12 @@ void r8_choose_test ( )
   int k;
   int n;
 
-  cout << "\n";
-  cout << "R8_CHOOSE_TEST\n";
-  cout << "  R8_CHOOSE evaluates C(N,K).\n";
-  cout << "\n";
-  cout << "   N     K    CNK\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_CHOOSE_TEST\n";
+  std::cout << "  R8_CHOOSE evaluates C(N,K).\n";
+  std::cout << "\n";
+  std::cout << "   N     K    CNK\n";
+  std::cout << "\n";
 
   for ( n = 0; n <= 4; n++ )
   {
@@ -5198,10 +5196,10 @@ void r8_choose_test ( )
     {
       cnk = r8_choose ( n, k );
 
-      cout                   << "  "
-           << setw(6) << n   << "  "
-           << setw(6) << k   << "  "
-           << setw(6) << cnk << "\n";
+      std::cout                   << "  "
+           << std::setw(6) << n   << "  "
+           << std::setw(6) << k   << "  "
+           << std::setw(6) << cnk << "\n";
     }
   }
 
@@ -5235,12 +5233,12 @@ void r8_erf_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "R8_ERF_TEST:\n";
-  cout << "  R8_ERF evaluates the error function.\n";
-  cout << "\n";
-  cout << "     X      Exact F     R8_ERF(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_ERF_TEST:\n";
+  std::cout << "  R8_ERF evaluates the error function.\n";
+  std::cout << "\n";
+  std::cout << "     X      Exact F     R8_ERF(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5255,10 +5253,10 @@ void r8_erf_test ( )
 
     fx2 = r8_erf ( x );
 
-    cout                    << "  "
-         << setw(8)  << x   << "  "
-         << setw(14) << fx  << "  "
-         << setw(14) << fx2 << "\n";
+    std::cout                    << "  "
+         << std::setw(8)  << x   << "  "
+         << std::setw(14) << fx  << "  "
+         << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -5291,12 +5289,12 @@ void r8_erf_inverse_test ( )
   double x1;
   double x2;
 
-  cout << "\n";
-  cout << "R8_ERF_INVERSE_TEST\n";
-  cout << "  R8_ERF_INVERSE inverts the error function.\n";
-  cout << "\n";
-  cout << "    FX           X1           X2\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_ERF_INVERSE_TEST\n";
+  std::cout << "  R8_ERF_INVERSE inverts the error function.\n";
+  std::cout << "\n";
+  std::cout << "    FX           X1           X2\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5311,10 +5309,10 @@ void r8_erf_inverse_test ( )
 
     x2 = r8_erf_inverse ( fx );
 
-    cout                   << "  "
-         << setw(8)  << fx << "  "
-         << setw(14) << x1 << "  "
-         << setw(14) << x2 << "\n";
+    std::cout                   << "  "
+         << std::setw(8)  << fx << "  "
+         << std::setw(14) << x1 << "  "
+         << std::setw(14) << x2 << "\n";
   }
 
   return;
@@ -5351,17 +5349,17 @@ void r8_euler_constant_test ( )
 
   g = r8_euler_constant ( );
 
-  cout << "\n";
-  cout << "R8_EULER_CONSTANT_TEST:\n";
-  cout << "  R8_EULER_CONSTANT returns the Euler-Mascheroni constant\n";
-  cout << "  sometimes denoted by 'gamma'.\n";
-  cout << "\n";
-  cout << "  gamma = limit ( N -> oo ) ( sum ( 1 <= I <= N ) 1 / I ) - log ( N )\n";
-  cout << "\n";
-  cout << "  Numerically, g = " << g << "\n";
-  cout << "\n";
-  cout << "         N      Partial Sum    |gamma - partial sum|\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_EULER_CONSTANT_TEST:\n";
+  std::cout << "  R8_EULER_CONSTANT returns the Euler-Mascheroni constant\n";
+  std::cout << "  sometimes denoted by 'gamma'.\n";
+  std::cout << "\n";
+  std::cout << "  gamma = limit ( N -> oo ) ( sum ( 1 <= I <= N ) 1 / I ) - log ( N )\n";
+  std::cout << "\n";
+  std::cout << "  Numerically, g = " << g << "\n";
+  std::cout << "\n";
+  std::cout << "         N      Partial Sum    |gamma - partial sum|\n";
+  std::cout << "\n";
 
   n = 1;
   for ( test = 0; test <= 20; test++ )
@@ -5372,9 +5370,9 @@ void r8_euler_constant_test ( )
     {
       g_approx = g_approx + 1.0 / double( i );
     }
-    cout << "  " << setw(8) << n
-         << "  " << setw(14) << g_approx
-         << "  " << setw(14) <<  fabs ( g_approx - g ) << "\n";
+    std::cout << "  " << std::setw(8) << n
+         << "  " << std::setw(14) << g_approx
+         << "  " << std::setw(14) <<  fabs ( g_approx - g ) << "\n";
     n = n * 2;
   }
 
@@ -5407,12 +5405,12 @@ void r8_factorial_test ( )
   int n_data;
   int n;
 
-  cout << "\n";
-  cout << "R8_FACTORIAL_TEST:\n";
-  cout << "  R8_FACTORIAL evaluates the factorial function.\n";
-  cout << "\n";
-  cout << "     N       Exact F       R8_FACTORIAL(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_FACTORIAL_TEST:\n";
+  std::cout << "  R8_FACTORIAL evaluates the factorial function.\n";
+  std::cout << "\n";
+  std::cout << "     N       Exact F       R8_FACTORIAL(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5425,10 +5423,10 @@ void r8_factorial_test ( )
       break;
     }
 
-    cout                                  << "  "
-         << setw(4)  << n                 << "  "
-         << setw(14) << fn                << "  "
-         << setw(14) << r8_factorial ( n ) << "\n";
+    std::cout                                  << "  "
+         << std::setw(4)  << n                 << "  "
+         << std::setw(14) << fn                << "  "
+         << std::setw(14) << r8_factorial ( n ) << "\n";
   }
 
   return;
@@ -5460,13 +5458,13 @@ void r8_factorial_log_test ( )
   int n_data;
   int n;
 
-  cout << "\n";
-  cout << "R8_FACTORIAL_LOG_TEST:\n";
-  cout << "  R8_FACTORIAL_LOG evaluates the logarithm of the\n";
-  cout << "  factorial function.\n";
-  cout << "\n";
-  cout << "     N	   Exact F	 R8_FACTORIAL_LOG(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_FACTORIAL_LOG_TEST:\n";
+  std::cout << "  R8_FACTORIAL_LOG evaluates the logarithm of the\n";
+  std::cout << "  factorial function.\n";
+  std::cout << "\n";
+  std::cout << "     N	   Exact F	 R8_FACTORIAL_LOG(N)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5479,10 +5477,10 @@ void r8_factorial_log_test ( )
       break;
     }
 
-    cout                                      << "  "
-         << setw(5)  << n                     << "  "
-         << setw(14) << fn                    << "  "
-         << setw(14) << r8_factorial_log ( n ) << "\n";
+    std::cout                                      << "  "
+         << std::setw(5)  << n                     << "  "
+         << std::setw(14) << fn                    << "  "
+         << std::setw(14) << r8_factorial_log ( n ) << "\n";
 
   }
 
@@ -5519,14 +5517,14 @@ void r8_gamma_test ( )
 //
 //  Save the current precision.
 //
-  ss = cout.precision ( );
+  ss = std::cout.precision ( );
 
-  cout << "\n";
-  cout << "R8_GAMMA_TEST:\n";
-  cout << "   R8_GAMMA evaluates the Gamma function.\n";
-  cout << "\n";
-  cout << "      X            GAMMA(X)     R8_GAMMA(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "R8_GAMMA_TEST:\n";
+  std::cout << "   R8_GAMMA evaluates the Gamma function.\n";
+  std::cout << "\n";
+  std::cout << "      X            GAMMA(X)     R8_GAMMA(X)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5540,14 +5538,14 @@ void r8_gamma_test ( )
     }
     fx2 = r8_gamma ( x );
 
-    cout << "  " << setw(12)                     << x  
-         << "  " << setw(24) << setprecision(16) << fx1 
-         << "  " << setw(24) << setprecision(16) << fx2 << "\n";
+    std::cout << "  " << std::setw(12)                     << x  
+         << "  " << std::setw(24) << std::setprecision(16) << fx1 
+         << "  " << std::setw(24) << std::setprecision(16) << fx2 << "\n";
   }
 //
 //  Restore the default precision.
 //
-  cout.precision ( ss );
+  std::cout.precision ( ss );
 
   return;
 }
@@ -5582,15 +5580,15 @@ void r8_hyper_2f1_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << " R8_HYPER_2F1_TEST:\n";
-  cout << "   R8_HYPER_2F1 evaluates the hypergeometric function 2F1.\n";
-  cout << "\n";
-  cout << "      A       B       C       X      ";
-  cout << " 2F1                       2F1                     DIFF\n";
-  cout << "                                     ";
-  cout << "(tabulated)               (computed)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << " R8_HYPER_2F1_TEST:\n";
+  std::cout << "   R8_HYPER_2F1 evaluates the hypergeometric function 2F1.\n";
+  std::cout << "\n";
+  std::cout << "      A       B       C       X      ";
+  std::cout << " 2F1                       2F1                     DIFF\n";
+  std::cout << "                                     ";
+  std::cout << "(tabulated)               (computed)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5605,13 +5603,13 @@ void r8_hyper_2f1_test ( )
 
     fx2 = r8_hyper_2f1 ( a, b, c, x );
 
-    cout << "  " << setw(6)  << setprecision(2)  << a
-         << "  " << setw(6)  << setprecision(2)  << b  
-         << "  " << setw(6)  << setprecision(2)  << c  
-         << "  " << setw(6)  << setprecision(2)  << x  
-         << "  " << setw(24) << setprecision(16) << fx
-         << "  " << setw(24) << setprecision(16) << fx2
-         << "  " << setw(10) << setprecision(4)  << fabs ( fx - fx2 ) << "\n";
+    std::cout << "  " << std::setw(6)  << std::setprecision(2)  << a
+         << "  " << std::setw(6)  << std::setprecision(2)  << b  
+         << "  " << std::setw(6)  << std::setprecision(2)  << c  
+         << "  " << std::setw(6)  << std::setprecision(2)  << x  
+         << "  " << std::setw(24) << std::setprecision(16) << fx
+         << "  " << std::setw(24) << std::setprecision(16) << fx2
+         << "  " << std::setw(10) << std::setprecision(4)  << fabs ( fx - fx2 ) << "\n";
   }
   return;
 }
@@ -5643,15 +5641,15 @@ void r8_psi_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "R8_PSI_TEST:\n";
-  cout << "  R8_PSI evaluates the Psi function.\n";
-  cout << "\n";
-  cout << "         X                  Psi(X)           " 
+  std::cout << "\n";
+  std::cout << "R8_PSI_TEST:\n";
+  std::cout << "  R8_PSI evaluates the Psi function.\n";
+  std::cout << "\n";
+  std::cout << "         X                  Psi(X)           " 
        << "         Psi(X)          DIFF\n";
-  cout << "                         (Tabulated)         " 
+  std::cout << "                         (Tabulated)         " 
        << "       (R8_PSI)\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5666,10 +5664,10 @@ void r8_psi_test ( )
 
     fx2 = r8_psi ( x );
 
-    cout << "  " << setprecision(2) << setw(8)  << x   
-         << "  " << setprecision(16) << setw(24) << fx  
-         << "  " << setprecision(16) << setw(24) << fx2 
-         << "  " << setprecision(4) << setw(10) << fabs ( fx - fx2 ) << "\n";
+    std::cout << "  " << std::setprecision(2) << std::setw(8)  << x   
+         << "  " << std::setprecision(16) << std::setw(24) << fx  
+         << "  " << std::setprecision(16) << std::setw(24) << fx2 
+         << "  " << std::setprecision(4) << std::setw(10) << fabs ( fx - fx2 ) << "\n";
 
   }
 
@@ -5706,31 +5704,31 @@ void r8poly_degree_test ( )
   int d;
   int m;
  
-  cout << "\n";
-  cout << "R8POLY_DEGREE_TEST\n";
-  cout << "  R8POLY_DEGREE determines the degree of an R8POLY.\n";
+  std::cout << "\n";
+  std::cout << "R8POLY_DEGREE_TEST\n";
+  std::cout << "  R8POLY_DEGREE determines the degree of an R8POLY.\n";
 
   m = 3;
 
   r8poly_print ( m, c1, "  The R8POLY:" );
   d = r8poly_degree ( m, c1 );
-  cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
+  std::cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
 
   r8poly_print ( m, c2, "  The R8POLY:" );
   d = r8poly_degree ( m, c2 );
-  cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
+  std::cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
 
   r8poly_print ( m, c3, "  The R8POLY:" );
   d = r8poly_degree ( m, c3 );
-  cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
+  std::cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
 
   r8poly_print ( m, c4, "  The R8POLY:" );
   d = r8poly_degree ( m, c4 );
-  cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
+  std::cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
 
   r8poly_print ( m, c5, "  The R8POLY:" );
   d = r8poly_degree ( m, c5 );
-  cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
+  std::cout << "  Dimensioned degree = " << m << ",  Actual degree = " << d << "\n";
 
   return;
 }
@@ -5760,9 +5758,9 @@ void r8poly_print_test ( )
   double c[6] = { 2.0, -3.4, 56.0, 0.0, 0.78, 9.0 };
   int m = 5;
 
-  cout << "\n";
-  cout << "R8POLY_PRINT_TEST\n";
-  cout << "  R8POLY_PRINT prints an R8POLY.\n";
+  std::cout << "\n";
+  std::cout << "R8POLY_PRINT_TEST\n";
+  std::cout << "  R8POLY_PRINT prints an R8POLY.\n";
 
   r8poly_print ( m, c, "  The R8POLY:" );
 
@@ -5800,10 +5798,10 @@ void r8poly_value_horner_test ( )
   double x_hi;
   double x_lo;
 
-  cout << "\n";
-  cout << "R8POLY_VALUE_HORNER_TEST\n";
-  cout << "  R8POLY_VALUE_HORNER evaluates a polynomial at\n";
-  cout << "  one point, using Horner's method.\n";
+  std::cout << "\n";
+  std::cout << "R8POLY_VALUE_HORNER_TEST\n";
+  std::cout << "  R8POLY_VALUE_HORNER evaluates a polynomial at\n";
+  std::cout << "  one point, using Horner's method.\n";
 
   r8poly_print ( m, c, "  The polynomial coefficients:" );
 
@@ -5811,16 +5809,16 @@ void r8poly_value_horner_test ( )
   x_hi = 5.0;
   x = r8vec_linspace_new ( n, x_lo, x_hi );
 
-  cout << "\n";
-  cout << "   I    X    P(X)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   I    X    P(X)\n";
+  std::cout << "\n";
 
   for ( i = 0; i < n; i++ )
   {
     p = r8poly_value_horner ( m, c, x[i] );
-    cout << "  " << setw(2) << i
-         << "  " << setw(8) << x[i]
-         << "  " << setw(14) << p << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(8) << x[i]
+         << "  " << std::setw(14) << p << "\n";
   }
 
   delete [] x;
@@ -5854,12 +5852,12 @@ void sigma_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "SIGMA_TEST\n";
-  cout << "  SIGMA computes the SIGMA function.\n";
-  cout << "\n";
-  cout << "  N   Exact   SIGMA(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SIGMA_TEST\n";
+  std::cout << "  SIGMA computes the SIGMA function.\n";
+  std::cout << "\n";
+  std::cout << "  N   Exact   SIGMA(N)\n";
+  std::cout << "\n";
  
   n_data = 0;
 
@@ -5872,10 +5870,10 @@ void sigma_test ( )
       break;
     }
 
-    cout                            << "  "
-         << setw(4)  << n           << "  "
-         << setw(10) << c           << "  "
-         << setw(10) << sigma ( n ) << "\n";
+    std::cout                            << "  "
+         << std::setw(4)  << n           << "  "
+         << std::setw(10) << c           << "  "
+         << std::setw(10) << sigma ( n ) << "\n";
   }
  
   return;
@@ -5907,23 +5905,23 @@ void simplex_num_test ( )
   int n;
   int value;
 
-  cout << "\n";
-  cout << "SIMPLEX_NUM_TEST\n";
-  cout << "  SIMPLEX_NUM computes the N-th simplex number\n";
-  cout << "  in M dimensions.\n";
-  cout << "\n";
-  cout << "      M: 0     1     2     3     4     5\n";
-  cout << "   N\n";
+  std::cout << "\n";
+  std::cout << "SIMPLEX_NUM_TEST\n";
+  std::cout << "  SIMPLEX_NUM computes the N-th simplex number\n";
+  std::cout << "  in M dimensions.\n";
+  std::cout << "\n";
+  std::cout << "      M: 0     1     2     3     4     5\n";
+  std::cout << "   N\n";
  
   for ( n = 0; n <= 10; n++ )
   {
-    cout << "  " << setw(2) << n;
+    std::cout << "  " << std::setw(2) << n;
     for ( m = 0; m <= 5; m++ )
     {
       value = simplex_num ( m, n );
-      cout << "  " << setw(4) << value;
+      std::cout << "  " << std::setw(4) << value;
     }
-    cout << "\n";
+    std::cout << "\n";
   } 
   return;
 }
@@ -5957,13 +5955,13 @@ void sin_power_int_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "SIN_POWER_INT_TEST:\n";
-  cout << "  SIN_POWER_INT computes the integral of the N-th power\n";
-  cout << "  of the sine function.\n";
-  cout << "\n";
-  cout << "         A         B       N        Exact    Computed\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "SIN_POWER_INT_TEST:\n";
+  std::cout << "  SIN_POWER_INT computes the integral of the N-th power\n";
+  std::cout << "  of the sine function.\n";
+  std::cout << "\n";
+  std::cout << "         A         B       N        Exact    Computed\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -5978,12 +5976,12 @@ void sin_power_int_test ( )
 
     fx2 = sin_power_int ( a, b, n );
 
-    cout                    << "  "
-         << setw(8)  << a   << "  "
-         << setw(8)  << b   << "  "
-         << setw(6)  << n   << "  "
-         << setw(12) << fx  << "  "
-         << setw(12) << fx2 << "\n";
+    std::cout                    << "  "
+         << std::setw(8)  << a   << "  "
+         << std::setw(8)  << b   << "  "
+         << std::setw(6)  << n   << "  "
+         << std::setw(12) << fx  << "  "
+         << std::setw(12) << fx2 << "\n";
   }
   return;
 }
@@ -6020,10 +6018,10 @@ void slice_test ( )
   int slice_max = SLICE_MAX;
   int slice_num;
 
-  cout << "\n";
-  cout << "SLICE_TEST:\n";
-  cout << "  SLICE determines the maximum number of pieces created\n";
-  cout << "  by SLICE_NUM slices in a DIM_NUM space.\n";
+  std::cout << "\n";
+  std::cout << "SLICE_TEST:\n";
+  std::cout << "  SLICE determines the maximum number of pieces created\n";
+  std::cout << "  by SLICE_NUM slices in a DIM_NUM space.\n";
 
   for ( dim_num = 1; dim_num <= dim_max; dim_num++ )
   {
@@ -6077,13 +6075,13 @@ void spherical_harmonic_test ( )
   double yr;
   double yr2;
 
-  cout << "\n";
-  cout << "SPHERICAL_HARMONIC_TEST:\n";
-  cout << "  SPHERICAL_HARMONIC evaluates spherical harmonic functions.\n";
-  cout << "\n";
-  cout << 
+  std::cout << "\n";
+  std::cout << "SPHERICAL_HARMONIC_TEST:\n";
+  std::cout << "  SPHERICAL_HARMONIC evaluates spherical harmonic functions.\n";
+  std::cout << "\n";
+  std::cout << 
     "         N         M    THETA      PHI            YR            YI\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6101,21 +6099,21 @@ void spherical_harmonic_test ( )
     yr2 = c[l];
     yi2 = s[l];
 
-    cout                      << "  "
-         << setw(8)  << l     << "  "
-         << setw(8)  << m     << "  "
-         << setw(8)  << theta << "  "
-         << setw(8)  << phi   << "  "
-         << setw(14) << yr    << "  "
-         << setw(14) << yi    << "\n";
+    std::cout                      << "  "
+         << std::setw(8)  << l     << "  "
+         << std::setw(8)  << m     << "  "
+         << std::setw(8)  << theta << "  "
+         << std::setw(8)  << phi   << "  "
+         << std::setw(14) << yr    << "  "
+         << std::setw(14) << yi    << "\n";
 
-    cout                      << "  "
+    std::cout                      << "  "
          << "        "        << "  "
          << "        "        << "  "
          << "        "        << "  "
          << "        "        << "  "
-         << setw(14) << yr2   << "  "
-         << setw(14) << yi2   << "\n";
+         << std::setw(14) << yr2   << "  "
+         << std::setw(14) << yi2   << "\n";
   }
 
   return;
@@ -6150,22 +6148,22 @@ void stirling1_test ( )
   int n = 8;
   int *s1;
 
-  cout << "\n";
-  cout << "STIRLING1_TEST\n";
-  cout << "  STIRLING1: Stirling numbers of first kind.\n";
-  cout << "  Get rows 1 through " << m << "\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STIRLING1_TEST\n";
+  std::cout << "  STIRLING1: Stirling numbers of first kind.\n";
+  std::cout << "  Get rows 1 through " << m << "\n";
+  std::cout << "\n";
  
   s1 = stirling1 ( m, n );
  
   for ( i = 0; i < m; i++ )
   {
-    cout << setw(6) << i+1 << "  ";
+    std::cout << std::setw(6) << i+1 << "  ";
     for ( j = 0; j < n; j++ )
     {
-      cout << setw(6) << s1[i+j*m] << "  ";
+      std::cout << std::setw(6) << s1[i+j*m] << "  ";
     }
-    cout << "\n";
+    std::cout << "\n";
   }
 
   delete [] s1;
@@ -6202,22 +6200,22 @@ void stirling2_test ( )
   int j;
   int *s2;
 
-  cout << "\n";
-  cout << "STIRLING2_TEST\n";
-  cout << "  STIRLING2: Stirling numbers of second kind.\n";
-  cout << "  Get rows 1 through " << M << "\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "STIRLING2_TEST\n";
+  std::cout << "  STIRLING2: Stirling numbers of second kind.\n";
+  std::cout << "  Get rows 1 through " << M << "\n";
+  std::cout << "\n";
  
   s2 = stirling2 ( M, N );
  
   for ( i = 0; i < M; i++ )
   {
-    cout << setw(6) << i+1 << "  ";
+    std::cout << std::setw(6) << i+1 << "  ";
     for ( j = 0; j < N; j++ )
     {
-      cout << setw(6) << s2[i+j*M] << "  ";
+      std::cout << std::setw(6) << s2[i+j*M] << "  ";
     }
-    cout << "\n";
+    std::cout << "\n";
   }
  
   delete [] s2;
@@ -6253,12 +6251,12 @@ void tau_test ( )
   int n;
   int n_data;
 
-  cout << "\n";
-  cout << "TAU_TEST\n";
-  cout << "  TAU computes the Tau function.\n";
-  cout << "\n";
-  cout << "  N  exact C(I)  computed C(I)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TAU_TEST\n";
+  std::cout << "  TAU computes the Tau function.\n";
+  std::cout << "\n";
+  std::cout << "  N  exact C(I)  computed C(I)\n";
+  std::cout << "\n";
  
   n_data = 0;
 
@@ -6271,10 +6269,10 @@ void tau_test ( )
       break;
     }
 
-    cout                          << "  "
-         << setw(4)  << n         << "  "
-         << setw(10) << c         << "  "
-         << setw(10) << tau ( n ) << "\n";
+    std::cout                          << "  "
+         << std::setw(4)  << n         << "  "
+         << std::setw(10) << c         << "  "
+         << std::setw(10) << tau ( n ) << "\n";
   }
  
   return;
@@ -6304,16 +6302,16 @@ void tetrahedron_num_test ( )
 {
   int n;
 
-  cout << "\n";
-  cout << "TETRAHEDRON_NUM_TEST\n";
-  cout << "  TETRAHEDRON_NUM computes the tetrahedron numbers.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TETRAHEDRON_NUM_TEST\n";
+  std::cout << "  TETRAHEDRON_NUM computes the tetrahedron numbers.\n";
+  std::cout << "\n";
  
   for ( n = 1; n <= 10; n++ )
   {
-    cout                                     << "  "
-         << setw(4) << n                     << "  "
-         << setw(6) << tetrahedron_num ( n ) << "\n";
+    std::cout                                     << "  "
+         << std::setw(4) << n                     << "  "
+         << std::setw(6) << tetrahedron_num ( n ) << "\n";
   }
  
   return;
@@ -6343,16 +6341,16 @@ void triangle_num_test ( )
 {
   int n;
 
-  cout << "\n";
-  cout << "TRIANGLE_NUM_TEST\n";
-  cout << "  TRIANGLE_NUM computes the triangular numbers.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRIANGLE_NUM_TEST\n";
+  std::cout << "  TRIANGLE_NUM computes the triangular numbers.\n";
+  std::cout << "\n";
  
   for ( n = 1; n <= 10; n++ )
   {
-    cout                                  << "  "
-         << setw(4) << n                  << "  "
-         << setw(6) << triangle_num ( n ) << "\n";;
+    std::cout                                  << "  "
+         << std::setw(4) << n                  << "  "
+         << std::setw(6) << triangle_num ( n ) << "\n";;
   }
  
   return;
@@ -6384,13 +6382,13 @@ void triangle_to_i4_test ( )
   int j;
   int k;
 
-  cout << "\n";
-  cout << "TRIANGLE_TO_I4_TEST\n";
-  cout << "  TRIANGLE_TO_I4 converts a triangular index to a\n";
-  cout << "  linear one.\n";
-  cout << "\n";
-  cout << "     I     J ==>   K\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRIANGLE_TO_I4_TEST\n";
+  std::cout << "  TRIANGLE_TO_I4 converts a triangular index to a\n";
+  std::cout << "  linear one.\n";
+  std::cout << "\n";
+  std::cout << "     I     J ==>   K\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 4; i++ )
   {
@@ -6398,9 +6396,9 @@ void triangle_to_i4_test ( )
     {
       k = triangle_to_i4 ( i, j );
 
-      cout << "  " << setw(4) << i
-           << "  " << setw(4) << j
-           << "    " << setw(4) << k << "\n";
+      std::cout << "  " << std::setw(4) << i
+           << "  " << std::setw(4) << j
+           << "    " << std::setw(4) << k << "\n";
     }
   }
  
@@ -6434,14 +6432,14 @@ void trinomial_test ( )
   int k;
   int t;
 
-  cout << "\n";
-  cout << "TRINOMIAL_TEST\n";
-  cout << "  TRINOMIAL evaluates the trinomial coefficient:\n";
-  cout << "\n";
-  cout << "  T(I,J,K) = (I+J+K)! / I! / J! / K!\n";
-  cout << "\n";
-  cout << "     I     J     K    T(I,J,K)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TRINOMIAL_TEST\n";
+  std::cout << "  TRINOMIAL evaluates the trinomial coefficient:\n";
+  std::cout << "\n";
+  std::cout << "  T(I,J,K) = (I+J+K)! / I! / J! / K!\n";
+  std::cout << "\n";
+  std::cout << "     I     J     K    T(I,J,K)\n";
+  std::cout << "\n";
  
   for ( k = 0; k <= 4; k++ )
   {
@@ -6450,10 +6448,10 @@ void trinomial_test ( )
       for ( i = 0; i <= 4; i++ )
       {
         t = trinomial ( i, j, k );
-        cout << "  " << setw(4) << i
-             << "  " << setw(4) << j
-             << "  " << setw(4) << k
-             << "  " << setw(8) << t << "\n";
+        std::cout << "  " << std::setw(4) << i
+             << "  " << std::setw(4) << j
+             << "  " << std::setw(4) << k
+             << "  " << std::setw(8) << t << "\n";
       }
     }
   }
@@ -6486,19 +6484,19 @@ void v_hofstadter_test ( )
   int i;
   int v;
 
-  cout << "\n";
-  cout << "V_HOFSTADTER_TEST\n";
-  cout << "  V_HOFSTADTER evaluates Hofstadter's recursive\n";
-  cout << "  V function.\n";
-  cout << "\n";
-  cout << "     N   V(N)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "V_HOFSTADTER_TEST\n";
+  std::cout << "  V_HOFSTADTER evaluates Hofstadter's recursive\n";
+  std::cout << "  V function.\n";
+  std::cout << "\n";
+  std::cout << "     N   V(N)\n";
+  std::cout << "\n";
 
   for ( i = 0; i <= 30; i++ )
   {
-    cout                                  << "  "
-         << setw(6) << i                  << "  "
-         << setw(6) << v_hofstadter ( i ) << "\n";
+    std::cout                                  << "  "
+         << std::setw(6) << i                  << "  "
+         << std::setw(6) << v_hofstadter ( i ) << "\n";
   }
 
   return;
@@ -6534,14 +6532,14 @@ void vibonacci_test ( )
   int v2[N];
   int v3[N];
 
-  cout << "\n";
-  cout << "VIBONACCI_TEST\n";
-  cout << "  VIBONACCI computes a Vibonacci sequence.\n";
-  cout << "\n";
-  cout << "  We compute the series 3 times.\n";
-  cout << "\n";
-  cout << "     I      V1      V2      V3\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "VIBONACCI_TEST\n";
+  std::cout << "  VIBONACCI computes a Vibonacci sequence.\n";
+  std::cout << "\n";
+  std::cout << "  We compute the series 3 times.\n";
+  std::cout << "\n";
+  std::cout << "     I      V1      V2      V3\n";
+  std::cout << "\n";
 
   seed = 123456789;
 
@@ -6551,11 +6549,11 @@ void vibonacci_test ( )
 
   for ( i = 0; i < N; i++ )
   {
-    cout                     << "  "
-         << setw(6) << i     << "  "
-         << setw(6) << v1[i] << "  "
-         << setw(6) << v2[i] << "  "
-         << setw(6) << v3[i] << "\n";
+    std::cout                     << "  "
+         << std::setw(6) << i     << "  "
+         << std::setw(6) << v1[i] << "  "
+         << std::setw(6) << v2[i] << "  "
+         << std::setw(6) << v3[i] << "\n";
   } 
 
   return;
@@ -6594,24 +6592,24 @@ void zeckendorf_test ( )
   int m;
   int n;
 
-  cout << "\n";
-  cout << "ZECKENDORF_TEST\n";
-  cout << "  ZECKENDORF computes the Zeckendorf decomposition of\n";
-  cout << "  an integer N into nonconsecutive Fibonacci numbers.\n";
-  cout << "\n";
-  cout << "   N Sum M Parts\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ZECKENDORF_TEST\n";
+  std::cout << "  ZECKENDORF computes the Zeckendorf decomposition of\n";
+  std::cout << "  an integer N into nonconsecutive Fibonacci numbers.\n";
+  std::cout << "\n";
+  std::cout << "   N Sum M Parts\n";
+  std::cout << "\n";
 
   for ( n = 1; n <= 100; n++ )
   {
     zeckendorf ( n, M_MAX, &m, i_list, f_list );
 
-    cout << setw(4) << n << "  ";
+    std::cout << std::setw(4) << n << "  ";
     for ( j = 0; j < m; j++ )
     {
-      cout << setw(4) << f_list[j] << "  ";
+      std::cout << std::setw(4) << f_list[j] << "  ";
     }
-    cout << "\n";
+    std::cout << "\n";
 
   }
 
@@ -6649,55 +6647,55 @@ void zernike_poly_test ( )
   double z1;
   double z2;
 
-  cout << "\n";
-  cout << "ZERNIKE_POLY_TEST\n";
-  cout << "  ZERNIKE_POLY evaluates a Zernike polynomial directly.\n";
-  cout << "\n";
-  cout << "  Table of polynomial coefficients:\n";
-  cout << "\n";
-  cout << "   N   M\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ZERNIKE_POLY_TEST\n";
+  std::cout << "  ZERNIKE_POLY evaluates a Zernike polynomial directly.\n";
+  std::cout << "\n";
+  std::cout << "  Table of polynomial coefficients:\n";
+  std::cout << "\n";
+  std::cout << "   N   M\n";
+  std::cout << "\n";
 
   for ( n = 0; n <= 5; n++ )
   {
-    cout << "\n";
+    std::cout << "\n";
     for ( m = 0; m <= n; m++ )
     {
       c = zernike_poly_coef ( m, n );
-      cout << "  " << setw(2) << n
-           << "  " << setw(2) << m;
+      std::cout << "  " << std::setw(2) << n
+           << "  " << std::setw(2) << m;
       for ( i = 0; i <= n; i++ )
       {
-        cout << "  " << setw(7) << c[i];
+        std::cout << "  " << std::setw(7) << c[i];
       }
-      cout << "\n";
+      std::cout << "\n";
       delete [] c;
     }
   }
 
   rho = 0.987654321;
 
-  cout << "\n";
-  cout << "  Z1: Compute polynomial coefficients,\n";
-  cout << "  then evaluate by Horner's method;\n";
-  cout << "  Z2: Evaluate directly by recursion.\n";
-  cout << "\n";
-  cout << "   N   M       Z1              Z2\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Z1: Compute polynomial coefficients,\n";
+  std::cout << "  then evaluate by Horner's method;\n";
+  std::cout << "  Z2: Evaluate directly by recursion.\n";
+  std::cout << "\n";
+  std::cout << "   N   M       Z1              Z2\n";
+  std::cout << "\n";
 
   for ( n = 0; n <= 5; n++ )
   {
-    cout << "\n";
+    std::cout << "\n";
     for ( m = 0; m <= n; m++ )
     {
       c = zernike_poly_coef ( m, n );
       z1 = r8poly_value_horner ( n, c, rho );
 
       z2 = zernike_poly ( m, n, rho );
-      cout << "  " << setw(2)  << n
-           << "  " << setw(2)  << m
-           << "  " << setw(16) << z1
-           << "  " << setw(16) << z2 << "\n";
+      std::cout << "  " << std::setw(2)  << n
+           << "  " << std::setw(2)  << m
+           << "  " << std::setw(16) << z1
+           << "  " << std::setw(16) << z2 << "\n";
 
       delete [] c;
     }
@@ -6732,10 +6730,10 @@ void zernike_poly_coef_test ( )
   int m;
   int n;
 
-  cout << "\n";
-  cout << "ZERNIKE_POLY_COEF_TEST\n";
-  cout << "  ZERNIKE_POLY_COEF determines the Zernike\n";
-  cout << "  polynomial coefficients.\n";
+  std::cout << "\n";
+  std::cout << "ZERNIKE_POLY_COEF_TEST\n";
+  std::cout << "  ZERNIKE_POLY_COEF determines the Zernike\n";
+  std::cout << "  polynomial coefficients.\n";
 
   n = 5;
 
@@ -6779,12 +6777,12 @@ void zeta_test ( )
   double z1;
   double z2;
 
-  cout << "\n";
-  cout << "ZETA_TEST\n";
-  cout << "  ZETA computes the Zeta function.\n";
-  cout << "\n";
-  cout << "       N            exact Zeta         computed Zeta\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "ZETA_TEST\n";
+  std::cout << "  ZETA computes the Zeta function.\n";
+  std::cout << "\n";
+  std::cout << "       N            exact Zeta         computed Zeta\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -6801,10 +6799,10 @@ void zeta_test ( )
 
     z2 = zeta ( n_real );
 
-    cout                   << "  "
-         << setw(6)  << n  << "  "
-         << setw(20) << z1 << "  "
-         << setw(20) << z2 << "\n";
+    std::cout                   << "  "
+         << std::setw(6)  << n  << "  "
+         << std::setw(20) << z1 << "  "
+         << std::setw(20) << z2 << "\n";
 
   }
 

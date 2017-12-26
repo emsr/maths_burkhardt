@@ -5,8 +5,6 @@
 # include <ctime>
 # include <cstring>
 
-using namespace std;
-
 # include "cdflib.hpp"
 
 //****************************************************************************80
@@ -8027,7 +8025,7 @@ S20:
 }
 //****************************************************************************80
 
-void ftnstop ( string msg )
+void ftnstop ( std::string msg )
 
 //****************************************************************************80
 //
@@ -8040,7 +8038,7 @@ void ftnstop ( string msg )
 //    Input, string MSG, the message to be printed.
 //
 {
-  cerr << msg << "\n";
+  std::cerr << msg << "\n";
 
   exit ( 0 );
 }

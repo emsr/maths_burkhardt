@@ -4,8 +4,6 @@
 # include <cmath>
 # include <ctime>
 
-using namespace std;
-
 # include "line_monte_carlo.hpp"
 
 //****************************************************************************80
@@ -89,9 +87,9 @@ double line01_monomial_integral ( int e )
 
   if ( e == -1 )
   {
-    cout << "\n";
-    cout << "LINE01_MONOMIAL_INTEGRAL - Fatal error!\n";
-    cout << "  E = -1.\n";
+    std::cout << "\n";
+    std::cout << "LINE01_MONOMIAL_INTEGRAL - Fatal error!\n";
+    std::cout << "  E = -1.\n";
     exit ( 1 );
   }
 
@@ -379,9 +377,9 @@ double *r8vec_uniform_01_new ( int n, int &seed )
 
   if ( seed == 0 )
   {
-    cerr << "\n";
-    cerr << "R8VEC_UNIFORM_01_NEW - Fatal error!\n";
-    cerr << "  Input value of SEED = 0.\n";
+    std::cerr << "\n";
+    std::cerr << "R8VEC_UNIFORM_01_NEW - Fatal error!\n";
+    std::cerr << "  Input value of SEED = 0.\n";
     exit ( 1 );
   }
 

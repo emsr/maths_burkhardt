@@ -4,8 +4,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "chebyshev_polynomial.hpp"
 
 int main ( );
@@ -91,10 +89,10 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "CHEBYSHEV_POLYNOMIAL_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the CHEBYSHEV_POLYNOMIAL library.\n";
+  std::cout << "\n";
+  std::cout << "CHEBYSHEV_POLYNOMIAL_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the CHEBYSHEV_POLYNOMIAL library.\n";
  
   test01 ( );
   t_mass_matrix_test ( );
@@ -155,10 +153,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "CHEBYSHEV_POLYNOMIAL_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "CHEBYSHEV_POLYNOMIAL_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -197,24 +195,24 @@ void test01 ( )
   int seed;
   double *x;
 
-  cout << "\n";
-  cout << "CHEBYSHEV_POLYNOMIAL_TEST01:\n";
-  cout << "  T_PROJECT_COEFFICIENTS_DATA estimates the Chebyshev polynomial\n";
-  cout << "  coefficients for a function given as data (x,fx).\n";
-  cout << "\n";
-  cout << "  Here, we use fx = f(x) = x^2 for the data.\n";
-  cout << "\n";
-  cout << "  Since T(0,x) = 1 and T(2,x) = 2*x^2 - 1, the correct expansion is\n";
-  cout << "  f(x) = 1/2 T(0,x) + 0 T(1,x) + 1/2 T(2,x) + 0 * all other polys,\n";
-  cout << "  if Chebyshev polynomials are based in [-1,+1].\n";
+  std::cout << "\n";
+  std::cout << "CHEBYSHEV_POLYNOMIAL_TEST01:\n";
+  std::cout << "  T_PROJECT_COEFFICIENTS_DATA estimates the Chebyshev polynomial\n";
+  std::cout << "  coefficients for a function given as data (x,fx).\n";
+  std::cout << "\n";
+  std::cout << "  Here, we use fx = f(x) = x^2 for the data.\n";
+  std::cout << "\n";
+  std::cout << "  Since T(0,x) = 1 and T(2,x) = 2*x^2 - 1, the correct expansion is\n";
+  std::cout << "  f(x) = 1/2 T(0,x) + 0 T(1,x) + 1/2 T(2,x) + 0 * all other polys,\n";
+  std::cout << "  if Chebyshev polynomials are based in [-1,+1].\n";
 //
 //  Data in [0,1];
 //
   a = 0.0;
   b = 1.0;
 
-  cout << "\n";
-  cout << "  Chebyshev polynomial will be based in [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "  Chebyshev polynomial will be based in [" << a << "," << b << "]\n";
 //
 //  Compute sample data.
 //
@@ -238,15 +236,15 @@ void test01 ( )
 //
   d2 = t_project_value_ab ( m, n, x, c, a, b );
 
-  cout << "\n";
-  cout << "   I      X(I)     Data(I)      Chebyshev(X(I))\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   I      X(I)     Data(I)      Chebyshev(X(I))\n";
+  std::cout << "\n";
   for ( i = 0; i < m; i++ )
   {
-    cout << "  " << setw(2) << i
-         << "  " << setw(12) << x[i]
-         << "  " << setw(12) << d[i]
-         << "  " << setw(12) << d2[i] << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(12) << x[i]
+         << "  " << std::setw(12) << d[i]
+         << "  " << std::setw(12) << d2[i] << "\n";
   }
 //
 //  Free memory.
@@ -284,14 +282,14 @@ void t_mass_matrix_test ( )
   double *a;
   int n;
 
-  cout << "\n";
-  cout <<  "T_MASS_MATRIX_TEST:\n";
-  cout <<  "  T_MASS_MATRIX computes the mass matrix for the\n";
-  cout <<  "  Chebyshev polynomials T(i,x).\n";
-  cout <<  "  A(I,J) = integral ( -1 <=x <= +1 ) T(i,x) T(j,x) / sqrt ( 1 - x^2 ) dx\n";
-  cout <<  "  0    if i is not equal to j;\n";
-  cout <<  "  pi   if i = j = 0;\n";
-  cout <<  "  pi/2 if i = j =/= 0.\n";
+  std::cout << "\n";
+  std::cout <<  "T_MASS_MATRIX_TEST:\n";
+  std::cout <<  "  T_MASS_MATRIX computes the mass matrix for the\n";
+  std::cout <<  "  Chebyshev polynomials T(i,x).\n";
+  std::cout <<  "  A(I,J) = integral ( -1 <=x <= +1 ) T(i,x) T(j,x) / sqrt ( 1 - x^2 ) dx\n";
+  std::cout <<  "  0    if i is not equal to j;\n";
+  std::cout <<  "  pi   if i = j = 0;\n";
+  std::cout <<  "  pi/2 if i = j =/= 0.\n";
 
   n = 3;
   a = t_mass_matrix ( n );
@@ -328,18 +326,18 @@ void t_moment_test ( )
   int e;
   double value;
 
-  cout << "\n";
-  cout << "T_MOMENT_TEST:\n";
-  cout << "  T_MOMENT returns the value of\n";
-  cout << "  integral ( -1 <=x <= +1 ) x^e / sqrt ( 1 - x^2 ) dx\n";
-  cout << "\n";
-  cout << "   E       Integral\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "T_MOMENT_TEST:\n";
+  std::cout << "  T_MOMENT returns the value of\n";
+  std::cout << "  integral ( -1 <=x <= +1 ) x^e / sqrt ( 1 - x^2 ) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Integral\n";
+  std::cout << "\n";
   for ( e = 0; e <= 10; e++ )
   {
     value = t_moment ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << value << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << value << "\n";
   }
 
   return;
@@ -374,13 +372,13 @@ void t_polynomial_test ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "T_POLYNOMIAL_TEST:\n";
-  cout << "  T_POLYNOMIAL evaluates the Chebyshev polynomial T(n,x).\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X        T(n,x)        T(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "T_POLYNOMIAL_TEST:\n";
+  std::cout << "  T_POLYNOMIAL evaluates the Chebyshev polynomial T(n,x).\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X        T(n,x)        T(n,x)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -401,10 +399,10 @@ void t_polynomial_test ( )
     x_vec[0] = x;
     fx2 = t_polynomial ( 1, n, x_vec );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2[n] << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2[n] << "\n";
 
     delete [] fx2;
 
@@ -445,13 +443,13 @@ void t_polynomial_ab_test ( )
   m = 11;
   n = 5;
 
-  cout << "\n";
-  cout << "T_POLYNOMIAL_AB_TEST:\n";
-  cout << "  T_POLYNOMIAL_AB evaluates Chebyshev polynomials TAB(n,x)\n";
-  cout << "  shifted from [-1,+1] to the domain [A,B].\n";
-  cout << "\n";
-  cout << "  Here, we will use the new domain [0,1]\n";
-  cout << "  and the desired maximum polynomial degree will be N = 5.\n";
+  std::cout << "\n";
+  std::cout << "T_POLYNOMIAL_AB_TEST:\n";
+  std::cout << "  T_POLYNOMIAL_AB evaluates Chebyshev polynomials TAB(n,x)\n";
+  std::cout << "  shifted from [-1,+1] to the domain [A,B].\n";
+  std::cout << "\n";
+  std::cout << "  Here, we will use the new domain [0,1]\n";
+  std::cout << "  and the desired maximum polynomial degree will be N = 5.\n";
 
   a = 0.0;
   b = 1.0;
@@ -497,16 +495,16 @@ void t_polynomial_ab_value_test ( )
   int n_data;
   double x01;
 
-  cout << "\n";
-  cout << "T_POLYNOMIAL_AB_VALUE_TEST:\n";
-  cout << "  T_POLYNOMIAL_AB_VALUE evaluates Chebyshev polynomials TAB(n,x)\n";
-  cout << "  shifted from [-1,+1] to the domain [A,B].\n";
-  cout << "\n";
-  cout << "  Here, we will use the new domain [0,1].\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X01    T01(n,x)       T01(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "T_POLYNOMIAL_AB_VALUE_TEST:\n";
+  std::cout << "  T_POLYNOMIAL_AB_VALUE evaluates Chebyshev polynomials TAB(n,x)\n";
+  std::cout << "  shifted from [-1,+1] to the domain [A,B].\n";
+  std::cout << "\n";
+  std::cout << "  Here, we will use the new domain [0,1].\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X01    T01(n,x)       T01(n,x)\n";
+  std::cout << "\n";
 
   a = 0.0;
   b = 1.0;
@@ -524,10 +522,10 @@ void t_polynomial_ab_value_test ( )
 
     fx2 = t_polynomial_ab_value ( a, b, n, x01 );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x01
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x01
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -561,10 +559,10 @@ void t_polynomial_coefficients_test ( )
   int j;
   int n;
 
-  cout << "\n";
-  cout << "T_POLYNOMIAL_COEFFICIENTS_TEST\n";
-  cout << "  T_POLYNOMIAL_COEFFICIENTS determines the polynomial coefficients \n";
-  cout << "  of T(n,x).\n";
+  std::cout << "\n";
+  std::cout << "T_POLYNOMIAL_COEFFICIENTS_TEST\n";
+  std::cout << "  T_POLYNOMIAL_COEFFICIENTS determines the polynomial coefficients \n";
+  std::cout << "  of T(n,x).\n";
 
   n = 5;
 
@@ -610,12 +608,12 @@ void t_polynomial_plot_test ( )
   int i;
   int n_num = 6;
   int n_val[6];
-  string output_filename;
+  std::string output_filename;
 
-  cout << "\n";
-  cout << "T_POLYNOMIAL_PLOT_TEST\n";
-  cout << "  T_POLYNOMIAL_PLOT plots selected\n";
-  cout << "  Chebyshev polynomials T(n,x).\n";
+  std::cout << "\n";
+  std::cout << "T_POLYNOMIAL_PLOT_TEST\n";
+  std::cout << "  T_POLYNOMIAL_PLOT plots selected\n";
+  std::cout << "  Chebyshev polynomials T(n,x).\n";
 
   for ( i = 0; i <= 5; i++ )
   {
@@ -657,13 +655,13 @@ void t_polynomial_value_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "T_POLYNOMIAL_VALUE_TEST:\n";
-  cout << "  T_POLYNOMIAL_VALUE evaluates the Chebyshev polynomial T(n,x).\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X        T(n,x)        T(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "T_POLYNOMIAL_VALUE_TEST:\n";
+  std::cout << "  T_POLYNOMIAL_VALUE evaluates the Chebyshev polynomial T(n,x).\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X        T(n,x)        T(n,x)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -678,10 +676,10 @@ void t_polynomial_value_test ( )
 
     fx2 = t_polynomial_value ( n, x );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -715,12 +713,12 @@ void t_polynomial_zeros_test ( )
   int n_max = 5;
   double *z;
 
-  cout << "\n";
-  cout << "T_POLYNOMIAL_ZEROS_TEST:\n";
-  cout << "  T_POLYNOMIAL_ZEROS returns zeroes of T(n,x).\n";
-  cout << "\n";
-  cout << "       N      X        T(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "T_POLYNOMIAL_ZEROS_TEST:\n";
+  std::cout << "  T_POLYNOMIAL_ZEROS returns zeroes of T(n,x).\n";
+  std::cout << "\n";
+  std::cout << "       N      X        T(n,x)\n";
+  std::cout << "\n";
 
   for ( n = 1; n <= n_max; n++ )
   {
@@ -728,11 +726,11 @@ void t_polynomial_zeros_test ( )
     fx = t_polynomial ( n, n, z );
     for ( i = 0; i < n; i++ )
     {
-      cout << "  " << setw(8) << n
-           << "  " << setw(8) << z[i]
-           << "  " << setw(14) << fx[i+n*n] << "\n";
+      std::cout << "  " << std::setw(8) << n
+           << "  " << std::setw(8) << z[i]
+           << "  " << std::setw(14) << fx[i+n*n] << "\n";
     }
-    cout << "\n";
+    std::cout << "\n";
     delete [] fx;
     delete [] z;
   }
@@ -771,10 +769,10 @@ void t_quadrature_rule_test ( )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "T_QUADRATURE_RULE_TEST:\n";
-  cout << "  T_QUADRATURE_RULE computes the quadrature rule\n";
-  cout << "  associated with T(n,x);\n";
+  std::cout << "\n";
+  std::cout << "T_QUADRATURE_RULE_TEST:\n";
+  std::cout << "  T_QUADRATURE_RULE computes the quadrature rule\n";
+  std::cout << "  associated with T(n,x);\n";
 
   n = 7;
   x = new double[n];
@@ -784,13 +782,13 @@ void t_quadrature_rule_test ( )
 
   r8vec2_print ( n, x, w, "    N      X            W" );
 
-  cout << "\n";
-  cout << "  Use the quadrature rule to estimate:\n";
-  cout << "\n";
-  cout << "    Q = Integral ( -1 <= X <= +1 ) X^E / sqrt ( 1-x^2) dx\n";
-  cout << "\n";
-  cout << "   E       Q_Estimate      Q_Exact\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Use the quadrature rule to estimate:\n";
+  std::cout << "\n";
+  std::cout << "    Q = Integral ( -1 <= X <= +1 ) X^E / sqrt ( 1-x^2) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Q_Estimate      Q_Exact\n";
+  std::cout << "\n";
 
   f = new double[n];
 
@@ -812,9 +810,9 @@ void t_quadrature_rule_test ( )
     }
     q = r8vec_dot_product ( n, w, f );
     q_exact = t_moment ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << q
-         << "  " << setw(14) << q_exact << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << q
+         << "  " << std::setw(14) << q_exact << "\n";
   }
 
   delete [] f;
@@ -851,11 +849,11 @@ void test07 ( )
   double *c;
   int n;
 
-  cout << "\n";
-  cout << "TEST07:\n";
-  cout << "  T_PROJECT_COEFFICIENTS computes the Chebyshev coefficients\n";
-  cout << "  of a function defined over [-1,+1].\n";
-  cout << "  T_PROJECT_COEFFICIENTS_AB works in [A,B].\n";
+  std::cout << "\n";
+  std::cout << "TEST07:\n";
+  std::cout << "  T_PROJECT_COEFFICIENTS computes the Chebyshev coefficients\n";
+  std::cout << "  of a function defined over [-1,+1].\n";
+  std::cout << "  T_PROJECT_COEFFICIENTS_AB works in [A,B].\n";
 
   n = 3;
   c = new double[n+1];
@@ -930,14 +928,14 @@ void test08 ( )
   int seed;
   double *x;
 
-  cout << "\n";
-  cout << "TEST08:\n";
-  cout << "  T_PROJECT_COEFFICIENTS_DATA computes the Chebyshev\n";
-  cout << "  coefficients of a function defined by data.\n";
-  cout << "\n";
-  cout << "  We are looking for an approximation that is good in [-1,+1].\n";
-  cout << "\n";
-  cout << "  Begin by using equally spaced points in [-1,+1].\n";
+  std::cout << "\n";
+  std::cout << "TEST08:\n";
+  std::cout << "  T_PROJECT_COEFFICIENTS_DATA computes the Chebyshev\n";
+  std::cout << "  coefficients of a function defined by data.\n";
+  std::cout << "\n";
+  std::cout << "  We are looking for an approximation that is good in [-1,+1].\n";
+  std::cout << "\n";
+  std::cout << "  Begin by using equally spaced points in [-1,+1].\n";
 
   a = -1.0;
   b = +1.0;
@@ -987,9 +985,9 @@ void test08 ( )
   delete [] d;
   delete [] x;
 
-  cout << "\n";
-  cout << "  Now sample equally spaced points in [0,+1].\n";
-  cout << "  The approximation still applies to the interval [-1,+1].\n";
+  std::cout << "\n";
+  std::cout << "  Now sample equally spaced points in [0,+1].\n";
+  std::cout << "  The approximation still applies to the interval [-1,+1].\n";
 
   a = 0.0;
   b = +1.0;
@@ -1023,8 +1021,8 @@ void test08 ( )
   delete [] d;
   delete [] x;
 
-  cout << "\n";
-  cout << "  Now random points in [-1,+1].\n";
+  std::cout << "\n";
+  std::cout << "  Now random points in [-1,+1].\n";
 
   a = -1.0;
   b = +1.0;
@@ -1078,17 +1076,17 @@ void test09 ( )
   double *v;
   double *x;
 
-  cout << "\n";
-  cout << "TEST09:\n";
-  cout << "  T_PROJECT_COEFFICIENTS computes the Chebyshev interpolant C(F)(n,x)\n";
-  cout << "  of a function F(x) defined over [-1,+1].\n";
-  cout << "  T_PROJECT_VALUE evaluates that projection.\n";
+  std::cout << "\n";
+  std::cout << "TEST09:\n";
+  std::cout << "  T_PROJECT_COEFFICIENTS computes the Chebyshev interpolant C(F)(n,x)\n";
+  std::cout << "  of a function F(x) defined over [-1,+1].\n";
+  std::cout << "  T_PROJECT_VALUE evaluates that projection.\n";
 
-  cout << "\n";
-  cout << "  Compute projections of order N to exp(x) over [-1,+1],\n";
-  cout << "\n";
-  cout << "   N   Max||F(x)-C(F)(n,x)||\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Compute projections of order N to exp(x) over [-1,+1],\n";
+  std::cout << "\n";
+  std::cout << "   N   Max||F(x)-C(F)(n,x)||\n";
+  std::cout << "\n";
 
   a = -1.0;
   b = +1.0;
@@ -1104,8 +1102,8 @@ void test09 ( )
     {
       r = r8_max ( r, fabs ( v[i] - exp ( x[i] ) ) );
     }
-    cout << "  " << setw(2) << n
-         << "  " << setw(14) << r << "\n";
+    std::cout << "  " << std::setw(2) << n
+         << "  " << std::setw(14) << r << "\n";
     delete [] c;
     delete [] v;
     delete [] x;
@@ -1146,20 +1144,20 @@ void test10 ( )
   double *v;
   double *x;
 
-  cout << "\n";
-  cout << "TEST10:\n";
-  cout << "  T_PROJECT_COEFFICIENTS_AB computes the Chebyshev interpolant C(F)(n,x)\n";
-  cout << "  of a function F(x) defined over [A,B].\n";
-  cout << "  T_PROJECT_VALUE_AB evaluates that projection.\n";
+  std::cout << "\n";
+  std::cout << "TEST10:\n";
+  std::cout << "  T_PROJECT_COEFFICIENTS_AB computes the Chebyshev interpolant C(F)(n,x)\n";
+  std::cout << "  of a function F(x) defined over [A,B].\n";
+  std::cout << "  T_PROJECT_VALUE_AB evaluates that projection.\n";
 
   a = 0.0;
   b = 1.5;
 
-  cout << "\n";
-  cout << "  Compute projections of order N to exp(x) over [" << a << "," << b << "]\n";
-  cout << "\n";
-  cout << "   N   Max||F(x)-C(F)(n,x)||\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Compute projections of order N to exp(x) over [" << a << "," << b << "]\n";
+  std::cout << "\n";
+  std::cout << "   N   Max||F(x)-C(F)(n,x)||\n";
+  std::cout << "\n";
 
   for ( n = 0; n <= 10; n++ )
   {
@@ -1172,8 +1170,8 @@ void test10 ( )
     {
       r = r8_max ( r, fabs ( v[i] - exp ( x[i] ) ) );
     }
-    cout << "  " << setw(2) << n
-         << "  " << setw(14) << r << "\n";
+    std::cout << "  " << std::setw(2) << n
+         << "  " << std::setw(14) << r << "\n";
     delete [] c;
     delete [] v;
     delete [] x;
@@ -1215,17 +1213,17 @@ void tt_product_test ( )
   double tj;
   double x;
 
-  cout << "\n";
-  cout << "TT_PRODUCT_TEST:\n";
-  cout << "  TT_PRODUCT(I,J;X) = T(I,X) * T(J,X)\n";
+  std::cout << "\n";
+  std::cout << "TT_PRODUCT_TEST:\n";
+  std::cout << "  TT_PRODUCT(I,J;X) = T(I,X) * T(J,X)\n";
 
   r8_lo = -1.0;
   r8_hi = +1.0;
   seed = 123456789;
 
-  cout << "\n";
-  cout << "   I   J      X               TI              TJ              TI*TJ       TT_PRODUCT\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   I   J      X               TI              TJ              TI*TJ       TT_PRODUCT\n";
+  std::cout << "\n";
   for ( test = 1; test <= 10; test++ )
   {
     x = r8_uniform_ab ( r8_lo, r8_hi, seed );
@@ -1234,13 +1232,13 @@ void tt_product_test ( )
     j = i4_uniform_ab ( -1, 4, seed );
     tj = t_polynomial_value ( j, x );
     titj = tt_product ( i, j, x );
-    cout << "  " << setw(2) << i
-         << "  " << setw(2) << j
-         << "  " << setw(14) << x
-         << "  " << setw(14) << ti
-         << "  " << setw(14) << tj
-         << "  " << setw(14) << ti * tj
-         << "  " << setw(14) << titj << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(2) << j
+         << "  " << std::setw(14) << x
+         << "  " << std::setw(14) << ti
+         << "  " << std::setw(14) << tj
+         << "  " << std::setw(14) << ti * tj
+         << "  " << std::setw(14) << titj << "\n";
   }
 
   return;
@@ -1277,14 +1275,14 @@ void tt_product_integral_test ( )
   int j;
   int n;
 
-  cout << "\n";
-  cout << "TT_PRODUCT_INTEGRAL_TEST:\n";
-  cout << "  TT_PRODUCT_INTEGRAL computes the product integral\n";
-  cout << "  of a pair of Chebyshev T polynomials T(i,x) and T(j,x).\n";
-  cout << "  A(I,J) = integral ( -1 <=x <= +1 ) T(i,x) T(j,x) / sqrt ( 1 - x^2 ) dx\n";
-  cout << "  0    if i is not equal to j;\n";
-  cout << "  pi   if i = j = 0;\n";
-  cout << "  pi/2 if i = j =/= 0.\n";
+  std::cout << "\n";
+  std::cout << "TT_PRODUCT_INTEGRAL_TEST:\n";
+  std::cout << "  TT_PRODUCT_INTEGRAL computes the product integral\n";
+  std::cout << "  of a pair of Chebyshev T polynomials T(i,x) and T(j,x).\n";
+  std::cout << "  A(I,J) = integral ( -1 <=x <= +1 ) T(i,x) T(j,x) / sqrt ( 1 - x^2 ) dx\n";
+  std::cout << "  0    if i is not equal to j;\n";
+  std::cout << "  pi   if i = j = 0;\n";
+  std::cout << "  pi/2 if i = j =/= 0.\n";
 
   n = 4;
   a = new double[(n+1)*(n+1)];
@@ -1341,14 +1339,14 @@ void ttt_product_integral_test ( )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "TTT_PRODUCT_INTEGRAL_TEST:\n";
-  cout << "  TTT_PRODUCT_INTEGRAL computes the triple integral\n";
-  cout << "  Tijk = integral ( -1 <= x <= 1 ) T(i,x) T(j,x) T(k,x) / sqrt ( 1-x^2) dx\n";
-  cout << "\n";
-  cout << "   I   J   K     Tijk           Tijk\n";
-  cout << "                 computed       exact\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TTT_PRODUCT_INTEGRAL_TEST:\n";
+  std::cout << "  TTT_PRODUCT_INTEGRAL computes the triple integral\n";
+  std::cout << "  Tijk = integral ( -1 <= x <= 1 ) T(i,x) T(j,x) T(k,x) / sqrt ( 1-x^2) dx\n";
+  std::cout << "\n";
+  std::cout << "   I   J   K     Tijk           Tijk\n";
+  std::cout << "                 computed       exact\n";
+  std::cout << "\n";
 
   n = 15;
   x = new double[n];
@@ -1372,11 +1370,11 @@ void ttt_product_integral_test ( )
       tk = t_polynomial_value ( k, x[l] );
       fx2 = fx2 + w[l] * ti * tj * tk;
     }
-    cout << "  " << setw(2) << i
-         << "  " << setw(2) << j
-         << "  " << setw(2) << k
-         << "  " << setw(14) << fx1
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(2) << j
+         << "  " << std::setw(2) << k
+         << "  " << std::setw(14) << fx1
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   delete [] x;
@@ -1418,17 +1416,17 @@ void tu_product_test ( )
   double uj;
   double x;
 
-  cout << "\n";
-  cout << "TU_PRODUCT_TEST:\n";
-  cout << "  TU_PRODUCT(I,J;X) = T(I,X) * U(J,X)\n";
+  std::cout << "\n";
+  std::cout << "TU_PRODUCT_TEST:\n";
+  std::cout << "  TU_PRODUCT(I,J;X) = T(I,X) * U(J,X)\n";
 
   r8_lo = -1.0;
   r8_hi = +1.0;
   seed = 123456789;
 
-  cout << "\n";
-  cout << "   I   J      X               TI              UJ              TI*UJ       TU_PRODUCT\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   I   J      X               TI              UJ              TI*UJ       TU_PRODUCT\n";
+  std::cout << "\n";
   for ( test = 1; test <= 10; test++ )
   {
     x = r8_uniform_ab ( r8_lo, r8_hi, seed );
@@ -1437,13 +1435,13 @@ void tu_product_test ( )
     j = i4_uniform_ab ( -1, 4, seed );
     uj = u_polynomial_value ( j, x );
     tiuj = tu_product ( i, j, x );
-    cout << "  " << setw(2) << i
-         << "  " << setw(2) << j
-         << "  " << setw(14) << x
-         << "  " << setw(14) << ti
-         << "  " << setw(14) << uj
-         << "  " << setw(14) << ti * uj
-         << "  " << setw(14) << tiuj << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(2) << j
+         << "  " << std::setw(14) << x
+         << "  " << std::setw(14) << ti
+         << "  " << std::setw(14) << uj
+         << "  " << std::setw(14) << ti * uj
+         << "  " << std::setw(14) << tiuj << "\n";
   }
 
   return;
@@ -1474,13 +1472,13 @@ void u_mass_matrix_test ( )
   double *a;
   int n;
 
-  cout << "\n";
-  cout <<  "U_MASS_MATRIX_TEST:\n";
-  cout <<  "  U_MASS_MATRIX computes the mass matrix for the\n";
-  cout <<  "  Chebyshev U polynomials U(i,x).\n";
-  cout <<  "  A(I,J) = integral ( -1 <=x <= +1 ) U(i,x) U(j,x) * sqrt ( 1 - x^2 ) dx\n";
-  cout <<  "  0    if i is not equal to j;\n";
-  cout <<  "  pi/2 if i = j.\n";
+  std::cout << "\n";
+  std::cout <<  "U_MASS_MATRIX_TEST:\n";
+  std::cout <<  "  U_MASS_MATRIX computes the mass matrix for the\n";
+  std::cout <<  "  Chebyshev U polynomials U(i,x).\n";
+  std::cout <<  "  A(I,J) = integral ( -1 <=x <= +1 ) U(i,x) U(j,x) * sqrt ( 1 - x^2 ) dx\n";
+  std::cout <<  "  0    if i is not equal to j;\n";
+  std::cout <<  "  pi/2 if i = j.\n";
 
   n = 3;
   a = u_mass_matrix ( n );
@@ -1517,18 +1515,18 @@ void u_moment_test ( )
   int e;
   double value;
 
-  cout << "\n";
-  cout << "U_MOMENT_TEST:\n";
-  cout << "  U_MOMENT returns the value of\n";
-  cout << "  integral ( -1 <=x <= +1 ) x^e * sqrt ( 1 - x^2 ) dx\n";
-  cout << "\n";
-  cout << "   E       Integral\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "U_MOMENT_TEST:\n";
+  std::cout << "  U_MOMENT returns the value of\n";
+  std::cout << "  integral ( -1 <=x <= +1 ) x^e * sqrt ( 1 - x^2 ) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Integral\n";
+  std::cout << "\n";
   for ( e = 0; e <= 10; e++ )
   {
     value = u_moment ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << value << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << value << "\n";
   }
 
   return;
@@ -1563,13 +1561,13 @@ void u_polynomial_test ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "U_POLYNOMIAL_TEST:\n";
-  cout << "  U_POLYNOMIAL evaluates the Chebyshev polynomial U(n,x).\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X        U(n,x)        U(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "U_POLYNOMIAL_TEST:\n";
+  std::cout << "  U_POLYNOMIAL evaluates the Chebyshev polynomial U(n,x).\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X        U(n,x)        U(n,x)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1590,10 +1588,10 @@ void u_polynomial_test ( )
     x_vec[0] = x;
     fx2 = u_polynomial ( 1, n, x_vec );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2[n] << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2[n] << "\n";
 
     delete [] fx2;
 
@@ -1634,13 +1632,13 @@ void u_polynomial_ab_test ( )
   m = 11;
   n = 5;
 
-  cout << "\n";
-  cout << "U_POLYNOMIAL_AB_TEST:\n";
-  cout << "  U_POLYNOMIAL_AB evaluates Chebyshev polynomials UAB(n,x)\n";
-  cout << "  shifted from [-1,+1] to the domain [A,B].\n";
-  cout << "\n";
-  cout << "  Here, we will use the new domain [0,1]\n";
-  cout << "  and the desired maximum polynomial degree will be N = 5.\n";
+  std::cout << "\n";
+  std::cout << "U_POLYNOMIAL_AB_TEST:\n";
+  std::cout << "  U_POLYNOMIAL_AB evaluates Chebyshev polynomials UAB(n,x)\n";
+  std::cout << "  shifted from [-1,+1] to the domain [A,B].\n";
+  std::cout << "\n";
+  std::cout << "  Here, we will use the new domain [0,1]\n";
+  std::cout << "  and the desired maximum polynomial degree will be N = 5.\n";
 
   a = 0.0;
   b = 1.0;
@@ -1686,16 +1684,16 @@ void u_polynomial_ab_value_test ( )
   int n_data;
   double x01;
 
-  cout << "\n";
-  cout << "U_POLYNOMIAL_AB_VALUE_TEST:\n";
-  cout << "  U_POLYNOMIAL_AB_VALUE evaluates Chebyshev polynomials UAB(n,x)\n";
-  cout << "  shifted from [-1,+1] to the domain [A,B].\n";
-  cout << "\n";
-  cout << "  Here, we will use the new domain [0,1].\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X01    U01(n,x)       U01(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "U_POLYNOMIAL_AB_VALUE_TEST:\n";
+  std::cout << "  U_POLYNOMIAL_AB_VALUE evaluates Chebyshev polynomials UAB(n,x)\n";
+  std::cout << "  shifted from [-1,+1] to the domain [A,B].\n";
+  std::cout << "\n";
+  std::cout << "  Here, we will use the new domain [0,1].\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X01    U01(n,x)       U01(n,x)\n";
+  std::cout << "\n";
 
   a = 0.0;
   b = 1.0;
@@ -1713,10 +1711,10 @@ void u_polynomial_ab_value_test ( )
 
     fx2 = u_polynomial_ab_value ( a, b, n, x01 );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x01
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x01
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -1750,10 +1748,10 @@ void u_polynomial_coefficients_test ( )
   int j;
   int n;
 
-  cout << "\n";
-  cout << "U_POLYNOMIAL_COEFFICIENTS_TEST\n";
-  cout << "  U_POLYNOMIAL_COEFFICIENTS determines the polynomial coefficients \n";
-  cout << "  of U(n,x).\n";
+  std::cout << "\n";
+  std::cout << "U_POLYNOMIAL_COEFFICIENTS_TEST\n";
+  std::cout << "  U_POLYNOMIAL_COEFFICIENTS determines the polynomial coefficients \n";
+  std::cout << "  of U(n,x).\n";
 
   n = 5;
 
@@ -1799,12 +1797,12 @@ void u_polynomial_plot_test ( )
   int i;
   int n_num = 6;
   int n_val[6];
-  string output_filename;
+  std::string output_filename;
 
-  cout << "\n";
-  cout << "U_POLYNOMIAL_PLOT_TEST\n";
-  cout << "  U_POLYNOMIAL_PLOT plots selected\n";
-  cout << "  Chebyshev polynomials U(n,x).\n";
+  std::cout << "\n";
+  std::cout << "U_POLYNOMIAL_PLOT_TEST\n";
+  std::cout << "  U_POLYNOMIAL_PLOT plots selected\n";
+  std::cout << "  Chebyshev polynomials U(n,x).\n";
 
   for ( i = 0; i <= 5; i++ )
   {
@@ -1846,13 +1844,13 @@ void u_polynomial_value_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "U_POLYNOMIAL_VALUE_TEST:\n";
-  cout << "  U_POLYNOMIAL_VALUE evaluates the Chebyshev polynomial U(n,x).\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X        U(n,x)        U(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "U_POLYNOMIAL_VALUE_TEST:\n";
+  std::cout << "  U_POLYNOMIAL_VALUE evaluates the Chebyshev polynomial U(n,x).\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X        U(n,x)        U(n,x)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -1867,10 +1865,10 @@ void u_polynomial_value_test ( )
 
     fx2 = u_polynomial_value ( n, x );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -1904,12 +1902,12 @@ void u_polynomial_zeros_test ( )
   int n_max = 5;
   double *z;
 
-  cout << "\n";
-  cout << "U_POLYNOMIAL_ZEROS_TEST:\n";
-  cout << "  U_POLYNOMIAL_ZEROS returns zeroes of U(n,x).\n";
-  cout << "\n";
-  cout << "       N      X        U(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "U_POLYNOMIAL_ZEROS_TEST:\n";
+  std::cout << "  U_POLYNOMIAL_ZEROS returns zeroes of U(n,x).\n";
+  std::cout << "\n";
+  std::cout << "       N      X        U(n,x)\n";
+  std::cout << "\n";
 
   for ( n = 1; n <= n_max; n++ )
   {
@@ -1917,11 +1915,11 @@ void u_polynomial_zeros_test ( )
     fx = u_polynomial ( n, n, z );
     for ( i = 0; i < n; i++ )
     {
-      cout << "  " << setw(8) << n
-           << "  " << setw(8) << z[i]
-           << "  " << setw(14) << fx[i+n*n] << "\n";
+      std::cout << "  " << std::setw(8) << n
+           << "  " << std::setw(8) << z[i]
+           << "  " << std::setw(14) << fx[i+n*n] << "\n";
     }
-    cout << "\n";
+    std::cout << "\n";
     delete [] fx;
     delete [] z;
   }
@@ -1960,10 +1958,10 @@ void u_quadrature_rule_test ( )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "U_QUADRATURE_RULE_TEST:\n";
-  cout << "  U_QUADRATURE_RULE computes the quadrature rule\n";
-  cout << "  associated with U(n,x);\n";
+  std::cout << "\n";
+  std::cout << "U_QUADRATURE_RULE_TEST:\n";
+  std::cout << "  U_QUADRATURE_RULE computes the quadrature rule\n";
+  std::cout << "  associated with U(n,x);\n";
 
   n = 7;
   x = new double[n];
@@ -1973,13 +1971,13 @@ void u_quadrature_rule_test ( )
 
   r8vec2_print ( n, x, w, "    N      X            W" );
 
-  cout << "\n";
-  cout << "  Use the quadrature rule to estimate:\n";
-  cout << "\n";
-  cout << "    Q = Integral ( -1 <= X <= +1 ) X^E * sqrt ( 1-x^2) dx\n";
-  cout << "\n";
-  cout << "   E       Q_Estimate      Q_Exact\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Use the quadrature rule to estimate:\n";
+  std::cout << "\n";
+  std::cout << "    Q = Integral ( -1 <= X <= +1 ) X^E * sqrt ( 1-x^2) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Q_Estimate      Q_Exact\n";
+  std::cout << "\n";
 
   f = new double[n];
 
@@ -2001,9 +1999,9 @@ void u_quadrature_rule_test ( )
     }
     q = r8vec_dot_product ( n, w, f );
     q_exact = u_moment ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << q
-         << "  " << setw(14) << q_exact << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << q
+         << "  " << std::setw(14) << q_exact << "\n";
   }
 
   delete [] f;
@@ -2046,17 +2044,17 @@ void uu_product_test ( )
   double uj;
   double x;
 
-  cout << "\n";
-  cout << "UU_PRODUCT_TEST:\n";
-  cout << "  UU_PRODUCT(I,J;X) = U(I,X) * U(J,X)\n";
+  std::cout << "\n";
+  std::cout << "UU_PRODUCT_TEST:\n";
+  std::cout << "  UU_PRODUCT(I,J;X) = U(I,X) * U(J,X)\n";
 
   r8_lo = -1.0;
   r8_hi = +1.0;
   seed = 123456789;
 
-  cout << "\n";
-  cout << "   I   J      X               UI              UJ              UI*UJ       UU_PRODUCT\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "   I   J      X               UI              UJ              UI*UJ       UU_PRODUCT\n";
+  std::cout << "\n";
   for ( test = 1; test <= 10; test++ )
   {
     x = r8_uniform_ab ( r8_lo, r8_hi, seed );
@@ -2065,13 +2063,13 @@ void uu_product_test ( )
     j = i4_uniform_ab ( -1, 4, seed );
     uj = u_polynomial_value ( j, x );
     uiuj = uu_product ( i, j, x );
-    cout << "  " << setw(2) << i
-         << "  " << setw(2) << j
-         << "  " << setw(14) << x
-         << "  " << setw(14) << ui
-         << "  " << setw(14) << uj
-         << "  " << setw(14) << ui * uj
-         << "  " << setw(14) << uiuj << "\n";
+    std::cout << "  " << std::setw(2) << i
+         << "  " << std::setw(2) << j
+         << "  " << std::setw(14) << x
+         << "  " << std::setw(14) << ui
+         << "  " << std::setw(14) << uj
+         << "  " << std::setw(14) << ui * uj
+         << "  " << std::setw(14) << uiuj << "\n";
   }
 
   return;
@@ -2108,13 +2106,13 @@ void uu_product_integral_test ( )
   int j;
   int n;
 
-  cout << "\n";
-  cout << "UU_PRODUCT_INTEGRAL_TEST:\n";
-  cout << "  UU_PRODUCT_INTEGRAL computes the product integral\n";
-  cout << "  of a pair of Chebyshev U polynomials U(i,x) and U(j,x).\n";
-  cout << "  A(I,J) = integral ( -1 <=x <= +1 ) U(i,x) U(j,x) * sqrt ( 1 - x^2 ) dx\n";
-  cout << "  0    if i is not equal to j;\n";
-  cout << "  pi/2 if i = j.\n";
+  std::cout << "\n";
+  std::cout << "UU_PRODUCT_INTEGRAL_TEST:\n";
+  std::cout << "  UU_PRODUCT_INTEGRAL computes the product integral\n";
+  std::cout << "  of a pair of Chebyshev U polynomials U(i,x) and U(j,x).\n";
+  std::cout << "  A(I,J) = integral ( -1 <=x <= +1 ) U(i,x) U(j,x) * sqrt ( 1 - x^2 ) dx\n";
+  std::cout << "  0    if i is not equal to j;\n";
+  std::cout << "  pi/2 if i = j.\n";
 
   n = 4;
   a = new double[(n+1)*(n+1)];
@@ -2158,13 +2156,13 @@ void v_mass_matrix_test ( )
   double *a;
   int n;
 
-  cout << "\n";
-  cout <<  "V_MASS_MATRIX_TEST:\n";
-  cout <<  "  V_MASS_MATRIX computes the mass matrix for the\n";
-  cout <<  "  Chebyshev polynomials V(i,x).\n";
-  cout <<  "  A(I,J) = integral ( -1 <=x <= +1 ) V(i,x) V(j,x) sqrt(1+x)/sqrt(1-x) dx\n";
-  cout <<  "  0  if i is not equal to j;\n";
-  cout <<  "  pi if i = j.\n";
+  std::cout << "\n";
+  std::cout <<  "V_MASS_MATRIX_TEST:\n";
+  std::cout <<  "  V_MASS_MATRIX computes the mass matrix for the\n";
+  std::cout <<  "  Chebyshev polynomials V(i,x).\n";
+  std::cout <<  "  A(I,J) = integral ( -1 <=x <= +1 ) V(i,x) V(j,x) sqrt(1+x)/sqrt(1-x) dx\n";
+  std::cout <<  "  0  if i is not equal to j;\n";
+  std::cout <<  "  pi if i = j.\n";
 
   n = 3;
   a = v_mass_matrix ( n );
@@ -2201,18 +2199,18 @@ void v_moment_test ( )
   int e;
   double value;
 
-  cout << "\n";
-  cout << "V_MOMENT_TEST:\n";
-  cout << "  V_MOMENT returns the value of\n";
-  cout << "  integral ( -1 <=x <= +1 ) x^e * sqrt(1+x)/sqrt(1-x) dx\n";
-  cout << "\n";
-  cout << "   E       Integral\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "V_MOMENT_TEST:\n";
+  std::cout << "  V_MOMENT returns the value of\n";
+  std::cout << "  integral ( -1 <=x <= +1 ) x^e * sqrt(1+x)/sqrt(1-x) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Integral\n";
+  std::cout << "\n";
   for ( e = 0; e <= 10; e++ )
   {
     value = v_moment ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << value << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << value << "\n";
   }
 
   return;
@@ -2247,13 +2245,13 @@ void v_polynomial_test ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "V_POLYNOMIAL_TEST:\n";
-  cout << "  V_POLYNOMIAL evaluates the Chebyshev polynomial V(n,x).\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X        V(n,x)        V(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "V_POLYNOMIAL_TEST:\n";
+  std::cout << "  V_POLYNOMIAL evaluates the Chebyshev polynomial V(n,x).\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X        V(n,x)        V(n,x)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2274,10 +2272,10 @@ void v_polynomial_test ( )
     x_vec[0] = x;
     fx2 = v_polynomial ( 1, n, x_vec );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2[n] << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2[n] << "\n";
 
     delete [] fx2;
 
@@ -2318,13 +2316,13 @@ void v_polynomial_ab_test ( )
   m = 11;
   n = 5;
 
-  cout << "\n";
-  cout << "V_POLYNOMIAL_AB_TEST:\n";
-  cout << "  V_POLYNOMIAL_AB evaluates Chebyshev polynomials VAB(n,x)\n";
-  cout << "  shifted from [-1,+1] to the domain [A,B].\n";
-  cout << "\n";
-  cout << "  Here, we will use the new domain [0,1]\n";
-  cout << "  and the desired maximum polynomial degree will be N = 5.\n";
+  std::cout << "\n";
+  std::cout << "V_POLYNOMIAL_AB_TEST:\n";
+  std::cout << "  V_POLYNOMIAL_AB evaluates Chebyshev polynomials VAB(n,x)\n";
+  std::cout << "  shifted from [-1,+1] to the domain [A,B].\n";
+  std::cout << "\n";
+  std::cout << "  Here, we will use the new domain [0,1]\n";
+  std::cout << "  and the desired maximum polynomial degree will be N = 5.\n";
 
   a = 0.0;
   b = 1.0;
@@ -2370,16 +2368,16 @@ void v_polynomial_ab_value_test ( )
   int n_data;
   double x01;
 
-  cout << "\n";
-  cout << "V_POLYNOMIAL_AB_VALUE_TEST:\n";
-  cout << "  V_POLYNOMIAL_AB_VALUE evaluates Chebyshev polynomials VAB(n,x)\n";
-  cout << "  shifted from [-1,+1] to the domain [A,B].\n";
-  cout << "\n";
-  cout << "  Here, we will use the new domain [0,1].\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X01    V01(n,x)       V01(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "V_POLYNOMIAL_AB_VALUE_TEST:\n";
+  std::cout << "  V_POLYNOMIAL_AB_VALUE evaluates Chebyshev polynomials VAB(n,x)\n";
+  std::cout << "  shifted from [-1,+1] to the domain [A,B].\n";
+  std::cout << "\n";
+  std::cout << "  Here, we will use the new domain [0,1].\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X01    V01(n,x)       V01(n,x)\n";
+  std::cout << "\n";
 
   a = 0.0;
   b = 1.0;
@@ -2397,10 +2395,10 @@ void v_polynomial_ab_value_test ( )
 
     fx2 = v_polynomial_ab_value ( a, b, n, x01 );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x01
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x01
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -2434,10 +2432,10 @@ void v_polynomial_coefficients_test ( )
   int j;
   int n;
 
-  cout << "\n";
-  cout << "V_POLYNOMIAL_COEFFICIENTS_TEST\n";
-  cout << "  V_POLYNOMIAL_COEFFICIENTS determines the polynomial coefficients \n";
-  cout << "  of V(n,x).\n";
+  std::cout << "\n";
+  std::cout << "V_POLYNOMIAL_COEFFICIENTS_TEST\n";
+  std::cout << "  V_POLYNOMIAL_COEFFICIENTS determines the polynomial coefficients \n";
+  std::cout << "  of V(n,x).\n";
 
   n = 5;
 
@@ -2483,12 +2481,12 @@ void v_polynomial_plot_test ( )
   int i;
   int n_num = 6;
   int n_val[6];
-  string output_filename;
+  std::string output_filename;
 
-  cout << "\n";
-  cout << "V_POLYNOMIAL_PLOT_TEST\n";
-  cout << "  V_POLYNOMIAL_PLOT plots selected\n";
-  cout << "  Chebyshev polynomials V(n,x).\n";
+  std::cout << "\n";
+  std::cout << "V_POLYNOMIAL_PLOT_TEST\n";
+  std::cout << "  V_POLYNOMIAL_PLOT plots selected\n";
+  std::cout << "  Chebyshev polynomials V(n,x).\n";
 
   for ( i = 0; i <= 5; i++ )
   {
@@ -2530,13 +2528,13 @@ void v_polynomial_value_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "V_POLYNOMIAL_VALUE_TEST:\n";
-  cout << "  V_POLYNOMIAL_VALUE evaluates the Chebyshev polynomial V(n,x).\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X        V(n,x)        V(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "V_POLYNOMIAL_VALUE_TEST:\n";
+  std::cout << "  V_POLYNOMIAL_VALUE evaluates the Chebyshev polynomial V(n,x).\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X        V(n,x)        V(n,x)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2551,10 +2549,10 @@ void v_polynomial_value_test ( )
 
     fx2 = v_polynomial_value ( n, x );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -2588,12 +2586,12 @@ void v_polynomial_zeros_test ( )
   int n_max = 5;
   double *z;
 
-  cout << "\n";
-  cout << "V_POLYNOMIAL_ZEROS_TEST:\n";
-  cout << "  V_POLYNOMIAL_ZEROS returns zeroes of V(n,x).\n";
-  cout << "\n";
-  cout << "       N      X        V(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "V_POLYNOMIAL_ZEROS_TEST:\n";
+  std::cout << "  V_POLYNOMIAL_ZEROS returns zeroes of V(n,x).\n";
+  std::cout << "\n";
+  std::cout << "       N      X        V(n,x)\n";
+  std::cout << "\n";
 
   for ( n = 1; n <= n_max; n++ )
   {
@@ -2601,11 +2599,11 @@ void v_polynomial_zeros_test ( )
     fx = v_polynomial ( n, n, z );
     for ( i = 0; i < n; i++ )
     {
-      cout << "  " << setw(8) << n
-           << "  " << setw(8) << z[i]
-           << "  " << setw(14) << fx[i+n*n] << "\n";
+      std::cout << "  " << std::setw(8) << n
+           << "  " << std::setw(8) << z[i]
+           << "  " << std::setw(14) << fx[i+n*n] << "\n";
     }
-    cout << "\n";
+    std::cout << "\n";
     delete [] fx;
     delete [] z;
   }
@@ -2644,10 +2642,10 @@ void v_quadrature_rule_test ( )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "V_QUADRATURE_RULE_TEST:\n";
-  cout << "  V_QUADRATURE_RULE computes the quadrature rule\n";
-  cout << "  associated with V(n,x);\n";
+  std::cout << "\n";
+  std::cout << "V_QUADRATURE_RULE_TEST:\n";
+  std::cout << "  V_QUADRATURE_RULE computes the quadrature rule\n";
+  std::cout << "  associated with V(n,x);\n";
 
   n = 7;
   x = new double[n];
@@ -2657,13 +2655,13 @@ void v_quadrature_rule_test ( )
 
   r8vec2_print ( n, x, w, "    N      X            W" );
 
-  cout << "\n";
-  cout << "  Use the quadrature rule to estimate:\n";
-  cout << "\n";
-  cout << "    Q = Integral ( -1 <= X <= +1 ) X^E * sqrt(1+x)/sqrt(1-x) dx\n";
-  cout << "\n";
-  cout << "   E       Q_Estimate      Q_Exact\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Use the quadrature rule to estimate:\n";
+  std::cout << "\n";
+  std::cout << "    Q = Integral ( -1 <= X <= +1 ) X^E * sqrt(1+x)/sqrt(1-x) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Q_Estimate      Q_Exact\n";
+  std::cout << "\n";
 
   f = new double[n];
 
@@ -2685,9 +2683,9 @@ void v_quadrature_rule_test ( )
     }
     q = r8vec_dot_product ( n, w, f );
     q_exact = v_moment ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << q
-         << "  " << setw(14) << q_exact << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << q
+         << "  " << std::setw(14) << q_exact << "\n";
   }
 
   delete [] f;
@@ -2728,13 +2726,13 @@ void vv_product_integral_test ( )
   int j;
   int n;
 
-  cout << "\n";
-  cout << "VV_PRODUCT_INTEGRAL_TEST:\n";
-  cout << "  VV_PRODUCT_INTEGRAL computes the product integral\n";
-  cout << "  of a pair of Chebyshev V polynomials V(i,x) and V(j,x).\n";
-  cout << "  A(I,J) = integral ( -1 <=x <= +1 ) V(i,x) V(j,x) * sqrt ( 1 + x ) / sqrt ( 1 - x ) dx\n";
-  cout << "  0  if i is not equal to j;\n";
-  cout << "  pi if i = j.\n";
+  std::cout << "\n";
+  std::cout << "VV_PRODUCT_INTEGRAL_TEST:\n";
+  std::cout << "  VV_PRODUCT_INTEGRAL computes the product integral\n";
+  std::cout << "  of a pair of Chebyshev V polynomials V(i,x) and V(j,x).\n";
+  std::cout << "  A(I,J) = integral ( -1 <=x <= +1 ) V(i,x) V(j,x) * sqrt ( 1 + x ) / sqrt ( 1 - x ) dx\n";
+  std::cout << "  0  if i is not equal to j;\n";
+  std::cout << "  pi if i = j.\n";
 
   n = 4;
   a = new double[(n+1)*(n+1)];
@@ -2778,13 +2776,13 @@ void w_mass_matrix_test ( )
   double *a;
   int n;
 
-  cout << "\n";
-  cout <<  "W_MASS_MATRIX_TEST:\n";
-  cout <<  "  W_MASS_MATRIX computes the mass matrix for the\n";
-  cout <<  "  Chebyshev polynomials W(i,x).\n";
-  cout <<  "  A(I,J) = integral ( -1 <=x <= +1 ) W(i,x) W(j,x) sqrt(1-x)/sqrt(1+x) dx\n";
-  cout <<  "  0  if i is not equal to j;\n";
-  cout <<  "  pi if i = j.\n";
+  std::cout << "\n";
+  std::cout <<  "W_MASS_MATRIX_TEST:\n";
+  std::cout <<  "  W_MASS_MATRIX computes the mass matrix for the\n";
+  std::cout <<  "  Chebyshev polynomials W(i,x).\n";
+  std::cout <<  "  A(I,J) = integral ( -1 <=x <= +1 ) W(i,x) W(j,x) sqrt(1-x)/sqrt(1+x) dx\n";
+  std::cout <<  "  0  if i is not equal to j;\n";
+  std::cout <<  "  pi if i = j.\n";
 
   n = 3;
   a = w_mass_matrix ( n );
@@ -2821,18 +2819,18 @@ void w_moment_test ( )
   int e;
   double value;
 
-  cout << "\n";
-  cout << "W_MOMENT_TEST:\n";
-  cout << "  W_MOMENT returns the value of\n";
-  cout << "  integral ( -1 <=x <= +1 ) x^e * sqrt(1-x)/sqrt(1+x) dx\n";
-  cout << "\n";
-  cout << "   E       Integral\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "W_MOMENT_TEST:\n";
+  std::cout << "  W_MOMENT returns the value of\n";
+  std::cout << "  integral ( -1 <=x <= +1 ) x^e * sqrt(1-x)/sqrt(1+x) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Integral\n";
+  std::cout << "\n";
   for ( e = 0; e <= 10; e++ )
   {
     value = w_moment ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << value << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << value << "\n";
   }
 
   return;
@@ -2867,13 +2865,13 @@ void w_polynomial_test ( )
   double x;
   double x_vec[1];
 
-  cout << "\n";
-  cout << "W_POLYNOMIAL_TEST:\n";
-  cout << "  W_POLYNOMIAL evaluates the Chebyshev polynomial W(n,x).\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X        W(n,x)        W(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "W_POLYNOMIAL_TEST:\n";
+  std::cout << "  W_POLYNOMIAL evaluates the Chebyshev polynomial W(n,x).\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X        W(n,x)        W(n,x)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -2894,10 +2892,10 @@ void w_polynomial_test ( )
     x_vec[0] = x;
     fx2 = w_polynomial ( 1, n, x_vec );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2[n] << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2[n] << "\n";
 
     delete [] fx2;
 
@@ -2938,13 +2936,13 @@ void w_polynomial_ab_test ( )
   m = 11;
   n = 5;
 
-  cout << "\n";
-  cout << "W_POLYNOMIAL_AB_TEST:\n";
-  cout << "  W_POLYNOMIAL_AB evaluates Chebyshev polynomials WAB(n,x)\n";
-  cout << "  shifted from [-1,+1] to the domain [A,B].\n";
-  cout << "\n";
-  cout << "  Here, we will use the new domain [0,1]\n";
-  cout << "  and the desired maximum polynomial degree will be N = 5.\n";
+  std::cout << "\n";
+  std::cout << "W_POLYNOMIAL_AB_TEST:\n";
+  std::cout << "  W_POLYNOMIAL_AB evaluates Chebyshev polynomials WAB(n,x)\n";
+  std::cout << "  shifted from [-1,+1] to the domain [A,B].\n";
+  std::cout << "\n";
+  std::cout << "  Here, we will use the new domain [0,1]\n";
+  std::cout << "  and the desired maximum polynomial degree will be N = 5.\n";
 
   a = 0.0;
   b = 1.0;
@@ -2990,16 +2988,16 @@ void w_polynomial_ab_value_test ( )
   int n_data;
   double x01;
 
-  cout << "\n";
-  cout << "W_POLYNOMIAL_AB_VALUE_TEST:\n";
-  cout << "  W_POLYNOMIAL_AB_VALUE evaluates Chebyshev polynomials WAB(n,x)\n";
-  cout << "  shifted from [-1,+1] to the domain [A,B].\n";
-  cout << "\n";
-  cout << "  Here, we will use the new domain [0,1].\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X01    W01(n,x)       W01(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "W_POLYNOMIAL_AB_VALUE_TEST:\n";
+  std::cout << "  W_POLYNOMIAL_AB_VALUE evaluates Chebyshev polynomials WAB(n,x)\n";
+  std::cout << "  shifted from [-1,+1] to the domain [A,B].\n";
+  std::cout << "\n";
+  std::cout << "  Here, we will use the new domain [0,1].\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X01    W01(n,x)       W01(n,x)\n";
+  std::cout << "\n";
 
   a = 0.0;
   b = 1.0;
@@ -3017,10 +3015,10 @@ void w_polynomial_ab_value_test ( )
 
     fx2 = w_polynomial_ab_value ( a, b, n, x01 );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x01
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x01
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -3054,10 +3052,10 @@ void w_polynomial_coefficients_test ( )
   int j;
   int n;
 
-  cout << "\n";
-  cout << "W_POLYNOMIAL_COEFFICIENTS_TEST\n";
-  cout << "  W_POLYNOMIAL_COEFFICIENTS determines the polynomial coefficients \n";
-  cout << "  of W(n,x).\n";
+  std::cout << "\n";
+  std::cout << "W_POLYNOMIAL_COEFFICIENTS_TEST\n";
+  std::cout << "  W_POLYNOMIAL_COEFFICIENTS determines the polynomial coefficients \n";
+  std::cout << "  of W(n,x).\n";
 
   n = 5;
 
@@ -3103,12 +3101,12 @@ void w_polynomial_plot_test ( )
   int i;
   int n_num = 6;
   int n_val[6];
-  string output_filename;
+  std::string output_filename;
 
-  cout << "\n";
-  cout << "W_POLYNOMIAL_PLOT_TEST\n";
-  cout << "  W_POLYNOMIAL_PLOT plots selected\n";
-  cout << "  Chebyshev polynomials W(n,x).\n";
+  std::cout << "\n";
+  std::cout << "W_POLYNOMIAL_PLOT_TEST\n";
+  std::cout << "  W_POLYNOMIAL_PLOT plots selected\n";
+  std::cout << "  Chebyshev polynomials W(n,x).\n";
 
   for ( i = 0; i <= 5; i++ )
   {
@@ -3150,13 +3148,13 @@ void w_polynomial_value_test ( )
   int n_data;
   double x;
 
-  cout << "\n";
-  cout << "W_POLYNOMIAL_VALUE_TEST:\n";
-  cout << "  W_POLYNOMIAL_VALUE evaluates the Chebyshev polynomial W(n,x).\n";
-  cout << "\n";
-  cout << "                   Tabulated      Computed\n";
-  cout << "     N      X        W(n,x)        W(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "W_POLYNOMIAL_VALUE_TEST:\n";
+  std::cout << "  W_POLYNOMIAL_VALUE evaluates the Chebyshev polynomial W(n,x).\n";
+  std::cout << "\n";
+  std::cout << "                   Tabulated      Computed\n";
+  std::cout << "     N      X        W(n,x)        W(n,x)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -3171,10 +3169,10 @@ void w_polynomial_value_test ( )
 
     fx2 = w_polynomial_value ( n, x );
 
-    cout << "  " << setw(8)  << n
-         << "  " << setw(8)  << x
-         << "  " << setw(14) << fx
-         << "  " << setw(14) << fx2 << "\n";
+    std::cout << "  " << std::setw(8)  << n
+         << "  " << std::setw(8)  << x
+         << "  " << std::setw(14) << fx
+         << "  " << std::setw(14) << fx2 << "\n";
   }
 
   return;
@@ -3208,12 +3206,12 @@ void w_polynomial_zeros_test ( )
   int n_max = 5;
   double *z;
 
-  cout << "\n";
-  cout << "W_POLYNOMIAL_ZEROS_TEST:\n";
-  cout << "  W_POLYNOMIAL_ZEROS returns zeroes of W(n,x).\n";
-  cout << "\n";
-  cout << "       N      X        W(n,x)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "W_POLYNOMIAL_ZEROS_TEST:\n";
+  std::cout << "  W_POLYNOMIAL_ZEROS returns zeroes of W(n,x).\n";
+  std::cout << "\n";
+  std::cout << "       N      X        W(n,x)\n";
+  std::cout << "\n";
 
   for ( n = 1; n <= n_max; n++ )
   {
@@ -3221,11 +3219,11 @@ void w_polynomial_zeros_test ( )
     fx = w_polynomial ( n, n, z );
     for ( i = 0; i < n; i++ )
     {
-      cout << "  " << setw(8) << n
-           << "  " << setw(8) << z[i]
-           << "  " << setw(14) << fx[i+n*n] << "\n";
+      std::cout << "  " << std::setw(8) << n
+           << "  " << std::setw(8) << z[i]
+           << "  " << std::setw(14) << fx[i+n*n] << "\n";
     }
-    cout << "\n";
+    std::cout << "\n";
     delete [] fx;
     delete [] z;
   }
@@ -3264,10 +3262,10 @@ void w_quadrature_rule_test ( )
   double *w;
   double *x;
 
-  cout << "\n";
-  cout << "W_QUADRATURE_RULE_TEST:\n";
-  cout << "  W_QUADRATURE_RULE computes the quadrature rule\n";
-  cout << "  associated with W(n,x);\n";
+  std::cout << "\n";
+  std::cout << "W_QUADRATURE_RULE_TEST:\n";
+  std::cout << "  W_QUADRATURE_RULE computes the quadrature rule\n";
+  std::cout << "  associated with W(n,x);\n";
 
   n = 7;
   x = new double[n];
@@ -3277,13 +3275,13 @@ void w_quadrature_rule_test ( )
 
   r8vec2_print ( n, x, w, "    N      X            W" );
 
-  cout << "\n";
-  cout << "  Use the quadrature rule to estimate:\n";
-  cout << "\n";
-  cout << "    Q = Integral ( -1 <= X <= +1 ) X^E * sqrt(1-x)/sqrt(1+x) dx\n";
-  cout << "\n";
-  cout << "   E       Q_Estimate      Q_Exact\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "  Use the quadrature rule to estimate:\n";
+  std::cout << "\n";
+  std::cout << "    Q = Integral ( -1 <= X <= +1 ) X^E * sqrt(1-x)/sqrt(1+x) dx\n";
+  std::cout << "\n";
+  std::cout << "   E       Q_Estimate      Q_Exact\n";
+  std::cout << "\n";
 
   f = new double[n];
 
@@ -3305,9 +3303,9 @@ void w_quadrature_rule_test ( )
     }
     q = r8vec_dot_product ( n, w, f );
     q_exact = w_moment ( e );
-    cout << "  " << setw(2) << e
-         << "  " << setw(14) << q
-         << "  " << setw(14) << q_exact << "\n";
+    std::cout << "  " << std::setw(2) << e
+         << "  " << std::setw(14) << q
+         << "  " << std::setw(14) << q_exact << "\n";
   }
 
   delete [] f;
@@ -3348,13 +3346,13 @@ void ww_product_integral_test ( )
   int j;
   int n;
 
-  cout << "\n";
-  cout << "WW_PRODUCT_INTEGRAL_TEST:\n";
-  cout << "  WW_PRODUCT_INTEGRAL computes the product integral\n";
-  cout << "  of a pair of Chebyshev W polynomials W(i,x) and W(j,x).\n";
-  cout << "  A(I,J) = integral ( -1 <=x <= +1 ) W(i,x) W(j,x) * sqrt ( 1 - x ) / sqrt ( 1 + x ) dx\n";
-  cout << "  0  if i is not equal to j;\n";
-  cout << "  pi if i = j.\n";
+  std::cout << "\n";
+  std::cout << "WW_PRODUCT_INTEGRAL_TEST:\n";
+  std::cout << "  WW_PRODUCT_INTEGRAL computes the product integral\n";
+  std::cout << "  of a pair of Chebyshev W polynomials W(i,x) and W(j,x).\n";
+  std::cout << "  A(I,J) = integral ( -1 <=x <= +1 ) W(i,x) W(j,x) * sqrt ( 1 - x ) / sqrt ( 1 + x ) dx\n";
+  std::cout << "  0  if i is not equal to j;\n";
+  std::cout << "  pi if i = j.\n";
 
   n = 4;
   a = new double[(n+1)*(n+1)];

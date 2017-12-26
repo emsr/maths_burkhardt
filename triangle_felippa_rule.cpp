@@ -5,8 +5,6 @@
 # include <cstring>
 # include <cmath>
 
-using namespace std;
-
 # include "triangle_felippa_rule.hpp"
 
 //****************************************************************************80

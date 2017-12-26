@@ -5,8 +5,6 @@
 
 # include "beta_nc.H"
 
-using namespace std;
-
 int main ( );
 void test01 ( );
 
@@ -38,19 +36,19 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "BETA_NC_PRB:\n";
-  cout << "  C++ version\n";
-  cout << "  Test the BETA_NC library.\n";
+  std::cout << "\n";
+  std::cout << "BETA_NC_PRB:\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the BETA_NC library.\n";
 
   test01 ( );
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "BETA_NC_PRB:\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "BETA_NC_PRB:\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -89,17 +87,17 @@ void test01 ( )
 
   error_max = 1.0E-10;
 
-  cout << "\n";
-  cout << "TEST01:\n";
-  cout << "  BETA_NONCENTRAL_CDF computes the noncentral incomplete \n";
-  cout << "  Beta function.\n";
-  cout << "  Compare to tabulated values.\n";
-  cout << "\n";
-  cout << "      A      B     LAMBDA        X      "
+  std::cout << "\n";
+  std::cout << "TEST01:\n";
+  std::cout << "  BETA_NONCENTRAL_CDF computes the noncentral incomplete \n";
+  std::cout << "  Beta function.\n";
+  std::cout << "  Compare to tabulated values.\n";
+  std::cout << "\n";
+  std::cout << "      A      B     LAMBDA        X      "
        << "    FX                        FX2\n";
-  cout << "                                        "
+  std::cout << "                                        "
        << "    (Tabulated)               (computed)          DIFF\n";
-  cout << "\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -114,13 +112,13 @@ void test01 ( )
 
     fx2 = beta_noncentral_cdf ( a, b, lambda, x, error_max );
 
-    cout << "  " << setprecision(2) << setw(5) << a
-         << "  " << setprecision(2) << setw(5) << b
-         << "  " << setprecision(3) << setw(7) << lambda
-         << "  " << setprecision(4) << setw(10) << x
-         << "  " << setprecision(16) << setw(24) << fx
-         << "  " << setprecision(16) << setw(24) << fx2
-         << "  " << setprecision(4) << setw(10) << r8_abs ( fx - fx2 ) << "\n";
+    std::cout << "  " << std::setprecision(2) << std::setw(5) << a
+         << "  " << std::setprecision(2) << std::setw(5) << b
+         << "  " << std::setprecision(3) << std::setw(7) << lambda
+         << "  " << std::setprecision(4) << std::setw(10) << x
+         << "  " << std::setprecision(16) << std::setw(24) << fx
+         << "  " << std::setprecision(16) << std::setw(24) << fx2
+         << "  " << std::setprecision(4) << std::setw(10) << r8_abs ( fx - fx2 ) << "\n";
   }
 
   return;

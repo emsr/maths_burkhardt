@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "toms462.hpp"
 
 int main ( );
@@ -39,20 +37,20 @@ int main ( )
 //
 {
   timestamp ( );
-  cout << "\n";
-  cout << "TOMS462_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the TOMS462 library.\n";
+  std::cout << "\n";
+  std::cout << "TOMS462_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the TOMS462 library.\n";
 
   test01 ( );
   test02 ( );
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "TOMS462_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TOMS462_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
@@ -86,80 +84,80 @@ void test01 ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "TEST01\n";
-  cout << "  Compare BIVNOR with some simple data\n";
-  cout << "  with 3 digit accuracy.\n";
-  cout << "\n";
-  cout << "       X         Y          R          P               P\n";
-  cout << "                                      (Tabulated)     (BIVNOR)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST01\n";
+  std::cout << "  Compare BIVNOR with some simple data\n";
+  std::cout << "  with 3 digit accuracy.\n";
+  std::cout << "\n";
+  std::cout << "       X         Y          R          P               P\n";
+  std::cout << "                                      (Tabulated)     (BIVNOR)\n";
+  std::cout << "\n";
 
   x =  0.8;
   y = -1.5;
   r =  -0.9;
   expect = 0.148;
   cdf = bivnor ( x, y, r );
-  cout << "  " << setw(9) << x
-       << "  " << setw(8) << y
-       << "  " << setw(8) << r
-       << "  " << setw(14) << expect
-       << "  " << setw(14) << cdf << "\n";
+  std::cout << "  " << std::setw(9) << x
+       << "  " << std::setw(8) << y
+       << "  " << std::setw(8) << r
+       << "  " << std::setw(14) << expect
+       << "  " << std::setw(14) << cdf << "\n";
 
   x =  0.6;
   y = -1.4;
   r =  -0.7;
   expect = 0.208;
   cdf = bivnor ( x, y, r );
-  cout << "  " << setw(9) << x
-       << "  " << setw(8) << y
-       << "  " << setw(8) << r
-       << "  " << setw(14) << expect
-       << "  " << setw(14) << cdf << "\n";
+  std::cout << "  " << std::setw(9) << x
+       << "  " << std::setw(8) << y
+       << "  " << std::setw(8) << r
+       << "  " << std::setw(14) << expect
+       << "  " << std::setw(14) << cdf << "\n";
 
   x =  0.2;
   y = -1.0;
   r =  -0.5;
   expect = 0.304;
   cdf = bivnor ( x, y, r );
-  cout << "  " << setw(9) << x
-       << "  " << setw(8) << y
-       << "  " << setw(8) << r
-       << "  " << setw(14) << expect
-       << "  " << setw(14) << cdf << "\n";
+  std::cout << "  " << std::setw(9) << x
+       << "  " << std::setw(8) << y
+       << "  " << std::setw(8) << r
+       << "  " << std::setw(14) << expect
+       << "  " << std::setw(14) << cdf << "\n";
 
   x = -1.2;
   y =  0.1;
   r =   0.0;
   expect = 0.407;
   cdf = bivnor ( x, y, r );
-  cout << "  " << setw(9) << x
-       << "  " << setw(8) << y
-       << "  " << setw(8) << r
-       << "  " << setw(14) << expect
-       << "  " << setw(14) << cdf << "\n";
+  std::cout << "  " << std::setw(9) << x
+       << "  " << std::setw(8) << y
+       << "  " << std::setw(8) << r
+       << "  " << std::setw(14) << expect
+       << "  " << std::setw(14) << cdf << "\n";
 
   x = -1.2;
   y = -0.1;
   r =   0.3;
   expect = 0.501;
   cdf = bivnor ( x, y, r );
-  cout << "  " << setw(9) << x
-       << "  " << setw(8) << y
-       << "  " << setw(8) << r
-       << "  " << setw(14) << expect
-       << "  " << setw(14) << cdf << "\n";
+  std::cout << "  " << std::setw(9) << x
+       << "  " << std::setw(8) << y
+       << "  " << std::setw(8) << r
+       << "  " << std::setw(14) << expect
+       << "  " << std::setw(14) << cdf << "\n";
 
   x = -0.4;
   y = -0.9;
   r =   0.6;
   expect = 0.601;
   cdf = bivnor ( x, y, r );
-  cout << "  " << setw(9) << x
-       << "  " << setw(8) << y
-       << "  " << setw(8) << r
-       << "  " << setw(14) << expect
-       << "  " << setw(14) << cdf << "\n";
+  std::cout << "  " << std::setw(9) << x
+       << "  " << std::setw(8) << y
+       << "  " << std::setw(8) << r
+       << "  " << std::setw(14) << expect
+       << "  " << std::setw(14) << cdf << "\n";
 
   return;
 }
@@ -193,16 +191,16 @@ void test02 ( )
   double x;
   double y;
 
-  cout << "\n";
-  cout << "TEST02\n";
-  cout << "  Compare BIVNOR with some tabulated data.\n";
-  cout << "\n";
-  cout << "      X          Y          ";
-  cout << "R           P                         P";
-  cout << "                      DIFF\n";
-  cout << "                                ";
-  cout << "       (Tabulated)               (BIVNOR)\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TEST02\n";
+  std::cout << "  Compare BIVNOR with some tabulated data.\n";
+  std::cout << "\n";
+  std::cout << "      X          Y          ";
+  std::cout << "R           P                         P";
+  std::cout << "                      DIFF\n";
+  std::cout << "                                ";
+  std::cout << "       (Tabulated)               (BIVNOR)\n";
+  std::cout << "\n";
 
   n_data = 0;
 
@@ -220,12 +218,12 @@ void test02 ( )
 //
     fxy2 = bivnor ( - x, - y, r );
 
-    cout << "  " << setw(8) << x
-         << "  " << setw(8) << y
-         << "  " << setw(8) << r
-         << "  " << setw(24) << fxy1
-         << "  " << setw(24) << fxy2
-         << "  " << setw(10) << r8_abs ( fxy1 - fxy2 ) << "\n";
+    std::cout << "  " << std::setw(8) << x
+         << "  " << std::setw(8) << y
+         << "  " << std::setw(8) << r
+         << "  " << std::setw(24) << fxy1
+         << "  " << std::setw(24) << fxy2
+         << "  " << std::setw(10) << r8_abs ( fxy1 - fxy2 ) << "\n";
   }
   return;
 }

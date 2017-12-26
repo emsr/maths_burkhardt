@@ -3,8 +3,6 @@
 # include <iomanip>
 # include <cmath>
 
-using namespace std;
-
 # include "line_felippa_rule.hpp"
 
 int main ( );
@@ -39,10 +37,10 @@ int main ( )
   int degree_max;
 
   timestamp ( );
-  cout << "\n";
-  cout << "LINE_FELIPPA_RULE_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the LINE_FELIPPA_RULE library.\n";
+  std::cout << "\n";
+  std::cout << "LINE_FELIPPA_RULE_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the LINE_FELIPPA_RULE library.\n";
 
   degree_max = 4;
   line_monomial_test ( degree_max );
@@ -52,10 +50,10 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "LINE_FELIPPA_RULE_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "LINE_FELIPPA_RULE_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;

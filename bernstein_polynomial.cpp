@@ -5,8 +5,6 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "bernstein_polynomial.hpp"
 
 //****************************************************************************80
@@ -646,9 +644,9 @@ double *bernstein_poly_ab ( int n, double a, double b, double x )
 
   if ( b == a )
   {
-    cerr << "\n";
-    cerr << "BERNSTEIN_POLY_AB - Fatal error!\n";
-    cerr << "  A = B = " << a << "\n";
+    std::cerr << "\n";
+    std::cerr << "BERNSTEIN_POLY_AB - Fatal error!\n";
+    std::cerr << "  A = B = " << a << "\n";
     exit ( 1 );
   }
 

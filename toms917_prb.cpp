@@ -5,12 +5,10 @@
 # include <iomanip>
 # include <iostream>
 
-using namespace std;
-
 # include "toms917.hpp"
 
 int main ( );
-void driver ( complex <double> z );
+void driver ( std::complex <double> z );
 void test_boundary ( );
 
 //****************************************************************************80
@@ -43,62 +41,62 @@ int main ( )
   double a;
   double b;
   double pi = M_PI;
-  complex <double> z;
+  std::complex <double> z;
 
   timestamp ( );
-  cout << "\n";
-  cout << "TOMS917_PRB\n";
-  cout << "  C++ version\n";
-  cout << "  Test the TOMS917 library.\n";
+  std::cout << "\n";
+  std::cout << "TOMS917_PRB\n";
+  std::cout << "  C++ version\n";
+  std::cout << "  Test the TOMS917 library.\n";
 
   a = 0.0;
   b = 0.0;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = 1.0;
   b = 0.0;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = 1.0 + exp ( 1.0 );
   b = 0.0;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = - 1.0;
   b = pi;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = - 1.0;
   b = - pi;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = - 2.0 + log ( 2.0 );
   b = pi;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = - 2.0 + log ( 2.0 );
   b = - pi;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = 0.0;
   b = 1.0 + pi / 2.0;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = 0.0;
   b = pi;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 
   a = 1.0;
   b = 1.0;
-  z = complex <double> ( a, b );
+  z = std::complex <double> ( a, b );
   driver ( z );
 //
 //  Test the function near the region boundaries.
@@ -107,17 +105,17 @@ int main ( )
 //
 //  Terminate.
 //
-  cout << "\n";
-  cout << "TOMS917_PRB\n";
-  cout << "  Normal end of execution.\n";
-  cout << "\n";
+  std::cout << "\n";
+  std::cout << "TOMS917_PRB\n";
+  std::cout << "  Normal end of execution.\n";
+  std::cout << "\n";
   timestamp ( );
 
   return 0;
 }
 //****************************************************************************80
 
-void driver ( complex <double> z )
+void driver ( std::complex <double> z )
 
 //****************************************************************************80
 //
@@ -146,55 +144,55 @@ void driver ( complex <double> z )
 //    Input, complex <double> Z, the argument of the Wright Omega function.
 //
 {
-  complex <double> condest;
-  complex <double> e;
-  complex <double> r;
-  complex <double> r_ult;
-  complex <double> w;
+  std::complex <double> condest;
+  std::complex <double> e;
+  std::complex <double> r;
+  std::complex <double> r_ult;
+  std::complex <double> w;
 
-  cout << "\n";
-  cout << "DRIVER:\n";
-  cout << "  Demonstrate simple and extended Wright Omega evaluators.\n";
+  std::cout << "\n";
+  std::cout << "DRIVER:\n";
+  std::cout << "  Demonstrate simple and extended Wright Omega evaluators.\n";
 //
 //  Simple evaluator.
 //
   w = wrightomega ( z );
 
-  cout << "\n";
-  cout << "  Calling:\n";
-  cout << "    w = wrightomega(z);\n";
-  cout << "  returns:\n";
-  cout << "    w = omega(" << real ( z ) 
-       << ", " << imag ( z ) 
-       << ") =  ( " << real ( w )
-       << ", " << imag ( w ) << ")\n";
+  std::cout << "\n";
+  std::cout << "  Calling:\n";
+  std::cout << "    w = wrightomega(z);\n";
+  std::cout << "  returns:\n";
+  std::cout << "    w = omega(" << std::real ( z ) 
+       << ", " << std::imag ( z ) 
+       << ") =  ( " << std::real ( w )
+       << ", " << std::imag ( w ) << ")\n";
 //
 //  Extended evaluator.
 //
   wrightomega_ext ( z, w, e, r, condest );
 
-  cout << "\n";
-  cout << "  Calling:\n";
-  cout << "    wrightomega_ext ( z, w, e, r, condest );\n";
-  cout << "  returns:\n";
-  cout << "    w = omega(" << real ( z ) 
-       << ", " << imag ( z ) 
-       << ") =  ( " << real ( w ) 
-       << ", " << imag ( w ) << ")\n";
-  cout << "  e = last update step = ( " << real ( e ) 
-       << ", " << imag ( e ) << ")\n";
-  cout << "  r = penultimate residual = ( " << real ( r ) 
-       << ", " << imag ( r ) << ")\n";
-  cout << "  condest = condition number estimate = ( " << real ( condest ) 
-       << ", " << imag ( condest ) << ")\n";
+  std::cout << "\n";
+  std::cout << "  Calling:\n";
+  std::cout << "    wrightomega_ext ( z, w, e, r, condest );\n";
+  std::cout << "  returns:\n";
+  std::cout << "    w = omega(" << std::real ( z ) 
+       << ", " << std::imag ( z ) 
+       << ") =  ( " << std::real ( w ) 
+       << ", " << std::imag ( w ) << ")\n";
+  std::cout << "  e = last update step = ( " << std::real ( e ) 
+       << ", " << std::imag ( e ) << ")\n";
+  std::cout << "  r = penultimate residual = ( " << std::real ( r ) 
+       << ", " << std::imag ( r ) << ")\n";
+  std::cout << "  condest = condition number estimate = ( " << std::real ( condest ) 
+       << ", " << std::imag ( condest ) << ")\n";
 //
 //  Calculate and print ultimate residual.
 //
   r_ult = ( 2.0 * w * w - 8.0 * w - 1.0 ) 
     / pow ( 1.0 + w, 6.0 ) * r * r * r * r;
-  cout << "\n";
-  cout << "  ultimate residual = ( " << real ( r_ult )
-       << ", " << imag ( r_ult ) << ")\n";
+  std::cout << "\n";
+  std::cout << "  ultimate residual = ( " << std::real ( r_ult )
+       << ", " << std::imag ( r_ult ) << ")\n";
 
   return;
 }
@@ -236,25 +234,25 @@ void test_boundary ( )
 {
   double a;
   double b;
-  complex <double> cond;
-  complex <double> e;
+  std::complex <double> cond;
+  std::complex <double> e;
   double exp_num = 160.0;
-  string filename = "results.txt";
-  ofstream fp;
+  std::string filename = "results.txt";
+  std::ofstream fp;
   int i;
   int n = 100;
   double pi = M_PI;
-  complex <double> r;
+  std::complex <double> r;
   double td;
-  complex <double> w;
+  std::complex <double> w;
   double x[2];
   double y[2];
-  complex <double> z;
+  std::complex <double> z;
 
-  cout << "\n";
-  cout << "TEST_BOUNDARY:\n";
-  cout << "  Test wrightomega_ext() near approximation region boundaries.\n";
-  cout << "  Store results in a file for comparison with benchmark data.\n";
+  std::cout << "\n";
+  std::cout << "TEST_BOUNDARY:\n";
+  std::cout << "  Test wrightomega_ext() near approximation region boundaries.\n";
+  std::cout << "  Store results in a file for comparison with benchmark data.\n";
 
   fp.open ( filename.c_str ( ) );
 //
@@ -272,12 +270,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0] + td * ( double ) i, y[0] );
+    z = std::complex <double> ( x[0] + td * ( double ) i, y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 2;
@@ -290,12 +288,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 3;
@@ -308,12 +306,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[1] + td * ( double ) i, y[0] );
+    z = std::complex <double> ( x[1] + td * ( double ) i, y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 4;
@@ -326,12 +324,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 5;
@@ -344,12 +342,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0] + td * ( double ) i, y[0] );
+    z = std::complex <double> ( x[0] + td * ( double ) i, y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 6;
@@ -362,12 +360,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 7;
@@ -380,12 +378,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[1] + td * ( double ) i, y[0] );
+    z = std::complex <double> ( x[1] + td * ( double ) i, y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
     }
 //
 //  Region 8;
@@ -398,12 +396,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 9;
@@ -416,12 +414,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 10;
@@ -434,12 +432,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0] + td * ( double ) i, y[0] );
+    z = std::complex <double> ( x[0] + td * ( double ) i, y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
     }
 //
 //  Region 11
@@ -451,12 +449,12 @@ void test_boundary ( )
   x[0] = nextafter ( 1.0, 2.0 );
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 12
@@ -471,12 +469,12 @@ void test_boundary ( )
     a = nextafter ( pi, -1.0 ) * cos ( x[0] - td * ( double ) i ) 
       + nextafter ( 1.0, - 1.0 );
     b = nextafter ( pi, -1.0 ) * sin ( x[0] - td * ( double ) i );
-    z = complex <double> ( a, b );
+    z = std::complex <double> ( a, b );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 13
@@ -489,12 +487,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 14
@@ -507,12 +505,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0] + td * ( double ) i, y[0] );
+    z = std::complex <double> ( x[0] + td * ( double ) i, y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 15
@@ -522,12 +520,12 @@ void test_boundary ( )
   {
     x[0] = nextafter ( - 1.0 - exp ( double( n - 1 - i ) / exp_num ), HUGE_VAL );
     y[0] = nextafter ( pi - 0.75 * ( x[0] + 1.0 ), HUGE_VAL );
-    z = complex <double> ( x[0], y[0] );
+    z = std::complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 16
@@ -539,12 +537,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 17
@@ -557,12 +555,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0] + td * ( double ) i, y[0] );
+    z = std::complex <double> ( x[0] + td * ( double ) i, y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 /*
   Region 18
@@ -575,12 +573,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 19
@@ -596,17 +594,17 @@ void test_boundary ( )
     x[0] = sqrt ( pi * pi - y[1] * y[1] ) + 1.0;
     if ( y[1] < 0 )
     {
-      z = complex <double> ( nextafter ( x[0], HUGE_VAL ), nextafter ( y[1], - HUGE_VAL ) );
+      z = std::complex <double> ( nextafter ( x[0], HUGE_VAL ), nextafter ( y[1], - HUGE_VAL ) );
     }
     else
     {
-      z = complex <double> ( nextafter ( x[0], HUGE_VAL ), nextafter ( y[1], HUGE_VAL ) );
+      z = std::complex <double> ( nextafter ( x[0], HUGE_VAL ), nextafter ( y[1], HUGE_VAL ) );
     } 
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 20;
@@ -619,12 +617,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 21;
@@ -637,12 +635,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[1] + td * ( double ) i, y[0] );
+    z = std::complex <double> ( x[1] + td * ( double ) i, y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 22
@@ -654,12 +652,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[1] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 23
@@ -669,12 +667,12 @@ void test_boundary ( )
   {
     x[0] = nextafter ( - 1.0 - exp ( double( i ) / exp_num ), HUGE_VAL );
     y[0] = nextafter ( - pi + 0.75 * ( x[0] + 1.0 ), - HUGE_VAL );
-    z = complex <double> ( x[0], y[0] );
+    z = std::complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 24
@@ -684,12 +682,12 @@ void test_boundary ( )
   {
     x[0] = nextafter ( - 1.0 - exp ( double( n - 1 - i ) / exp_num ), - HUGE_VAL );
     y[0] = nextafter ( - pi + 0.75 * ( x[0] + 1.0 ), HUGE_VAL );
-    z = complex <double> ( x[0], y[0] );
+    z = std::complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 25
@@ -701,12 +699,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[1] + td * (double) i ) );
+    z = std::complex <double> ( x[0], ( y[1] + td * (double) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 26
@@ -717,12 +715,12 @@ void test_boundary ( )
   for ( i = 0; i < n; i++ )
   {
     x[0] = - 1.0 - exp ( double( i ) / exp_num );
-    z = complex <double> ( x[0], y[0] );
+    z = std::complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 27
@@ -733,12 +731,12 @@ void test_boundary ( )
   for ( i = 0; i < n; i++ )
   {
     x[0] = - 1.0 - exp ( double( n - 1 - i ) / exp_num );
-    z = complex <double> ( x[0], y[0] );
+    z = std::complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 28
@@ -750,12 +748,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 29
@@ -766,12 +764,12 @@ void test_boundary ( )
   for ( i = 0; i < n; i++ )
   {
     x[0] = - 1.0 - exp ( double( i ) / exp_num );
-    z = complex <double> ( x[0], y[0] );
+    z = std::complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 30
@@ -782,12 +780,12 @@ void test_boundary ( )
   for ( i = 0; i < n; i++ )
   {
     x[0] = - 1.0 - exp ( double( n - 1 - i ) / exp_num );
-    z = complex <double> ( x[0], y[0] );
+    z = std::complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 31
@@ -799,12 +797,12 @@ void test_boundary ( )
 
   for ( i = 0; i < n; i++ )
   {
-    z = complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
+    z = std::complex <double> ( x[0], ( y[0] + td * ( double ) i ) );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Region 32
@@ -814,21 +812,21 @@ void test_boundary ( )
   {
     x[0] = -1.0 - exp ( double( n - 1 - i ) / exp_num );
     y[0] = nextafter ( pi - 0.75 * ( x[0] + 1.0 ), 0.1 );
-    z = complex <double> ( x[0], y[0] );
+    z = std::complex <double> ( x[0], y[0] );
     wrightomega_ext ( z, w, e, r, cond );
-    fp << real ( z ) << " " 
-       << imag ( z ) << " " 
-       << real ( w ) << " "
-       << imag ( w ) << "\n"; 
+    fp << std::real ( z ) << " " 
+       << std::imag ( z ) << " " 
+       << std::real ( w ) << " "
+       << std::imag ( w ) << "\n"; 
   }
 //
 //  Terminate.
 //
   fp.close ( );
 
-  cout << "\n";
-  cout << "TEST_BOUNDARY:\n";
-  cout << "  Results saved in file '" << filename << "'\n";
+  std::cout << "\n";
+  std::cout << "TEST_BOUNDARY:\n";
+  std::cout << "  Results saved in file '" << filename << "'\n";
 
   return;
 }
