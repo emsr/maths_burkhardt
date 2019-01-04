@@ -17,6 +17,7 @@ add_library(maths_burkhardt SHARED
 	    bernstein_polynomial.cpp
 	    cdflib.cpp
 	    chebyshev_polynomial.cpp
+	    filon.cpp
 	    gegenbauer_polynomial.cpp
 	    hermite_polynomial.cpp
 	    jacobi_polynomial.cpp
