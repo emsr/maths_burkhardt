@@ -1594,13 +1594,13 @@ subroutine cchg ( a, b, z, chg )
   a1 = a
   z0 = z
 
-  if ( abs(b) < epsilon(b) .or. b == - int ( abs ( b ) ) ) then
+  if (abs(b) < epsilon(b) .or. abs(b + int(abs(b))) < epsilon(b)) then
     chg = cmplx ( 1.0D+30, 0.0D+00, kind = 8 )
-  else if ( abs(a) < epsilon(a) .or. abs(z) < epsilon(real(z)) ) then
+  else if (abs(a) < epsilon(a) .or. abs(z) < epsilon(real(z))) then
     chg = cmplx ( 1.0D+00, 0.0D+00, kind = 8 )
-  else if ( a == -1.0D+00 ) then
+  else if (abs(a + 1.0D+00) < epsilon(a)) then
     chg = 1.0D+00 - z / b
-  else if ( a == b ) then
+  else if (abs(a - b) < epsilon(a)) then
     chg = exp ( z )
   else if ( abs(a - b - 1.0D+00) < epsilon(b) ) then
     chg = ( 1.0D+00 + z / b ) * exp ( z )
@@ -2131,7 +2131,7 @@ subroutine cfc ( z, zf, zd )
   zp2 = zp * zp
   z0 = cmplx ( 0.0D+00, 0.0D+00, kind = 8 )
 
-  if ( z == z0 ) then
+  if (abs(z - z0) < epsilon(eps)) then
 
     c = z0
 
@@ -2255,7 +2255,7 @@ subroutine cfs ( z, zf, zd )
   zp2 = zp * zp
   z0 = cmplx ( 0.0D+00, 0.0D+00, kind = 8 )
 
-  if ( z == z0 ) then
+  if (abs(z - z0) < epsilon(eps)) then
 
     s = z0
 
@@ -2660,19 +2660,19 @@ subroutine chgm ( a, b, x, hg )
   x0 = x
   hg = 0.0D+00
 
-  if ( abs(b) < epsilon(b) .or. b == - abs ( int ( b ) ) ) then
+  if (abs(b) < epsilon(b) .or. abs(b + abs(int(b))) < epsilon(b)) then
     hg = 1.0D+300
-  else if ( abs(a) < epsilon(a) .or. abs(x) < epsilon(x) ) then
+  else if (abs(a) < epsilon(a) .or. abs(x) < epsilon(x)) then
     hg = 1.0D+00
-  else if ( a == -1.0D+00 ) then
+  else if (abs(a + 1.0D+00) < epsilon(a)) then
     hg = 1.0D+00 - x / b
-  else if ( a == b ) then
+  else if (abs(a - b) < epsilon(a)) then
     hg = exp ( x )
-  else if ( abs(a - b - 1.0D+00) < epsilon(b) ) then
+  else if (abs(a - b - 1.0D+00) < epsilon(b)) then
     hg = ( 1.0D+00 + x / b ) * exp ( x )
-  else if ( abs(a - 1.0D+00) < epsilon(a) .and. abs(b - 2.0D+00) < epsilon(b) ) then
+  else if (abs(a - 1.0D+00) < epsilon(a) .and. abs(b - 2.0D+00) < epsilon(b) ) then
     hg = ( exp ( x ) - 1.0D+00 ) / x
-  else if ( abs(a - int(a)) < epsilon(a) .and. a < 0.0D+00 ) then
+  else if (abs(a - int(a)) < epsilon(a) .and. a < 0.0D+00 ) then
     m = int ( - a )
     r = 1.0D+00
     hg = 1.0D+00
@@ -2682,7 +2682,7 @@ subroutine chgm ( a, b, x, hg )
     end do
   end if
 
-  if ( hg /= 0.0D+00 ) then
+  if (abs(hg) >= epsilon(hg)) then
     return
   end if
 
@@ -2836,10 +2836,10 @@ subroutine chgu ( a, b, x, hu, md )
   bl2 = ( 5.0D+00 < x .and. x <= 12.5D+00 ) .and. &
     ( 1.0D+00 <= a .and. a + 4.0D+00 <= b )
   bl3 = 12.5D+00 < x .and. 5.0D+00 <= a .and. a + 5.0D+00 <= b
-  bn = abs(b - int(b)) < epsilon(b) .and. b .ne. 0.0D+00
+  bn = abs(b - int(b)) < epsilon(b) .and. abs(b) >= epsilon(b)
   id1 = -100
 
-  if ( b .ne. int ( b ) ) then
+  if (abs(b - int(b)) >= epsilon(b)) then
     call chgus ( a, b, x, hu, id1 )
     md = 1
     if ( 6 <= id1 ) then
@@ -3031,7 +3031,7 @@ subroutine chgubi ( a, b, x, hu, id )
   end do
 
   da1 = log10 ( hmax )
-  if ( hmin /= 0.0D+00 ) then
+  if (abs(hmin) >= epsilon(hmin)) then
     da2 = log10 ( hmin )
   end if
   id = int ( 15 - abs ( da1 - da2 ) )
@@ -3082,7 +3082,7 @@ subroutine chgubi ( a, b, x, hu, id )
   end do
 
   db1 = log10 ( hmax )
-  if ( hmin /= 0.0D+00 ) then
+  if (abs(hmin) >= epsilon(hmin)) then
     db2 = log10 ( hmin )
   end if
   id1 = int ( 15 - abs ( db1 - db2 ) )
@@ -3104,11 +3104,11 @@ subroutine chgubi ( a, b, x, hu, id )
   sb = ub * hm3
   hu = sa + sb
 
-  if ( sa /= 0.0D+00 ) then
+  if (abs(sa) >= epsilon(sa)) then
     id1 = int ( log10 ( abs ( sa ) ) )
   end if
 
-  if ( hu /= 0.0D+00 ) then
+  if (abs(hu) >= epsilon(hu)) then
     id2 = int ( log10 ( abs ( hu ) ) )
   end if
 
@@ -3479,7 +3479,7 @@ subroutine chgus ( a, b, x, hu, id )
   end do
 
   d1 = log10 ( hmax )
-  if ( hmin /= 0.0D+00 ) then
+  if (abs(hmin) >= epsilon(hmin)) then
     d2 = log10 ( hmin )
   end if
   id = int ( 15 - abs ( d1 - d2 ) )
@@ -5586,7 +5586,7 @@ subroutine cjyna ( n, z, nm, cbj, cdj, cby, cdy )
     end if
   end do
 
-  if ( 4 < lb  .and. imag ( z ) /= 0.0D+00 ) then
+  if (4 < lb  .and. abs(imag(z)) >= epsilon(imag(z))) then
 
     do
 
@@ -6119,7 +6119,7 @@ subroutine cjyva ( v, z, vm, cbj, cdj, cby, cdy )
 
   if ( a0 <= 12.0D+00 ) then
 
-    if ( v0 .ne. 0.0D+00 ) then
+    if (abs(v0) >= epsilon(v0)) then
 
       do l = 0, 1
         vl = v0 + l
@@ -6259,7 +6259,7 @@ subroutine cjyva ( v, z, vm, cbj, cdj, cby, cdy )
       end if
     end do
 
-    if ( 4 < lb .and. imag ( z ) /= 0.0D+00 ) then
+    if ( 4 < lb .and. abs(imag(z)) >= epsilon(imag(z))) then
 
       do
 
@@ -6523,7 +6523,7 @@ subroutine cjyvb ( v, z, vm, cbj, cdj, cby, cdy )
 
   if ( a0 <= 12.0D+00 ) then
 
-    if ( v0 .ne. 0.0D+00 ) then
+    if (abs(v0) >= epsilon(v0)) then
 
       cjvn = cmplx ( 1.0D+00, 0.0D+00, kind = 8 )
       cr = cmplx ( 1.0D+00, 0.0D+00, kind = 8 )
@@ -6923,7 +6923,7 @@ subroutine clqmn ( mm, m, n, x, y, cqm, cqd )
 
   xc = abs ( z )
 
-  if ( imag ( z ) == 0.0D+00 .or. xc < 1.0D+00 ) then
+  if (abs(imag(z)) < epsilon(imag(z)) .or. xc < 1.0D+00 ) then
     ls = 1
   end if
 
@@ -7319,7 +7319,7 @@ subroutine cpbdn ( n, z, cpb, cpd )
 
     n0 = -n
 
-    if ( x <= 0.0D+00 .or. abs ( z ) == 0.0D+00 ) then
+    if (x <= 0.0D+00 .or. abs(z) < epsilon(abs(z))) then
 
       cf0 = ca0
       cpb(0) = cf0
@@ -7530,9 +7530,9 @@ subroutine cpdsa ( n, z, cdn )
 
   else
 
-    if ( abs ( z ) == 0.0D+00 ) then
+    if (abs(z) < epsilon(abs(z))) then
 
-      if ( va0 <= 0.0D+00 .and. abs(va0 - int ( va0 )) < epsilon(va0) ) then
+      if (va0 <= 0.0D+00 .and. abs(va0 - int ( va0 )) < epsilon(va0)) then
         cdn = 0.0D+00
       else
         call gaih ( va0, ga0 )
@@ -7655,7 +7655,7 @@ subroutine cpsi ( x, y, psr, psi )
     end if
 
     if ( abs(x0) < epsilon(x0) ) then
-      if ( y /= 0.0D+00 ) then
+      if ( abs(y) >= epsilon(y) ) then
         th = 0.5D+00 * pi
       else
         th = 0.0D+00
@@ -8633,7 +8633,7 @@ subroutine cva2 ( kd, m, q, a )
 
     call cv0 ( kd, m, q, a )
 
-    if ( q /= 0.0D+00 ) then
+    if (abs(q) >= epsilon(q)) then
       call refine ( kd, m, q, a, 1 )
     end if
 
@@ -9819,7 +9819,7 @@ subroutine e1z ( z, ce1 )
     ct = 1.0D+00 / ( z + ct0 )
 
     ce1 = exp ( - z ) * ct
-    if ( x <= 0.0D+00 .and. imag ( z ) == 0.0D+00 ) then
+    if ( x <= 0.0D+00 .and. abs(imag(z)) < epsilon(imag(z)) ) then
       ce1 = ce1 - pi * cmplx ( 0.0D+00, 1.0D+00, kind = 8 )
     end if
 
@@ -9985,7 +9985,7 @@ subroutine elit ( hk, phi, fe, ee )
       c = ( a0 - b0 ) / 2.0D+00
       fac = 2.0D+00 * fac
       r = r + fac * c * c
-      if ( phi /= 90.0D+00 ) then
+      if ( abs(phi - 90.0D+00) >= epsilon(phi) ) then
         d = d0 + atan ( ( b0 / a0 ) * tan ( d0 ) )
         g = g + c * sin( d )
         d0 = d + pi * int ( d / pi + 0.5D+00 )
@@ -11433,13 +11433,13 @@ subroutine gaih ( x, ga )
 
   pi = 3.141592653589793D+00
 
-  if ( abs(x - int(x)) < epsilon(x) .and. 0.0 < x ) then
+  if (abs(x - int(x)) < epsilon(x) .and. 0.0 < x) then
     ga = 1.0D+00
     m1 = int ( x - 1.0D+00 )
     do k = 2, m1
       ga = ga * k
     end do
-  else if ( x + 0.5D+00 == int ( x + 0.5D+00) .and. 0.0D+00 < x ) then
+  else if (abs(x + 0.5D+0 - int(x + 0.5D+00)) < epsilon(x) .and. 0.0D+0 < x) then
     m = int ( x )
     ga = sqrt ( pi )
     do k = 1, m
@@ -12022,7 +12022,7 @@ subroutine hygfx ( a, b, c, x, hf )
     hf = 1.0D+00
     return
 
-  else if ( 1.0D+00 - x == eps .and. 0.0D+00 < c - a - b ) then
+  else if ( abs(1.0D+00 - x) < eps .and. 0.0D+00 < c - a - b ) then
 
     call gamma ( c, gc )
     call gamma ( c - a - b, gcab )
@@ -17115,7 +17115,7 @@ subroutine jyv ( v, x, vm, bj, dj, by, dy )
 
   if ( x <= 12.0D+00 ) then
 
-    if ( v0 /= 0.0D+00 ) then
+    if ( abs(v0) >= epsilon(v0) ) then
 
       do l = 0, 1
 
@@ -19300,7 +19300,7 @@ subroutine lpmv ( v, m, x, pmv )
   nv = int ( v )
   v0 = v - nv
 
-  if ( x == -1.0D+00 .and. v /= nv ) then
+  if ( abs(x + 1.0D+00) < epsilon(x) .and. abs(v - nv) >= epsilon(v) ) then
     if ( m == 0 ) then
       pmv = -1.0D+300
     else
@@ -21531,9 +21531,9 @@ subroutine psi ( x, ps )
 
     ps = - el + s
 
-  else if ( xa + 0.5D+00 == aint ( xa + 0.5D+00 ) ) then
+  else if (abs(xa + 0.5D+00 - aint(xa + 0.5D+00)) < epsilon(xa)) then
 
-    n = int ( xa - 0.5D+00 )
+    n = int (xa - 0.5D+00)
 
     do k = 1, n
       s = s + 1.0D+00 / real ( 2 * k - 1, kind = 8 )
@@ -24692,7 +24692,7 @@ end
       hv = 0.0D+00
     else if ( v < -1.0D+00 ) then
       hv = ( -1.0D+00 ) ** ( int ( 0.5D+00 - v ) - 1 ) * 1.0D+300
-    else if ( v == -1.0D+00 ) then
+    else if (abs(v + 1.0D+00) < epsilon(v)) then
       hv = 2.0D+00 / pi
     end if
     return
@@ -25061,11 +25061,11 @@ subroutine stvlv ( v, x, slv )
 
   if ( abs(x) < epsilon(x) ) then
 
-    if ( -1.0D+00 < v .or. abs(int ( v ) - v - 0.5D+00) < epsilon(v) ) then
+    if (-1.0D+00 < v .or. abs(int(v) - v - 0.5D+00) < epsilon(v)) then
       slv = 0.0D+00
     else if ( v < -1.0D+00 ) then
       slv = ( -1 ) ** ( int ( 0.5D+00 - v ) - 1 ) * 1.0D+300
-    else if ( v == -1.0D+00 ) then
+    else if (abs(v + 1.0D+00) < epsilon(v)) then
       slv = 2.0D+00 / pi
     end if
 
@@ -25402,7 +25402,7 @@ subroutine vvsa ( va, x, pv )
       gw = fac * sv + 1.0D+00
       r1 = gw * r * gm
       pv = pv + r1
-      if ( abs ( r1 / pv ) < eps .and. gw /= 0.0D+00 ) then
+      if (abs (r1 / pv) < eps .and. gw >= epsilon(gw)) then
         exit
       end if
     end do
