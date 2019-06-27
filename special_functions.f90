@@ -1761,10 +1761,10 @@ subroutine cerf ( z, cer, cder )
 !
   implicit none
 
-  complex ( kind = 8 ) c0
+  real ( kind = 8 ) c0
   complex ( kind = 8 ) cder
   complex ( kind = 8 ) cer
-  complex ( kind = 8 ) cs
+  real ( kind = 8 ) cs
   real ( kind = 8 ) ei1
   real ( kind = 8 ) ei2
   real ( kind = 8 ) eps
