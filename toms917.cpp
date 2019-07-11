@@ -62,7 +62,7 @@ std::complex <double> wrightomega ( std::complex <double> z )
   std::complex <double> r;
   std::complex <double> w;
 
-  int flag = wrightomega_ext ( z, w, e, r, cond );
+  wrightomega_ext ( z, w, e, r, cond );
 
   return w;
 }
