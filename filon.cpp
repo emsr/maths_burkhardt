@@ -6,7 +6,7 @@
 
 using namespace std;
 
-# include "filon.hpp"
+#include <filon.h>
 
 //****************************************************************************80
 
@@ -126,12 +126,12 @@ double filon_fun_cos ( int n, double *f ( int n, double x[] ), double a,
   x = new double[n];
   for ( i = 0; i < n; i++ )
   {
-    x[i] = ( ( double ) ( n - i - 1 ) * a   
-           + ( double ) (     i     ) * b ) 
-           / ( double ) ( n     - 1 );
+    x[i] = ( static_cast<double> ( n - i - 1 ) * a   
+           + static_cast<double> (     i     ) * b ) 
+           / static_cast<double> ( n     - 1 );
   }
 
-  h = ( b - a ) / ( double ) ( n - 1 );
+  h = ( b - a ) / static_cast<double> ( n - 1 );
   theta = t * h;
   sint = sin ( theta );
   cost = cos ( theta );
@@ -308,12 +308,12 @@ double filon_tab_cos ( int n, double ftab[], double a, double b, double t )
   x = new double[n];
   for ( i = 0; i < n; i++ )
   {
-    x[i] = ( ( double ) ( n - i - 1 ) * a   
-           + ( double ) (     i     ) * b ) 
-           / ( double ) ( n     - 1 );
+    x[i] = ( static_cast<double> ( n - i - 1 ) * a   
+           + static_cast<double> (     i     ) * b ) 
+           / static_cast<double> ( n     - 1 );
   }
 
-  h = ( b - a ) / ( double ) ( n - 1 );
+  h = ( b - a ) / static_cast<double> ( n - 1 );
   theta = t * h;
   sint = sin ( theta );
   cost = cos ( theta );
@@ -487,12 +487,12 @@ double filon_fun_sin ( int n, double *f ( int n, double x[] ), double a,
   x = new double[n];
   for ( i = 0; i < n; i++ )
   {
-    x[i] = ( ( double ) ( n - i - 1 ) * a   
-           + ( double ) (     i     ) * b ) 
-           / ( double ) ( n     - 1 );
+    x[i] = ( static_cast<double> ( n - i - 1 ) * a   
+           + static_cast<double> (     i     ) * b ) 
+           / static_cast<double> ( n     - 1 );
   }
 
-  h = ( b - a ) / ( double ) ( n - 1 );
+  h = ( b - a ) / static_cast<double> ( n - 1 );
   theta = t * h;
   sint = sin ( theta );
   cost = cos ( theta );
@@ -669,12 +669,12 @@ double filon_tab_sin ( int n, double ftab[], double a, double b, double t )
   x = new double[n];
   for ( i = 0; i < n; i++ )
   {
-    x[i] = ( ( double ) ( n - i - 1 ) * a   
-           + ( double ) (     i     ) * b ) 
-           / ( double ) ( n     - 1 );
+    x[i] = ( static_cast<double> ( n - i - 1 ) * a   
+           + static_cast<double> (     i     ) * b ) 
+           / static_cast<double> ( n     - 1 );
   }
 
-  h = ( b - a ) / ( double ) ( n - 1 );
+  h = ( b - a ) / static_cast<double> ( n - 1 );
   theta = t * h;
   sint = sin ( theta );
   cost = cos ( theta );
@@ -807,52 +807,4 @@ int i4_power ( int i, int j )
     }
   }
   return value;
-}
-//****************************************************************************80
-
-void timestamp ( )
-
-//****************************************************************************80
-//
-//  Purpose:
-//
-//    TIMESTAMP prints the current YMDHMS date as a time stamp.
-//
-//  Example:
-//
-//    31 May 2001 09:45:54 AM
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license.
-//
-//  Modified:
-//
-//    08 July 2009
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    None
-//
-{
-# define TIME_SIZE 40
-
-  static char time_buffer[TIME_SIZE];
-  const struct std::tm *tm_ptr;
-  size_t len;
-  std::time_t now;
-
-  now = std::time ( NULL );
-  tm_ptr = std::localtime ( &now );
-
-  len = std::strftime ( time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm_ptr );
-
-  std::cout << time_buffer << "\n";
-
-  return;
-# undef TIME_SIZE
 }
