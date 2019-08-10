@@ -10,7 +10,6 @@ endif(MSVC)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-psabi -Wno-deprecated-declarations -Wold-style-cast")
 
 add_library(maths_burkhardt SHARED
-            maths_burkhardt.h
 	    special_functions.f90
 	    asa109.cpp
 	    asa243.cpp
@@ -39,4 +38,5 @@ add_library(maths_burkhardt SHARED
 	    triangle_felippa_rule.cpp
 	    triangle_monte_carlo.cpp
 )
+target_include_directories(maths_burkhardt PUBLIC .)
 target_link_libraries(maths_burkhardt gfortran)
