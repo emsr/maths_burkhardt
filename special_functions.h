@@ -1,27 +1,25 @@
 #ifndef BURKHARDT_SPECIAL_FUNCTIONS_H
 #define BURKHARDT_SPECIAL_FUNCTIONS_H 1
 
+#include <stddef.h>
 #ifdef __cplusplus
+#include <complex>
+#define __GFORTRAN_FLOAT_COMPLEX std::complex<float>
+#define __GFORTRAN_DOUBLE_COMPLEX std::complex<double>
+#define __GFORTRAN_LONG_DOUBLE_COMPLEX std::complex<long double>
 extern "C" {
+#else
+#define __GFORTRAN_FLOAT_COMPLEX float _Complex
+#define __GFORTRAN_DOUBLE_COMPLEX double _Complex
+#define __GFORTRAN_LONG_DOUBLE_COMPLEX long double _Complex
 #endif
 
-// airy_ai airy_bi
-void airya_(const double * x, double * ai, double * bi, double * ad, double * bd);
-
-// struve_h
-void stvhv_(const double * nu, const double * x, double * sh);
-
-// struve_l
-void stvlv_(const double * nu, const double * x, double * sl);
-
-// conf_hyperg
-void cchg_(const double * a, const double * b, const double * z, double * chg);
-
-// tricomi_u
-void chgu_(const double * a, const double * b, const double * x, double * hu, int * md);
-
-// hyperg
-void hygfx_(const double * a, const double * b, const double * c, const double * x, double * hf);
+void airyab (double x, double *ai, double *bi, double *ad, double *bd);
+void confhyp (double a, double b, double x, double *chg);
+void hyperg2f1 (double a, double b, double c, double x, double *hf);
+void struveh (double nu, double x, double *sh);
+void struvel (double nu, double x, double *sl);
+void tricomiu (double a, double b, double x, double *hu, int *md);
 
 #ifdef __cplusplus
 }
