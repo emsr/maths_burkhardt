@@ -21406,7 +21406,7 @@ subroutine pbwa ( a, x, w1f, w1d, w2f, w2d )
 
   y1d = a
   r = 1.0D+00
-  do k = 1, 100
+  do k = 1, 99
     r = 0.5D+00 * r * x * x / ( k * ( 2.0D+00 * k + 1.0D+00 ) )
     r1 = h(k+1) * r
     y1d = y1d + r1
@@ -21430,7 +21430,7 @@ subroutine pbwa ( a, x, w1f, w1d, w2f, w2d )
 
   y2f = 1.0D+00
   r = 1.0D+00
-  do k = 1, 100
+  do k = 1, 99
     r = 0.5D+00 * r * x * x / ( k * ( 2.0D+00 * k + 1.0D+00 ) )
     r1 = d(k+1) * r
     y2f = y2f + r1
@@ -21442,7 +21442,7 @@ subroutine pbwa ( a, x, w1f, w1d, w2f, w2d )
   y2f = x * y2f
   y2d = 1.0D+00
   r = 1.0D+00
-  do k = 1, 100
+  do k = 1, 99
     r = 0.5D+00 * r * x * x / ( k * ( 2.0D+00 * k - 1.0D+00 ) )
     r1 = d(k+1) * r
     y2d = y2d + r1
