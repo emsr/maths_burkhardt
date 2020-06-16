@@ -51,7 +51,7 @@ double *cheby_t_zero ( int n )
 
   for ( i = 0; i < n; i++ )
   {
-    angle = ( double ) ( 2 * i + 1 ) * pi / ( double ) ( 2 * n );
+    angle = double( 2 * i + 1 ) * pi / double( 2 * n );
     z[i] = cos ( angle );
   }
   return z;
@@ -98,7 +98,7 @@ double *cheby_u_zero ( int n )
 
   for ( i = 0; i < n; i++ )
   {
-    angle = ( double ) ( i + 1 ) * pi / ( double ) ( n + 1 );
+    angle = double( i + 1 ) * pi / double( n + 1 );
     z[i] = cos ( angle );
   }
   return z;
@@ -1020,7 +1020,7 @@ void dif_deriv_table ( int nd, double xd[], double yd[], double xdp[],
 
   for ( i = 0; i < nd - 1; i++ )
   {
-    ydp[i] = ( double ) ( i + 1 ) * yd_temp[i+1];
+    ydp[i] = double( i + 1 ) * yd_temp[i+1];
   }
 
   delete [] xd_temp;
@@ -1122,7 +1122,7 @@ void dif_derivk_table ( int nd, double xd[], double dd[], int k,
 
     for ( i = 0; i < ndk; i++ )
     {
-      dd_temp[i] = ( double ) ( i + 1 ) * dd_temp[i+1];
+      dd_temp[i] = double( i + 1 ) * dd_temp[i+1];
     }
   }
 
@@ -1918,8 +1918,8 @@ void ncc_rule ( int norder, double xtab[], double weight[] )
 
   for ( i = 1; i <= norder; i++ )
   {
-    xtab[i-1] = ( ( double ) ( norder - i ) * a + ( double ) ( i - 1 ) * b )
-      / ( double ) ( norder - 1 );
+    xtab[i-1] = ( double( norder - i ) * a + double( i - 1 ) * b )
+      / double( norder - 1 );
   }
 
   nc_rule ( norder, a, b, xtab, weight );
@@ -1979,8 +1979,8 @@ void nco_rule ( int norder, double xtab[], double weight[] )
 
   for ( i = 1; i <= norder; i++ )
   {
-    xtab[i-1] = ( ( double ) ( norder + 1 - i ) * a + ( double ) ( i ) * b )
-      / ( double ) ( norder + 1 );
+    xtab[i-1] = ( double( norder + 1 - i ) * a + double( i ) * b )
+      / double( norder + 1 );
   }
 
   nc_rule ( norder, a, b, xtab, weight );
@@ -2212,7 +2212,7 @@ void r8poly_ant_cof ( int n, double poly_cof[], double poly_cof2[] )
 //
   for ( i = 1; i <= n; i++ )
   {
-    poly_cof2[i] = poly_cof[i-1] / ( double ) i;
+    poly_cof2[i] = poly_cof[i-1] / double(i);
   }
 
   return;
@@ -2264,7 +2264,7 @@ double r8poly_ant_val ( int n, double poly_cof[], double xval )
 
   for ( i = n - 1; 0 <= i; i-- )
   {
-    value = ( value + poly_cof[i] / ( double ) ( i + 1 ) ) * xval;
+    value = ( value + poly_cof[i] / double( i + 1 ) ) * xval;
   }
 
   return value;
@@ -2478,7 +2478,7 @@ void r8poly_der_cof ( int n, double poly_cof[], double poly_cof2[] )
 
   for ( i = 0; i < n; i++ )
   {
-    poly_cof2[i] = ( double ) ( i + 1 ) * poly_cof[i+1];
+    poly_cof2[i] = double( i + 1 ) * poly_cof[i+1];
   }
 
   return;
@@ -2533,11 +2533,11 @@ double r8poly_der_val ( int n, double poly_cof[], double xval )
   int i;
   double value;
 
-  value = ( double ) ( n - 1 ) * poly_cof[n-1];
+  value = double( n - 1 ) * poly_cof[n-1];
 
   for ( i = n - 2; 1 <= i; i-- )
   {
-    value = value * xval + ( double ) i * poly_cof[i];
+    value = value * xval + double(i) * poly_cof[i];
   }
 
   return value;
@@ -2830,7 +2830,7 @@ void r8vec_indicator ( int n, double a[] )
 
   for ( i = 0; i <= n - 1; i++ )
   {
-    a[i] = ( double ) ( i + 1 );
+    a[i] = double( i + 1 );
   }
 
   return;
@@ -2975,49 +2975,3 @@ void roots_to_r8poly ( int nroots, double roots[], int *nc, double c[] )
   return;
 }
 //****************************************************************************80
-
-void timestamp ( )
-
-//****************************************************************************80
-//
-//  Purpose:
-//
-//    TIMESTAMP prints the current YMDHMS date as a time stamp.
-//
-//  Example:
-//
-//    May 31 2001 09:45:54 AM
-//
-//  Licensing:
-//
-//    This code is distributed under the GNU LGPL license.
-//
-//  Modified:
-//
-//    02 October 2003
-//
-//  Author:
-//
-//    John Burkardt
-//
-//  Parameters:
-//
-//    None
-//
-{
-# define TIME_SIZE 40
-
-  static char time_buffer[TIME_SIZE];
-  const struct tm *tm;
-  time_t now;
-
-  now = time ( NULL );
-  tm = localtime ( &now );
-
-  strftime ( time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm );
-
-  cout << time_buffer << "\n";
-
-  return;
-# undef TIME_SIZE
-}
