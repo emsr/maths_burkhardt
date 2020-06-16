@@ -787,7 +787,7 @@ int dsvdc ( double a[], int lda, int m, int n, double s[], double e[],
   int l;
   int ll;
   int lls;
-  int ls;
+  int ls = 0; // Uninitialized warning.
   int lu;
   int maxit = 30;
   int mm;
