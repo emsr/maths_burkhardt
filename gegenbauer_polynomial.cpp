@@ -3,7 +3,6 @@
 # include <ctime>
 # include <iomanip>
 # include <iostream>
-# include <vector>
 
 # include "gegenbauer_polynomial.hpp"
 
@@ -119,6 +118,7 @@ void gegenbauer_ek_compute ( int n, double alpha, double x[], double w[] )
 //
 {
   double abi;
+  double* bj;
   bool check;
   int i;
   double zemu;
@@ -158,7 +158,7 @@ void gegenbauer_ek_compute ( int n, double alpha, double x[], double w[] )
     x[i] = 0.0;
   }
 
-  std::vector<double> bj(n);
+  bj = new double(n);
 
   bj[0] = 4.0 * pow ( alpha + 1.0, 2 )
     / ( ( 2.0 * alpha + 3.0 ) * pow ( 2.0 * alpha + 2.0, 2 ) );
@@ -189,6 +189,8 @@ void gegenbauer_ek_compute ( int n, double alpha, double x[], double w[] )
   {
     w[i] = pow ( w[i], 2 );
   }
+
+  delete [] bj;
 
   return;
 }
