@@ -119,7 +119,6 @@ void gegenbauer_ek_compute ( int n, double alpha, double x[], double w[] )
 //
 {
   double abi;
-  double *bj;
   bool check;
   int i;
   double zemu;
