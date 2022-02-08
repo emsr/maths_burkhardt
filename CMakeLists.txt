@@ -12,7 +12,11 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-psabi -Wno-deprecated-declarations -Wold
 add_library(maths_burkhardt SHARED
 	    special_functions.f90
 	    special_functions_module.f90
+	    prob.cpp
 	    asa109.cpp
+	    asa152.cpp
+	    asa226.cpp
+	    asa241.cpp
 	    asa243.cpp
 	    asa310.cpp
 	    bernstein_polynomial.cpp

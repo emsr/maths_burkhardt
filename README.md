@@ -8,3 +8,5 @@ http://people.sc.fsu.edu/~jburkardt/f_src/specfun/specfun.html
 
 I basically packaged things a a library with a header and one shared library.
 I changed to cmake.
+
+I had to try the wayback machine!
