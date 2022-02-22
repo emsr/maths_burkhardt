@@ -1,15 +1,15 @@
 #include <string>
 
-void daxpy ( int n, double da, double dx[], int incx, double dy[], int incy );
-double ddot ( int n, double dx[], int incx, double dy[], int incy );
-double dnrm2 ( int n, double x[], int incx );
-void drot ( int n, double x[], int incx, double y[], int incy, double c,
-  double s );
-void drotg ( double *sa, double *sb, double *c, double *s );
-void dscal ( int n, double sa, double x[], int incx );
-int dsvdc ( double a[], int lda, int m, int n, double s[], double e[], 
-  double u[], int ldu, double v[], int ldv, double work[], int job );
-void dswap ( int n, double x[], int incx, double y[], int incy );
+#include "blas1_d.hpp"
+//void daxpy ( int n, double da, double dx[], int incx, double dy[], int incy );
+//double ddot ( int n, double dx[], int incx, double dy[], int incy );
+//double dnrm2 ( int n, double x[], int incx );
+//void drot ( int n, double x[], int incx, double y[], int incy, double c, double s );
+//void drotg ( double *sa, double *sb, double *c, double *s );
+//void dscal ( int n, double sa, double x[], int incx );
+//int dsvdc ( double a[], int lda, int m, int n, double s[], double e[], 
+//            double u[], int ldu, double v[], int ldv, double work[], int job );
+//void dswap ( int n, double x[], int incx, double y[], int incy );
 
 int i4_max ( int i1, int i2 );
 int i4_min ( int i1, int i2 );

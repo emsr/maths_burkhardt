@@ -43,6 +43,13 @@ add_library(maths_burkhardt SHARED
 	    triangle_fekete_rule.cpp
 	    triangle_felippa_rule.cpp
 	    triangle_monte_carlo.cpp
+	    blas0.cpp
+	    blas1_c.cpp
+	    blas1_d.cpp
+	    blas1_s.cpp
+	    blas1_z.cpp
+	    blas2_d.cpp
+	    blas3_d.cpp
 )
 target_include_directories(maths_burkhardt PUBLIC .)
 target_link_libraries(maths_burkhardt gfortran)
