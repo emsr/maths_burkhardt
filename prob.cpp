@@ -71,8 +71,8 @@ double angle_cdf ( double x, int n )
   else
   {
     cdf = sin_power_int ( zero, x, n - 2 )
-      * tgamma ( ( double ) ( n ) / 2.0 )
-      / ( sqrt ( r8_pi ) * tgamma ( ( double ) ( n - 1 ) / 2.0 ) );
+      * tgamma ( static_cast<double>(n ) / 2.0 )
+      / ( sqrt ( r8_pi ) * tgamma ( static_cast<double>(n - 1 ) / 2.0 ) );
   }
 
   return cdf;
@@ -182,8 +182,8 @@ double angle_pdf ( double x, int n )
   else
   {
     pdf = pow ( ( sin ( x ) ), ( n - 2 ) )
-      * tgamma ( ( double ) ( n ) / 2.0 )
-      / ( sqrt ( r8_pi ) * tgamma ( ( double ) ( n - 1 ) / 2.0 ) );
+      * tgamma ( static_cast<double>(n ) / 2.0 )
+      / ( sqrt ( r8_pi ) * tgamma ( static_cast<double>(n - 1 ) / 2.0 ) );
   }
 
   return pdf;
@@ -764,7 +764,7 @@ double benford_cdf ( int x )
   }
   else
   {
-    value = log10 ( ( double ) ( x + 1 ) );
+    value = log10 ( static_cast<double>(x + 1 ) );
     value = fmod ( value, 1.0 );
   }
 
@@ -840,7 +840,7 @@ double benford_pdf ( int x )
   }
   else
   {
-    pdf = log10 ( ( double ) ( x + 1 ) / ( double ) ( x ) );
+    pdf = log10 ( static_cast<double>(x + 1 ) / static_cast<double>(x ) );
   }
 
   return pdf;
@@ -2058,9 +2058,9 @@ double beta_binomial_cdf ( int x, double a, double b, int c )
     cdf = 0.0;
     for ( y = 0; y <= x; y++ )
     {
-      pdf = r8_beta ( a + ( double ) y, b + ( double ) ( c - y) )
-        / ( ( double ) ( c + 1 )
-         * r8_beta ( ( double ) ( y + 1 ), ( double ) ( c - y + 1 ) )
+      pdf = r8_beta ( a + static_cast< double > ( y), b + static_cast<double>(c - y) )
+        / ( static_cast<double>(c + 1 )
+         * r8_beta ( static_cast<double>(y + 1 ), static_cast<double>(c - y + 1 ) )
          * r8_beta ( a, b ) );
       cdf = cdf + pdf;
     }
@@ -2130,10 +2130,10 @@ int beta_binomial_cdf_inv ( double cdf, double a, double b, int c )
 
   for ( y = 0; y <= c; y++ )
   {
-    pdf = r8_beta ( a + ( double ) ( y ),
-      b + ( double ) ( c - y ) ) / ( ( double ) ( c + 1 )
-      * r8_beta ( ( double ) ( y + 1 ),
-      ( double ) ( c - y + 1 ) ) * r8_beta ( a, b ) );
+    pdf = r8_beta ( a + static_cast<double>(y ),
+      b + static_cast<double>(c - y ) ) / ( static_cast<double>(c + 1 )
+      * r8_beta ( static_cast<double>(y + 1 ),
+      static_cast<double>(c - y + 1 ) ) * r8_beta ( a, b ) );
 
     cum = cum + pdf;
 
@@ -2245,7 +2245,7 @@ double beta_binomial_mean ( double a, double b, int c )
 {
   double mean;
 
-  mean = ( double ) ( c ) * a / ( a + b );
+  mean = static_cast<double>(c ) * a / ( a + b );
 
   return mean;
 }
@@ -2334,10 +2334,10 @@ double beta_binomial_pdf ( int x, double a, double b, int c )
   }
   else if ( x <= c )
   {
-    pdf = r8_beta ( a + ( double ) ( x ), b + ( double ) ( c - x ) )
-      / ( ( double ) ( c + 1 )
-      * r8_beta ( ( double ) ( x + 1 ),
-      ( double ) ( c - x + 1 ) ) * r8_beta ( a, b ) );
+    pdf = r8_beta ( a + static_cast<double>(x ), b + static_cast<double>(c - x ) )
+      / ( static_cast<double>(c + 1 )
+      * r8_beta ( static_cast<double>(x + 1 ),
+      static_cast<double>(c - x + 1 ) ) * r8_beta ( a, b ) );
   }
   else if ( c < x )
   {
@@ -2427,8 +2427,8 @@ double beta_binomial_variance ( double a, double b, int c )
 {
   double variance;
 
-  variance = ( ( double ) ( c ) * a * b )
-    * ( a + b + ( double ) ( c ) )
+  variance = ( static_cast<double>(c ) * a * b )
+    * ( a + b + static_cast<double>(c ) )
     / ( ( a + b ) * ( a + b ) * ( a + b + 1.0 ) );
 
   return variance;
@@ -2864,8 +2864,8 @@ double beta_cdf_inv_old ( double cdf, double a, double b )
 //
 //  Find D(2,K-2).
 //
-      s1 = q * ( ( double ) ( k ) - 2.0 ) * s1 / t;
-      s2 = q * ( 2.0 - ( double ) ( k ) ) * s2 / x;
+      s1 = q * ( static_cast<double>(k ) - 2.0 ) * s1 / t;
+      s2 = q * ( 2.0 - static_cast<double>(k ) ) * s2 / x;
       d[2-1+(k-2)*MAXK] = s1 + s2;
 //
 //  Find D(3,K-3), D(4,K-4), D(5,K-5), ... , D(K-1,1).
@@ -2877,18 +2877,18 @@ double beta_cdf_inv_old ( double cdf, double a, double b )
 
         for ( j = 1; j <= k - i; j++ )
         {
-          bcoeff = ( bcoeff * ( double ) ( k - i - j + 1 ) )
-            / ( double ) ( j );
+          bcoeff = ( bcoeff * static_cast<double>(k - i - j + 1 ) )
+            / static_cast<double>(j );
           sum2 = sum2 + bcoeff * d[2-1+j*MAXK] * d[i-2+(k-i-j)*MAXK];
         }
-        d[i-1+(k-i)*MAXK] = sum2 + d[i-2+(k-i+1)*MAXK] / ( double ) ( i - 1 );
+        d[i-1+(k-i)*MAXK] = sum2 + d[i-2+(k-i+1)*MAXK] / static_cast<double>(i - 1 );
       }
 //
 //  Compute D(K,0) and use it to expand the series.
 //
       d[k-1+0*MAXK] = d[2-1+0*MAXK] * d[k-2+0*MAXK] + d[k-2+1*MAXK]
-        / ( double ) ( k - 1 );
-      tail = d[k-1+0*MAXK] * q / ( double ) ( k );
+        / static_cast<double>(k - 1 );
+      tail = d[k-1+0*MAXK] * q / static_cast<double>(k );
       x = x + tail;
 //
 //  Check for divergence.
@@ -3377,13 +3377,13 @@ double beta_inc ( double a, double b, double x )
   i = 1;
   value = 1.0;
 
-  ns = ( int ) ( qq + cx * ( a + b ) );
+  ns = static_cast<int>( qq + cx * ( a + b ) );
 //
 //  Use Soper's reduction formulas.
 //
   rx = xx / cx;
 
-  temp = qq - ( double ) i;
+  temp = qq - static_cast<double>(i);
   if ( ns == 0 )
   {
     rx = xx;
@@ -3404,7 +3404,7 @@ double beta_inc ( double a, double b, double x )
       exit ( 1 );
     }
 
-    term = term * temp * rx / ( pp + ( double ) ( i ) );
+    term = term * temp * rx / ( pp + static_cast<double>(i ) );
     value = value + term;
     temp = fabs ( term );
 
@@ -3418,7 +3418,7 @@ double beta_inc ( double a, double b, double x )
 
     if ( 0 <= ns )
     {
-      temp = qq - ( double ) i;
+      temp = qq - static_cast< double > ( i);
       if ( ns == 0 )
       {
         rx = xx;
@@ -3871,7 +3871,7 @@ double binomial_cdf ( double x, int a, double b )
     {
       cnk = i4_choose ( a, j );
 
-      pr = ( double ) ( cnk ) * pow ( b, j ) * pow ( ( 1.0 - b ), ( a - j ) );
+      pr = static_cast<double>(cnk ) * pow ( b, j ) * pow ( ( 1.0 - b ), ( a - j ) );
 
       cdf = cdf + pr;
 
@@ -4036,7 +4036,7 @@ double binomial_mean ( int a, double b )
 {
   double mean;
 
-  mean = ( double ) ( a ) * b;
+  mean = static_cast<double>(a ) * b;
 
   return mean;
 }
@@ -4122,7 +4122,7 @@ double binomial_pdf ( int x, int a, double b )
   {
     cnk = i4_choose ( a, x );
 
-    pdf = ( double ) ( cnk ) * pow ( b, x ) * pow ( ( 1.0 - b ), ( a - x ) );
+    pdf = static_cast<double>(cnk ) * pow ( b, x ) * pow ( ( 1.0 - b ), ( a - x ) );
   }
 
   return pdf;
@@ -4223,7 +4223,7 @@ double binomial_variance ( int a, double b )
 {
   double variance;
 
-  variance = ( double ) ( a ) * b * ( 1.0 - b );
+  variance = static_cast<double>(a ) * b * ( 1.0 - b );
 
   return variance;
 }
@@ -4277,7 +4277,7 @@ double birthday_cdf ( int n )
   cdf = 1.0;
   for ( i = 1; i <= n; i++ )
   {
-    cdf = cdf * ( double ) ( 365 + 1 - i ) / 365.0;
+    cdf = cdf * static_cast<double>(365 + 1 - i ) / 365.0;
   }
 //
 //  Compute the probability that it is NOT the case that N people
@@ -4341,7 +4341,7 @@ int birthday_cdf_inv ( double cdf )
 
   for ( i = 1; i <= 365; i++ )
   {
-    cdf_not = cdf_not * ( double ) ( 365 + 1 - i ) / 365.0;
+    cdf_not = cdf_not * static_cast<double>(365 + 1 - i ) / 365.0;
     if ( cdf <= 1.0 - cdf_not )
     {
       n = i;
@@ -4401,12 +4401,12 @@ double birthday_pdf ( int n )
 //
   for ( i = 1; i <= n - 1; i++ )
   {
-    pdf = pdf * ( double ) ( 365 + 1 - i ) / 365.0;
+    pdf = pdf * static_cast<double>(365 + 1 - i ) / 365.0;
   }
 //
 //  Compute the probability that person N has one of those N-1 birthdays.
 //
-  pdf = pdf * ( double ) ( n - 1 ) / 365.0;
+  pdf = pdf * static_cast<double>(n - 1 ) / 365.0;
 
   return pdf;
 }
@@ -5048,9 +5048,9 @@ int buffon_box_sample ( double a, double b, double l, int trial_num )
 //  Randomly choose the location of the eye of the needle in [0,0]x[A,B],
 //  and the angle the needle makes.
 //
-    x1 = a * ( double ) rand ( ) / ( double ) RAND_MAX;
-    y1 = b * ( double ) rand ( ) / ( double ) RAND_MAX;
-    angle = 2.0 * r8_pi * ( double ) rand ( ) / ( double ) RAND_MAX;
+    x1 = a * static_cast< double > ( rand ( )) / static_cast< double > (RAND_MAX);
+    y1 = b * static_cast< double > ( rand ( )) / static_cast< double > (RAND_MAX);
+    angle = 2.0 * r8_pi * static_cast< double > (rand ( )) / static_cast< double > (RAND_MAX);
 //
 //  Compute the location of the point of the needle.
 //
@@ -5243,8 +5243,8 @@ int buffon_sample ( double a, double l, int trial_num )
 //  Randomly choose the location (X1,Y1) of the eye of the needle
 //  in [0,0]x[A,0], and the angle the needle makes.
 //
-    x1 = a * ( double ) rand ( ) / ( double ) RAND_MAX;
-    angle = 2.0 * r8_pi * ( double ) rand ( ) / ( double ) RAND_MAX;
+    x1 = a * static_cast< double > ( rand ( )) / static_cast< double > (RAND_MAX);
+    angle = 2.0 * r8_pi * static_cast< double > ( rand ( )) / static_cast< double > (RAND_MAX);
 //
 //  Compute the location of the point of the needle.
 //  We only need to know the value of X2, not Y2!
@@ -7664,9 +7664,9 @@ double chi_square_sample ( double a, int &seed )
   double x;
   double x2;
 
-  n = ( int ) a;
+  n = static_cast< int > ( a);
 
-  if ( ( double ) ( n ) == a && n <= it_max )
+  if ( static_cast<double>(n ) == a && n <= it_max )
   {
     x = 0.0;
     for ( i = 1; i <= n; i++ )
@@ -8891,13 +8891,13 @@ double coupon_complete_pdf ( int type_num, int box_num )
     factor = 1.0;
     for ( i = 1; i <= type_num; i++ )
     {
-      factor = factor * ( double ) ( i ) / ( double ) ( type_num );
+      factor = factor * static_cast<double>(i ) / static_cast<double>(type_num );
     }
     for ( i = type_num+1; i <= box_num; i++ )
     {
-      factor = factor / ( double ) ( type_num );
+      factor = factor / static_cast<double>(type_num );
     }
-    pdf = factor * ( double ) ( stirling2_value ( box_num-1, type_num-1 ) );
+    pdf = factor * static_cast< double >( stirling2_value ( box_num-1, type_num-1 ) );
   }
   return pdf;
 }
@@ -8958,9 +8958,9 @@ double coupon_mean ( int j, int type_num )
 
   for ( i = 1; i <= j; i++ )
   {
-    mean = mean + 1.0 / ( double ) ( type_num - i + 1 );
+    mean = mean + 1.0 / static_cast<double>(type_num - i + 1 );
   }
-  mean = mean * ( double ) ( type_num );
+  mean = mean * static_cast<double>(type_num );
 
   return mean;
 }
@@ -9137,10 +9137,10 @@ double coupon_variance ( int j, int type_num )
   variance = 0.0;
   for ( i = 1; i <= j; i++ )
   {
-    variance = variance + ( double ) ( i - 1 ) /
-      pow ( ( double ) ( type_num - i + 1 ), 2 );
+    variance = variance + static_cast<double>(i - 1 ) /
+      pow ( static_cast<double>(type_num - i + 1 ), 2 );
   }
-  variance = variance * ( double ) ( type_num );
+  variance = variance * static_cast<double>(type_num );
 
   return variance;
 }
@@ -9196,7 +9196,7 @@ double deranged_cdf ( int x, int a )
       dnmk = deranged_enum ( a - x2 );
       sum2 = sum2 + cnk * dnmk;
     }
-    cdf = ( double ) ( sum2 ) / r8_factorial ( a );
+    cdf = static_cast<double>(sum2 ) / r8_factorial ( a );
   }
 
   return cdf;
@@ -9516,7 +9516,7 @@ double deranged_pdf ( int x, int a )
   {
     cnk = i4_choose ( a, x );
     dnmk = deranged_enum ( a - x );
-    pdf = ( double ) ( cnk * dnmk ) / r8_factorial ( a );
+    pdf = static_cast< double >( cnk * dnmk ) / r8_factorial ( a );
   }
 
   return pdf;
@@ -10811,13 +10811,13 @@ double dirichlet_multinomial_pdf ( int x[], int a, int b, double c[] )
 
   c_sum = r8vec_sum ( b, c );
 
-  pdf_log = - lgamma ( c_sum + ( double ) ( a ) ) + lgamma ( c_sum )
-    + lgamma ( ( double ) ( a + 1 ) );
+  pdf_log = - lgamma ( c_sum + static_cast<double>(a ) ) + lgamma ( c_sum )
+    + lgamma ( static_cast<double>(a + 1 ) );
 
   for ( i = 0; i < b; i++ )
   {
-    pdf_log = pdf_log + lgamma ( c[i] + ( double ) ( x[i] ) )
-      - lgamma ( c[i] ) - lgamma ( ( double ) ( x[i] + 1 ) );
+    pdf_log = pdf_log + lgamma ( c[i] + static_cast<double>( x[i] ) )
+      - lgamma ( c[i] ) - lgamma ( static_cast<double>( x[i] + 1 ) );
   }
 
   pdf = exp ( pdf_log );
@@ -11042,7 +11042,7 @@ double discrete_mean ( int a, double b[] )
   mean = 0.0;
   for ( j = 0; j < a; j++ )
   {
-    mean = mean + ( double ) ( j + 1 ) * b[j];
+    mean = mean + static_cast<double>(j + 1 ) * b[j];
   }
 
   mean = mean / b_sum;
@@ -11189,7 +11189,7 @@ double discrete_variance ( int a, double b[] )
   mean = 0.0;
   for ( j = 1; j <= a; j++ )
   {
-    mean = mean + ( double ) ( j ) * b[j-1];
+    mean = mean + static_cast<double>(j ) * b[j-1];
   }
 
   mean = mean / b_sum;
@@ -11197,7 +11197,7 @@ double discrete_variance ( int a, double b[] )
   variance = 0.0;
   for ( j = 1; j <= a; j++ )
   {
-    variance = variance + b[j-1] * pow ( ( double ) j - mean, 2 );
+    variance = variance + b[j-1] * pow ( static_cast< double > ( j) - mean, 2 );
   }
 
   variance = variance / b_sum;
@@ -12464,7 +12464,7 @@ double english_sentence_length_mean ( )
   mean = 0.0;
   for ( j = 1; j <= SENTENCE_LENGTH_MAX; j++ )
   {
-    mean = mean + ( double ) ( j ) * pdf_vec[j-1];
+    mean = mean + static_cast<double>(j ) * pdf_vec[j-1];
   }
 
   mean = mean / pdf_sum;
@@ -12777,7 +12777,7 @@ double english_sentence_length_variance ( )
   mean = 0.0;
   for ( j = 1; j <= SENTENCE_LENGTH_MAX; j++ )
   {
-    mean = mean + ( double ) ( j ) * pdf_vec[j-1];
+    mean = mean + static_cast<double>(j ) * pdf_vec[j-1];
   }
 
   mean = mean / pdf_sum;
@@ -12785,7 +12785,7 @@ double english_sentence_length_variance ( )
   variance = 0.0;
   for ( j = 1; j <= SENTENCE_LENGTH_MAX; j++ )
   {
-    variance = variance + pdf_vec[j-1] * pow ( ( double ) j - mean, 2 );
+    variance = variance + pdf_vec[j-1] * pow ( static_cast< double > ( j) - mean, 2 );
   }
 
   variance = variance / pdf_sum;
@@ -13051,7 +13051,7 @@ double english_word_length_mean ( )
   mean = 0.0;
   for ( j = 1; j <= WORD_LENGTH_MAX; j++ )
   {
-    mean = mean + ( double ) ( j ) * pdf_vec[j-1];
+    mean = mean + static_cast<double>(j ) * pdf_vec[j-1];
   }
 
   mean = mean / pdf_sum;
@@ -13260,7 +13260,7 @@ double english_word_length_variance ( )
   mean = 0.0;
   for ( j = 1; j <= WORD_LENGTH_MAX; j++ )
   {
-    mean = mean + ( double ) ( j ) * pdf_vec[j-1];
+    mean = mean + static_cast<double>(j ) * pdf_vec[j-1];
   }
 
   mean = mean / pdf_sum;
@@ -13268,7 +13268,7 @@ double english_word_length_variance ( )
   variance = 0.0;
   for ( j = 1; j <= WORD_LENGTH_MAX; j++ )
   {
-    variance = variance + pdf_vec[j-1] * pow ( ( double ) j - mean, 2 );
+    variance = variance + pdf_vec[j-1] * pow ( static_cast< double > ( j) - mean, 2 );
   }
 
   variance = variance / pdf_sum;
@@ -13320,7 +13320,7 @@ double erlang_cdf ( double x, double a, double b, int c )
   else
   {
     x2 = ( x - a ) / b;
-    p2 = ( double ) ( c );
+    p2 = static_cast<double>(c );
 
     cdf = r8_gamma_inc ( p2, x2 );
   }
@@ -13533,7 +13533,7 @@ double erlang_mean ( double a, double b, int c )
 {
   double mean;
 
-  mean = a + b * ( double ) ( c );
+  mean = a + b * static_cast<double>(c );
 
   return mean;
 }
@@ -13677,7 +13677,7 @@ double erlang_variance ( double a, double b, int c )
 {
   double variance;
 
-  variance =  b * b * ( double ) ( c );
+  variance =  b * b * static_cast<double>(c );
 
   return variance;
 }
@@ -14889,10 +14889,10 @@ double f_cdf ( double x, int m, int n )
   }
   else
   {
-    arg1 = 0.5 * ( double ) ( n );
-    arg2 = 0.5 * ( double ) ( m );
+    arg1 = 0.5 * static_cast<double>(n );
+    arg2 = 0.5 * static_cast<double>(m );
 
-    arg3 = ( double ) ( n ) / ( ( double ) ( n ) + ( double ) ( m ) * x );
+    arg3 = static_cast<double>(n ) / ( static_cast<double>(n ) + static_cast<double>(m ) * x );
 
     cdf = 1.0 - beta_inc ( arg1, arg2, arg3 );
   }
@@ -15165,7 +15165,7 @@ double f_mean ( int m, int n )
     exit ( 1 );
   }
 
-  mean = ( double ) ( n ) / ( double ) ( n - 2 );
+  mean = static_cast<double>(n ) / static_cast<double>(n - 2 );
 
   return mean;
 }
@@ -15221,8 +15221,8 @@ double f_pdf ( double x, int m, int n )
   }
   else
   {
-    a = ( double ) ( m );
-    b = ( double ) ( n );
+    a = static_cast<double>(m );
+    b = static_cast<double>(n );
 
     top = sqrt ( pow ( a, m ) * pow ( b, n ) * pow ( x, m - 2 ) );
     bot1 = r8_beta ( a / 2.0, b / 2.0 ) ;
@@ -15271,13 +15271,13 @@ double f_sample ( int m, int n, int &seed )
   double xm;
   double xn;
 
-  a = ( double ) ( m );
+  a = static_cast<double>(m );
   xm = chi_square_sample ( a, seed );
 
-  a = ( double ) ( n );
+  a = static_cast<double>(n );
   xn = chi_square_sample ( a, seed );
 
-  x = ( double ) ( n ) * xm / ( ( double ) ( m ) * xn );
+  x = static_cast<double>(n ) * xm / ( static_cast<double>(m ) * xn );
 
   return x;
 }
@@ -15323,8 +15323,8 @@ double f_variance ( int m, int n )
     exit ( 1 );
   }
 
-  variance = ( double ) ( 2 * n * n * ( m + n - 2 ) ) /
-    ( double ) ( m * ( n - 2 ) * ( n - 2 ) * ( n - 4 ) );
+  variance = static_cast<double>( 2 * n * n * ( m + n - 2 ) ) /
+    static_cast<double>( m * ( n - 2 ) * ( n - 2 ) * ( n - 4 ) );
 
   return variance;
 }
@@ -15612,8 +15612,8 @@ double f_noncentral_mean ( double a, int m, int n )
     exit ( 1 );
   }
 
-  mean = ( ( double ) ( m ) + a ) * ( double ) ( n )
-    / ( ( double ) ( m ) * ( double ) ( n - 2 ) );
+  mean = ( static_cast<double>(m ) + a ) * static_cast<double>(n )
+    / ( static_cast<double>(m ) * static_cast<double>(n - 2 ) );
 
   return mean;
 }
@@ -15663,8 +15663,8 @@ double f_noncentral_variance ( double a, int m, int n )
     exit ( 1 );
   }
 
-  mr = ( double ) ( m );
-  nr = ( double ) ( n );
+  mr = static_cast<double>(m );
+  nr = static_cast<double>(n );
 
   variance = ( ( mr + a ) * ( mr + a ) + 2.0 * ( mr + a ) * nr * nr )
     / ( ( nr - 2.0 ) * ( nr - 4.0 ) * mr * mr )
@@ -18337,7 +18337,7 @@ int geometric_cdf_inv ( double cdf, double a )
   }
   else
   {
-    x = 1 + ( int ) ( log ( 1.0 - cdf ) / log ( 1.0 - a ) );
+    x = 1 + static_cast< int >( log ( 1.0 - cdf ) / log ( 1.0 - a ) );
   }
 
   return x;
@@ -18766,9 +18766,9 @@ int get_seed ( )
 //
 //  Remap SEED from [1,43200] to [1,IMAX].
 //
-  seed = ( int )
-    ( ( ( double ) seed )
-    * ( ( double ) I_MAX ) / ( 60.0 * 60.0 * 12.0 ) );
+  seed = static_cast<int>
+    ( ( static_cast< double >( seed) )
+    * ( static_cast< double >(I_MAX) ) / ( 60.0 * 60.0 * 12.0 ) );
 //
 //  Never use a seed of 0.
 //
@@ -19644,8 +19644,8 @@ double hypergeometric_cdf ( int x, int n, int m, int l )
 
   for ( x2 = 0; x2 <= x - 1; x2++ )
   {
-    pdf = pdf * ( double ) ( ( m - x2 ) * ( n - x2 ) )
-      / ( double ) ( ( x2 + 1 ) * ( l - m - n + x2 + 1 ) );
+    pdf = pdf * static_cast< double >( ( m - x2 ) * ( n - x2 ) )
+      / static_cast< double >( ( x2 + 1 ) * ( l - m - n + x2 + 1 ) );
 
     cdf = cdf + pdf;
   }
@@ -19892,7 +19892,7 @@ double hypergeometric_mean ( int n, int m, int l )
 {
   double mean;
 
-  mean = ( double ) ( n * m ) / ( double ) ( l );
+  mean = static_cast< double >( n * m ) / static_cast<double>(l );
 
   return mean;
 }
@@ -20055,8 +20055,8 @@ int hypergeometric_sample ( int n, int m, int l, int &seed )
 
   while ( a < u )
   {
-    b = b * ( double ) ( ( m - x ) * ( n - x ) )
-      / ( double ) ( ( x + 1 ) * ( l - m - n + x + 1 ) );
+    b = b * static_cast< double >( ( m - x ) * ( n - x ) )
+      / static_cast< double >( ( x + 1 ) * ( l - m - n + x + 1 ) );
 
     a = a + b;
 
@@ -20104,8 +20104,8 @@ double hypergeometric_variance ( int n, int m, int l )
 {
   double variance;
 
-  variance = ( double ) ( n * m * ( l - m ) * ( l - n ) )
-    / ( double ) ( l * l * ( l - 1 ) );
+  variance = static_cast< double >( n * m * ( l - m ) * ( l - n ) )
+    / static_cast< double >( l * l * ( l - 1 ) );
 
   return variance;
 }
@@ -20145,9 +20145,9 @@ double i4_choose_log ( int n, int k )
   double value;
 
   value = 
-      lgamma ( ( double ) ( n + 1 ) ) 
-    - lgamma ( ( double ) ( k + 1 ) ) 
-    - lgamma ( ( double ) ( n - k + 1 ) );
+      lgamma ( static_cast<double>(n + 1 ) ) 
+    - lgamma ( static_cast<double>(k + 1 ) ) 
+    - lgamma ( static_cast<double>(n - k + 1 ) );
 
   return value;
 }
@@ -20351,9 +20351,9 @@ double *i4row_mean ( int m, int n, int a[] )
     mean[i] = 0.0;
     for ( j = 0; j < n; j++ )
     {
-      mean[i] = mean[i] + ( double ) a[i+j*m];
+      mean[i] = mean[i] + static_cast< double > ( a[i+j*m]);
     }
-    mean[i] = mean[i] / ( double ) ( n );
+    mean[i] = mean[i] / static_cast<double>(n );
   }
 
   return mean;
@@ -20462,19 +20462,19 @@ double *i4row_variance ( int m, int n, int a[] )
     mean = 0.0;
     for ( j = 0; j < n; j++ )
     {
-      mean = mean + ( double ) a[i+j*m];
+      mean = mean + static_cast< double > ( a[i+j*m]);
     }
-    mean = mean / ( double ) ( n );
+    mean = mean / static_cast<double>(n );
 
     variance[i] = 0.0;
     for ( j = 0; j < n; j++ )
     {
-      variance[i] = variance[i] + pow ( ( ( double ) a[i+j*m] - mean ), 2 );
+      variance[i] = variance[i] + pow ( ( static_cast< double > ( a[i+j*m]) - mean ), 2 );
     }
 
     if ( 1 < n )
     {
-      variance[i] = variance[i] / ( double ) ( n - 1 );
+      variance[i] = variance[i] / static_cast<double>(n - 1 );
     }
     else
     {
@@ -20521,10 +20521,10 @@ double i4vec_mean ( int n, int x[] )
   mean = 0.0;
   for ( i = 0; i < n; i++ )
   {
-    mean = mean + ( double ) x[i];
+    mean = mean + static_cast< double > ( x[i]);
   }
 
-  mean = mean / ( double ) n;
+  mean = mean / static_cast< double > ( n);
 
   return mean;
 }
@@ -20840,12 +20840,12 @@ int *i4vec_uniform_ab_new ( int n, int a, int b, int &seed )
       seed = seed + i4_huge;
     }
 
-    r = ( float ) ( seed ) * 4.656612875E-10;
+    r = static_cast< float > (seed) * 4.656612875E-10;
 //
 //  Scale R to lie between A-0.5 and B+0.5.
 //
-    r = ( 1.0 - r ) * ( ( float ) a - 0.5 ) 
-      +         r   * ( ( float ) b + 0.5 );
+    r = ( 1.0 - r ) * ( static_cast< float > ( a) - 0.5 ) 
+      +         r   * ( static_cast< float > ( b) + 0.5 );
 //
 //  Use rounding to convert R to an integer between A and B.
 //
@@ -20967,12 +20967,12 @@ double i4vec_variance ( int n, int x[] )
   variance = 0.0;
   for ( i = 0; i < n; i++ )
   {
-    variance = variance + ( ( double ) x[i] - mean ) * ( ( double ) x[i] - mean );
+    variance = variance + ( static_cast< double > ( x[i]) - mean ) * ( static_cast< double > ( x[i]) - mean );
   }
 
   if ( 1 < n )
   {
-    variance = variance / ( double ) ( n - 1 );
+    variance = variance / static_cast<double>(n - 1 );
   }
   else
   {
@@ -21781,14 +21781,14 @@ double lerch ( double a, double b, double c )
   {
     sum2_old = sum2;
 
-    if ( c + ( double ) ( k ) == 0.0 )
+    if ( c + static_cast<double>(k ) == 0.0 )
     {
       k = k + 1;
       a_k = a_k * a;
       continue;
     }
 
-    sum2 = sum2 + a_k / pow ( c + ( double ) ( k ), b );
+    sum2 = sum2 + a_k / pow ( c + static_cast<double>(k ), b );
 
     if ( sum2 <= sum2_old )
     {
@@ -22537,7 +22537,7 @@ double log_series_cdf ( double x, double a )
     }
     else
     {
-      pdf = ( double ) ( x2 - 1 ) * a * pdf / ( double ) ( x2 );
+      pdf = static_cast<double>(x2 - 1 ) * a * pdf / static_cast<double>(x2 );
     }
 
     cdf = cdf + pdf;
@@ -22607,7 +22607,7 @@ int log_series_cdf_inv ( double cdf, double a )
     }
     else
     {
-      pdf = ( double ) ( x - 1 ) * a * pdf / ( double ) ( x );
+      pdf = static_cast<double>(x - 1 ) * a * pdf / static_cast<double>(x );
     }
 
     cdf2 = cdf2 + pdf;
@@ -22885,7 +22885,7 @@ double log_series_pdf ( int x, double a )
   }
   else
   {
-    pdf = - pow ( a, x ) / ( ( double ) ( x ) * log ( 1.0 - a ) );
+    pdf = - pow ( a, x ) / ( static_cast<double>(x ) * log ( 1.0 - a ) );
   }
   return pdf;
 }
@@ -22934,7 +22934,7 @@ int log_series_sample ( double a, int &seed )
   u = r8_uniform_01 ( seed );
   v = r8_uniform_01 ( seed );
 
-  x = ( int ) ( 1.0 + log ( v ) / ( log ( 1.0 - pow ( 1.0 - a, u ) ) ) );
+  x = static_cast< int >( 1.0 + log ( v ) / ( log ( 1.0 - pow ( 1.0 - a, u ) ) ) );
 
   return x;
 }
@@ -24478,11 +24478,11 @@ int multinomial_coef1 ( int nfactor, int factor[] )
 //
   n = i4vec_sum ( nfactor, factor );
 
-  facn = lgamma ( ( double ) ( n + 1 ) );
+  facn = lgamma ( static_cast<double>(n + 1 ) );
 
   for ( i = 0; i < nfactor; i++ )
   {
-    facn = facn - lgamma ( ( double ) ( factor[i] + 1 ) );
+    facn = facn - lgamma ( static_cast< double >( factor[i] + 1 ) );
   }
 
   ncomb = r8_nint ( exp ( facn ) );
@@ -24683,11 +24683,11 @@ double *multinomial_covariance ( int a, int b, double c[] )
     {
       if ( i == j )
       {
-        covariance[i+j*b] = ( double ) ( a ) * c[i] * ( 1.0 - c[i] );
+        covariance[i+j*b] = static_cast<double>(a ) * c[i] * ( 1.0 - c[i] );
       }
       else
       {
-        covariance[i+j*b] = - ( double ) ( a ) * c[i] * c[j];
+        covariance[i+j*b] = - static_cast<double>(a ) * c[i] * c[j];
       }
     }
   }
@@ -24739,7 +24739,7 @@ double *multinomial_mean ( int a, int b, double c[] )
 
   for ( i = 0; i < b; i++ )
   {
-    mean[i] = ( double ) ( a ) * c[i];
+    mean[i] = static_cast<double>(a ) * c[i];
   }
 
   return mean;
@@ -24803,12 +24803,12 @@ double multinomial_pdf ( int x[], int a, int b, double c[] )
 //  To try to avoid overflow, do the calculation in terms of logarithms.
 //  Note that Gamma(A+1) = A factorial.
 //
-  pdf_log = lgamma ( ( double ) ( a + 1 ) );
+  pdf_log = lgamma ( static_cast<double>(a + 1 ) );
 
   for ( i = 0; i < b; i++ )
   {
     pdf_log = pdf_log + x[i] * log ( c[i] )
-      - lgamma ( ( double ) ( x[i] + 1 ) );
+      - lgamma ( static_cast< double >( x[i] + 1 ) );
   }
 
   pdf = exp ( pdf_log );
@@ -24948,7 +24948,7 @@ double *multinomial_variance ( int a, int b, double c[] )
 
   for ( i = 0; i < b; i++ )
   {
-    variance[i] = ( double ) ( a ) * c[i] * ( 1.0 - c[i] );
+    variance[i] = static_cast<double>(a ) * c[i] * ( 1.0 - c[i] );
   }
 
   return variance;
@@ -25491,7 +25491,7 @@ double negative_binomial_cdf ( int x, int a, double b )
   {
     cnk = i4_choose ( y - 1, a - 1 );
 
-    pdf = ( double ) ( cnk ) * pow ( b, a ) * pow ( 1.0 - b, y - a );
+    pdf = static_cast<double>(cnk ) * pow ( b, a ) * pow ( 1.0 - b, y - a );
 
     cdf = cdf + pdf;
   }
@@ -25833,7 +25833,7 @@ double negative_binomial_mean ( int a, double b )
 {
   double mean;
 
-  mean = ( double ) ( a ) / b;
+  mean = static_cast<double>(a ) / b;
 
   return mean;
 }
@@ -25897,7 +25897,7 @@ double negative_binomial_pdf ( int x, int a, double b )
   {
     cnk = i4_choose ( x - 1, a - 1 );
 
-    pdf = ( double ) ( cnk ) * pow ( b, a ) * pow ( 1.0 - b, x - a );
+    pdf = static_cast<double>(cnk ) * pow ( b, a ) * pow ( 1.0 - b, x - a );
   }
 
   return pdf;
@@ -26000,7 +26000,7 @@ double negative_binomial_variance ( int a, double b )
 {
   double variance;
 
-  variance = ( double ) ( a ) * ( 1.0 - b ) / ( b * b );
+  variance = static_cast<double>(a ) * ( 1.0 - b ) / ( b * b );
 
   return variance;
 }
@@ -29022,7 +29022,7 @@ double planck_sample ( double a, double b, int &seed )
 
   z = zipf_sample ( c2, seed );
 
-  x = g / ( a * ( double ) ( z ) );
+  x = g / ( a * static_cast<double>(z ) );
 
   return x;
 }
@@ -29389,7 +29389,7 @@ double poisson_cdf ( int k, double a )
   for ( i = 1; i <= k; i++ )
   {
     last = next;
-    next = last * a / ( double ) i;
+    next = last * a / static_cast< double > ( i);
     cdf = cdf + next;
   }
 
@@ -29461,7 +29461,7 @@ int poisson_cdf_inv ( double cdf, double a )
     else
     {
       last = newval;
-      newval = last * a / ( double ) ( i );
+      newval = last * a / static_cast<double>(i );
       sum2 = sum2 + newval;
     }
 
@@ -29825,7 +29825,7 @@ double poisson_pdf ( int k, double a )
     return pdf;
   }
 
-  pdf = exp ( - a ) * pow ( a, ( double ) k ) / r8_factorial ( k );
+  pdf = exp ( - a ) * pow ( a, static_cast< double > ( k) ) / r8_factorial ( k );
 
   return pdf;
 }
@@ -29900,7 +29900,7 @@ int poisson_sample ( double a, int &seed )
     else
     {
       last = next;
-      next = last * a / ( double ) i;
+      next = last * a / static_cast< double > ( i);
       sum = sum + next;
     }
 
@@ -30529,7 +30529,7 @@ int quasigeometric_cdf_inv ( double cdf, double a, double b )
   }
   else
   {
-    x = 1 + ( int ) ( ( log ( 1.0 - cdf ) - log ( 1.0 - a ) ) / log ( b ) );
+    x = 1 + static_cast< int >( ( log ( 1.0 - cdf ) - log ( 1.0 - a ) ) / log ( b ) );
   }
 
   return x;
@@ -30839,9 +30839,9 @@ int r8_ceiling ( double r )
 {
   int value;
 
-  value = ( int ) ( r );
+  value = static_cast< int >( r );
 
-  if ( ( double ) value < r )
+  if ( static_cast< double > ( value) < r )
   {
     value = value + 1;
   }
@@ -31049,7 +31049,7 @@ double r8_error_f ( double x )
     }
 
     erfxd = ( xnum + c[7] ) / ( xden + d[7] );
-    xsq = ( ( double ) ( ( int ) ( xabs * 16.0 ) ) ) / 16.0;
+    xsq = ( static_cast< double >( static_cast< int >( xabs * 16.0 ) ) ) / 16.0;
     del = ( xabs - xsq ) * ( xabs + xsq );
     erfxd = exp ( - xsq * xsq ) * exp ( -del ) * erfxd;
 
@@ -31091,7 +31091,7 @@ double r8_error_f ( double x )
 
       erfxd = xsq * ( xnum + p[4] ) / ( xden + q[4] );
       erfxd = ( sqrpi - erfxd ) / xabs;
-      xsq = ( ( double ) ( ( int ) ( xabs * 16.0 ) ) ) / 16.0;
+      xsq = ( static_cast< double >( static_cast< int >( xabs * 16.0 ) ) ) / 16.0;
       del = ( xabs - xsq ) * ( xabs + xsq );
       erfxd = exp ( - xsq * xsq ) * exp ( - del ) * erfxd;
 
@@ -31639,7 +31639,7 @@ double r8_gamma_log_int ( int n )
     exit ( 1 );
   }
 
-  value = lgamma ( ( double ) ( n ) );
+  value = lgamma ( static_cast<double>(n ) );
 
   return value;
 }
@@ -31710,7 +31710,7 @@ double r8_modp ( double x, double y )
     exit ( 1 );
   }
 
-  value = x - ( ( double ) ( ( int ) ( x / y ) ) ) * y;
+  value = x - ( static_cast< double >( static_cast< int >( x / y ) ) ) * y;
 
   if ( value < 0.0 )
   {
@@ -31785,7 +31785,7 @@ double r8_uniform_01 ( int &seed )
     seed = seed + 2147483647;
   }
 
-  r = ( double ) ( seed ) * 4.656612875E-10;
+  r = static_cast<double>(seed ) * 4.656612875E-10;
 
   return r;
 }
@@ -31931,7 +31931,7 @@ double r8_zeta ( double p )
     {
       n = n + 1;
       zsum_old = zsum;
-      zsum = zsum + 1.0 / pow ( ( double ) n, p );
+      zsum = zsum + 1.0 / pow ( static_cast< double > ( n), p );
       if ( zsum <= zsum_old )
       {
         break;
@@ -32058,7 +32058,7 @@ double *r8row_mean ( int m, int n, double a[] )
     {
       mean[i] = mean[i] + a[i+j*m];
     }
-    mean[i] = mean[i] / ( double ) ( n );
+    mean[i] = mean[i] / static_cast<double>(n );
   }
 
   return mean;
@@ -32169,7 +32169,7 @@ double *r8row_variance ( int m, int n, double a[] )
     {
       mean = mean + a[i+j*m];
     }
-    mean = mean / ( double ) ( n );
+    mean = mean / static_cast<double>(n );
 
     variance[i] = 0.0;
     for ( j = 0; j < n; j++ )
@@ -32179,7 +32179,7 @@ double *r8row_variance ( int m, int n, double a[] )
 
     if ( 1 < n )
     {
-      variance[i] = variance[i] / ( double ) ( n - 1 );
+      variance[i] = variance[i] / static_cast<double>(n - 1 );
     }
     else
     {
@@ -32242,7 +32242,7 @@ double r8vec_circular_variance ( int n, double x[] )
     sum_s = sum_s + sin ( x[i] - mean );
   }
 
-  value = sqrt ( sum_c * sum_c + sum_s * sum_s ) / ( double ) n;
+  value = sqrt ( sum_c * sum_c + sum_s * sum_s ) / static_cast< double > ( n);
 
   value = 1.0 - value;
 
@@ -32425,7 +32425,7 @@ double r8vec_mean ( int n, double x[] )
     mean = mean + x[i];
   }
 
-  mean = mean / ( double ) n;
+  mean = mean / static_cast< double > ( n);
 
   return mean;
 }
@@ -32590,7 +32590,7 @@ double r8vec_variance ( int n, double x[] )
 
   if ( 1 < n )
   {
-    variance = variance / ( double ) ( n - 1 );
+    variance = variance / static_cast<double>(n - 1 );
   }
   else
   {
@@ -33587,7 +33587,7 @@ int ribesl ( double x, double alpha, int nb, int ize, double b[] )
 //  Use 2-term ascending series for small X.
 //
   ncalc = nb;
-  magx = ( int ) ( x );
+  magx = static_cast< int > (x);
 //
 //  Initialize the forward sweep, the P-sequence of Olver.
 //
@@ -33595,7 +33595,7 @@ int ribesl ( double x, double alpha, int nb, int ize, double b[] )
   {
     nbmx = nb - magx;
     n = magx + 1;
-    en = ( double ) ( n + n ) + ( alpha + alpha );
+    en = static_cast<double>(n + n ) + ( alpha + alpha );
     plast = one;
     p = en / x;
 //
@@ -33691,7 +33691,7 @@ int ribesl ( double x, double alpha, int nb, int ize, double b[] )
       if ( !flag )
       {
         n = nend;
-        en = ( double ) ( n + n ) + ( alpha + alpha );
+        en = static_cast<double>(n + n ) + ( alpha + alpha );
 //
 //  Calculate special significance test for 2 < NBMX.
 //
@@ -33724,7 +33724,7 @@ int ribesl ( double x, double alpha, int nb, int ize, double b[] )
     en = en + two;
     tempb = zero;
     tempa = one / p;
-    em = ( double ) ( n ) - one;
+    em = static_cast<double>(n ) - one;
     empal = em + alpha;
     emp2al = ( em - one ) + ( alpha + alpha );
     total = tempa * empal * emp2al / em;
@@ -34006,8 +34006,8 @@ double runs_mean ( int m, int n )
 {
   double mean;
 
-  mean = ( double ) ( m + 2 * m * n + n )
-       / ( double ) ( m             + n );
+  mean = static_cast< double >( m + 2 * m * n + n )
+          / static_cast<double>(m             + n );
 
   return mean;
 }
@@ -34134,17 +34134,17 @@ double runs_pdf ( int m, int n, int r )
 //
   if ( ( r % 2 ) == 0 )
   {
-    pdf = ( double ) ( 2 * i4_choose ( m - 1, ( r / 2 ) - 1 )
-                         * i4_choose ( n - 1, ( r / 2 ) - 1 ) )
-        / ( double ) (     i4_choose ( m + n, n ) );
+    pdf = static_cast< double >( 2 * i4_choose ( m - 1, ( r / 2 ) - 1 )
+                               * i4_choose ( n - 1, ( r / 2 ) - 1 ) )
+        / static_cast< double >(     i4_choose ( m + n, n ) );
   }
   else
   {
-    pdf = ( double ) (   i4_choose ( m - 1, ( r - 1 ) / 2 )
+    pdf = static_cast< double >(i4_choose ( m - 1, ( r - 1 ) / 2 )
                        * i4_choose ( n - 1, ( r - 3 ) / 2 )
                        + i4_choose ( m - 1, ( r - 3 ) / 2 )
                        * i4_choose ( n - 1, ( r - 1 ) / 2 ) )
-        / ( double ) (   i4_choose ( m + n, n ) );
+        / static_cast< double >(   i4_choose ( m + n, n ) );
   }
 
   return pdf;
@@ -34281,8 +34281,8 @@ double runs_variance ( int m, int n )
 {
   double variance;
 
-  variance = ( double ) ( 2 * m * n * ( 2 * m * n - m - n ) )
-           / ( double ) ( ( m + n ) * ( m + n ) * ( m + n - 1 ) );
+  variance = static_cast< double >( 2 * m * n * ( 2 * m * n - m - n ) )
+           / static_cast< double >( ( m + n ) * ( m + n ) * ( m + n - 1 ) );
 
   return variance;
 }
@@ -35070,7 +35070,7 @@ double sphere_unit_area_nd ( int dim_num )
     area = 2.0 * pow ( r8_pi, m );
     for ( i = 1; i <= m - 1; i++ )
     {
-      area = area / ( ( double ) i );
+      area = area / ( static_cast< double > ( i) );
     }
   }
   else
@@ -35079,7 +35079,7 @@ double sphere_unit_area_nd ( int dim_num )
     area = pow ( 2.0, dim_num ) * pow ( r8_pi, m );
     for ( i = m + 1; i <= 2 * m; i++ )
     {
-      area = area / ( ( double ) i );
+      area = area / ( static_cast< double > ( i) );
     }
   }
 
@@ -35747,7 +35747,7 @@ double student_noncentral_cdf ( double x, int idf, double d )
   double sum2;
   double temp;
 
-  f = ( double ) idf;
+  f = static_cast< double >(idf);
 
   if ( idf == 1 )
   {
@@ -35792,7 +35792,7 @@ double student_noncentral_cdf ( double x, int idf, double d )
 
     for ( k = 2; k <= idf - 2; k = k + 2 )
     {
-      fk = ( double ) ( k );
+      fk = static_cast<double>(k );
 
       fmkm2 = b * ( d * a * ak * fmkm1 + fmkm2 ) * ( fk - 1.0 ) / fk;
 
@@ -37252,7 +37252,7 @@ double uniform_01_sample ( int &seed )
 //
 //  Multiply by 1 / (2^31-1).
 //
-  temp = ( ( double ) seed ) * 4.656612875E-10;
+  temp = static_cast< double > ( seed) * 4.656612875E-10;
 
   return temp;
 }
@@ -37351,7 +37351,7 @@ double *uniform_01_order_sample ( int n, int &seed )
   for ( i = n-1; 0 <= i; i-- )
   {
     u = r8_uniform_01 ( seed );
-    v = v * pow ( u, 1.0 / ( double ) ( i + 1 ) );
+    v = v * pow ( u, 1.0 / static_cast<double>(i + 1 ) );
     x[i] = v;
   }
 
@@ -37702,7 +37702,7 @@ double uniform_discrete_cdf ( int x, int a, int b )
   }
   else
   {
-    cdf = ( double ) ( x + 1 - a ) / ( double ) ( b + 1 - a );
+    cdf = static_cast<double>(x + 1 - a ) / static_cast<double>(b + 1 - a );
   }
 
   return cdf;
@@ -37754,8 +37754,8 @@ int uniform_discrete_cdf_inv ( double cdf, int a, int b )
     exit ( 1 );
   }
 
-  a2 = ( double ) ( a ) - 0.5;
-  b2 = ( double ) ( b ) + 0.5;
+  a2 = static_cast<double>(a ) - 0.5;
+  b2 = static_cast<double>(b ) + 0.5;
   x2 = a + cdf * ( b2 - a2 );
 
   x = r8_nint ( x2 );
@@ -37838,7 +37838,7 @@ double uniform_discrete_mean ( int a, int b )
 {
   double mean;
 
-  mean = 0.5 * ( double ) ( a + b );
+  mean = 0.5 * static_cast<double>(a + b );
 
   return mean;
 }
@@ -37892,7 +37892,7 @@ double uniform_discrete_pdf ( int x, int a, int b )
   }
   else
   {
-    pdf = 1.0 / ( double ) ( b + 1 - a );
+    pdf = 1.0 / static_cast<double>(b + 1 - a );
   }
 
   return pdf;
@@ -37970,7 +37970,7 @@ double uniform_discrete_variance ( int a, int b )
 {
   double variance;
 
-  variance = ( double ) ( ( b + 1 - a ) * ( b + 1 - a ) - 1 ) / 12.0;
+  variance = static_cast< double >( ( b + 1 - a ) * ( b + 1 - a ) - 1 ) / 12.0;
 
   return variance;
 }
@@ -38142,8 +38142,8 @@ double von_mises_cdf ( double x, double a, double b )
 
     if ( 0.0 < z )
     {
-      ip = ( int ) ( z * a2 - a3 / ( z + a4 ) + a1 );
-      p = ( double ) ( ip );
+      ip = static_cast< int >( z * a2 - a3 / ( z + a4 ) + a1 );
+      p = static_cast<double>(ip );
       s = sin ( y );
       c = cos ( y );
       y = p * y;
@@ -39808,7 +39808,7 @@ int zipf_sample ( double a, int &seed )
   {
     u = r8_uniform_01 ( seed );
     v = r8_uniform_01 ( seed );
-    w = ( int ) ( 1.0 / pow ( u, 1.0 / ( a - 1.0 ) ) );
+    w = static_cast< int >( 1.0 / pow ( u, 1.0 / ( a - 1.0 ) ) );
 
     t = pow ( ( w + 1.0 ) / w, a - 1.0 );
 
@@ -39819,7 +39819,7 @@ int zipf_sample ( double a, int &seed )
 
   }
 
-  x = ( int ) w;
+  x = static_cast< int >(w);
 
   return x;
 }
