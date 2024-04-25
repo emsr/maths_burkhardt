@@ -61,7 +61,7 @@ complex <float> c4_uniform_01 ( int &seed )
     seed = seed + 2147483647;
   }
 
-  r = sqrt ( ( float ) ( ( double ) ( seed ) * 4.656612875E-10 ) );
+  r = sqrt ( static_cast<float>(static_cast<double>(seed) * 4.656612875E-10) );
 
   k = seed / 127773;
 
@@ -72,8 +72,7 @@ complex <float> c4_uniform_01 ( int &seed )
     seed = seed + 2147483647;
   }
 
-  theta = 2.0 * pi * ( float )
-    ( ( double ) ( seed ) * 4.656612875E-10 );
+  theta = 2.0 * pi * static_cast<float>(static_cast<double>(seed) * 4.656612875E-10);
 
   value = complex <float> ( r * cos ( theta ), r * sin ( theta ) );
 
@@ -265,9 +264,9 @@ complex <float> *c4mat_test ( int n )
   {
     for ( i = 0; i < n; i++ )
     {
-      angle = 2.0 * pi * ( float ) ( i * j ) / ( float ) ( n );
+      angle = 2.0 * pi * static_cast<float>(i * j) / static_cast<float>(n);
 
-      a[i+j*n] = exp ( I * angle ) / sqrt ( ( float ) ( n ) );
+      a[i+j*n] = exp ( I * angle ) / sqrt ( static_cast<float>(n) );
     }
   }
   return a;
@@ -419,7 +418,7 @@ complex <float> *c4mat_uniform_01_new ( int m, int n, int &seed )
         seed = seed + i4_huge;
       }
 
-      r = sqrt ( ( float ) ( seed ) * 4.656612875E-10 );
+      r = sqrt ( static_cast<float>(seed) * 4.656612875E-10 );
 
       k = seed / 127773;
 
@@ -430,7 +429,7 @@ complex <float> *c4mat_uniform_01_new ( int m, int n, int &seed )
         seed = seed + i4_huge;
       }
 
-      theta = 2.0 * r4_pi * ( ( float ) ( seed ) * 4.656612875E-10 );
+      theta = 2.0 * r4_pi * ( static_cast<float>(seed) * 4.656612875E-10 );
 
       c[i+j*m] = r * complex <float> ( cos ( theta ), sin ( theta ) );
     }
@@ -536,7 +535,7 @@ complex <float> *c4vec_uniform_01_new ( int n, int &seed )
       seed = seed + i4_huge;
     }
 
-    r = sqrt ( ( float ) ( seed ) * 4.656612875E-10 );
+    r = sqrt ( static_cast<float>(seed) * 4.656612875E-10 );
 
     k = seed / 127773;
 
@@ -547,7 +546,7 @@ complex <float> *c4vec_uniform_01_new ( int n, int &seed )
       seed = seed + i4_huge;
     }
 
-    theta = 2.0 * r4_pi * ( ( float ) ( seed ) * 4.656612875E-10 );
+    theta = 2.0 * r4_pi * ( static_cast<float>(seed) * 4.656612875E-10 );
 
     c[i] = r * complex <float> ( cos ( theta ), sin ( theta ) );
   }
@@ -606,7 +605,7 @@ complex <double> c8_uniform_01 ( int &seed )
     seed = seed + 2147483647;
   }
 
-  r = sqrt ( ( ( double ) ( seed ) * 4.656612875E-10 ) );
+  r = sqrt ( ( static_cast<double>(seed) * 4.656612875E-10 ) );
 
   k = seed / 127773;
 
@@ -617,7 +616,7 @@ complex <double> c8_uniform_01 ( int &seed )
     seed = seed + 2147483647;
   }
 
-  theta = 2.0 * pi * ( ( double ) ( seed ) * 4.656612875E-10 );
+  theta = 2.0 * pi * ( static_cast<double>(seed) * 4.656612875E-10 );
 
   value = complex <double> ( r * cos ( theta ), r * sin ( theta ) );
 
@@ -809,9 +808,9 @@ complex <double> *c8mat_test ( int n )
   {
     for ( i = 0; i < n; i++ )
     {
-      angle = 2.0 * pi * ( double ) ( i * j ) / ( double ) ( n );
+      angle = 2.0 * pi * static_cast<double>(i * j) / static_cast<double>(n);
 
-      a[i+j*n] = exp ( I * angle ) / sqrt ( ( double ) ( n ) );
+      a[i+j*n] = exp ( I * angle ) / sqrt ( static_cast<double>(n) );
     }
   }
   return a;
@@ -928,7 +927,7 @@ complex <double> *c8mat_uniform_01_new ( int m, int n, int &seed )
         seed = seed + 2147483647;
       }
 
-      r = sqrt ( ( double ) ( seed ) * 4.656612875E-10 );
+      r = sqrt ( static_cast<double>(seed) * 4.656612875E-10 );
 
       k = seed / 127773;
 
@@ -939,7 +938,7 @@ complex <double> *c8mat_uniform_01_new ( int m, int n, int &seed )
         seed = seed + 2147483647;
       }
 
-      theta = 2.0 * r8_pi * ( ( double ) ( seed ) * 4.656612875E-10 );
+      theta = 2.0 * r8_pi * ( static_cast<double>(seed) * 4.656612875E-10 );
 
       c[i+j*m] = r * complex <double> ( cos ( theta ), sin ( theta ) );
     }
@@ -1008,7 +1007,7 @@ complex <double> *c8vec_uniform_01_new ( int n, int &seed )
       seed = seed + 2147483647;
     }
 
-    r = sqrt ( ( double ) ( seed ) * 4.656612875E-10 );
+    r = sqrt ( static_cast<double>(seed) * 4.656612875E-10 );
 
     k = seed / 127773;
 
@@ -1019,7 +1018,7 @@ complex <double> *c8vec_uniform_01_new ( int n, int &seed )
       seed = seed + 2147483647;
     }
 
-    theta = 2.0 * r8_pi * ( ( double ) ( seed ) * 4.656612875E-10 );
+    theta = 2.0 * r8_pi * ( static_cast<double>(seed) * 4.656612875E-10 );
 
     c[i] = r * complex <double> ( cos ( theta ), sin ( theta ) );
   }
@@ -1795,7 +1794,7 @@ float r4_uniform_01 ( int &seed )
 //  Although SEED can be represented exactly as a 32 bit integer,
 //  it generally cannot be represented exactly as a 32 bit real number.
 //
-  value = ( float ) ( seed ) * 4.656612875E-10;
+  value = static_cast<float>(seed) * 4.656612875E-10;
 
   return value;
 }
@@ -1857,7 +1856,7 @@ float r4_uniform_ab ( float a, float b, int &seed )
     seed = seed + i4_huge;
   }
 
-  value = ( float ) ( seed ) * 4.656612875E-10;
+  value = static_cast<float>(seed) * 4.656612875E-10;
 
   value = a + ( b - a ) * value;
 
@@ -2066,7 +2065,7 @@ float *r4mat_test ( char trans, int lda, int m, int n )
     {
       for ( i = 0; i < m; i++ )
       {
-        a[i+j*lda] = ( float ) ( 10 * ( i + 1 ) + ( j + 1 ) );
+        a[i+j*lda] = static_cast<float> ( 10 * ( i + 1 ) + ( j + 1 ) );
       }
     }
   }
@@ -2078,7 +2077,7 @@ float *r4mat_test ( char trans, int lda, int m, int n )
     {
       for ( i = 0; i < m; i++ )
       {
-        a[j+i*lda] = ( float ) ( 10 * ( i + 1 ) + ( j + 1 ) );
+        a[j+i*lda] = static_cast<float> ( 10 * ( i + 1 ) + ( j + 1 ) );
       }
     }
   }
@@ -2184,7 +2183,7 @@ void r4mat_uniform_01 ( int m, int n, int &seed, float r[] )
         seed = seed + i4_huge;
       }
 
-      r[i+j*m] = ( float ) ( seed ) * 4.656612875E-10;
+      r[i+j*m] = static_cast<float>(seed) * 4.656612875E-10;
     }
   }
   return;
@@ -2288,7 +2287,7 @@ double *r8mat_test ( char trans, int lda, int m, int n )
     {
       for ( i = 0; i < m; i++ )
       {
-        a[i+j*lda] = ( double ) ( 10 * ( i + 1 ) + ( j + 1 ) );
+        a[i+j*lda] = static_cast<double> ( 10 * ( i + 1 ) + ( j + 1 ) );
       }
     }
   }
@@ -2300,7 +2299,7 @@ double *r8mat_test ( char trans, int lda, int m, int n )
     {
       for ( i = 0; i < m; i++ )
       {
-        a[j+i*lda] = ( double ) ( 10 * ( i + 1 ) + ( j + 1 ) );
+        a[j+i*lda] = static_cast<double> ( 10 * ( i + 1 ) + ( j + 1 ) );
       }
     }
   }
@@ -2406,7 +2405,7 @@ void r8mat_uniform_01 ( int m, int n, int &seed, double r[] )
         seed = seed + i4_huge;
       }
 
-      r[i+j*m] = ( double ) ( seed ) * 4.656612875E-10;
+      r[i+j*m] = static_cast<double>(seed) * 4.656612875E-10;
     }
   }
   return;

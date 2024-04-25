@@ -79,7 +79,7 @@ double angle_cdf ( double x, int n )
 }
 //****************************************************************************80
 
-double angle_mean ( int n )
+double angle_mean ( int /*n*/ )
 
 //****************************************************************************80
 //
@@ -539,7 +539,7 @@ bool arcsin_check ( double a )
 }
 //****************************************************************************80
 
-double arcsin_mean ( double a )
+double arcsin_mean ( double /*a*/ )
 
 //****************************************************************************80
 //
@@ -1262,7 +1262,7 @@ double bessel_i0 ( double arg )
   double rec15 = 6.6666666666666666666E-02;
   double sump;
   double sumq;
-  double value;
+  double value = 0.0;
   double x;
   double xmax = 91.9;
   double xsmall = 2.98E-08;
@@ -4525,7 +4525,7 @@ double bradford_cdf ( double x, double a, double b, double c )
 //    Output, double BRADFORD_CDF, the value of the CDF.
 //
 {
-  double cdf;
+  double cdf = 0.0;
 
   if ( x <= a )
   {
@@ -4576,7 +4576,7 @@ double bradford_cdf_inv ( double cdf, double a, double b, double c )
 //    Output, double BRADFORD_CDF_INV, the corresponding argument of the CDF.
 //
 {
-  double x;
+  double x = 0.0;
 
   if ( cdf < 0.0 || 1.0 < cdf )
   {
@@ -4726,7 +4726,7 @@ double bradford_pdf ( double x, double a, double b, double c )
 //    Output, double BRADFORD_PDF, the value of the PDF.
 //
 {
-  double pdf;
+  double pdf = 0.0;
 
   if ( x <= a )
   {
@@ -5362,7 +5362,7 @@ double burr_cdf_inv ( double cdf, double a, double b, double c, double d )
 }
 //****************************************************************************80
 
-bool burr_check ( double a, double b, double c, double d )
+bool burr_check ( double /*a*/, double b, double c, double /*d*/ )
 
 //****************************************************************************80
 //
@@ -5556,7 +5556,7 @@ double burr_sample ( double a, double b, double c, double d, int &seed )
 }
 //****************************************************************************80
 
-double burr_variance ( double a, double b, double c, double d )
+double burr_variance ( double /*a*/, double b, double c, double d )
 
 //****************************************************************************80
 //
@@ -5746,7 +5746,7 @@ double cardioid_cdf_inv ( double cdf, double a, double b )
 }
 //****************************************************************************80
 
-bool cardioid_check ( double a, double b )
+bool cardioid_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -5791,7 +5791,7 @@ bool cardioid_check ( double a, double b )
 }
 //****************************************************************************80
 
-double cardioid_mean ( double a, double b )
+double cardioid_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -5922,7 +5922,7 @@ double cardioid_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double cardioid_variance ( double a, double b )
+double cardioid_variance ( double /*a*/, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -6194,7 +6194,7 @@ void cauchy_cdf_values ( int &n_data, double &mu, double &sigma, double &x,
 }
 //****************************************************************************80
 
-bool cauchy_check ( double a, double b )
+bool cauchy_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -6234,7 +6234,7 @@ bool cauchy_check ( double a, double b )
 }
 //****************************************************************************80
 
-double cauchy_mean ( double a, double b )
+double cauchy_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -6365,7 +6365,7 @@ double cauchy_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double cauchy_variance ( double a, double b )
+double cauchy_variance ( double /*a*/, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -6827,7 +6827,7 @@ double chi_cdf_inv ( double cdf, double a, double b, double c )
 }
 //****************************************************************************80
 
-bool chi_check ( double a, double b, double c )
+bool chi_check ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -7016,7 +7016,7 @@ double chi_sample ( double a, double b, double c, int &seed )
 }
 //****************************************************************************80
 
-double chi_variance ( double a, double b, double c )
+double chi_variance ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -8252,7 +8252,7 @@ double *circular_normal_01_variance ( )
 }
 //****************************************************************************80
 
-double *circular_normal_mean ( double a[2], double b )
+double *circular_normal_mean ( double a[2], double /*b*/ )
 
 //****************************************************************************80
 //
@@ -8392,7 +8392,7 @@ double *circular_normal_sample ( double a[2], double b, int &seed )
 }
 //****************************************************************************80
 
-double *circular_normal_variance ( double a[2], double b )
+double *circular_normal_variance ( double /*a*/[2], double b )
 
 //****************************************************************************80
 //
@@ -8462,7 +8462,7 @@ double cosine_cdf ( double x, double a, double b )
 //    Output, double CDF, the value of the CDF.
 //
 {
-  double cdf;
+  double cdf = 0.0;
   const double r8_pi = 3.14159265358979323;
   double y;
 
@@ -8589,7 +8589,7 @@ double cosine_cdf_inv ( double cdf, double a, double b )
 }
 //****************************************************************************80
 
-bool cosine_check ( double a, double b )
+bool cosine_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -8629,7 +8629,7 @@ bool cosine_check ( double a, double b )
 }
 //****************************************************************************80
 
-double cosine_mean ( double a, double b )
+double cosine_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -8700,7 +8700,7 @@ double cosine_pdf ( double x, double a, double b )
 //    Output, double PDF, the value of the PDF.
 //
 {
-  double pdf;
+  double pdf = 0.0;
   const double r8_pi = 3.14159265358979323;
   double y;
 
@@ -8764,7 +8764,7 @@ double cosine_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double cosine_variance ( double a, double b )
+double cosine_variance ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -9881,7 +9881,7 @@ double dipole_cdf_inv ( double cdf, double a, double b )
 }
 //****************************************************************************80
 
-bool dipole_check ( double a, double b )
+bool dipole_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -11206,7 +11206,7 @@ double discrete_variance ( int a, double b[] )
 }
 //****************************************************************************80
 
-double *disk_mean ( double a, double b, double c )
+double *disk_mean ( double a, double b, double /*c*/ )
 
 //****************************************************************************80
 //
@@ -11295,7 +11295,7 @@ double *disk_sample ( double a, double b, double c, int &seed )
 }
 //****************************************************************************80
 
-double disk_variance ( double a, double b, double c )
+double disk_variance ( double /*a*/, double /*b*/, double c )
 
 //****************************************************************************80
 //
@@ -13453,7 +13453,7 @@ double erlang_cdf_inv ( double cdf, double a, double b, int c )
 }
 //****************************************************************************80
 
-bool erlang_check ( double a, double b, int c )
+bool erlang_check ( double /*a*/, double b, int c )
 
 //****************************************************************************80
 //
@@ -13646,7 +13646,7 @@ double erlang_sample ( double a, double b, int c, int &seed )
 }
 //****************************************************************************80
 
-double erlang_variance ( double a, double b, int c )
+double erlang_variance ( double /*a*/, double b, int c )
 
 //****************************************************************************80
 //
@@ -14171,7 +14171,7 @@ void exponential_cdf_values ( int &n_data, double &lambda, double &x,
 }
 //****************************************************************************80
 
-bool exponential_check ( double a, double b )
+bool exponential_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -14357,7 +14357,7 @@ double exponential_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double exponential_variance ( double a, double b )
+double exponential_variance ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -14627,7 +14627,7 @@ void extreme_values_cdf_values ( int &n_data, double &alpha, double &beta,
 }
 //****************************************************************************80
 
-bool extreme_values_check ( double a, double b )
+bool extreme_values_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -14802,7 +14802,7 @@ double extreme_values_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double extreme_values_variance ( double a, double b )
+double extreme_values_variance ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -15125,7 +15125,7 @@ bool f_check ( int m, int n )
 }
 //****************************************************************************80
 
-double f_mean ( int m, int n )
+double f_mean ( int /*m*/, int n )
 
 //****************************************************************************80
 //
@@ -16116,7 +16116,7 @@ double fisk_cdf_inv ( double cdf, double a, double b, double c )
 //
 {
   const double r8_huge = 1.0E+30;
-  double x;
+  double x = 0.0;
 
   if ( cdf < 0.0 || 1.0 < cdf )
   {
@@ -16143,7 +16143,7 @@ double fisk_cdf_inv ( double cdf, double a, double b, double c )
 }
 //****************************************************************************80
 
-bool fisk_check ( double a, double b, double c )
+bool fisk_check ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -16338,7 +16338,7 @@ double fisk_sample ( double a, double b, double c, int &seed )
 }
 //****************************************************************************80
 
-double fisk_variance ( double a, double b, double c )
+double fisk_variance ( double  /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -17305,7 +17305,7 @@ void gamma_cdf_values ( int &n_data, double &mu, double &sigma, double &x,
 }
 //****************************************************************************80
 
-bool gamma_check ( double a, double b, double c )
+bool gamma_check ( double  /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -17722,7 +17722,7 @@ double gamma_sample ( double a, double b, double c, int &seed )
 }
 //****************************************************************************80
 
-double gamma_variance ( double a, double b, double c )
+double gamma_variance ( double  /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -17987,7 +17987,7 @@ double genlogistic_cdf_inv ( double cdf, double a, double b, double c )
 //
 {
   const double r8_huge = 1.0E+30;
-  double x;
+  double x = 0.0;
 
   if ( cdf < 0.0 || 1.0 < cdf )
   {
@@ -18014,7 +18014,7 @@ double genlogistic_cdf_inv ( double cdf, double a, double b, double c )
 }
 //****************************************************************************80
 
-bool genlogistic_check ( double a, double b, double c )
+bool genlogistic_check ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -18189,7 +18189,7 @@ double genlogistic_sample ( double a, double b, double c, int &seed )
 }
 //****************************************************************************80
 
-double genlogistic_variance ( double a, double b, double c )
+double genlogistic_variance ( double  /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -18993,7 +18993,7 @@ double gompertz_pdf ( double x, double a, double b )
 //    Output, double GOMPERTZ_PDF, the value of the PDF.
 //
 {
-  double pdf;
+  double pdf = 0.0;
 
   if ( x < 0.0 )
   {
@@ -19378,7 +19378,7 @@ double half_normal_cdf_inv ( double cdf, double a, double b )
 }
 //****************************************************************************80
 
-bool half_normal_check ( double a, double b )
+bool half_normal_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -19557,7 +19557,7 @@ double half_normal_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double half_normal_variance ( double a, double b )
+double half_normal_variance ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -21087,7 +21087,7 @@ bool inverse_gaussian_check ( double a, double b )
 }
 //****************************************************************************80
 
-double inverse_gaussian_mean ( double a, double b )
+double inverse_gaussian_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -21524,7 +21524,7 @@ double laplace_cdf_inv ( double cdf, double a, double b )
 }
 //****************************************************************************80
 
-bool laplace_check ( double a, double b )
+bool laplace_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -21563,7 +21563,7 @@ bool laplace_check ( double a, double b )
 }
 //****************************************************************************80
 
-double laplace_mean ( double a, double b )
+double laplace_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -21686,7 +21686,7 @@ double laplace_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double laplace_variance ( double a, double b )
+double laplace_variance ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -22268,7 +22268,7 @@ void log_normal_cdf_values ( int &n_data, double &mu, double &sigma,
 }
 //****************************************************************************80
 
-bool log_normal_check ( double a, double b )
+bool log_normal_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -23525,7 +23525,7 @@ void logistic_cdf_values ( int &n_data, double &mu, double &beta, double &x,
 }
 //****************************************************************************80
 
-bool logistic_check ( double a, double b )
+bool logistic_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -23564,7 +23564,7 @@ bool logistic_check ( double a, double b )
 }
 //****************************************************************************80
 
-double logistic_mean ( double a, double b )
+double logistic_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -24565,7 +24565,7 @@ int multinomial_coef2 ( int nfactor, int factor[] )
 }
 //****************************************************************************80
 
-bool multinomial_check ( int a, int b, double c[] )
+bool multinomial_check ( int /*a*/, int b, double c[] )
 
 //****************************************************************************80
 //
@@ -25119,7 +25119,7 @@ double nakagami_cdf ( double x, double a, double b, double c )
 //    Output, double NAKAGAMI_CDF, the value of the CDF.
 //
 {
-  double cdf;
+  double cdf = 0.0;
   double p2;
   double x2;
   double y;
@@ -25265,7 +25265,7 @@ double nakagami_cdf_inv ( double cdf, double a, double b, double c )
 }
 //****************************************************************************80
 
-bool nakagami_check ( double a, double b, double c )
+bool nakagami_check ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -25382,7 +25382,7 @@ double nakagami_pdf ( double x, double a, double b, double c )
 //    Output, double NAKAGAMI_PDF, the value of the PDF.
 //
 {
-  double pdf;
+  double pdf = 0.0;
   double y;
 
   if ( x <= 0.0 )
@@ -25403,7 +25403,7 @@ double nakagami_pdf ( double x, double a, double b, double c )
 }
 //****************************************************************************80
 
-double nakagami_variance ( double a, double b, double c )
+double nakagami_variance ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -26878,7 +26878,7 @@ bool normal_check ( double mu, double sigma )
 }
 //****************************************************************************80
 
-double normal_mean ( double mu, double sigma )
+double normal_mean ( double mu, double /*sigma*/ )
 
 //****************************************************************************80
 //
@@ -27046,7 +27046,7 @@ double *normal_samples ( int n, double mu, double sigma, int &seed )
 }
 //****************************************************************************80
 
-double normal_variance ( double mu, double sigma )
+double normal_variance ( double /*mu*/, double sigma )
 
 //****************************************************************************80
 //
@@ -28862,7 +28862,7 @@ bool planck_check ( double a, double b )
 }
 //****************************************************************************80
 
-double planck_mean ( double a, double b )
+double planck_mean ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -29028,7 +29028,7 @@ double planck_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double planck_variance ( double a, double b )
+double planck_variance ( double /*a*/, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -33047,7 +33047,7 @@ double reciprocal_cdf ( double x, double a, double b )
 //    Output, double RECIPROCAL_CDF, the value of the CDF.
 //
 {
-  double cdf;
+  double cdf = 0.0;
 
   if ( x <= 0.0 )
   {
@@ -33092,7 +33092,7 @@ double reciprocal_cdf_inv ( double cdf, double a, double b )
 //    Output, double RECIPROCAL_CDF_INV, the corresponding argument of the CDF.
 //
 {
-  double x;
+  double x = 0.0;
 
   if ( cdf < 0.0 || 1.0 < cdf )
   {
@@ -33234,7 +33234,7 @@ double reciprocal_pdf ( double x, double a, double b )
 //    Output, double RECIPROCAL_PDF, the value of the PDF.
 //
 {
-  double pdf;
+  double pdf = 0.0;
 
   if ( x <= 0.0 )
   {
@@ -34405,7 +34405,7 @@ double sech_cdf_inv ( double cdf, double a, double b )
 {
   const double r8_huge = 1.0E+30;
   const double r8_pi = 3.14159265358979323;
-  double x;
+  double x = 0.0;
 
   if ( cdf < 0.0 || 1.0 < cdf )
   {
@@ -34432,7 +34432,7 @@ double sech_cdf_inv ( double cdf, double a, double b )
 }
 //****************************************************************************80
 
-bool sech_check ( double a, double b )
+bool sech_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -34472,7 +34472,7 @@ bool sech_check ( double a, double b )
 }
 //****************************************************************************80
 
-double sech_mean ( double a, double b )
+double sech_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -34596,7 +34596,7 @@ double sech_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double sech_variance ( double a, double b )
+double sech_variance ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -34663,7 +34663,7 @@ double semicircular_cdf ( double x, double a, double b )
 //    Output, double SEMICIRCULAR_CDF, the value of the CDF.
 //
 {
-  double cdf;
+  double cdf = 0.0;
   const double r8_pi = 3.14159265358979323;
   double y;
 
@@ -34796,7 +34796,7 @@ double semicircular_cdf_inv ( double cdf, double a, double b )
 }
 //****************************************************************************80
 
-bool semicircular_check ( double a, double b )
+bool semicircular_check ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -34836,7 +34836,7 @@ bool semicircular_check ( double a, double b )
 }
 //****************************************************************************80
 
-double semicircular_mean ( double a, double b )
+double semicircular_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -34907,7 +34907,7 @@ double semicircular_pdf ( double x, double a, double b )
 //    Output, double SEMICIRCULAR_PDF, the value of the PDF.
 //
 {
-  double pdf;
+  double pdf = 0.0;
   const double r8_pi = 3.14159265358979323;
   double y;
 
@@ -34974,7 +34974,7 @@ double semicircular_sample ( double a, double b, int &seed )
 }
 //****************************************************************************80
 
-double semicircular_variance ( double a, double b )
+double semicircular_variance ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -35464,7 +35464,7 @@ bool student_check ( double a, double b, double c )
 }
 //****************************************************************************80
 
-double student_mean ( double a, double b, double c )
+double student_mean ( double a, double /*b*/, double c )
 
 //****************************************************************************80
 //
@@ -35635,7 +35635,7 @@ double student_sample ( double a, double b, double c, int &seed )
 }
 //****************************************************************************80
 
-double student_variance ( double a, double b, double c )
+double student_variance ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -38523,7 +38523,7 @@ bool von_mises_check ( double a, double b )
 }
 //****************************************************************************80
 
-double von_mises_circular_variance ( double a, double b )
+double von_mises_circular_variance ( double /*a*/, double b )
 
 //****************************************************************************80
 //
@@ -38560,7 +38560,7 @@ double von_mises_circular_variance ( double a, double b )
 }
 //****************************************************************************80
 
-double von_mises_mean ( double a, double b )
+double von_mises_mean ( double a, double /*b*/ )
 
 //****************************************************************************80
 //
@@ -39004,7 +39004,7 @@ void weibull_cdf_values ( int &n_data, double &alpha, double &beta,
 }
 //****************************************************************************80
 
-bool weibull_check ( double a, double b, double c )
+bool weibull_check ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //
@@ -39190,7 +39190,7 @@ double weibull_sample ( double a, double b, double c, int &seed )
 }
 //****************************************************************************80
 
-double weibull_variance ( double a, double b, double c )
+double weibull_variance ( double /*a*/, double b, double c )
 
 //****************************************************************************80
 //

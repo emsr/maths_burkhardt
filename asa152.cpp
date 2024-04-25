@@ -39,7 +39,7 @@ double alnfac ( int n )
 {
   double value;
 
-  value = lgamma ( ( double ) ( n + 1 ) );
+  value = lgamma ( static_cast<double> ( n + 1 ) );
 
   return value;
 }
@@ -183,23 +183,23 @@ double chyper ( bool point, int kk, int ll, int mm, int nn, int *ifault )
     return value;
   }
 
-  p = ( double ) ( nn ) / ( double ) ( mm - nn );
+  p = static_cast<double> ( nn ) / static_cast<double> ( mm - nn );
 
   if ( 16.0 * r8_max ( p, 1.0 / p ) 
-    < ( double ) ( i4_min ( kk, mm - kk ) ) &&
+    < static_cast<double> ( i4_min ( kk, mm - kk ) ) &&
     mvbig < mm && - 100.0 < elimit )
   {
 //
 //  Use a normal approximation.
 //
-    mean = ( double ) ( kk * nn ) / ( double ) ( mm );
+    mean = static_cast<double> ( kk * nn ) / static_cast<double> ( mm );
 
-    sig = sqrt ( mean * ( ( double ) ( mm - nn ) / ( double ) ( mm ) ) 
-    * ( ( double ) ( mm - kk ) / ( ( double ) ( mm - 1 ) ) ) );
+    sig = sqrt ( mean * ( static_cast<double> ( mm - nn ) / static_cast<double> ( mm ) ) 
+    * ( static_cast<double> ( mm - kk ) / ( static_cast<double> ( mm - 1 ) ) ) );
 
     if ( point )
     {
-      arg = - 0.5 * ( pow ( ( ( double ) ( ll ) - mean ) / sig, 2 ) );
+      arg = - 0.5 * ( pow ( ( static_cast<double> ( ll ) - mean ) / sig, 2 ) );
       if ( elimit <= arg )
       {
         value = exp ( arg ) / ( sig * rootpi );
@@ -211,7 +211,7 @@ double chyper ( bool point, int kk, int ll, int mm, int nn, int *ifault )
     }
     else
     {
-      value = alnorm ( ( ( double ) ( ll ) + 0.5 - mean ) / sig, false );
+      value = alnorm ( ( static_cast<double> ( ll ) + 0.5 - mean ) / sig, false );
     }
   }
   else
@@ -265,8 +265,8 @@ double chyper ( bool point, int kk, int ll, int mm, int nn, int *ifault )
 //
       for ( i = 1; i <= l - 1; i++ )
       {
-        value = value * ( double ) ( ( k - i ) * ( n - i ) ) 
-        / ( double ) ( ( l - i ) * ( m - i ) );
+        value = value * static_cast<double> ( ( k - i ) * ( n - i ) ) 
+        / static_cast<double> ( ( l - i ) * ( m - i ) );
       }
 
       if ( l != k )
@@ -274,7 +274,7 @@ double chyper ( bool point, int kk, int ll, int mm, int nn, int *ifault )
         j = m - n + l;
         for ( i = l; i <= k - 1; i++ )
         {
-          value = value * ( double ) ( j - i ) / ( double ) ( m - i );
+          value = value * static_cast<double> ( j - i ) / static_cast<double> ( m - i );
         }
       }
     }
@@ -307,8 +307,8 @@ double chyper ( bool point, int kk, int ll, int mm, int nn, int *ifault )
       if ( p < elimit )
       {
         *ifault = 3;
-        if ( ( double ) ( nn * kk + nn + kk + 1 ) 
-          / ( double ) ( mm + 2 ) < ( double ) ( ll ) )
+        if ( static_cast<double> ( nn * kk + nn + kk + 1 ) 
+          / static_cast<double> ( mm + 2 ) < static_cast<double> ( ll ) )
         {
           value = 1.0;
         }
@@ -336,8 +336,8 @@ double chyper ( bool point, int kk, int ll, int mm, int nn, int *ifault )
     {
       for ( i = 1; i <= l - 1; i++ )
       {
-        p = p * ( double ) ( ( l - i ) * ( mnkl - i ) ) / 
-        ( double ) ( ( nl + i ) * ( kl + i ) );
+        p = p * static_cast<double> ( ( l - i ) * ( mnkl - i ) ) / 
+        static_cast<double> ( ( nl + i ) * ( kl + i ) );
         pt = pt + p;
       }
     }
@@ -346,8 +346,8 @@ double chyper ( bool point, int kk, int ll, int mm, int nn, int *ifault )
       dir = !dir;
       for ( j = 0; j <= kl - 1; j++ )
       {
-        p = p * ( double ) ( ( nl - j ) * ( kl - j ) ) 
-        / ( double ) ( ( l + j ) * ( mnkl + j ) );
+        p = p * static_cast<double> ( ( nl - j ) * ( kl - j ) ) 
+        / static_cast<double> ( ( l + j ) * ( mnkl + j ) );
         pt = pt + p;
       }
     }

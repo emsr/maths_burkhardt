@@ -547,7 +547,7 @@ void dtrmv ( char uplo, char trans, char diag, int n, double a[], int lda,
   int ix;
   int j;
   int jx;
-  int kx;
+  int kx = 0;
   bool nounit;
   double temp;
 //
